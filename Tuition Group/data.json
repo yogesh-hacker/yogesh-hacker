@@ -1,0 +1,425 @@
+data=[
+    {
+        "serialno" : "1",
+        "name" : "Pramit Ghosh",
+        "number" : "8167820876",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "2",
+        "name" : "Pranab Paramanik",
+        "number" : "8653320376",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "3",
+        "name" : "Gourab Chatterjee",
+        "number" : "9681590517",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "4",
+        "name" : "Suman Singh",
+        "number" : "7362901471",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "5",
+        "name" : "Debasish Mallick",
+        "number" : "7501229420",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "6",
+        "name" : "Debopriyo Samanta",
+        "number" : "7585096739",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "7",
+        "name" : "Sk Nosibul",
+        "number" : "7810963935",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "8",
+        "name" : "Abid Hossain",
+        "number" : "8710056730",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "8",
+        "name" : "Sourav Bhul",
+        "number" : "9093663287",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "9",
+        "name" : "Animesh Mallick",
+        "number" : "9641678785",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "10",
+        "name" : "Raj Roy",
+        "number" : "9883197344",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "11",
+        "name" : "Titas",
+        "number" : "9832688913",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "12",
+        "name" : "Joyjith Manna",
+        "number" : "7364809322",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "13",
+        "name" : "Sangita Hazra",
+        "number" : "8927014704",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "14",
+        "name" : "Piyali Mete",
+        "number" : "9635234044",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "15",
+        "name" : "Prerana Basu",
+        "number" : "9800529490",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "16",
+        "name" : "Sania",
+        "number" : "6294517940",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "17",
+        "name" : "Shayani Patra",
+        "number" : "6294929563",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "18",
+        "name" : "Nandi",
+        "number" : "6295743714",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "19",
+        "name" : "Punom Karar",
+        "number" : "6296669189",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "20",
+        "name" : "Ayantika Ghosh",
+        "number" : "7364954958",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "21",
+        "name" : "Samanta",
+        "number" : "7384084667",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "22",
+        "name" : "Keya",
+        "number" : "7501232294",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "23",
+        "name" : "Sathi Koley",
+        "number" : "7501679468",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "24",
+        "name" : "Ananya",
+        "number" : "7551079437",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "25",
+        "name" : "Damupatra",
+        "number" : "7908709140",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "26",
+        "name" : "Mohas",
+        "number" : "8159970606",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "27",
+        "name" : "Aditi Pandit",
+        "number" : "8250961015",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "28",
+        "name" : "Mona",
+        "number" : "8509631824",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "29",
+        "name" : "Bristi",
+        "number" : "8597129899",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "30",
+        "name" : "Laboni",
+        "number" : "8972414605",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "31",
+        "name" : "",
+        "number" : "9093407831",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "32",
+        "name" : "Taniya Khatun",
+        "number" : "9641800949",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "33",
+        "name" : "Peu Samanta",
+        "number" : "9832492874",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "34",
+        "name" : "Khadija Sarkar",
+        "number" : "9883442208",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "35",
+        "name" : "Sampati Pal",
+        "number" : "9883931860",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "36",
+        "name" : "Arpita Khan",
+        "number" : "8159980596",
+        "address" : "GHARGOHAL ARAMBAGH Pin-712414",
+        "school" : "GHARGOHAL MAHAMAYA BASU VIDYANIK",
+        "college" : "",
+        "photo" : "https://raw.githubusercontent.com/yogesh-hacker/yogesh-hacker/main/Tuition%20Group/%2B918159980596.png"
+    },
+    {
+        "serialno" : "37",
+        "name" : "Mondira Patra",
+        "number" : "9874939856",
+        "address" : "GOPINATHPUR JAMDARA DHANIAKHALI Pin-712410",
+        "school" : "JAMDHARA SRI BHARATI VIDYAPITH",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "38",
+        "name" : "Taniya Jana",
+        "number" : "7602511703",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "39",
+        "name" : "Keya Patra",
+        "number" : "8101582239",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "40",
+        "name" : "Susmita",
+        "number" : "8101191624",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : "https://raw.githubusercontent.com/yogesh-hacker/yogesh-hacker/main/Tuition%20Group/%2B918101191624.jpg"
+    },
+    {
+        "serialno" : "41",
+        "name" : "Niha Guchhait",
+        "number" : "8334804409",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "42",
+        "name" : "Naba Hazra",
+        "number" : "7718703816",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "43",
+        "name" : "Asha Pal",
+        "number" : "9083580724",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "43",
+        "name" : "Minhaj",
+        "number" : "7047493161",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "43",
+        "name" : "",
+        "number" : "8348561909",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : ""
+    },
+    {
+        "serialno" : "43",
+        "name" : "Amal",
+        "number" : "6297608556",
+        "address" : "",
+        "school" : "",
+        "college" : "",
+        "photo" : "https://raw.githubusercontent.com/yogesh-hacker/yogesh-hacker/main/Tuition%20Group/%2B916297608556.jpg"
+    }
+]
