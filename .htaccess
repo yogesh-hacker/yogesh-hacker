@@ -1,1 +1,1 @@
-RedirectMatch 403 ^/Tuition Group/?$
+RedirectMatch 403 ^/images/.+\.(png|gif|js)$
