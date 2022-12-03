@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Tuition Group Details</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css" type="text/css" media="all" />
+
+</head>
+<body>
+    <div id="errors"></div>
+    <div id="form">
+        <h2>OSINT<br>Phone Number</h2>
+        <select name="group_type" id="group_type">
+            <option value="null" selected="" disabled="">Select group type...</option>
+            <option value="1">English Honours 1 SEM [Private]</option>
+        </select>
+        <button class="change_mode" type="submit">Change Mode</button>
+        <div id="data_mode">
+            <button type="submit" class="close">×</button>
+            <p>
+                Please choose Information Type :
+            </p>
+            <div class="details_mode_input">
+                <input class="default" type="radio" name="details_mode" id="details_mode" checked="" value="basic" />
+                <label class="radio_label" for="basic_mode">Basic Mode</label>
+            </div>
+            <div class="details_mode_input">
+                <input class="non_default" type="radio" name="details_mode" id="details_mode" value="advance" onclick="auth()"/>
+                <label class="radio_label" for="advance_mode">Advance Mode</label>
+            </div>
+        </div>
+
+        <input data-type="number" id="s_query" class="number" type="tel" value="" placeholder="Enter phone number to search..." />
+
+        <div class="sugg_container">
+            <div id="osint_sugg">
+            </div>
+        </div>
+
+
+        <button onclick="search_by_number()" class="search" type="submit">Search</button>
+        <button id="seeall" class="seeall" type="submit">See All</button>
+    </div>
+
+    <p class="switch">
+        <a class="cstype" href="#">Search by name instead...</a>
+    </p>
+    <p id="amount"></p>
+    <!--div class="loader"><img class="" src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" alt="" /><p>Loading...</p></div-->
+    <div id="result">
+    </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="main.js" type="text/javascript" charset="utf-8"></script>
+<script src="data.json" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
