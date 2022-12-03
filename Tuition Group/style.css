@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html{
+    user-select: none;
+}
+
 #group_type{
     position: absolute;
     top: 0;
