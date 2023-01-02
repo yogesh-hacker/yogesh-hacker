@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#192133" />
+    <link rel="icon" href="/hackerindia.in/logo.ico">
+    <title>Hacker India - Watch Hollywood Bollywood Movies, Webseries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Open+Sans:wght@400;500;600&family=Raleway:wght@500;600;700&family=Ubuntu:wght@400;500&family=Andika:wght@400;700&display=swap" rel="stylesheet">
+    <style type="text/css" media="all">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .contents {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 30px;
+            background-color: #ddd;
+            padding: 40px 20px;
+            border-radius: 5px;
+        }
+
+        .links li {
+            list-style-type: none;
+            margin: 10px 0px;
+        }
+
+        .links li a {
+            padding: 10px 15px;
+            display: block;
+            background-color: #000;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-family: 'Raleway';
+            font-weight: 500;
+            border-radius: 3px;
+            -webkit-tap-highlight-color: transparent;
+            transition-duration: 0.3s;
+        }
+
+        .links li a:hover {
+            background-color: #00AF00;
+        }
+    </style>
+</head>
+<body>
+    <div class="contents">
+        <ul class="links">
+
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        var data = [{
+            "serial_no": "1",
+            "url_title": "XNXX",
+            "url": "https://www.xnxx.com/",
+            "url_description": "",
+        }, {
+            "serial_no": "2",
+            "url_title": "XVIDEOS",
+            "url": "https://www.xvideos.com/",
+            "url_description": "",
+        }, {
+            "serial_no": "3",
+            "url_title": "Pornhub",
+            "url": "https://www.pornhub.com/",
+            "url_description": "",
+        }, {
+            "serial_no": "4",
+            "url_title": "NaughtyAmerica[VIP]",
+            "url": "https://www.naughtyamerica.com/",
+            "url_description": "",
+        }, {
+            "serial_no": "5",
+            "url_title": "Bazzers[VIP]",
+            "url": "https://www.brazzersnetwork.com/",
+            "url_description": "",
+        }]
+
+        $(document).ready(function() {
+            while (password == null || password == "" || password != "@hackerindia") {
+                var password = prompt("Please enter password to gain access...", "")
+                if (password === "@hackerindia") {
+                    load_page()
+                }
+            }
+        })
+
+
+        function load_page() {
+            for (var i = 0; i < data.length; i++) {
+                $(".links").append(`<li><a href="`+data[i].url+`" target="_blank">`+data[i].url_title+`</a></li>`)
+            }
+        }
+    </script>
+</body>
