@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #E8F5FF;
+}
+
+h2,
+h2 p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px auto;
+    font-family: 'Open Sans';
+    font-weight: 600;
+}
+
+h2 p {
+    font-size: 15px;
+    font-family: "Poppins";
+    font-weight: 400;
+    margin: 5px;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin: 10px 10px;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#file-name,
+#file-type,
+#sort-by,
+.search {
+    display: block;
+    width: 90%;
+    height: 47px;
+    margin: 10px;
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    background-color: white;
+    transition-duration: 0.3s;
+    font-family: "Andika";
+}
+
+#file-type:hover,
+#file-name:focus,
+#file-name:hover,
+#sort-by:hover {
+    border: 1px solid #105880;
+}
+
+#file-name {
+    font-family: 'Poppins';
+}
+
+.search {
+    color: white;
+    background-color: #105880;
+    border: none;
+}
+
+.search:hover {
+    background-color: #00A7FF;
+}
+
+.pby-logo {
+    margin: 5px 0px;
+    color: #999;
+    font-size: 15px;
+    font-family: 'Open Sans';
+}
+
+#result{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin: 10px 10px;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.result_card {
+    display: block;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.308);
+    border-radius: 5px;
+    padding: 5px;
+    transition-duration: 0.5s;
+    margin: 10px 0px;
+    word-wrap: break-word;
+}
+
+.result_card p {
+    font-family: "Poppins";
+    font-weight: 600;
+    width: 100%;
+    text-overflow: wrap;
+}
+
+.result_card span {
+    font-weight: 400;
+}
+
+.file-type {
+    color: white;
+    background-color: #0074FF;
+    font-family: "Poppins";
+    border-radius: 2px;
+    padding: 1px 5px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.file-link {
+    font-weight: 400;
+    text-decoration: none;
+    color: #008BFF;
+}
+
+.file-link:hover {
+    color: #00C54D;
+}
+
+.result-amount{
+    margin: 0px auto 0px 0px;
+    font-family: "Andika";
+    font-size: 15px;
+    font-weight: 400;
+    color: grey;
+}
