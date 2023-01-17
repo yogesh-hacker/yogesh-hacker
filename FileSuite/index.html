@@ -7,15 +7,17 @@
     <meta name="googlebot" content="notranslate">
     <meta name="theme-color" content="#192133" />
     <link rel="icon" href="/hackerindia.in/logo.ico">
-    <title>Hacker India - Watch Hollywood Bollywood Movies, Webseries</title>
+    <title>FileSuite - By Hacker India</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css" type="text/css" media="all" />
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css" type="text/css" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Open+Sans:wght@400;500;600&family=Raleway:wght@500;600;700&family=Ubuntu:wght@400;500&family=Poppins:wght@400;500;600;700&family=Andika:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2>FileSuit by Hacker India<br><p>Find video, audio, archive files accross the web.
+    <h2>FileSuite by Hacker India<br><p>
+        Find video, audio, archive files accross the web.
     </p>
     </h2>
     <section id="form">
@@ -42,13 +44,29 @@
             <p>
                 Powered By <span>RapidAPI</span>
             </p>
+            <span><i class="icon-move"></i></span>
         </div>
     </section>
 
-    <div id="result">
+    <div id="container">
+        <div class="quick_actions">
+            <button id="fullscreen"><i class="fa-solid fa-expand"></i></button>
+            <button id="drag"><i class="fa-solid fa-up-down-left-right"></i></button>
+            <button id="change_side"><i class=" fa-solid fa-right"></i></button>
+            <button id="close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="view_file">
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+    <div id="result">
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="main.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
