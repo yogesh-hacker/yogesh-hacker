@@ -1,0 +1,31 @@
+mydata=[
+    {
+        "serial_no" : "1",
+        "cc_name" : "CC_1",
+        "questions" : [
+            {
+            "book_name" : "Mrichchhakatika",
+            "questions" : ["Discuss the unique features of Sudraka's depiction of the society in the play/representation of the society/picture of the society. <span class='mark'>10</span>","Mrichchhakatika is a study of the subjugation and emancipation of woman - Do you agree? Justify your answer. <span class='mark'>10</span>","Critically discuss the significance of the title of Sudraka's play Mrichchhakatika. <span class='mark'>10</span>","Discuss how Vasantasena in Mrichchhakatika excels despite her status as a courtesan. <span class='mark'>5</span>","Comment on the relationship between Vasantasena and Rohasena in Michchhakatika. <span class='mark'>5</span>"]
+            },
+            {
+            "book_name" : "Abhijnanasakuntalam",
+            "questions" : ["Analyze the character of King Duhsanta in Abhijnanasakuntalam. <span class='mark'>10</span>","The role of Madhavya in Abhijnanasakuntalam/The sceneharacter of vidusaka/court Jester/clown/ Madhavya. <span class='mark'>10</span>","Describe the character of Sakuntala. <span class='mark'>10</span>","Justify the appropriateness of the title of the play Abhijnanasakuntalam. <span class='mark'>10</span>","Describe and comment on the scene of Sakuntala's depature in Act IV of Abhijnanasakuntalam. <span class='mark'>5</span>","Discuss the role of Anasuya and Priyamvada in Kalidasa's play Abhijnanasakuntalam. <span class='mark'>5</span>"
+]
+            }
+        ]
+    },
+    {
+        "serial_no" : "2",
+        "cc_name" : "CC_2",
+        "questions" : [
+            {
+            "book_name" : "Oedipus",
+            "questions" : ["Oedipus as the tragic protagonist/a victim of destiny, as a Greek/ clarical tragedy/'Character is destiny' or 'destiny is character'/as a tragedy of fate. <span class='mark'>10</span>","Elaborate upon the paradox of sight - blindness in Sophocles's Oedipus the king. <span class='mark'>10</span>","Discuss Oedipus as an ideal tragic hero of the Aristotelian type. <span class='mark'>10</span>","Dramatic Irony / Tragic Irony in Sophocles's Oedipus the King. <span class='mark'>10</span>","The role and function of Chorus in Oedipus the King. <span class='mark'>10</span>","Why does Sophocles sometimes have messengers describe the actions that have occurred rather than representing these events directly? <span class='mark'>5</span>","Where was Oedipus reared and why did he leave the place? <span class='mark'>5</span>","How did Oedipus kill Laius and where? <span class='mark'>5</span>","Why was Oedipus angry Teiresias? <span class='mark'>5</span>","How does Creon defend himself against Oedipus's accusation? <span class='mark'>5</span>","How does Jocasta try to assure Oedipus that he is not guilty of Laius's death? <span class='mark'>5</span>","What is the Chorus's view of Teiresias's accusations against Oedipus? <span class='mark'>5</span>","What was the riddle posed by Sphinx to Oedipus? <span class='mark'>5</span>","Comment on the role of fate in Oedipus the king. <span class='mark'>5</span>","Why does Oedipus blind himself? <span class='mark'>5</span>","What message did Creon bring from the oracle of Delphi? <span class='mark'>5</span>"]
+            },
+            {
+            "book_name" : "Metamorphoses",
+            "questions" : ["The theme of divine revenge in Ovid's Metamorphoses with special reference to Book III. <span class='mark'>10</span>","How is the theme of divine revenge presented/revealed in the story of Pentheus and Bacchus. <span class='mark'>5</span>","Describe the story of Teiresias and recount it's out outcome. <span class='mark'>5</span>","Narrate Cadmus's fight with dragon. <span class='mark'>5</span>"]
+            }
+        ]
+    }
+]
