@@ -83,4 +83,5 @@ h2 {
     vertical-align: middle;
     border: 1px solid black;
     border-radius: 50%;
+    user-select: none;
 }
