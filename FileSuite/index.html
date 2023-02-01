@@ -20,6 +20,19 @@
         Find video, audio, archive files accross the web.
     </p>
     </h2>
+    <button type="submit" class="settings"><i class="fa-solid fa-gear"></i>Settings</button>
+    <div class="hidden_canvas">
+        
+    </div>
+    <div class="sett-container">
+        <h3>Settings</h3>
+        <select name="" id="search-type">
+            <option value="default" selected>Search Type</option>
+            <option value="1">Normal Search</option>
+            <option value="2">Deep Search</option>
+            <option value="3">Both (Default)</option>
+        </select>
+    </div>
     <section id="form">
         <input type="text" name="" id="file-name" placeholder="Enter File Name..." />
         <select name="" id="file-type">
@@ -44,6 +57,9 @@
             <p>
                 Powered By <span>RapidAPI</span>
             </p>
+            <p class="version">
+                Version 1.8
+            </p>
             <span><i class="icon-move"></i></span>
         </div>
     </section>
@@ -60,9 +76,11 @@
     </div>
 
 
-
-    <div id="result">
-
+    <h3>Normal Results</h3>
+    <div id="result" class="result_canvas">
+    </div>
+    <h3>Advanced Results</h3>
+    <div id="deep_search" class="result_canvas">
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

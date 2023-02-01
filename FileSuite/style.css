@@ -10,6 +10,7 @@ body {
 }
 
 h2,
+h3,
 h2 p {
     display: flex;
     justify-content: center;
@@ -42,7 +43,8 @@ h2 p {
 #file-name,
 #file-type,
 #sort-by,
-.search {
+.search ,
+#search-type{
     display: block;
     width: 90%;
     height: 47px;
@@ -64,7 +66,7 @@ h2 p {
 }
 
 #file-name {
-    height: 47px;
+    height: 47px !important;
     font-family: 'Poppins';
     padding: none;
 }
@@ -74,6 +76,10 @@ h2 p {
     color: white;
     background-color: #105880;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .search:hover {
@@ -85,9 +91,17 @@ h2 p {
     color: #999;
     font-size: 15px;
     font-family: 'Open Sans';
+    text-align: center;
 }
 
-#result {
+.version{
+    color: #101010;
+    font-size: 14px;
+    font-family: "Poppins";
+    margin-top: 5px;
+}
+
+.result_canvas {
     position: relative;
     display: flex;
     align-items: center;
@@ -96,6 +110,24 @@ h2 p {
     margin: 10px 10px;
     padding: 20px;
     border-radius: 4px;
+}
+
+
+.ds_loader{
+    margin: -15px 0px 10px 0px;
+    left: 0px;
+    font-family: 'Raleway';
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    color: #555;
+}
+
+.res_info{
+    color: red;
+    font-family: "Montserrat";
+    display: inline-block;
+    font-size: 15px;
 }
 
 .result_card {
@@ -130,6 +162,7 @@ h2 p {
     font-size: 12px;
     letter-spacing: 1px;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .file-link {
@@ -137,15 +170,30 @@ h2 p {
     font-family: "Poppins";
     width: 100%;
     padding: 5px;
-    height: 30px;
+    height: 35px;
     border: 1px solid #999;
     border-radius: 3px;
-    color: #008BFF;
+    color: #00A414;
+    font-weight: 600;
     padding-right: 30px;
+    font-size: 16px;
 }
 
 .file-link:hover {
-    color: #00C54D;
+    color: #444;
+}
+
+.media-link{
+    display: inline;
+    font-family: "Poppins";
+    color: #00A414;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.media-link:hover{
+    color: blue;
 }
 
 .result-amount {
@@ -185,31 +233,6 @@ h2 p {
     color: #999;
 }
 
-
-.loader {
-    position: absolute;
-    border: 2px solid transparent;
-    border-top: 2px solid black;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    animation: spin 0.5s linear infinite;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-
-
 #item {
     position: relative;
     width: 100%;
@@ -232,7 +255,7 @@ h2 p {
 /*---------- Embeder ----------*/
 
 #container{
-    position: absolute;
+    position: fixed;
     top: 0;
     display: none;
     left: 0;
@@ -292,4 +315,99 @@ h2 p {
     margin-top: 10px;
     height: 100%;
     width: 100%;
+}
+
+/*---------- Loader ----------*/
+.loader {
+    position: relative;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 0.6s linear infinite;
+    vertical-align: middle;
+    margin: 0;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*---------- Settings ----------*/
+
+.sett-container{
+    height: 300px;
+    width: 95%;
+    top: 20px;
+    position: fixed;
+    z-index: 5;
+    background-color: white;
+    display: none;
+    align-items: center;
+    padding: 0px;
+    margin: 0px auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #A4A4A4;
+    border-radius: 5px;
+    touch-action: none;
+    flex-direction: column;
+}
+
+
+.hidden_canvas{
+    display: none;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 4;
+    user-select: none;
+    cursor: pointer;
+    touch-action: none;
+}
+
+.settings{
+    position: relative;
+    margin: 0px 10px 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 5rem;
+    font-size: 14px;
+    color: white;
+    background-color: #0078FF;
+    border: none;
+    border-radius: 3px;
+    touch-action: default;
+    transition-duration: 0.3s;
+}
+
+.settings i{
+    margin: 0px 3px;
+    animation-name: none;
+    animation: 1s infinite linear;
+}
+
+.settings:hover{
+    box-shadow: 0px 0px 0px 3px #93D0FF !important;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
