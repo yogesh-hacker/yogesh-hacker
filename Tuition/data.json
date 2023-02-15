@@ -9,8 +9,7 @@ mydata=[
             },
             {
             "book_name" : "Abhijnanasakuntalam",
-            "questions" : ["Analyze the character of King Duhsanta in Abhijnanasakuntalam. <span class='mark'>10</span>","The role of Madhavya in Abhijnanasakuntalam/The character of Vidusaka/Court Jester/Clown/ Madhavya. <span class='mark'>10</span>","Describe the character of Sakuntala. <span class='mark'>10</span>","Justify the appropriateness of the title of the play Abhijnanasakuntalam. <span class='mark'>10</span>","Describe and comment on the scene of Sakuntala's depature in Act IV of Abhijnanasakuntalam. <span class='mark'>5</span>","Discuss the role of Anasuya and Priyamvada in Kalidasa's play Abhijnanasakuntalam. <span class='mark'>5</span>"
-]
+            "questions" : ["Analyze the character of King Duhsanta in Abhijnanasakuntalam. <span class='mark'>10</span>","The role of Madhavya in Abhijnanasakuntalam/The character of Vidusaka/Court Jester/Clown/ Madhavya. <span class='mark'>10</span>","Describe the character of Sakuntala. <span class='mark'>10</span>","Justify the appropriateness of the title of the play Abhijnanasakuntalam. <span class='mark'>10</span>","Describe and comment on the scene of Sakuntala's depature in Act IV of Abhijnanasakuntalam. <span class='mark'>5</span>","Discuss the role of Anasuya and Priyamvada in Kalidasa's play Abhijnanasakuntalam. <span class='mark'>5</span>","Write a note on the character and role of Kanva as you find in Abhijnana Sakuntalam. <span class='mark'>5</span>"]
             }
         ]
     },
