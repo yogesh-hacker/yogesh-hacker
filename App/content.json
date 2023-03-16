@@ -1,13 +1,11 @@
-
-
-
 {
     "data":[
         {
         "app_name" : "HackFlix",
         "app_size" : "",
-        "latest_version" : "1.0-alpha",
         "latest_version_code" : "1.0",
+        "latest_version" : "1.0",
+        "latest_version_src" : "https://example.com"
         "last_updated_date" : "",
         }
     ]
