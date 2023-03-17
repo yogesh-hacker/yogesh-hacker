@@ -10,13 +10,13 @@ body {
     transition-duration: 0.2s;
 }
 
-#navbar{
+#navbar {
     margin: 0;
     padding: 0;
 }
 
 
-.nav_container{
+.nav_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -32,7 +32,7 @@ body {
     padding: 0;
 }
 
-.nav_branding{
+.nav_branding {
     color: #FFF;
     display: flex;
     align-items: center;
@@ -42,26 +42,26 @@ body {
     height: 100%;
 }
 
-.nav_branding img{
+.nav_branding img {
     height: 50px;
 }
 
-.nav_branding h2{
+.nav_branding h2 {
     margin: 0px 2px;
 }
 
-.nav_branding span{
+.nav_branding span {
     color: #C900FF;
 }
 
-.nav_menu{
+.nav_menu {
     display: flex;
     margin: 0px 10px 0px auto;
     font-size: 20px;
     color: #C900FF;
 }
 
-.nav_menu_items{
+.nav_menu_items {
     position: relative;
     width: 100%;
     color: white;
@@ -75,17 +75,17 @@ body {
     transition-duration: 0.3s;
 }
 
-.list_items{
+.list_items {
     width: 100%;
 }
 
-.nav_menu_items li{
+.nav_menu_items li {
     width: 100%;
     color: white;
     list-style-type: none;
 }
 
-.nav_menu_items li a{
+.nav_menu_items li a {
     color: white;
     height: 60px;
     width: 100%;
@@ -97,13 +97,13 @@ body {
 
 /*-----------------*/
 
-#home{
+#home {
     color: white;
     background-color: #111111;
     padding: 40px 20px;
 }
 
-.title{
+.title {
     font-family: none;
     text-align: center;
     font-weight: 0;
@@ -111,12 +111,12 @@ body {
     font-weight: 300;
 }
 
-#home p{
+#home p {
     text-align: center;
     margin: 20px 0px;
 }
 
-.home_actions{
+.home_actions {
     margin-top: 30px;
     display: flex;
     justify-content: center;
@@ -124,7 +124,8 @@ body {
     flex-direction: column;
     background-color: transparent;
 }
-.home_actions a{
+.home_actions a,
+.download_buttons a{
     height: 50px;
     display: flex;
     justify-content: center;
@@ -138,30 +139,31 @@ body {
     color: white;
     text-transform: uppercase;
     font-size: 18px;
+    transition-duration: 0.3s;
 }
 
-.home_actions a i{
+.home_actions a i {
     margin: 0px 5px;
 }
 
-.contributer{
+.contributer {
     background-color: white !important;
     color: black !important;
 }
 
-#articles{
+#articles {
     padding: 40px 20px;
     text-align: left;
     font-size: 20px;
 }
 
-.heading{
+.heading {
     font-size: 30px;
     font-weight: 0px !important;
     margin: 0px 0px 40px 0px;
 }
 
-.thumbnail{
+.thumbnail {
     position: relative;
     display: flex;
     justify-content: center;
@@ -173,19 +175,19 @@ body {
     margin: 40px 0px;
     color: white;
 }
-.thumbnail img{
+.thumbnail img {
     height: 80px;
     margin-left: -10px;
 }
 
-.thumbnail h2{
+.thumbnail h2 {
     margin-left: -20px;
 }
 
-.thumbnail span{
+.thumbnail span {
     color: #C900FF;
 }
-.tagline{
+.tagline {
     display: block;
     position: absolute;
     top: 62%;
@@ -196,106 +198,65 @@ body {
 }
 
 #articles table, td, th {
-  border: 1px solid black;
+    border: 1px solid black;
 }
 
 #articles table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 20px 0px;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0px;
 }
-#articles table td{
+#articles table td {
     padding: 10px 5px;
     text-align: center;
     font-size: 18px;
 }
 
-
-
-/*
-.nav_menu {
+.download_section {
     display: block;
-    position: absolute;
-    left: 10px;
-    color: #A1A3A9;
-    font-size: 20px;
-    -webkit-tap-highlight-color: transparent;
-    transition-duration: 0.2s;
-}
-
-.nav_menu:hover {
+    width: auto;
+    background-color: #0F111A;
+    border-radius: 10px;
+    margin: 20px 0px;
     color: white;
+    padding: 30px 20px;
 }
 
-.nav_items {
-    list-style-type: none;
-    background-color: #0C101A;
-    top: 0;
-    position: fixed;
-    left: 0;
-    height: 100%;
-    width: 0px;
-    overflow: hidden;
-    transition-duration: 0.5s;
-    z-index: 2;
-}
-
-.canvas {
-    display: none;
-    background-color: rgba(0,0,0,0.4);
+.hr{
+    background-color: #fff;
+    height: 2px;
     width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    margin: 40px 0px;
 }
 
-.nav_items ul li,
-.nav_items li a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-    font-size: 15px;
-    font-family: 'Raleway';
-    font-weight: 400;
+.download_section ul li{
+    margin: 10px 0px;
+    line-height: 30px;
 }
 
-.nav_items li a {
-    margin: 10px;
-    padding: 5px 10px;
-}
-
-.nav_items li i {
-    margin-right: 5px;
-    color: #A1A3A9;
-    transition-duration: 0.2s;
-}
-
-.nav_items a:hover i {
-    color: white;
-}
-
-.user_id{
-    font-family: 'Montserrat' !important;
-    font-size: 14px;
-    word-break: break !important;
-    word-wrap: wrap;
-    color: #F1F1F1 !important;
-}
-
-.nav_logo {
-    margin: 5px;
+.download_buttons{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#navbar h2 {
-    font-size: 20px;
-    text-align: center;
-    color: white;
-    font-family: 'Raleway';
+.download_buttons a{
+    width: 250px;
 }
-*/
+
+.download_buttons a i{
+    margin-right: 5px;
+}
+
+.download_section a:hover{
+    background-color: white;
+    color: black;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.href_general{
+    color: #FF4151 !important;
+    text-decoration: none !important;
+    background-color: transparent !important;
+}
