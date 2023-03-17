@@ -1,10 +1,10 @@
 {
     "data": [
         {
-            "app_name": "Minecraft",
+            "app_name": "HackFlix",
             "app_size": "10.00MB",
             "latest_version_code": "1.0",
-            "latest_version": "1.0",
+            "latest_version": "1.0-alpha",
             "latest_version_src": "https://example.com",
             "last_updated_date": "16 March 2022"
         }
