@@ -22,11 +22,11 @@
     },
     {
       "serial_no": "3",
-      "movie_name": "KGF Chapter 2",
-      "movie_poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0v7VXw8aA9ynd8tuBHcJe0q-zGQU_hV50pw&usqp=CAU",
+      "movie_name": "Vaathi",
+      "movie_poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT38_fjrB6jgcMF1z_JNQHUbLa1zXlRHGbyKA&usqp=CAU",
       "movie_thumbnail": "",
-      "movie_src": "http://185.223.160.3/Movie/2022/RRR.A.K.A.Rise.Roar.Revolt.2022/RRR.A.K.A.Rise.Roar.Revolt.2022.HINDI.720p.10bit.WEBRip.2CH.x265.HEVC-PSA.Sermovie.mkv",
-      "download_link": "https://yogesh-hacker.github.io/yogesh-hacker/signed.apk",
+      "movie_src": "https://bunnycdn.ydc1wes.me/hls2/01/00004/6thdqn4cycjm_l/master.m3u8?t=NQiNtIseGxuWfJ3Gxo_hq4F9GNKNWGtVwlD6nBoC9WU&s=1679404649&e=14400&f=22492&i=0.0&sp=0",
+      "download_link": "https://bunnycdn.ydc1wes.me/hls2/01/00004/6thdqn4cycjm_l/master.m3u8?t=NQiNtIseGxuWfJ3Gxo_hq4F9GNKNWGtVwlD6nBoC9WU&s=1679404649&e=14400&f=22492&i=0.0&sp=0",
       "stream_type": "application/x-mpegURL",
       "is_playing": "true"
     }
