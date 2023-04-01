@@ -5,19 +5,19 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=yogesh-hacker" alt="yogesh-hacker" /></a> </p>
 
-- 🔭 I’m currently working on [hackerindia.in](https://yogesh-hacker.github.io/hackerindia.in)
+- 🔭 I’m currently working on [HackFlix](https://yogesh-hacker.github.io/yogesh-hacker/App)
 
 - 🌱 I’m currently learning **Backend Development on Python**
 
 - 👯 I’m looking to collaborate on [Git](www.github.com)
 
-- 🤝 I’m looking for help with **SpeeX**
+- 🤝 I’m looking for help with **oSumAltX**
 
 - 💬 Ask me about **Javascript, PHP, C++**
 
 - 📫 How to reach me **yogeshkumarjamre1@gmail.com**
 
-- ⚡ Fun fact **I am Ethical Hacker and Developer 😃**
+- ⚡ Fun fact **I am Ethical Hacker and Developer, come to 8BP😃**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
