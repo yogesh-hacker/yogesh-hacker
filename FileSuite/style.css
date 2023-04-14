@@ -40,10 +40,9 @@ h2 p {
     border-radius: 4px;
 }
 
-#file-name,
 #file-type,
 #sort-by,
-.search ,
+.search,
 #search-type{
     display: block;
     width: 90%;
@@ -66,9 +65,17 @@ h2 p {
 }
 
 #file-name {
-    height: 47px !important;
-    font-family: 'Poppins';
-    padding: none;
+    display: block;
+    width: 90%;
+    height: 47px;
+    margin: 10px;
+    font-size: 16px;
+    padding: 0px 12px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    background-color: white;
+    transition-duration: 0.3s;
+    font-family: "Andika";
 }
 
 .search {
