@@ -2,11 +2,11 @@
   "data": [
     {
       "serial_no": "1",
-      "movie_name": "Pathaan",
-      "movie_poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT4FLImSBSdr9e-c1_sB8sK3gQTIkHujVctg&usqp=CAU",
+      "movie_name": "Kisi Ka Bhai Kisi Ki Jaan",
+      "movie_poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVlQxDyU-ONZW84qrbgMm6KWKxAejbFMdBJw&usqp=CAU",
       "movie_thumbnail": "",
-      "movie_src": "https://archive.org/download/pathaan-2023-1080p-webrip-5.1-yts.-mx/Pathaan%20%282023%29%20%5B1080p%5D%20%5BWEBRip%5D%20%5B5.1%5D%20%5BYTS.MX%5D/Pathaan.2023.1080p.WEBRip.x264.AAC5.1-%5BYTS.MX%5D.mp4",
-      "download_link": "https://archive.org/download/pathaan-2023-1080p-webrip-5.1-yts.-mx/Pathaan%20%282023%29%20%5B1080p%5D%20%5BWEBRip%5D%20%5B5.1%5D%20%5BYTS.MX%5D/Pathaan.2023.1080p.WEBRip.x264.AAC5.1-%5BYTS.MX%5D.mp4",
+      "movie_src": "https://bunnycdn.ydc1wes.me/hls2/01/00004/86oitzibpej4_l/master.m3u8?t=jnUsma67QwkTOJGcoOPsKwxMYohcjVFaKXehXZxP_7s&s=1682094897&e=14400&f=23395&i=0.0&sp=0",
+      "download_link": "https://bunnycdn.ydc1wes.me/hls2/01/00004/86oitzibpej4_l/master.m3u8?t=jnUsma67QwkTOJGcoOPsKwxMYohcjVFaKXehXZxP_7s&s=1682094897&e=14400&f=23395&i=0.0&sp=0",
       "stream_type": "application/x-mpegURL",
       "is_playing": "true"
     },
@@ -18,7 +18,7 @@
       "movie_src": "https://leave.ydc1wes.me/hls2/01/00003/tkgdrmlirxx7_,l,h,.urlset/master.m3u8?t=5_HWFXCIY-iceP5Hc1Nn7EUeQglca5NW-DQ6ZeVLyLA&s=1681094536&e=14400&f=18144&i=0.0&sp=0",
       "download_link": "https://archive.org/download/pathaan-2023-1080p-webrip-5.1-yts.-mx/Pathaan%20%282023%29%20%5B1080p%5D%20%5BWEBRip%5D%20%5B5.1%5D%20%5BYTS.MX%5D/Pathaan.2023.1080p.WEBRip.x264.AAC5.1-%5BYTS.MX%5D.mp4",
       "stream_type": "application/x-mpegURL",
-      "is_playing": "true"
+      "is_playing": "false"
     }
   ]
 }
