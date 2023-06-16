@@ -14,7 +14,7 @@ $("#menu").click(function() {
 
 var appData = []
 $(document).ready(function() {
-    $.getJSON("content.json", function(data) {
+    $.getJSON("data.json", function(data) {
         const rawData = data;
         appData.push(rawData.data[0]);
         loadData()
