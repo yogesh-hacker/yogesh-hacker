@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="googlebot" content="notranslate">
+    <meta name="theme-color" content="#192133" />
+    <link rel="icon" href="/hackerindia.in/logo.ico">
+    <title>FileSuite - By Hacker India</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="container">
+        <h2 style="margin-bottom:20px;">Facebook Profile Photo Snatcher</h2>
+        <input class="fb_id" type="text" name="" id="" value="" placeholder="Enter profile ID/URL" />
+
+        <select name="" id="default_options">
+            <option value="4000:4000">Normal (4000:4000)</option>
+            <option value="10000:2500">HD Crop Center (10000:2500)</option>
+            <option value="10000:5000">Crop Center (10000:5000)</option>
+            <option value="10000:20000">HD Center (10000:20000)</option>
+            <option value="20000:100000">Full HD Center (10000:20000)</option>
+        </select>
+        <div class="resolution">
+            <span>Width</span>
+            <input class="width" type="number" name="" id="" value="1000" placeholder="e.g. 1000" />
+            <span>Height</span>
+            <input class="height" type="number" name="" id="" value="1000" placeholder="e.g. 1000" />
+        </div>
+
+        <button class="parse">Snatch</button>
+    </div>
+
+    <div class="result-container">
+        <img class="result" src="" alt="" />
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

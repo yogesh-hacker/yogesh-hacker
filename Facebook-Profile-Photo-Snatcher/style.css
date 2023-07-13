@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: black;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+h2 {
+    color: #FFB000;
+    font-family: "Oswald";
+    text-align: center;
+    margin: 10px 0px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    margin: 10px 10px;
+    padding: 20px;
+    border-radius: 4px;
+    border: 2px solid #FF9F00 !important;
+}
+
+
+#container input {
+    height: 40px;
+    width: 90%;
+    background-color: transparent;
+    color: #07FF00;
+    padding: 5px 10px;
+    border: 2px solid #FF9F00;
+    border-radius: 3px;
+    font-family: Monospace;
+}
+
+#default_options {
+    margin-top: 30px;
+    height: 40px;
+    width: auto;
+    color: #FFB000;
+    background-color: transparent;
+    border: 2px solid #FF9F00;
+    border-radius: 3px;
+    font-family: "Oswald";
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0px 5px;
+}
+
+.resolution {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.resolution span {
+    color: #FFB000;
+    font-family: "Teko";
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+.resolution input {
+    width: 80px !important;
+    margin: 5px;
+    font-family: "Oswald" !important;
+    color: #FFB000 !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+}
+
+#container button {
+    margin: 40px 0px 0px 0px;
+    background-color: #FF9F00;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 22px;
+    font-family: "Teko";
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition-duration: 0.3s;
+}
+
+.result-container {
+    border: 2px solid #39ECFF !important;
+    display: flex;
+    margin: 10px;
+    border-radius: 1px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px !important;
+}
+
+.result {
+    max-height: 0px;
+    transition-duration: 2s;
+}
+
+#container button:hover {
+    box-shadow: 0px 0px 0px 3px#FFD48E;
+}
