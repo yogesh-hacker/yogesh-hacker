@@ -1,0 +1,68 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width', initial-scale='1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>About HackFlix || An app to explore the entertainment </title>
+    <link rel='stylesheet' href='index.css'>
+    <!--None-->
+    <link rel='stylesheet' href='https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav id="navbar">
+        <a class="nav_menu" href="#"><i class="fa-sharp fa-solid fa-bars"></i></a>
+        <ul class="nav_items">
+            <div class="nav_logo">
+                <img src="https://yogesh-hacker.github.io/yogesh-hacker/App/app_icon.png" alt="" />
+                <p>
+                    Hacker India Inc.
+                </p>
+            </div>
+            <li><a href="/hackerindia.in"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="/hackerindia.in/about-me"><i class="fa-regular fa-circle-info"></i> About</a></li>
+            <li><a href="/hackerindia.in/#services"><i class="fa-brands fa-servicestack"></i> Services</a></li>
+            <li><a href="/hackerindia.in/#contact"><i class="fa-regular fa-message-text"></i> Contact Us</a></li>
+            <hr />
+            <p class="user_id"></p>
+
+        </ul>
+        <div class="canvas">
+        </div>
+        <h2>HackFlix</h2>
+    </nav>
+
+    <section id="main-page">
+        <h2 id="movie-title"></h2>
+        <span id="release-year"></span>
+        <span id="movie-runtime"></span>
+        <img id="movie-thumbnail" src="" alt="Thumbmail" />
+        <div class="movie_poster_container">
+            <img id="movie-poster" src="" alt="Poster">
+            <div class="left_container">
+                <div class="genres_container"></div>
+                <p id="movie-description"></p>
+            </div>
+        </div>
+        <p id="original_language"></p>
+        <p id="movie-popularity"></p>
+        <div class="action_buttons">
+            <a id="open_in_app" href="#"><i class="fa-sharp fa-regular fa-arrow-up-right-from-square"></i> Open In App</a>
+        </div>
+        
+    </section>
+
+
+
+    <!--None-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
