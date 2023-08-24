@@ -1,0 +1,130 @@
+data= [
+    {
+      "q": "Is there a frame story structure in the novel Clear Light of Day? If yes, indicate.",
+      "a": "Yes, the novel \"Clear Light of Day\" by Anita Desai employs a frame narrative structure. The novel begins and ends with the present-day events involving the character of Bim. The middle portion delves into the past through Bim's memories and recollections, creating a frame around the central narrative."
+    },
+    {
+      "q": "What does Tara, in Anita Desai's Clear Light of Day, say she wants to be when she grows up?",
+      "a": "In Anita Desai's \"Clear Light of Day,\" Tara aspires to become a mother, setting her apart from her siblings Raja and Bim, who have different ambitions."
+    },
+    {
+      "q": "How does the novel “Clear Light of Day” open?",
+      "a": "The novel “Clear Light of Day” opens with Tara waking up from sleep after listening to the song of Koels which is a well-known Indian bird. Though she does not have a sound sleep due to the barking of Bim’s pet dog Badshah and the stinging of mosquitoes, she wakes up early"
+    },
+    {
+      "q": "What is a rose walk and how is it described?",
+      "a": "A rose walk is actually a walk between two long beds of roses.\n\nIt covers the distance between the verandah and the far end of the lawn where there are a large number of trees —- fig, oak, mulberry and eucalyptus. Tara has a feeling that the number of roses has decreased in comparison to her childhood"
+    },
+    {
+      "q": "How did Tara react on seeing a snail in a hedge and to what effect?",
+      "a": "On seeing a snail in a hedge Tara exclaimed with joy and surprise. What made her do so was that in her childhood she used to see a snail hiding in the hedge.\n\nThe reaction of Tara appeared to Bim to be childish because Tara had become a mother of two grown-up daughters. So Bim became surprised."
+    },
+    {
+      "q": "Why could Tara not sleep soundly on the first night of her stay in her parental house in Old Delhi?",
+      "a": "On the first night of her stay in her parental house in Old Delhi, Tara could not sleep soundly because of two factors. The first one was the stinging of mosquitoes. The second one was the barking of Badshah, Bim’s pet dog. Actually, Tara lived a sophisticated life in the United States and so was not habituated to these things."
+    },
+    {
+      "q": "Reproduce the conversation between Bim and Tara on the identity of Badshah.",
+      "a": "Badshah was the pet dog of Bim. While speaking about Badshah, Bim told Tara that Badshah was the son of Begun, a bitch that lived till the age of fourteen. She added that the present age of Badshah was twelve years. However, Tara had the impression that Badsah was nine or ten years old."
+    },
+    {
+      "q": "What did Bim say about Old Delhi?",
+      "a": "Bim said that no change took place in Old Delhi. She added that it only decayed. She went on to say that according to her students Old Delhi could be compared to a vast graveyard with every house looking like a tomb. She placed New Delhi as the opposite of Old Delhi."
+    },
+    {
+      "q": "What did Bim say about Baba’s habit of listening to the old records on his gramophone?",
+      "a": "Bim said that Baba did not want to change his habit of listening to the old records on his gramophone. She added that Baba loved these records to a great extent. In reply to Tara’s question about her being disturbed by these records, Bim told that she had become so accustomed to these things that she could hardly hear them."
+    },
+    {
+      "q": "How do Bim and Bakul decide to spend the first day of Tara and Bakul’s stay in Old Delhi?",
+      "a": "Bim decided to spend the first day of Bakul and Tara’s stay in Old Delhi by teaching her college students certain topics of  History which had not been fully discussed in the course of regular lectures and seminars. Bakul wanted to spend it by going to New Delhi in his uncle’s car and meeting some of his relatives there."
+    },
+    {
+      "q": "Which problem occurred to Baba’s gramophone and to what effect?",
+      "a": "Once the gramophone needle of Baba did not work and so the music stopped.\n\nIt made Baba feel depressed and even defeated. So he got away to the road to get rid of this oppressive feeling. Tara who saw him from afar tried to stop him by calling him but he had already disappeared. It could be risky for Baba."
+    },
+    {
+      "q": "What did Bim teach her college students by calling them in her house?",
+      "a": "By calling her college students in her house Bim taught them an important aspect of Indian history. As she acknowledged it to her students, it was not empress Razia or empress Nur Tehan. She added that it was a more important topic and mentioned it as the war between Shivaji and Aurangzeb."
+    },
+    {
+      "q": "What was Bakul’s personal opinion about Bim?",
+      "a": "According to Bakul, Bim had a rather large nose. Moreover, she had a coarse way of laughing and a manly way of sitting with her legs up. However, he admired Bim’s decisiveness, firmness and determination. As Tara did not possess these, Bim, to Bakul, was a mixture of positive and negative qualities."
+    },
+    {
+      "q": "Who was the ice-cream seller and what effect did he have upon Tara’s house in Old Delhi?",
+      "a": "The ice-cream seller was a Sikh gentleman and he made business by riding a bi-cycle. His trade cry was “Caryhom ice-cream wallah”.\n\n When he came to Tara’s house in Old Delhi, the hitherto gloomy atmosphere dispersed. In fact, everyone took ice cream. Bim was found in a happy mood. Tara acknowledged this effect."
+    },
+    {
+      "q": "Which book did Tara find in the drawing-room bookshelf of their house in Old Delhi and to what effect?",
+      "a": "In the drawing-room bookshelf of their house in Old Delhi Tara found Jawaharlal Nehru’s “Letters to a Daughter”.\n\nThe room produced in her a feeling of boredom. She wanted to find a release by going to her neat flat in Washington but found that she did not have the willpower for it. She also thought of the heat outside."
+    },
+    {
+      "q": "Which myth according to Bim was associated with the river Jumna?",
+      "a": "According to Bim, Jumna was a holy river. She added that on the banks of this river Lord Krishna used to play his flute while Radha used to dance. Tara however ignored this mythical story and told that the river was a little trickle of mud with dusty banks. Thus she de-romanticized the river."
+    },
+    {
+      "q": "What kind of enjoyment did Bim and Tara have with the Jumna?",
+      "a": "By the side of Jumna, Bim and Tara played as children. Moreover, they used to bully the ferryman into giving them free rides to the melon fields. There they used to eat the ripe melons and drink their pink juice. Tara however told that Bim used to have these enjoyments in the company of Raja, not hers."
+    },
+    {
+      "q": "Who was Raja?",
+      "a": "Raja was the elder brother of Bim, Tara and Baba. "
+    },
+    {
+      "q": "How did Bim describe the evening walk of Hyder Ali and its impact on Raja?",
+      "a": "According to Bim, during the course of his evening walk Hyder Ali used to come riding on his white horse. She added that he was preceded by his orderly and followed by his dog.\n\nRaja became impressed by the glamour of Hyder Ali and wanted to ride on a white horse with his dog following him."
+    },
+    {
+      "q": "What was the content of Raja’s letter to Bim?",
+      "a": "The content of Raja’s letter to Bim was that Hyder Ali had died, leaving all his property to Raja and Benazir. The content also conveyed the message that if Bim and Baba wanted to stay in Hyder Ali’s house at the existing rent, they could do so because neither he nor Benazir wanted to increase the rent."
+    },
+    {
+      "q": "Why did Bim decide not to attend the marriage ceremony in Raja’s house/ not to enter Raja’s house in Hyderabad?",
+      "a": "In his letter to Bim Raja presented himself as the landlord and Bim and Baba as his tenants. He also suggested that he was doing a favour by allowing them to live on the old amount of rent. Bim felt insulted at such an audacious attitude of  Raja and so decided not to attend the marriage ceremony in Raja’s house/ not to enter Raja’s house in Hyderabad."
+    },
+    {
+      "q": "Who were the Misra sisters and why did Bim and Tara visit them?",
+      "a": "The Misras lived in that neighbourhood where Bim and Baba lived. The two married but rejected Misra sisters — Jaya and Sarla — looked after their old father and three good-for-nothing brothers by working hard.\n\nBim and Tara visited them because they had been asking about Tara and really wanted to meet her."
+    },
+    {
+      "q": "How did the two Misra sisters earn their living?",
+      "a": "The two Misra sisters — Jaya and Sarla — were married but rejected by their husbands. Since their three brothers were good-for-nothing, they had to toil to look after themselves, their old father and their brothers. For this, they ran a nursery school in their house at day time and in the evening taught little girls how to sing and dance."
+    },
+    {
+      "q": "What did Mr Misra tell Bim about his life in Burma?",
+      "a": "Mr Misra told Bim that he wanted to go to England to study law but went to Burma after a swami told him that he could make a lot of money in the east without doing much work. He added that he made a lot of money but did not develop any sense of discipline and had no academic degree."
+    },
+    {
+      "q": "What was the family business of Bim and what was its present status?",
+      "a": "The family business of Bim was an insurance business.\n\nIt was monitored by a manager. Though the manager earned more than he was entitled to do, Bim did not oppose it because she and Baba got something from it to meet some of their needs. In fact, this earning was supplementary to Bim’s earnings as a lecturer at a college."
+    },
+    {
+      "q": "Which question did Jaya ask Bakul and what answer did he give?",
+      "a": "Jaya asked Bakul what Bakul answered when he was informally asked about the conditions in India.\n\nBakul answered that he always said, “No comment” to such questions. He added that he never discussed negative events like famines or drought or communal troubles or political frictions and said only about its finest aspects."
+    },
+    {
+      "q": "Which flowers did Jaya offer Tara and why?",
+      "a": "Jaya offered Tara some Jasmine flowers.\n\nThe reason behind it was that these flowers made her think of the picnic that they had many years ago in the Lodi Gardens. However, the mention of the picnic made Tara remember an unpleasant incident that she wanted to keep away from her mind."
+    },
+    {
+      "q": "What changes came to the life of Bim in the summer of 1947?",
+      "a": "The summer of 1947 was very eventful in the life of Bim. Tara had already been married, Raja had already been settled and Mira Masi was already dead. So Bim was left alone in the house with Baba. In that summer Bim got a lecturer’s job in a college and it gave her economic independence and the resultant happiness."
+    },
+    {
+      "q": "Who is Mr. Sharma?",
+      "a": "Mr Sharma is the person who has been running the whole insurance business after the death of Mr Das. Though he earns a lot more than he is officially entitled to do, Bim does not oppose him because whatever she gets from the business is considerable and it helps her to manage some of the familial expenses."
+    },
+    {
+      "q": "What were the things to be found in Baba’s room?",
+      "a": "Baba was a differently-abled person. Expectedly he did not need those things which a normal person needed. To be precise, his room contained a string cot, a table, a canvas chair, an HMV gramophone and a wardrobe. Baba was fond of listening to the songs of the old days and the HMV gramophone helped him for this purpose."
+    },
+    {
+      "q": "Which music and songs do Baba listen to and to what effect?",
+      "a": "Baba listens to the music and songs of the 1940s repeatedly and that too on a regular basis.\n\nThat Baba wants to stick to his fascination for these old music and songs appears strange to Tara. However, Bim does not find anything unusual in it because she too is against any kind of change."
+    },
+    {
+      "q": "How is Baba described?",
+      "a": "Baba is described as having white hair. It gives his young face a ghostly look. As a result, people become startled. Mentally retarded as he is, Baba’s appearance is something that does not go with his youth and age. At different places in the novel it is said that Baba throws a downcast look even when he is asked questions."
+    }
+  ]
