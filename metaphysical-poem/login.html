@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>License Key Verification</title>
+</head>
+<body>
+
+<h1>Enter License Key</h1>
+
+<input type="text" id="licenseKey" placeholder="Enter license key">
+<button onclick="checkLicense()">Verify</button>
+<p id="errorMessage" style="color: red;"></p>
+
+<script>
+function setCookie(name, value) {
+  document.cookie = name + "=" + value + "; path=/";
+}
+
+function checkLicense() {
+  var enteredKey = document.getElementById("licenseKey").value;
+  var correctKey = "M7DB28SJ28UANW7UXKLA0273Q38"; // Replace with the actual correct license key
+
+  if (enteredKey === correctKey) {
+    setCookie("licenseVerified", "true");
+    window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/metaphysical-poem/"; // Replace with the actual page you want to redirect to
+  } else {
+    document.getElementById("errorMessage").textContent = "Invalid license key. Please try again.";
+  }
+}
+</script>
+
+</body>
+</html>
