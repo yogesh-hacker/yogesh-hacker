@@ -1,0 +1,130 @@
+data= [{
+    "q": "What is a metaphysical poetry?",
+    "a": "Metaphysical poetry is a style of poetry that emerged in the 17th century, characterized by its use of complex and intellectual themes, intricate(complex) metaphors, and often unconventional(unique) structure. It explores philosophical and spiritual concepts, blending(mixing) the physical and spiritual worlds to provoke deep thought and contemplation.",
+    "poem_id": "1"
+},
+    {
+        "q": "Who first used the term \"Metaphysical Poetry\"?",
+        "a": "The term \"Metaphysical Poetry\" was first used by the 17th-century poet and critic Samuel Johnson to describe a group of poets who wrote with a distinct(different) style and shared certain characteristics.",
+        "poem_id": "1"
+    },
+    {
+        "q": "Name any four metaphysical poets.",
+        "a": "Four prominent metaphysical poets are John Donne, George Herbert, Andrew Marvell, and Richard Crashaw.",
+        "poem_id": "1"
+    },
+    {
+        "q": "How does the chides the sun in the opening lines of the poem?",
+        "a": "In \"The Sun Rising,\" the speaker chides the sun by addressing it as \"busy old fool\" and questioning why it is disturbing his intimate(especial) moments with his lover. This shows the speaker's frustration at the intrusion(wrongdoing) of the sun's light into their private space.",
+        "poem_id": "1"
+    },
+    {
+        "q": "Why does the poetic persona chides the sun?",
+        "a": "The poetic persona often chides the sun in poetry as a form of literary expression to convey emotions or themes such as longing, melancholy(sorrow), or the fleeting(short) nature of time. The sun rising might be used to symbolize new beginnings, but the persona's chiding could indicate a resistance to change or a desire to hold onto the current moment.",
+        "poem_id": "1"
+    },
+    {
+        "q": "Who according do the poet persona needs chiding from the sun?",
+        "a": "In \"The Sun Rising,\" the poetic persona suggests that even kings and princes need to be chided by the sun. The poem's speaker conveys a sense of arrogance(pride), claiming that their love is so powerful that it can command the sun to stop its usual course and focus its rays on them instead. This idea reflects the persona's belief that their love is above even the natural order of things.",
+        "poem_id": "1"
+    },
+    {
+        "q": "What according to the poet, is immune from 'Clime' and time?",
+        "a": "In \"The Sun Rising\" by John Donne, the poet suggests that love is immune from both \"clime\" (climate) and time. He portrays love as a force that transcends(excel or surpass) physical and temporal boundaries.",
+        "poem_id": "1"
+    },
+    {
+        "q": "How, according to the poet can he overpower the sun?",
+        "a": "In \"The Sun Rising\" by John Donne, the poet expresses that he can overpower the sun by simply closing the curtains of his bedroom, suggesting that their love and intimacy(attachment) are more significant than the sun's rays.",
+        "poem_id": "1"
+    },
+    {
+        "q": "\"Both the India' spice and mine\" - what does the line suggests?",
+        "a": "In \"The Sun Rising\" by John Donne, the line \"Both the India' spice and mine\" suggests that the poet considers the treasures of India and his lover's body to be equally valuable. The line signifies the idea that his lover's body holds immense(great) worth, like the precious spices from India, highlighting the poet's intense admiration and desire for his beloved.",
+        "poem_id": "1"
+    },
+    {
+        "q": "What does the poet suggest the sun to do instead of peeping through curtain?",
+        "a": "In \"The Sun Rising\" by John Donne, the poet suggests that instead of peeping through the curtains, the sun should go and warm the other parts of the world, like India, where rulers are currently awake and active. The poet playfully scolds the sun for interrupting his intimate moment with his lover, encouraging it to focus its attention elsewhere.",
+        "poem_id": "1"
+    },
+    {
+        "q": "What does the poet suggest the sun to make his center and sphere?",
+        "a": "In \"The Sun Rising\" by John Donne, the poet suggests that the sun should make the poet's lover's eyes its center and sphere. This indicates the poet's desire for the world to revolve around his beloved's gaze, emphasizing the intensity of his love and the importance he places on their relationship.",
+        "poem_id": "1"
+    },
+    {
+        "q": "What is Macrocosm and Microcosm?",
+        "a": "In metaphysical poetry, \"macrocosm\" and \"microcosm\" refer to two interconnected concepts. <br><br> i. Macrocosm: This term refers to the larger universe or world as a whole. It represents the external reality, encompassing all of creation, nature, and the cosmos. In metaphysical poetry, poets often use macrocosm to draw parallels between the vast universe and human experiences, exploring the relationship between the individual and the larger universe.<br><br>ii. Microcosm: The microcosm, on the other hand, refers to the smaller, internal world within an individual. It symbolizes the human experience, emotions, thoughts, and inner contemplations. In metaphysical poetry, poets frequently use microcosm to explore the intricacies of human emotions, drawing connections between the inner world of the individual and the external world of the universe.<br><br>Both terms are used in metaphysical poetry to create complex and meaningful connections between the individual and the world around them, often exploring philosophical and spiritual themes.",
+        "poem_id": "1"
+    },
+    {
+        "q": "How is a metaphysical poem generally structured?",
+        "a": "Metaphysical poems are characterized by features like elaborate metaphors (conceits), intellectual complexity, paradoxes, wordplay, and a blend of personal and universal themes. They often challenge conventional language and thinking, encouraging readers to explore profound ideas.",
+        "poem_id": "1"
+    },
+    {
+        "q": "\"Saucy pedantic wretch\" - How does the poet deals with the image of sun? (5)",
+        "a": "In \"The Sun Rising\" by John Donne, the poet employs various strategies to deal with the image of the sun. One of these strategies is using paradox and unconventional language. The phrase \"saucy pedantic wretch\" is an example of this approach. <br><br>The term \"saucy\" implies arrogance or impudence, while \"pedantic\" suggests a focus on trivial details. These words are used in a playful and almost scolding manner to address the sun, which is a conventional symbol of power and grandeur. By labeling the sun as such, the poet presents a bold reversal of traditional hierarchy, diminishing the sun's importance.<br><br>This strategy reflects the metaphysical poets' tendency to challenge and subvert established norms. By addressing the sun in this manner, the poet asserts his lover's centrality and superiority over even the mighty forces of nature. This contributes to the overall theme of the poem, which revolves around the supremacy of love and human emotions over cosmic elements.",
+        "poem_id": "1"
+    },
+    {
+        "q": "\"Love, all alike, no season knows nor clime\" - explain line with the reference.",
+        "a": "In the line \"Love, all alike, no season knows nor clime\" from \"The Sun Rising\" by John Donne, the poet emphasizes the timeless and universal nature of love. The reference to \"no season\" and \"nor clime\" underscores the idea that love is not bound by the constraints of time or physical location. <br><br>The poet argues that love remains constant and consistent regardless of changing seasons or geographical boundaries. This concept is reinforced through the imagery of the sun in the poem. While the sun has the power to mark time and illuminate different parts of the world, the poet suggests that love is even more potent, as it remains unwavering and unaffected by external factors.<br><br>By comparing love's unchanging nature to the sun's ability to traverse the globe, the poet elevates love to a status beyond that of a fleeting emotion. This approach aligns with the metaphysical poets' tendency to explore profound themes through unconventional metaphors and paradoxical statements. The line also supports the central message of the poem, asserting the supremacy of love over even the most powerful natural forces.",
+        "poem_id": "1"
+    },
+    {
+        "q": "\"Thy beams, so reverend and strong/Why shouldst thou think?\"",
+        "a": "In \"The Sun Rising\" by John Donne, the lines \"Thy beams, so reverend and strong/Why shouldst thou think?\" express the poet's rhetorical question to the sun, highlighting the irony and playfulness he employs to challenge the sun's assumed superiority.<br><br>The adjective \"reverend\" typically conveys respect and awe, often associated with religious figures or things deserving of veneration. By addressing the sun's beams as \"reverend,\" the poet sarcastically acknowledges the conventional reverence given to the sun and its power. This sets the stage for the subsequent question, \"Why shouldst thou think?\" which serves as a rhetorical challenge to the sun's audacity.<br<br>The poet's question implies that the sun is presumptuous to disturb the intimate space shared by the poet and his lover. It emphasizes the theme of love's supremacy over cosmic elements and the poet's assertion that their love transcends even the grandeur of the sun. Through this questioning tone, the poet subverts the traditional hierarchy that places the sun at the center of the universe, instead placing his own emotions and relationship at the forefront.<br><br>These lines contribute to the overall theme of the poem, showcasing the metaphysical poets' characteristic use of paradox, wit, and unconventional language to explore complex ideas related to love, time, and the human experience.",
+        "poem_id": "1"
+    },
+    {
+        "q": "\"She's all states, and all princes, I,\" - What does the line suggests?",
+        "a": "In the line \"She's all states, and all princes, I,\" from \"The Sun Rising\" by John Donne, the poet uses metaphysical conceit to suggest that his lover is not only an embodiment of all the states and kingdoms in the world, but also all the rulers or princes within those states.<br><br>The phrase \"all states\" refers to the various countries and political entities, implying that the poet's lover encompasses the entire world within her being. Similarly, \"all princes\" refers to the rulers or leaders of these states. By positioning himself as \"I,\" the poet suggests that he and his lover hold a higher, more comprehensive power compared to the worldly leaders.<br><br>This portrayal reflects the metaphysical poets' tendency to use extravagant metaphors to convey complex emotions and ideas. The poet's assertion of being both \"all states\" and \"all princes\" highlights the supremacy of his love and his lover's influence over the external world. It's a way of declaring that their love creates its own realm of importance, surpassing the grandeur of political power.<br><br>The line contributes to the central theme of the poem by emphasizing the dominance of love and personal connection over worldly concerns, particularly the power of the sun. It's a bold and vivid expression of the poet's devotion and the significance he places on his intimate relationship.",
+        "poem_id": "1"
+    },
+    {
+        "q": "\"All honor's mimic, all wealth alchemy\" - Explain \"mimic\" and \"alchemy\" with the reference of context.",
+        "a": "In the line \"All honor's mimic, all wealth alchemy\" from \"The Sun Rising\" by John Donne, the poet uses the terms \"mimic\" and \"alchemy\" to convey the idea that compared to the intimacy and love shared between the speaker and his lover, conventional notions of honor and wealth are inferior and transient.\n\ni. Mimic: In this context, \"mimic\" refers to something that imitates or replicates the appearance of something else without possessing its true essence. The poet suggests that the honor bestowed upon rulers and wealthy individuals is merely a superficial imitation of true significance. It lacks the genuine depth and enduring value that love possesses. The term \"mimic\" emphasizes the idea that honor is a mere pretense when compared to the profound emotions shared between the poet and his lover.<br><br>ii. Alchemy: \"Alchemy\" refers to the medieval practice of attempting to transform base metals into gold or discovering a universal elixir of life. In the context of the poem, the poet employs \"alchemy\" metaphorically to represent wealth. However, the use of \"alchemy\" also suggests the transient and illusory nature of wealth. Just as alchemy aimed to transform something ordinary into something extraordinary, wealth is often pursued for its transformative power. However, like the pursuit of the alchemical goal, the pursuit of wealth can also prove fleeting and ultimately unfulfilling.<br><br>By juxtaposing \"mimic\" and \"alchemy,\" the poet highlights how both honor and wealth are inadequate when compared to the authenticity and enduring quality of the love shared between the poet and his lover. This further reinforces the central theme of the poem, asserting the supreme importance of intimate emotional connections over worldly pursuits. The poet's use of these terms adds depth to his critique of societal values while elevating the significance of his personal relationship.",
+        "poem_id": "1"
+    },
+    {
+        "q": "What the word \"troth\" mean?",
+        "a": "The word \"troth\" means a pledge or promise of loyalty or faithfulness, especially in the context of a romantic or marital relationship. It signifies a solemn commitment and devotion between individuals.",
+        "poem_id": "2"
+    },
+    {
+        "q": "What does the poet mean by \"sucked on country pleasures\"?",
+        "a": "The phrase \"sucked on country pleasures\" suggests that the poet and his lover have indulged in the simple and pure joys of rural life, implying they have enjoyed a peaceful and fulfilling time together in a natural setting.",
+        "poem_id": "2"
+    },
+    {
+        "q": "Bring out the reference in phrase \"Seven Sleepers' den\"?",
+        "a": "The phrase \"Seven Sleepers' den\" references a legend from early Christian tradition about a group of young men who went into a cave to escape religious persecution during the Roman Empire. They fell into a miraculous sleep and woke up centuries later, unaware of the passage of time. In the poem, the reference could symbolize the secluded and timeless space the lovers share, suggesting their own private sanctuary away from the concerns of the external world.",
+        "poem_id": "2"
+    },
+    {
+        "q": "What beauty according to the poet, does the desire and get?",
+        "a": "According to the poet, desire gains beauty through fulfillment. In \"Good Morrow,\" the poet expresses that the intense connection between two lovers elevates and enhances their physical beauty, making it more radiant and meaningful.",
+        "poem_id": "2"
+    },
+    {
+        "q": "What does the poet mean by \"hemispheres\"?",
+        "a": "The term \"hemispheres\" in the poem \"Good Morrow\" refers to the halves or sections of the globe, specifically representing the two separate parts of the world. In the context of the poem, it symbolizes the different experiences and lives the lovers had before they found each other. The poet suggests that their love has united their individual worlds, forming a new and complete whole.",
+        "poem_id": "2"
+    },
+    {
+        "q": "How, according to the poet, can their love never slacken or die?",
+        "a": "In \"Good Morrow,\" the poet expresses the idea that their love can never weaken or fade because their connection is built upon a deep and profound bond. The poet uses the metaphor of \"two hemispheres\" to depict their individual lives before they met, and he asserts that their love has now brought these hemispheres together into one whole. This unity and completeness signify the enduring nature of their love, as it transcends the limitations of time and remains constant. The poet's belief in the eternal strength of their love is central to his assertion that it will never \"slacken or decay.\"",
+        "poem_id": "2"
+    },
+    {
+        "q": "\"Let sea-discoverers to new worlds have gone...\" - Explain with reference to the context.",
+        "a": "The line \"Let sea-discoverers to new worlds have gone...\" from John Donne's poem \"Good Morrow\" suggests that while explorers have ventured to discover new lands, the poet and his lover have found a world of their own within their love.<br><br>The poet compares their love to the explorations of sea-discoverers who sought out uncharted territories. However, he argues that their love is an even greater discovery. The context implies that the depths of their feelings and connection are as vast and unexplored as any new world. The line underscores the uniqueness and significance of their relationship, implying that their love journey is as profound and exciting as any journey of exploration.",
+        "poem_id": "2"
+    },
+    {
+        "q": "\"Let us possess one world, each hath one, and is one\" - Explain the line.",
+        "a": "The line suggests that the speaker and their lover have created a unique world through their relationship. Each of them possesses this world, and within it, they are united as one entity, emphasizing the profound unity and connection they share.",
+        "poem_id": "2"
+    }]
