@@ -27,7 +27,7 @@ function setCookie(name, value) {
 }
 
 var licenseVerified = getCookie("licenseVerified");
-if (licenseVerified !== "true") {
+if (licenseVerified === "true") {
   window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/metaphysical-poem/"; // Redirect to login/license key page
   }
 
