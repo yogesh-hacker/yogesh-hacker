@@ -35,7 +35,7 @@
         }
         .question {
             font-weight: 600;
-            font-family: "Ubuntu";
+            font-family: "Andika";
         }
         .answer {
             font-family: "Arima Madurai";
@@ -46,12 +46,77 @@
             font-family: "Andika";
             text-decoration: underline;
         }
+
+        .heading {
+            text-align: center;
+            text-decoration: underline;
+            font-family: "Ubuntu";
+        }
+
+        .mark {
+            position: relative;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-left: 5px;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid black;
+            border-radius: 50%;
+            user-select: none;
+            background-color: #FF0084;
+            color: white;
+        }
+        
+        .hairline{
+            background-color: #D9D9D9;
+            height: 1px;
+            width: 100%;
+        }
+        
+        .showAnswer{
+            background-color: #007CFF;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            align-self: center;
+        }
+        
+        .buttons_container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
-    <div id="questions"></div>
+    <div class="buttons_container">
+        
+    
+    <button class="showAnswer">Show Answers (Disabled)</button>
+    </div>
+    <section id="result">
+        <h2 class="heading">Sonnet No 18</h2>
+        <div id="item_id_1"></div>
+        <h2 class="heading">Sonnet No 116</h2>
+        <div id="item_id_2"></div>
+        <h2 class="heading">The Sun Rising</h2>
+        <div id="item_id_3"></div>
+        <h2 class="heading">Good Morrow</h2>
+        <div id="item_id_4"></div>
+        <h2 class="heading">Night Of The Scorpion</h2>
+        <div id="item_id_5"></div>
+        <h2 class="heading">An Introduction</h2>
+        <div id="item_id_6"></div>
+        <h2 class="heading">Macbeth</h2>
+        <div id="item_id_7"></div>
+        <h2 class="heading">Clear Light Of Day</h2>
+        <div id="item_id_8"></div>
+    </section>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
     <script type='text/javascript' src='main.js'></script>
-    <script src="file.json" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
