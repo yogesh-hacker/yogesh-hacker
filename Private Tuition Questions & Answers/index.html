@@ -66,15 +66,16 @@
             user-select: none;
             background-color: #FF0084;
             color: white;
+            z-index: 0;
         }
-        
-        .hairline{
+
+        .hairline {
             background-color: #D9D9D9;
             height: 1px;
             width: 100%;
         }
-        
-        .showAnswer{
+
+        .showAnswer {
             background-color: #007CFF;
             text-align: center;
             padding: 10px 15px;
@@ -84,19 +85,105 @@
             border-radius: 5px;
             align-self: center;
         }
-        
-        .buttons_container{
+
+        .buttons_container {
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
+        .canvas {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 5;
+            background-color: white;
+        }
+        .canvas img {
+            height: 100px;
+        }
+        
+        .login_canvas{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 5;
+            background-color: rgba(0,0,0,0.7);
+        }
+        
+        .login_form{
+            background-color: white;
+            height: 200px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+        .login_form input{
+            height: 40px;
+            width: 85%;
+            outline: none;
+            font-size: 16px;
+            border: 1px solid #5BC6FF;
+            border-radius: 5px;
+            padding: 0px 10px;
+            transition-duration: 0.2s;
+            font-family: "Andika";
+        }
+        
+        .login_form input:focus,
+        .login_form input:hover{
+            box-shadow: 0px 0px 0px 4px #BDE8FF;
+        }
+        
+        .login_form button{
+            background-color: #28A745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            margin-top: 20px;
+            font-family: "Raleway";
+            font-weight: 500;
+            transition-duration: 0.2s;
+        }
+        .error{
+            color: #CF1C00;
+            font-family: "Raleway";
+            margin: 0;
+            margin-top: 5px;
+        }
+        
+        .login_form button:hover{
+            background-color: #228D3A;
+        }
     </style>
 </head>
 <body>
+    <div class="canvas">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632/64ee1832914441.569836c7b2ff3.gif" alt="" />
+    </div>
+    <div class="login_canvas">
+        <div class="login_form">
+            <input type="number" name="" id="userNumber" value="" placeholder="Enter mobile number (Without +91)..."/>
+            <p class="error"></p>
+            <button id="login" type="submit">Verify</button>
+        </div>
+    </div>
     <div class="buttons_container">
-        
-    
-    <button class="showAnswer">Show Answers (Disabled)</button>
+        <button class="showAnswer">Show Answers (Disabled)</button>
     </div>
     <section id="result">
         <h2 class="heading">Sonnet No 18</h2>
@@ -117,6 +204,7 @@
         <div id="item_id_8"></div>
     </section>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
     <script type='text/javascript' src='main.js'></script>
 </body>
 </html>
