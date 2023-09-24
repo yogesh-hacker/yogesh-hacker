@@ -55,7 +55,7 @@ function showData(isAnswer) {
 
 
 $(".showAnswer").click(function() {
-    for (var i = 0; i < 9; i++) {
+    for (var i = 0; i < 10; i++) {
         $("#item_id_"+i).html("")
     }
     if (isAnswerShown == true) {
