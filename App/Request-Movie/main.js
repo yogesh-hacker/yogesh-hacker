@@ -158,6 +158,7 @@ function loadUser() {
 
 function logUser() {
     var username = $("#username").val().trim()
+    user = username;
     if (username != "") {
         if (username.length > 4) {
             Cookies.set("username", username, {
