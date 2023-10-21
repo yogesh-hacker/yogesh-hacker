@@ -4,9 +4,15 @@
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <meta name='og:title' content='Request movies || Hack Flix'>
+    <meta name='og:type' content='movie-request-page'>
+    <meta name='og:url' content='https://hackerindia.in/App/Request-Movie'>
+    <meta name='og:image' content='http://ia.media-imdb.com/rock.jpg'>
+    <meta name='og:site_name' content='Hacker India'>
+    <meta name='og:description' content='A page to request movies you eager to watch on Hack Flix'>
+
     <title>Request movies || Hack Flix</title>
     <link rel='stylesheet' href='style.css'>
-    <!--None-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css" type="text/css" media="all" />
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css" type="text/css" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +23,7 @@
     <div class="loader-container">
         <div class="custom-loader"></div>
     </div>
+
     <div class="member_form">
         <h2>Be a member</h2>
         <p>
@@ -29,7 +36,7 @@
     <div class="member_form_canvas">
     </div>
 
-    <nav id="navbar">
+    <div id="navbar">
         <a class="nav_menu" href="#"><i class="fa-sharp fa-solid fa-bars"></i></a>
         <ul class="nav_items">
             <div class="nav_logo">
@@ -38,28 +45,41 @@
                     Hacker India Inc.
                 </p>
             </div>
-            <li><a href="/hackerindia.in"><i class="fa-solid fa-house"></i> Request Movie</a></li>
-            <li><a href="/hackerindia.in/about-me"><i class="fa-regular fa-circle-info"></i> Pending Requests</a></li>
+            <li><a class="request_movie"><i class="fa-solid fa-film"></i> Request Movie</a></li>
+            <li><a class="all_requests"><i class="fa-regular fa-database"></i> All Requests</a></li>
             <hr />
             <p class="user_id"></p>
 
         </ul>
-        <div class="canvas">
-        </div>
+        <div class="canvas"></div>
         <h2>Hacker India</h2>
-    </nav>
-
-    <div class="form">
-        <input type="text" name="" id="" value="" placeholder="Enter movie name..." />
-        <button type="submit">Search</button>
     </div>
 
-    <div class="result_items">
+    <section id="all-requests-page">
+        <h2><i class="fa-solid fa-database"></i>All Requests</h2>
+        <div id="result_container">
+            <table id="results" class="table table-stripped table-bordered">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Movie Title</th>
+                    <th scope="col">IST</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </table>
+        </div>
+    </section>
 
-    </div>
-    <div class="next_page">
-        <button id="viewMore">View More</button>
-    </div>
+    <section id="request-page">
+        <div class="form">
+            <input type="text" name="" id="" value="" placeholder="Enter movie name..." />
+            <button type="submit">Search</button>
+        </div>
+        <div class="result_items"></div>
+        <div class="next_page">
+            <button id="viewMore">View More</button>
+        </div>
+    </section>
 
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>

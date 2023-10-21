@@ -406,14 +406,14 @@ button,
     -webkit-tap-highlight-color: transparent;
 }
 
-.loader-container{
+.loader-container {
     position: fixed;
     width: 100%;
     top: -100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:  column;
+    flex-direction: column;
     transition-duration: 0.5s;
 }
 
@@ -429,4 +429,63 @@ button,
 @keyframes s3 {
     to {
         transform: rotate(1turn)
-    }}
+    }
+}
+
+
+/*----------- Table Design -----------*/
+/* Style for the table */
+.table {
+    font-family: "Raleway";
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+}
+
+/* Style for table rows */
+.table tr {
+    background-color: #fff;
+}
+
+.table th,td {
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.table tr:hover {
+    background-color: #e0e0e0;
+}
+
+#all-requests-page h2 i{
+    margin: 0px 10px; !important
+}
+
+#all-requests-page h2{
+    margin-bottom: 20px;
+}
+
+.status{
+    color: black;
+    padding: 5px 10px;
+}
+
+.pending{
+    background-color: #FFBC00; !important
+}
+
+.uploaded{
+    background-color: #00B211; !important
+}
+
+.canceled{
+    background-color: #C82F00; !important
+}
+
+.unavailable{
+    background-color: #CDCDCD; !important
+}
