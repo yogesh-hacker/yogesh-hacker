@@ -138,6 +138,7 @@ function logUser() {
     var username = $("#username").val().trim()
     if (username != "") {
         if (username.length > 4) {
+            user = username;
             Cookies.set("username", username, {
                 expires: 365
             })
