@@ -1,0 +1,45 @@
+data=[{
+    "book_title" : "The Purloined Letter",
+    "cover_image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt5_4-2PJKwemFrJDsn80zUQHMXNkpbUYfwA&usqp=CAU",
+    "source": "uuuu"
+},
+    {
+        "book_title" : "The Crack Up",
+        "cover_image" : "https://m.media-amazon.com/images/I/817HdjCf6ML._AC_UF1000,1000_QL80_.jpg",
+        "source": "uuuu"
+    },
+    {
+        "book_title" : "The Prologue",
+        "cover_image" : "uuuu",
+        "source": "https://www.poetryfoundation.org/poems/43705/prologue-56d22283c12e1"
+    },
+    {
+        "book_title" : "Passage To India (Lines.1-68)",
+        "cover_image" : "uuuu",
+        "source": "uuuu"
+    },
+    {
+        "book_title" : "Crow Testament",
+        "cover_image" : "uuuu",
+        "source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5gebRFbXgW8C813OnGPh0D-vxJ_30hBecNw&usqp=CAU"
+    },
+    {
+        "book_title" : "The Murder of Roger Ackroyd",
+        "cover_image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSukQpCBXoXPafzO8OaKluLVTeY7_HV1hlorw&usqp=CAU",
+        "source": "uuuu"
+    },
+    {
+        "book_title" : "Tintin in Tibet",
+        "cover_image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAYkwvFM2-eKk-f4_TuExTzzGSkM1gT7avEg&usqp=CAU",
+        "source": "https://yogesh-hacker.github.io/yogesh-hacker/semester/3/books/20_Tintin_in_Tibet.pdf"
+    },
+    {
+        "book_title" : "Paradise Lost(Book I)",
+        "cover_image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStf20cn-LEbtZ-nEFs_VUQNsKAivFA_N9omw&usqp=CAU",
+        "source": "uuuu"
+    },
+    {
+        "book_title" : "The Rape of the Lock(Cantos I and III)",
+        "cover_image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1dw3kgegCYUcvoxo1LfxvxHKOJoznePEPqA&usqp=CAU",
+        "source": "uuuu"
+    }]
