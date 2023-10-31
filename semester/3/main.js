@@ -11,3 +11,6 @@ $(".canvas").click(function() {
 $(".notes").click(function(){
     window.open("https://yogesh-hacker.github.io/yogesh-hacker/Private%20Tuition%20Questions%20&%20Answers/")
 })
+$(".books").click(function(){
+    window.location.href("https://yogesh-hacker.github.io/yogesh-hacker/semester/3/books")
+})
