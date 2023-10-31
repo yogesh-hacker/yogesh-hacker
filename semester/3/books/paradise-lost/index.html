@@ -1,0 +1,46 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Paradise Lost Book I - F.T. Prince - Commentary on Book I</title>
+    <link rel='stylesheet' href=''>
+    <!--None-->
+    <link rel='stylesheet' href='https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css' type='text/css' media='all' />
+    <style type="text/css" media="all">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .book-canvas {
+            width: 100%;
+        }
+        .book-canvas img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="book-canvas"></div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+    <script type='text/javascript'>
+        function appendImageSequentially(i) {
+            if (i <= 140) {
+                var imageUrl = "https://yogesh-hacker.github.io/yogesh-hacker/semester/3/books/paradise-lost/paradiselostbook0000milt_i4e4_0" + i + ".jpg";
+                $(".book-canvas").append("<img src='" + imageUrl + "'/>");
+                setTimeout(function () {
+                    appendImageSequentially(i + 1);
+                }, 500);
+            }
+        }
+
+        $(document).ready(function () {
+            appendImageSequentially(105);
+        });
+    </script>
+</body>
+</html>
