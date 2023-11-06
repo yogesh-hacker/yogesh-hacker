@@ -11,12 +11,12 @@ data=[{
     {
         "book_title" : "The Prologue",
         "cover_image" : "uuuu",
-        "source": "https://www.poetryfoundation.org/poems/43705/prologue-56d22283c12e1"
+        "source": "prologue/"
     },
     {
         "book_title" : "Passage To India (Lines.1-68)",
         "cover_image" : "uuuu",
-        "source": "uuuu"
+        "source": "passage-to-india/"
     },
     {
         "book_title" : "Crow Testament",
