@@ -35,8 +35,8 @@ data=[{
     },
     {
         "book_title" : "Paradise Lost(Book I)",
-        "cover_image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStf20cn-LEbtZ-nEFs_VUQNsKAivFA_N9omw&usqp=CAU",
-        "source": "uuuu"
+        "cover_image" : "https://rukminim2.flixcart.com/image/850/1000/book/2/2/9/paradise-lost-books-1-2-original-imadyqfptezhd8yh.jpeg?q=90",
+        "source": "paradise-lost/"
     },
     {
         "book_title" : "The Rape of the Lock(Cantos I and III)",
