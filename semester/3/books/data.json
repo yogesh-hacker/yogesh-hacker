@@ -21,7 +21,7 @@ data=[{
     {
         "book_title" : "Crow Testament",
         "cover_image" : "uuuu",
-        "source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5gebRFbXgW8C813OnGPh0D-vxJ_30hBecNw&usqp=CAU"
+        "source": "crow-testament/"
     },
     {
         "book_title" : "The Murder of Roger Ackroyd",
