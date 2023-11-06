@@ -6,7 +6,7 @@ data=[{
     {
         "book_title" : "The Crack Up",
         "cover_image" : "https://m.media-amazon.com/images/I/817HdjCf6ML._AC_UF1000,1000_QL80_.jpg",
-        "source": "uuuu"
+        "source": "the-crack-up/"
     },
     {
         "book_title" : "The Prologue",
