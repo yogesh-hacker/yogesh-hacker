@@ -1,7 +1,7 @@
 data=[{
     "book_title" : "The Purloined Letter",
     "cover_image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt5_4-2PJKwemFrJDsn80zUQHMXNkpbUYfwA&usqp=CAU",
-    "source": "uuuu"
+    "source": "The_Purloined_Letter.pdf/"
 },
     {
         "book_title" : "The Crack Up",
