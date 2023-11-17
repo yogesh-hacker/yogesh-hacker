@@ -139,6 +139,13 @@
     font-size: 25px;
 }
 
+.member-name span{
+    background-color: transparent;
+    font-family: "Oswald";
+    margin: 0px 0px 2px 5px;
+    vertical-align: bottom;
+}
+
 .member-bio,
 .member-position{
     color: #ACC1D2;
