@@ -102,7 +102,6 @@ $('.question').on('click', function () {
 
 $("#login").click(function() {
     mAccessKey = $("#userNumber").val();
-    console.log(mPhoneNumber)
     if (mAccessKey.length == 20) {
         for (var i = 0; i < accessKeys.length; i++) {
             if (mAccessKey === accessKeys[i]) {
