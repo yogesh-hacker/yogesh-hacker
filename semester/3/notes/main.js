@@ -1,5 +1,5 @@
 var data = [];
-var mPhoneNumber;
+var mAccessKey;
 var accessKeys = ["3de013132a81731687c1", "a13df950d3172fe1df8b", "5cb343ceeae2263e3471", "24c4ba9cad9bf5aae190", "ffc1ec0b6bedd74122c2", "03968fde20f5cca2fe99"]
 
 $(document).ready(function() {
@@ -106,7 +106,7 @@ $("#login").click(function() {
     if (mAccessKey.length == 20) {
         for (var i = 0; i < accessKeys.length; i++) {
             if (mAccessKey === accessKeys[i]) {
-                Cookies.set("_user_id", mAccessKey, {
+                Cookies.set("_access_key_", mAccessKey, {
                     expires: 5
                 })
                 alert("Welcome dear user, I am glad to see you here!")
