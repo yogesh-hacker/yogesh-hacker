@@ -41,5 +41,5 @@ data=[{
     {
         "book_title" : "The Rape of the Lock(Cantos I and III)",
         "cover_image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1dw3kgegCYUcvoxo1LfxvxHKOJoznePEPqA&usqp=CAU",
-        "source": "uuuu"
+        "source": "the-rape-of-the-lock/"
     }]
