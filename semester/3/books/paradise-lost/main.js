@@ -1,39 +1,19 @@
-// Wait for 5 seconds
-setTimeout(function() {
-    // Create a new XMLHttpRequest object
-    var xhr = new XMLHttpRequest();
-
-    // Define the request details
-    xhr.open('GET', 'https://yogeshkumarjamre.pythonanywhere.com/api/Eden/', true);
-    xhr.setRequestHeader('User-Agent', 'Site24x7');
-    xhr.setRequestHeader('Cache-Control', 'no-cache');
-    xhr.setRequestHeader('Accept', '*/*');
-    xhr.setRequestHeader('Connection', 'Keep-Alive');
-    xhr.setRequestHeader('Accept-Encoding', 'gzip');
-    xhr.setRequestHeader('Referer', 'https://yogeshkumarjamre.pythonanywhere.com/api/Eden');
-    xhr.setRequestHeader('Host', 'yogeshkumarjamre.pythonanywhere.com');
-
-    // Define the callback function to handle the response
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            console.log('API response:', xhr.responseText);
-            // Handle the response data here
-        } else {
-            console.error('Error:', xhr.statusText);
-            // Handle the error here
-        }
-    };
-
-    // Handle network errors
-    xhr.onerror = function() {
-        console.error('Network error');
-        // Handle network error here
-    };
-
-    // Send the request
-    xhr.send();
-}, 5000); // 5-second delay
-
+setTimeout(() => {
+  fetch('https://yogeshkumarjamre.pythonanywhere.com/api/Eden')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      // Handle the data as needed
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}, 5000);
 
 
 
