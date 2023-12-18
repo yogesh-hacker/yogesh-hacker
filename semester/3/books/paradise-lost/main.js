@@ -42,7 +42,11 @@ function handleClickedWord(word) {
             // Append part of speech and sentences to the alert box
             Object.entries(data.info).forEach(([partOfSpeech, sentences]) => {
                 const partOfSpeechElement = document.createElement('p');
+                const wordElement = document.createElement('p');
                 partOfSpeechElement.innerHTML = `<strong>${partOfSpeech}:</strong>`;
+                wordElement.innerHTML = `<strong>Word : ${word}</strong>`;
+
+                customAlert.appendChild(wordElement);
                 customAlert.appendChild(partOfSpeechElement);
 
                 sentences.forEach(sentence => {
