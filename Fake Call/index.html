@@ -1,0 +1,113 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Fake Call</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css' type='text/css' media='all' />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Open+Sans:wght@400;500;600&family=Raleway:wght@500;600;700&family=Ubuntu:wght@400;500&family=Andika:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section id="full-screen">
+        <div class="status-bar">
+            <p class="device-time">
+                21:14
+            </p>
+            <p class="signal-strength">
+                <i class="fa-solid fa-signal-bars"></i>
+            </p>
+            <p class="vo-lte">
+                Vo<br><b>LTE</b>
+            </p>
+            <div class="status-right">
+                <i class="fa-brands fa-chromecast"></i>
+                <div class="battery">
+                    <div class="battery-container">
+                        <div class="battery-level">
+                            88
+                        </div>
+                    </div>
+                    <div class="battery-dot"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="fake-call-dialer">
+            <div class="caller-id">
+                <p class="person-name">
+                    Chacha
+                </p>
+                <p class="person-number">
+                    <img class="caller-sim-card" src="simcard.png" alt="" />+91 8538 032 595
+                </p>
+                <p class="call-status">
+                    Calling...
+                </p>
+            </div>
+            <div class="dialer-buttons">
+                <div class="row">
+                    <div class="button record">
+                        <i class="fa-solid fa-voicemail"></i>
+                        <p class="button-text">
+                            Record
+                        </p>
+                    </div>
+                    <div class="button hold">
+                        <i class="fa-light fa-circle-pause"></i>
+                        <p class="button-text">
+                            Hold
+                        </p>
+                    </div>
+                    <div class="button add-call">
+                        <i class="fa-solid fa-thin fa-plus"></i>
+                        <p class="button-text">
+                            Add Call
+                        </p>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="button mute">
+                        <img src="mute.png" alt="" />
+                        <!--i class="fa-solid fa-microphone-slash"></i-->
+                        <p class="button-text">
+                            Mute
+                        </p>
+                    </div>
+                    <div id="play-button" class="button speaker">
+                        <i class="fa-sharp fa-solid fa-volume"></i>
+                        <p class="button-text">
+                            Speaker
+                        </p>
+                    </div>
+                    <div class="button dialpad">
+                        <img class="" src="phone.png" alt="" />
+                        <p class="button-text">
+                            Dialpad
+                        </p>
+                    </div>
+                </div>
+                <div class="hangup">
+                    <i class="fa-solid fa-phone-hangup"></i>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-buttons">
+            <i class="fa-regular fa-square"></i>
+            <i class="fa-regular fa-circle"></i>
+            <i class="fa-regular fa-triangle"></i>
+        </div>
+    </section>
+    
+    <audio id="pre-voice" src="audio.mp3" controls=""></audio>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+    <script type='text/javascript' src='main.js'></script>
+</body>
+</html>

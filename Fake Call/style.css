@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: none;
+}
+
+#full-screen {
+    height: 100%;
+}
+
+#full-screen::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 17px);
+    height: calc(100% + 17px);
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuwg3_3FnDhcbg0w1V_0mz3yMSbDqLdWVfItcvQoA3zysT_lehl3GKdAHp&s=10');
+    filter: brightness(50%) blur(5px);
+    margin: -8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.status-bar {
+    /*font-family: none;*/
+    background-color: transparent;
+    height: 27px;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    padding: 0px 10px;
+    align-items: flex-end;
+    color: white;
+    position: relative;
+}
+
+.device-time {
+    font-size: 14px;
+    font-family: none;
+    margin: 0px 3px;
+    margin-right: 1px;
+}
+
+.signal-strength {
+    font-size: 11px;
+    padding: 3px 4px;
+    margin: 0px 2px;
+}
+
+.vo-lte {
+    font-size: 7px;
+    font-family: "Ubuntu";
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0;
+    word-spacing: 0;
+    line-height: 7px;
+    padding-bottom: 2px;
+}
+
+button {
+    font-family: "Lato";
+}
+
+.status-right{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: 9px;
+    padding: 5px 5px 0px 0px;
+}
+
+.status-right i{
+    margin-top: 2px;
+    margin-right: 3px;
+}
+
+.battery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px 4px 0px;
+}
+
+.battery-container {
+    border: 0.2px solid white;
+    height: 8px;
+    width: 17px;
+    border-radius: 2px;
+    padding: 0.5px;
+}
+
+.battery-level {
+    font-size: 7px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.2px;
+    align-items: center;
+    font-family: none;
+    border-radius: 1px;
+    background: rgb(70,213,231);
+    background: linear-gradient(90deg, rgba(70,213,231,1) 88%, rgba(27,33,60,0) 88%);
+    color: black;
+    font-weight: bold;
+}
+
+.battery-dot {
+    background-color: white;
+    height: 3px;
+    width: 1px;
+}
+
+.fake-call-dialer {
+    background-color: transparent;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    /* Add relative positioning to the container */
+}
+
+.caller-id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100px;
+    position: absolute;
+    /* Use absolute positioning */
+    top: 5%;
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Adjust to center horizontally */
+    z-index: 1;
+    /* Ensure the caller ID is on top */
+}
+
+
+.caller-sim-card {
+    height: 16px;
+    padding-bottom: 3px;
+}
+
+.call-status {
+    color: white;
+}
+
+.person-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.caller-id .person-name {
+    font-size: 30px;
+    color: white;
+}
+
+/* Dialer Buttons */
+
+.dialer-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+.dialer-buttons .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 70%;
+    text-align: center;
+    color: white;
+    margin: 15px 0px;
+}
+
+.dialer-buttons .row i {
+    color: white;
+    font-size: 25px;
+    margin: 10px;
+}
+
+.dialer-buttons .hangup {
+    height: 60px;
+    width: 60px;
+    background: rgb(217,83,56);
+    background: radial-gradient(circle, rgba(217,83,56,1) 0%, rgba(251,105,71,1) 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    border-radius: 50%;
+}
+
+.dialer-buttons .hangup i {
+    color: white;
+    font-size: 20px;
+}
+
+.row p {
+    font-family: none;
+}
+
+.row .record i {
+    background-color: white;
+    color: #000;
+    transform: rotate(180deg);
+    background-clip: ;
+    font-size: 14px;
+    padding: 4px 5px;
+    border-radius: 2px;
+}
+
+.row .add-call i {
+    font-weight: 300;
+}
+
+.row .dialpad img,
+.row .mute img{
+    height: 25px;
+    filter: brightness(0) invert(1);
+    margin: 9px;
+}
+
+.speaker-active {
+    color: #00D33D;
+    !important
+    font-size: 20px;
+}
+
+.navigation-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navigation-buttons i{
+    color: white;
+    font-size: 19px;
+}
+
+.navigation-buttons .fa-triangle{
+    transform: rotate(270deg);
+}
