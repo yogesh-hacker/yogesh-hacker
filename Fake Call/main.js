@@ -4,6 +4,13 @@ $("body").click(function () {
     fullscreen();
 });
 
+const currentDate = new Date();
+const hours = currentDate.getHours();
+const minutes = currentDate.getMinutes();
+
+const formattedTime = `${hours}:${minutes}`;
+$(".device-time").text(formattedTime);
+
 
 function fullscreen() {
     if (elem.requestFullscreen) {
