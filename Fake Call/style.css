@@ -98,18 +98,26 @@ button {
 }
 
 .battery-level {
+    height: 100%;
     font-size: 7px;
     display: flex;
     justify-content: center;
-    margin-top: 0.2px;
+    margin-top: 0px;
     align-items: center;
     font-family: none;
+    vertical-align: middle;
+    text-align: center;
     border-radius: 1px;
     background: rgb(70,213,231);
     background: linear-gradient(90deg, rgba(70,213,231,1) 88%, rgba(27,33,60,0) 88%);
     color: black;
     font-weight: bold;
 }
+
+.battery-level p{
+    margin-top: 1px;
+}
+
 
 .battery-dot {
     background-color: white;
@@ -263,4 +271,14 @@ button {
 
 .navigation-buttons .fa-triangle{
     transform: rotate(270deg);
+}
+
+.dialer-buttons .hold,
+.dialer-buttons .add-call{
+    opacity: 0.5;
+    transition-duration: 0.2s;
+}
+
+.dialer-buttons .active{
+    opacity: 1; !important
 }
