@@ -44,7 +44,6 @@ $(".hangup").click(function() {
 
 $(".speaker").click(function() {
     audioPlayer.play();
-    setTimeout(startTimer, 9500);
 });
 
 var intervalId;
