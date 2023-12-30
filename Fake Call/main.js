@@ -92,7 +92,7 @@ if ('wakeLock' in navigator) {
 
 
 audioPlayer.addEventListener("timeupdate", function() {
-    if (audioPlayer.currentTime * 1000 >= 11000) {
+    if (audioPlayer.currentTime * 1000 >= 10000) {
         startTimer();
         audioPlayer.removeEventListener("timeupdate", arguments.callee);
     }
