@@ -1,5 +1,5 @@
 var elem = document.getElementById("full-screen")
-
+var audioPlayer = $("#pre-voice")[0];
 $("body").click(function () {
     fullscreen();
 });
@@ -37,13 +37,13 @@ $("#play-button").click(function() {
 })
 
 $(".hangup").click(function() {
-    $("#pre-voice")[0].pause();
-    $("#pre-voice")[0].currentTime = 0;
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
     stopTimer();
 })
 
 $(".speaker").click(function() {
-    $("#pre-voice")[0].play();
+    audioPlayer.play();
     setTimeout(startTimer, 9500);
 });
 
@@ -52,8 +52,6 @@ var intervalId;
 function startTimer() {
     var timer = 0;
     var timerElement = $(".call-status");
-
-    var audioPlayer = $("#pre-voice")[0];
 
     audioPlayer.addEventListener("ended",
         function() {
@@ -92,3 +90,11 @@ if ('wakeLock' in navigator) {
 } else {
     console.warn('Wake Lock API not supported');
 }
+
+
+audioPlayer.addEventListener("timeupdate", function() {
+    if (audioPlayer.currentTime * 1000 >= 11000) {
+        startTimer();
+        audioPlayer.removeEventListener("timeupdate", arguments.callee);
+    }
+});
