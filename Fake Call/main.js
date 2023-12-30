@@ -5,8 +5,8 @@ $("body").click(function () {
 });
 
 const currentDate = new Date();
-const hours = currentDate.getHours();
-const minutes = currentDate.getMinutes();
+const hours = currentDate.getHours().toString().padStart(2, '0');
+const minutes = currentDate.getMinutes().toString().padStart(2, '0');
 
 const formattedTime = `${hours}:${minutes}`;
 $(".device-time").text(formattedTime);

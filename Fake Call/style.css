@@ -173,6 +173,8 @@ button {
 .caller-id .person-name {
     font-size: 30px;
     color: white;
+    text-align: center;
+    width: 300px;
 }
 
 /* Dialer Buttons */
@@ -259,14 +261,15 @@ button {
     position: absolute;
     bottom: 0;
     height: 50px;
-    width: 60%;
+    width: 59%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .navigation-buttons i{
     color: white;
-    font-size: 19px;
+    font-size: 18px;
+    color: #a4a4a4;
 }
 
 .navigation-buttons .fa-triangle{
@@ -281,4 +284,8 @@ button {
 
 .dialer-buttons .active{
     opacity: 1; !important
+}
+
+#pre-voice{
+    display: none;
 }
