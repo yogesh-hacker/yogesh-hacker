@@ -59,7 +59,7 @@ $('#convertButton').click(function () {
     } else {
         $(".h2c-status").text("Generating...");
         $(".h2c-title").html($("#h2c-title-input").val()+`<span class="h2c-movie-quality"><sup>${getTypo()}</sup><span>`);
-        $(".h2c-poster").attr("src",$("#h2c-poster-input").val();
+        $(".h2c-poster").attr("src",$("#h2c-poster-input").val());
         setTheme();
         setTimeout(function() {
             $("#convertButton").text("Convert to Image")
