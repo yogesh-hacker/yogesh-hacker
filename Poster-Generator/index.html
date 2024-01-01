@@ -1,0 +1,63 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Square Post Creator</title>
+    <link rel='stylesheet' href='style.css'>
+    <!--None-->
+    <link rel='stylesheet' href='https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css' type='text/css' media='all' />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Open+Sans:wght@400;500;600&family=Raleway:wght@500;600;700&family=Ubuntu:wght@400;500&family=Andika:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="app-title">Poster Generator</h1>
+
+    <div id="h2c-prebuilt-form">
+        <input type="text" name="" id="h2c-title-input" value="" placeholder="Enter Movie Name..." />
+        <input type="text" name="" id="h2c-poster-input" value="" placeholder="Enter poster url..."/>
+        <select name="" id="movie-typo">
+            <option value="1" selected="" disabled="">Select typo</option>
+            <option value="2">On Demand</option>
+            <option value="3">WEB-DL</option>
+            <option value="4">UHD</option>
+            <option value="5">FHD</option>
+            <option value="6">HD</option>
+        </select>
+        <select name="" id="movie-poster-theme">
+            <option value="null">Select Poster Theme</option>
+            <option value="1">Normal</option>
+            <option value="2">Violence</option>
+            <option value="3">Aqua</option>
+        </select>
+    </div>
+
+    <div class="h2c-action">
+        <p class="h2c-status"></p>
+        <a id="convertButton" href="#h2c-canvas">Generate</a>
+        <a id="h2c-result-download" href="">Download</a>
+    </div>
+
+    <div id="h2c">
+        <div id="h2c-canvas" class="theme-normal">
+            <img class="app-logo" src="https://yogesh-hacker.github.io/yogesh-hacker/App/app_icon.png" alt="" />
+            <img class="h2c-poster" src="https://m.media-amazon.com/images/M/MV5BYWUwZWUwNmQtMzlkYS00YmI1LTgzNzItZGIxMDgxYjRlNDk0XkEyXkFqcGdeQXVyMTQ3Mzk2MDg4._V1_FMjpg_UX658_.jpg" alt="" />
+            <h3 class="h2c-title">Toby<span class="h2c-movie-quality"><sup>HD</sup></span></h3>
+            <div class="hairline"></div>
+            <div class="hairline-2"></div>
+            <div class="h2c-footer">
+                <span class="h2c-f-app-title">HackFlix</span><span class="h2c-f-divider">||</span><span class="h2c-f-app-subtitle">Watch Now</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+    <script type='text/javascript' src='main.js'></script>
+</body>
+</html>

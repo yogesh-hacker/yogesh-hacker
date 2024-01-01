@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.app-title{
+    margin-top: 50px;
+    color: black;
+    font-family: "Oswald";
+    text-align: center;
+}
+
+#h2c-prebuilt-form{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#h2c-prebuilt-form input,
+#h2c-prebuilt-form select{
+    color: black;
+    height: 40px;
+    width: 70%;
+    margin: 10px;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #60CFFF;
+    transition-duration: 0.3s;
+}
+
+#h2c-prebuilt-form input:hover,
+#h2c-prebuilt-form select:hover{
+    box-shadow: 0px 0px 0px 4px #CEF0FF;
+}
+
+#h2c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+#h2c-canvas {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    flex-direction: column;
+}
+
+.h2c-poster {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+.h2c-title {
+    font-family: "Raleway";
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.h2c-movie-quality sup {
+    background-color: #00A415;
+    color: white;
+    font-family: "Open Sans";
+    border-radius: 2px;
+    padding: 1px 2px;
+    font-size: 10px;
+    margin: 0px 0px 0px 2px;
+}
+
+.hairline,
+.hairline-2 {
+    height: 2px;
+    width: 25%;
+    background-color: #FF0011;
+    margin-bottom: 5px;
+    !important
+}
+
+.hairline {
+    margin-top: 10px;
+    !important
+}
+
+.hairline-2 {
+    width: 12%;
+    !important
+}
+
+.h2c-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    bottom: 20;
+}
+
+.app-logo {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    border-radius: 50%;
+    background-position: center;
+}
+
+.h2c-footer span {
+    font-size: 20px;
+}
+
+.h2c-f-app-title {
+    font-family: "Oswald";
+    letter-spacing: 1px;
+}
+
+.h2c-f-app-subtitle {
+    font-family: "Open Sans";
+    !important
+}
+
+.h2c-f-divider {
+    margin: 0px 5px;
+}
+.h2c-status {
+    color: black;
+    font-family: "Ubuntu";
+    margin: 20px 0px 0px 0px;
+}
+.h2c-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.h2c-action a {
+    color: black;
+    text-decoration: none;
+    background-color: #008DFF;
+    padding: 15px 0px;
+    font-family: "Montserrat";
+    width: 9.5rem;
+    text-align: center;
+    margin: 10px 0px;
+    -webkit-tap-highlight-color: transparent;
+    color: white;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+.h2c-action a:hover {
+    box-shadow: 0px 0px 0px 4px #AFDCFF;
+}
+
+
+/* Themes */
+
+#h2c .theme-normal {
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(9,20,110,1) 42%, rgba(14,40,222,1) 100%);
+}
+
+#h2c .theme-violence {
+    background: rgb(255,0,0);
+    background: linear-gradient(180deg, rgba(255,0,0,1) 0%, rgba(29,0,0,1) 100%);
+}
+
+#h2c .theme-aqua {
+    background: rgb(0,145,145);
+    background: linear-gradient(180deg, rgba(0,145,145,1) 0%, rgba(27,33,60,0.9969060054192176) 80%, rgba(27,33,60,1) 100%);
+}
