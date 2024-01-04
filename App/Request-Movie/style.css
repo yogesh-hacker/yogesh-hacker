@@ -27,6 +27,11 @@ body {
     padding: 0;
 }
 
+#result_container{
+    width: 100%;
+    overflow-x: scroll;
+}
+
 .nav_menu {
     display: block;
     position: absolute;
@@ -91,7 +96,8 @@ body {
     color: white;
 }
 
-.user_id {
+.user_id,
+.username{
     font-family: 'Montserrat' !important;
     font-size: 14px;
     word-break: break !important;
@@ -121,7 +127,8 @@ body {
     font-family: 'Raleway';
 }
 
-.nav_items img {
+
+.nav_logo img {
     height: 40px;
     width: 40px;
     border: 1px solid white;
@@ -253,7 +260,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 999;
+    z-index: 99999;
     box-shadow: 2px 5px 20px 5px rgba(0, 0, 0, 0.3);
     padding: 20px;
     border-radius: 5px;
@@ -432,6 +439,12 @@ button,
     }
 }
 
+/* V2.0 */
+
+.edit-username{
+    font-size: 14px;
+    padding: 10px 10px 10px 5px;
+}
 
 /*----------- Table Design -----------*/
 /* Style for the table */

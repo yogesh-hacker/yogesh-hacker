@@ -4,19 +4,14 @@
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <meta name='og:title' content='Request movies || Hack Flix'>
+    <meta name='og:type' content='movie-request-page'>
+    <meta name='og:url' content='https://hackerindia.in/App/Request-Movie'>
+    <meta name='og:image' content='http://ia.media-imdb.com/rock.jpg'>
+    <meta name='og:site_name' content='Hacker India'>
+    <meta name='og:description' content='A page to request movies you eager to watch on Hack Flix'>
+
     <title>Request movies || Hack Flix</title>
-    <meta name="description" content="A page to request movies you eager to watch on Hack Flix">
-    <meta property="og:url" content="https://yogesh-hacker.github.io/yogesh-hacker/App/Request-Movie/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Request movies || Hack Flix">
-    <meta property="og:description" content="A page to request movies you eager to watch on Hack Flix">
-    <meta property="og:image" content="https://yogesh-hacker.github.io/yogesh-hacker/App/Request-Movie/image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="yogesh-hacker.github.io">
-    <meta property="twitter:url" content="https://yogesh-hacker.github.io/yogesh-hacker/App/Request-Movie/">
-    <meta name="twitter:title" content="Request movies || Hack Flix">
-    <meta name="twitter:description" content="A page to request movies you eager to watch on Hack Flix">
-    <meta name="twitter:image" content="https://yogesh-hacker.github.io/yogesh-hacker/App/Request-Movie/image.png">
     <link rel='stylesheet' href='style.css'>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css" type="text/css" media="all" />
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css" type="text/css" media="all" />
@@ -30,12 +25,12 @@
     </div>
 
     <div class="member_form">
-        <h2>Be a member</h2>
-        <p>
-            By becoming member you will get many premium features. So please enter a valid name
+        <h2>Change Username</h2>
+        <p class="change-username-description">
+            By changing Username you only replacing your public idenfication. Though your actual idenfication User ID: XXXX can't be changed;
         </p>
         <input type="text" id="username" value="" placeholder="Please enter your username (e.g. John Doe)" />
-        <button type="submit" onclick="logUser()">Ok</button>
+        <button type="submit" onclick="updateUsername()">Ok</button>
     </div>
 
     <div class="member_form_canvas">
@@ -53,8 +48,10 @@
             <li><a class="request_movie"><i class="fa-solid fa-film"></i> Request Movie</a></li>
             <li><a class="all_requests"><i class="fa-regular fa-database"></i> All Requests</a></li>
             <hr />
-            <p class="user_id"></p>
-
+            <div class="user_info">
+                <p class="username">Username : Loading...</p>
+                <p class="user_id"></p>
+            </div>
         </ul>
         <div class="canvas"></div>
         <h2>Hacker India</h2>
@@ -90,5 +87,6 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
     <script type='text/javascript' src='main.js'></script>
+    <script src="login.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 var BASE_URL = "https://api.themoviedb.org/3/search/movie";
 var BASE_URL_MOVIE = "https://api.themoviedb.org/3/movie/"
 var API_KEY = "0216c7f0ac7eccd88428ff92bbccd0a1";
-var IMAGE_PATH = "https://image.tmdb.org/t/p/original";
+var IMAGE_PATH = "https://image.tmdb.org/t/p/w200";
 var REQUESTS_DB = [];
 
 var SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbwnTtnh_aR6iHXxMqXkkO_SxSpKGtGt4E-7rO2itQkQnJxEFM_Vmr44RoG10JaAs5cE-g/exec";
@@ -9,6 +9,7 @@ var isParsed = false;
 
 $("#all-requests-page").hide();
 $("#request-page").show();
+
 
 $("#viewMore").hide();
 $(".nav_menu").click(function() {
@@ -33,7 +34,7 @@ function fetchData() {
     .then(data => {
         if (data.success !== false) {
             for (var i = 0; i < data.results.length; i++) {
-                var idMatched = false; // Initialize a flag to track ID matches for each data item
+                var idMatched = false;
 
                 for (var j = 0; j < REQUESTS_DB.length; j++) {
                     if (data.results[i].id == REQUESTS_DB[j].movie_id) {
@@ -106,47 +107,23 @@ function ctrlq(e) {
 
 function request(id) {
     var url = SCRIPT_BASE_URL + "?callback=ctrlq&serial_no=1&request_id="+user+"&movie_id="+id+"&is_uploaded=0&action=insert";
-
-
-
-    var request = jQuery.ajax({
-        crossDomain: true,
-        url: url,
-        method: "GET",
-        dataType: "jsonp"
-    });
-}
-
-
-$(document).ready(function() {
-    loadUser();
-    loadRequests();
-})
-
-var user;
-function loadUser() {
-    user = Cookies.get("username");
-    if (user == undefined) {
-        $(".member_form").css("display", "flex");
-        $(".member_form_canvas").css("display", "flex")
-    } else {
-        $(".user_id").append("Username : "+user)
+    if (user != "") {
+        var request = jQuery.ajax({
+            crossDomain: true,
+            url: url,
+            method: "GET",
+            dataType: "jsonp"
+        });
+    }else{
+        customAlertDialog('Please Wait!',
+        'Please wait! the page is loading...',
+        [{
+            name: 'OK',
+            action: () => {}
+        }]);
     }
 }
 
-function logUser() {
-    var username = $("#username").val().trim()
-    if (username != "") {
-        if (username.length > 4) {
-            user = username;
-            Cookies.set("username", username, {
-                expires: 365
-            })
-            $(".user_id").append("Username : "+username)
-            $(".member_form , .member_form_canvas").css("display", "none")
-        }
-    }
-}
 
 function loadRequests() {
     REQUESTS_DB.length = 0;
@@ -157,6 +134,7 @@ function loadRequests() {
             REQUESTS_DB.push(json.records[i])
         }
         showRequests();
+        REQUESTS_DB.reverse();
     })
     $(".loader-container").css("top",
         "-100px");
@@ -179,7 +157,6 @@ $(".all_requests").click(function() {
 
 async function showRequests() {
     let serialNumber = 1;
-    REQUESTS_DB.reverse();
     for (let i = 0; i < REQUESTS_DB.length; i++) {
         try {
             const title = await parseTitle(REQUESTS_DB[i].movie_id);
@@ -264,20 +241,3 @@ function getStatus(isUploaded) {
     }
     return status;
 }
-
-$(document).ready(function () {
-    // Get the URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-
-    // Extract the parameters using jQuery
-    const manufacturer = urlParams.get('manufacturer');
-    const model = urlParams.get('model');
-    const androidId = urlParams.get('androidId');
-
-    // Use the parameters as needed
-    console.log('Manufacturer:', manufacturer);
-    console.log('Model:', model);
-    console.log('Android ID:', androidId);
-    $(".user_id").append("<br>User ID : "+manufacturer+";"+model+";"+androidId+"<br>")
-    // Add more jQuery logic as needed
-});
