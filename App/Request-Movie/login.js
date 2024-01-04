@@ -50,7 +50,7 @@ function openForm() {
 
 function updateUsername() {
     var username = $("#username").val().trim();
-    if (username.length < 3 && username != "") {
+    if (username.length > 3 && username != "") {
         var url = LOGIN_URL + "?callback=saveUsernameChanges&device_id="+userDeviceId+"&username="+username+"&action=change_username";
 
         var request = jQuery.ajax({
