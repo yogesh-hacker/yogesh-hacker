@@ -10,6 +10,9 @@ var isParsed = false;
 $("#all-requests-page").hide();
 $("#request-page").show();
 
+$(document).ready(function(){
+    loadRequests();
+})
 
 $("#viewMore").hide();
 $(".nav_menu").click(function() {
