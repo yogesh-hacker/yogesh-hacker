@@ -4,15 +4,16 @@ var API_KEY = "0216c7f0ac7eccd88428ff92bbccd0a1";
 var IMAGE_PATH = "https://image.tmdb.org/t/p/w200";
 var REQUESTS_DB = [];
 
-var SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbwnTtnh_aR6iHXxMqXkkO_SxSpKGtGt4E-7rO2itQkQnJxEFM_Vmr44RoG10JaAs5cE-g/exec";
+var SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbxFMf4ofdQpl-jKcGhu0Fa5Ozr8saCGvDNE0CtYozZFi086vro-oqgda_neppeL_-zIHw/exec";
 var isParsed = false;
-
-$("#all-requests-page").hide();
-$("#request-page").show();
 
 $(document).ready(function(){
     loadRequests();
 })
+
+$("#all-requests-page").hide();
+$("#request-page").show();
+
 
 $("#viewMore").hide();
 $(".nav_menu").click(function() {
@@ -109,7 +110,7 @@ function ctrlq(e) {
 }
 
 function request(id) {
-    var url = SCRIPT_BASE_URL + "?callback=ctrlq&serial_no=1&request_id="+user+"&movie_id="+id+"&is_uploaded=0&action=insert";
+    var url = SCRIPT_BASE_URL + "?callback=ctrlq&serial_no=1&request_id="+user+"&movie_id="+id+"&is_uploaded=0&device_id="+userDeviceId+"&action=insert";
     if (user != "") {
         var request = jQuery.ajax({
             crossDomain: true,
