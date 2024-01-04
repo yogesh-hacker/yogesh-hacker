@@ -264,3 +264,20 @@ function getStatus(isUploaded) {
     }
     return status;
 }
+
+$(document).ready(function () {
+    // Get the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Extract the parameters using jQuery
+    const manufacturer = urlParams.get('manufacturer');
+    const model = urlParams.get('model');
+    const androidId = urlParams.get('androidId');
+
+    // Use the parameters as needed
+    console.log('Manufacturer:', manufacturer);
+    console.log('Model:', model);
+    console.log('Android ID:', androidId);
+    $(".user_id").append("<br>User ID : "+manufacturer+";"+model+";"+androidId+"<br>")
+    // Add more jQuery logic as needed
+});
