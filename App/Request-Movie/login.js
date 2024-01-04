@@ -10,7 +10,7 @@ $(document).ready(function () {
         $(".user_id").append("User ID : "+androidId);
         userDeviceId = androidId;
     } else {
-        $("body").html("<center>Unauthorized Access<br>This page used to embed please <a href='../App'>download </a>our app to view this page.</center>")
+        $("body").html("<center>Unauthorized Access<br>This page used to embed please <a href='../'>download </a>our app to view this page.</center>")
         $("body").css("background-color", "#fff")
     }
 });
