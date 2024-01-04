@@ -4,7 +4,7 @@ var API_KEY = "0216c7f0ac7eccd88428ff92bbccd0a1";
 var IMAGE_PATH = "https://image.tmdb.org/t/p/w200";
 var REQUESTS_DB = [];
 
-var SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbxFMf4ofdQpl-jKcGhu0Fa5Ozr8saCGvDNE0CtYozZFi086vro-oqgda_neppeL_-zIHw/exec";
+var SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbyaUYzYo7Aa6GA8FZnA-P6Xqp9hA_dpCWbcfGB_p4prEelB_5n_eoATBqfc5H1ahMlB8Q/exec";
 var isParsed = false;
 
 $(document).ready(function(){
