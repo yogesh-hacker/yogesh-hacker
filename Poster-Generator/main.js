@@ -58,7 +58,12 @@ $('#convertButton').click(function () {
         setTimeout(convertToImage(), 1000);
     } else {
         $(".h2c-status").text("Generating...");
-        $(".h2c-title").html($("#h2c-title-input").val()+`<span class="h2c-movie-quality"><sup>${getTypo()}</sup><span>`);
+        if(getTypo() != ""){
+            $(".h2c-title").html($("#h2c-title-input").val()+`<span class="h2c-movie-quality"><sup>${getTypo()}</sup><span>`);
+        }
+        else{
+            $(".h2c-title").html($("#h2c-title-input").val());
+        }
         $(".h2c-poster").attr("src",$("#h2c-poster-input").val());
         setTheme();
         setTimeout(function() {
@@ -132,7 +137,7 @@ function getTypo() {
             return "HD"
             break;
         default:
-            return null;
+            return "";
             break;
     }
 }
