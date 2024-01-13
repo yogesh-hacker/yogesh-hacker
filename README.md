@@ -24,11 +24,11 @@
 <h2 align="center>Hack Flix</h2>
 ```An Android Application made using Java focused to provide free movies and webseries. My app focused on freeium, that's why my app comes with these features```
 
-• No Ads
-• No Subscription
-• Smooth Video Playback
-• A Fast Downloader made using (Fetch2)
-•  Adaptive Streaming and many more...
+- No Ads
+- No Subscription
+- Smooth Video Playback
+- A Fast Downloader made using (Fetch2)
+- Adaptive Streaming and many more...
 
 
 To Download Our/My App Visit This Link...
