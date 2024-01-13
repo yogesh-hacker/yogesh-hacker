@@ -33,7 +33,7 @@
 
 To Download Our/My App Visit This Link...
 
-(HackFlix)[https://yogesh-hacker.github.io/yogesh-hacker/App/]
+[HackFlix](https://yogesh-hacker.github.io/yogesh-hacker/App/)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
