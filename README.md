@@ -20,7 +20,6 @@
 - ⚡ Fun fact **I am Ethical Hacker and Developer, come to 8BP😃**
 
 
-
 # Hack Flix
 
 <p align="center"><em>An Android Application made using Java, dedicated to providing free movies and web series. This app focuses on a freemium model, offering the following features:</em></p>
@@ -28,8 +27,25 @@
 - No Ads
 - No Subscription
 - Smooth Video Playback
-- Fast Downloader powered by [Fetch2](https://github.com/your-fetch2-repo)
+- Fast Downloader powered by [Fetch2](https://github.com/tonyofrancis/Fetch)
 - Adaptive Streaming and more...
+
+## Tags
+
+<div align="center">
+  <kbd>Bollyflix</kbd>
+  <kbd>Bolly4u</kbd>
+  <kbd>Free Movies</kbd>
+  <kbd>Web Series</kbd>
+  <kbd>Ad-Free</kbd>
+  <kbd>Subscription-Free</kbd>
+  <kbd>FilmyZilla</kbd>
+  <kbd>Filmywap</kbd>
+  <kbd>Fetch2</kbd>
+  <kbd>RarBGHD</kbd>
+  <kbd>Download Movies Free</kbd>
+  <kbd>Watch Online</kbd>
+</div>
 
 ## Download
 
