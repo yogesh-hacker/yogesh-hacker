@@ -21,19 +21,22 @@
 
 
 
-<h2 align="center>Hack Flix</h2>
-```An Android Application made using Java focused to provide free movies and webseries. My app focused on freeium, that's why my app comes with these features```
+# Hack Flix
+
+<p align="center"><em>An Android Application made using Java, dedicated to providing free movies and web series. This app focuses on a freemium model, offering the following features:</em></p>
 
 - No Ads
 - No Subscription
 - Smooth Video Playback
-- A Fast Downloader made using (Fetch2)
-- Adaptive Streaming and many more...
+- Fast Downloader powered by [Fetch2](https://github.com/your-fetch2-repo)
+- Adaptive Streaming and more...
 
+## Download
 
-To Download Our/My App Visit This Link...
+To experience ad-free, subscription-free streaming with Hack Flix, visit our website:
 
-[HackFlix](https://yogesh-hacker.github.io/yogesh-hacker/App/)
+[Download HackFlix](https://yogesh-hacker.github.io/yogesh-hacker/App/)
+
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
