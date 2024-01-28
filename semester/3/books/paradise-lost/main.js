@@ -91,21 +91,38 @@ $(document).ready(function () {
 
 var tabLeft = $(".tab-left");
 var tabRight = $(".tab-right");
-var tabBorder = $(".tab-border");
 var tabContentLeft = $(".tab-content-left");
 var tabContentRight = $(".tab-content-right");
+var scrollPositions = {};
 
 tabLeft.click(function() {
     tabBorder.css("transform", "translateX(0)");
-    tabContentRight.css("display", "none");
+    tabContentRight.hide();
     tabContentLeft.css("display", "flex");
+    restoreScrollPosition('left');
 });
 
 tabRight.click(function() {
     tabBorder.css("transform", "translateX(100%)");
     tabContentRight.css("display", "flex");
-    tabContentLeft.css("display", "none");
+    tabContentLeft.hide();
+    restoreScrollPosition('right');
 });
+
+function restoreScrollPosition(tabId) {
+    var tabContent = tabId === 'left' ? tabContentLeft : tabContentRight;
+    if (scrollPositions[tabId]) {
+        tabContent.scrollTop(scrollPositions[tabId]);
+    } else {
+        tabContent.scrollTop(0);
+    }
+}
+
+$('.tab-content-left, .tab-content-right').scroll(function() {
+    var tabId = $(this).hasClass('tab-content-left') ? 'left' : 'right';
+    scrollPositions[tabId] = $(this).scrollTop();
+});
+
 
 function appendImageSequentially(i) {
     if (i <= 140) {
