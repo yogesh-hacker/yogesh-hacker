@@ -88,3 +88,35 @@ $(document).ready(function () {
             event.stopPropagation();
         });
 });
+
+var tabLeft = $(".tab-left");
+var tabRight = $(".tab-right");
+var tabBorder = $(".tab-border");
+var tabContentLeft = $(".tab-content-left");
+var tabContentRight = $(".tab-content-right");
+
+tabLeft.click(function() {
+    tabBorder.css("transform", "translateX(0)");
+    tabContentRight.css("display", "none");
+    tabContentLeft.css("display", "flex");
+});
+
+tabRight.click(function() {
+    tabBorder.css("transform", "translateX(100%)");
+    tabContentRight.css("display", "flex");
+    tabContentLeft.css("display", "none");
+});
+
+function appendImageSequentially(i) {
+    if (i <= 140) {
+        var imageUrl = "https://yogesh-hacker.github.io/yogesh-hacker/semester/3/books/paradise-lost/paradiselostbook0000milt_i4e4_0" + i + ".jpg";
+        $(".tab-content-right").append("<img src='" + imageUrl + "'/>");
+        setTimeout(function () {
+            appendImageSequentially(i + 1);
+        }, 500);
+    }
+}
+
+$(document).ready(function(){
+    appendImageSequentially(105);
+})
