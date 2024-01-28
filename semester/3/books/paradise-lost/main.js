@@ -91,6 +91,7 @@ $(document).ready(function () {
 
 var tabLeft = $(".tab-left");
 var tabRight = $(".tab-right");
+var tabBorder = $(".tab-border");
 var tabContentLeft = $(".tab-content-left");
 var tabContentRight = $(".tab-content-right");
 var scrollPositions = {};
@@ -111,11 +112,10 @@ tabRight.click(function() {
 
 function restoreScrollPosition(tabId) {
     var tabContent = tabId === 'left' ? tabContentLeft : tabContentRight;
-    if (scrollPositions[tabId]) {
-        tabContent.scrollTop(scrollPositions[tabId]);
-    } else {
-        tabContent.scrollTop(0);
+    if (!scrollPositions[tabId]) {
+        scrollPositions[tabId] = 0; // Initialize to top if not yet scrolled
     }
+    tabContent.scrollTop(scrollPositions[tabId]);
 }
 
 $('.tab-content-left, .tab-content-right').scroll(function() {
