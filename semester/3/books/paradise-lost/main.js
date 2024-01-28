@@ -112,17 +112,15 @@ tabRight.click(function() {
 
 function restoreScrollPosition(tabId) {
     var tabContent = tabId === 'left' ? tabContentLeft : tabContentRight;
-    if (!scrollPositions[tabId]) {
-        scrollPositions[tabId] = 0; // Initialize to top if not yet scrolled
+    if (scrollPositions[tabId] !== undefined) {
+        tabContent.scrollTop(scrollPositions[tabId]);
     }
-    tabContent.scrollTop(scrollPositions[tabId]);
 }
 
 $('.tab-content-left, .tab-content-right').scroll(function() {
     var tabId = $(this).hasClass('tab-content-left') ? 'left' : 'right';
     scrollPositions[tabId] = $(this).scrollTop();
 });
-
 
 function appendImageSequentially(i) {
     if (i <= 140) {
