@@ -185,9 +185,38 @@
         .login_form button:hover {
             background-color: #228D3A;
         }
+        .info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 10px 10px 0px 10px;
+            background-color: #FFF3D4;
+            padding: 10px;
+            border: #FFA500 1px solid;
+            border-radius: 4px;
+            color: #FFA500;
+        }
+
+        .info button {
+            background-color: black;
+            border-radius: 4px;
+            color: white;
+            position: relative;
+            margin: 0px 0px 0px auto;
+            left: auto;
+            right: 0px;
+            border: none;
+            font-size: 12px;
+            padding: 5px 8px;
+        }
     </style>
 </head>
 <body>
+    <div class="info">
+        <button type="submit" onclick="hideAlert()">Close</button>
+        <p>Due to the significant volume of data, the page is experiencing delays. Please be patient while the content loads.</p>
+    </div>
     <div class="canvas">
         <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632/64ee1832914441.569836c7b2ff3.gif" alt="" />
     </div>
