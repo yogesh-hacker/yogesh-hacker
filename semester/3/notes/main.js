@@ -129,3 +129,7 @@ function hideLoginForm() {
     $(".login_canvas").css("display",
         "none");
 }
+
+function hideAlert(){
+    $(".info").css("display","none");
+}
