@@ -21,5 +21,5 @@ $(".cc-10").click(function(){
 })
 
 $(".sec-2").click(function(){
-    window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/4/notes/papers/2/";
+    window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/4/notes/papers/sec-2/";
 })
