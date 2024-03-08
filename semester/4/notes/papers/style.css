@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: none;
+}
+
+:root {
+    --primary-color: #1F1F26;
+    --secondary-color: #1A191F;
+    --primary-accent-color: #9FD5FF;
+    --secondary-accent-color: #9ED5FF;
+    --primary-text-color: #E0F2FF;
+    --secondary-text-color: #ACC1D2;
+    --primary-icon-color: #D0D0D0;
+    --primary-button-text-color: #182244;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--secondary-text-color);
+}
+
+.page-heading {
+    margin: 20px 0px;
+    font-family: "Oswald";
+    font-size: 40px;
+    text-align: center;
+    color: var(--secondary-accent-color);
+    text-transform: uppercase;
+}
+
+.total_question {
+    font-family: "Raleway";
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.setting {
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat";
+}
+
+.data-error {
+    margin-top: 100px;
+    font-family: "Arima";
+    text-align: center;
+    font-size: 14px;
+}
+
+.error {
+    color: #CF1C00;
+    font-family: "Open Sans";
+    margin: 0;
+    margin-top: 5px;
+}
+
+#content {
+    margin: 10px;
+}
+
+.question-container {
+    background-color: rgba(159,213,255,0.1);
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 5px;
+}
+
+.question {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-family: "Andika";
+    margin: 0px;
+}
+
+.answer,
+.answer b {
+    font-family: "Merriweather";
+    color: var(--primary-text-color);
+}
+
+.poem_name {
+    text-align: center;
+    margin: 30px 0px;
+    font-family: "Andika";
+    text-decoration: underline;
+}
+
+.book-title {
+    text-align: center;
+    text-decoration: underline;
+    font-family: "Ubuntu";
+    color: var(--primary-accent-color);
+    margin: 20px 0px;
+}
+
+.mark {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+    border-radius: 50%;
+    user-select: none;
+    background-color: var(--primary-accent-color);
+    color: var(--primary-button-text-color);
+    z-index: 0;
+}
+
+.hairline {
+    background-color: #D9D9D9;
+    height: 1px;
+    width: 100%;
+}
+
+.showAnswer {
+    background-color: #007CFF;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+}
+
+#result {
+    padding: 0px 5px;
+}
+
+.buttons_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    background-color: #0E111F;
+    touch-action: none;
+}
+.canvas img {
+    height: 150px;
+}
+
+.login_canvas {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.login_form {
+    background-color: var(--primary-color);
+    height: 200px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.login_form input {
+    height: 40px;
+    width: 85%;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid var(--primary-accent-color);
+    border-radius: 5px;
+    padding: 0px 10px;
+    transition-duration: 0.2s;
+    font-family: "Andika";
+}
+
+.login_form input:focus,
+.login_form input:hover {
+    box-shadow: 0px 0px 0px 4px #BDE8FF;
+}
+
+.login_form button {
+    background-color: #28A745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 20px;
+    font-family: "Raleway";
+    font-weight: 500;
+    transition-duration: 0.2s;
+}
+
+.cc_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cc_list button {
+    width: 100%;
+    margin: 5px 0px;
+    border-radius: 0px;
+}
+
+.login_form button:hover {
+    background-color: #228D3A;
+}
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 10px 0px 10px;
+    background-color: #FFF3D4;
+    padding: 10px;
+    border: #FFA500 1px solid;
+    border-radius: 4px;
+    color: #FFA500;
+    font-family: "Andika";
+}
+
+.info button {
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    position: relative;
+    margin: 0px 0px 0px auto;
+    left: auto;
+    right: 0px;
+    border: none;
+    font-size: 12px;
+    padding: 5px 8px;
+}
