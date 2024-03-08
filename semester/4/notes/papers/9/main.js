@@ -1,7 +1,7 @@
 var data = [];
 var mAccessKey;
 var accessKeys = ["3de013132a81731687c1", "a13df950d3172fe1df8b", "5cb343ceeae2263e3471", "24c4ba9cad9bf5aae190", "ffc1ec0b6bedd74122c2", "03968fde20f5cca2fe99", "624ba2d56f22a3f3618c", "9bbdcd61084e818079f8"]
-var mPaperId = 80;
+var mPaperId = 9;
 
 $(document).ready(function() {
     var accessKey = Cookies.get("_access_key_");
