@@ -194,6 +194,30 @@ body {
     font-weight: 900;
 }
 
+.stats-hyperlink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.stats-hyperlink a{
+    display: block;
+    width: 85%;
+    padding: 18px 0px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-size: 18px;
+    border-radius: 40px;
+    font-family: "Open Sans";
+}
+
+.stats-hyperlink a i{
+    margin: 0px 8px;
+}
+
 /*-------- Wave Section --------*/
 
 .wave {
