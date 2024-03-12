@@ -3,6 +3,7 @@ var BASE_URL_MOVIE = "https://api.themoviedb.org/3/movie/"
 var API_KEY = "0216c7f0ac7eccd88428ff92bbccd0a1";
 var IMAGE_PATH = "https://image.tmdb.org/t/p/w200";
 var REQUESTS_DB = [];
+var API_LAYER_CONNECTION_URL = "https://yogeshkumarjamre.pythonanywhere.com/api?url=";
 
 var SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbyaUYzYo7Aa6GA8FZnA-P6Xqp9hA_dpCWbcfGB_p4prEelB_5n_eoATBqfc5H1ahMlB8Q/exec";
 var isParsed = false;
@@ -31,7 +32,7 @@ function fetchData() {
     var uploadStatus = "";
     var status = "";
     var sQuery = $(".form input").val().trim();
-    var sUrl = BASE_URL + "?api_key=" + API_KEY + "&query=" + sQuery + "&include_adult=true&page=" + page;
+    var sUrl = API_LAYER_CONNECTION_URL + BASE_URL + "?api_key=" + API_KEY + "&query=" + sQuery + "&include_adult=true&page=" + page;
 
     fetch(sUrl)
     .then(response => response.json())
@@ -190,7 +191,7 @@ async function showRequests() {
 
 
 function parseTitle(movieId) {
-    return fetch(BASE_URL_MOVIE+ movieId + "?api_key=" + API_KEY)
+    return fetch(API_LAYER_CONNECTION_URL + BASE_URL_MOVIE + movieId + "?api_key=" + API_KEY)
     .then(response => response.json())
     .then(data => {
         if (data.success !== false) {
