@@ -43,7 +43,7 @@ function showData() {
     for (var i = 0; i < data.length; i++) {
         var item_id = data[i].item_id;
         var item_title = data[i].item_title;
-        var cc_id = data[i].cc_id;
+        var cc_id = data[i].paper_id;
 
         if (!serialNumbers[item_id]) {
             serialNumbers[item_id] = 1;
