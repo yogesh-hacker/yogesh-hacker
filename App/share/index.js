@@ -14,7 +14,7 @@ $("body").ready(function() {
 
 function fetchMovieDetails(movieId) {
     var url = API_URL.replace("MOVIE_ID", movieId);
-    fetch(url)
+    fetch("https://yogeshkumarjamre.pythonanywhere.com/api/?url="+url)
     .then(response => response.json())
     .then(data => {
         if (data.success != false) {
