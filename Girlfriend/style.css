@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family: none;
+}
+
+#content-main {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #FF0073;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#content-main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("background.png");
+    background-size: cover;
+    z-index: 0;
+    opacity: 0.5;
+    /* Adjust the opacity as needed */
+}
+
+
+.question-box {
+    display: none;
+    background-color: white;
+    padding: 30px 10px;
+    width: 80%;
+    border-radius: 15px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.8);
+    transition: transform 0.5s ease;
+}
+
+.swipe-out {
+    transform: translateX(-200%);
+}
+
+
+.question-box .question {
+    text-align: center;
+    font-family: "Hind Siliguri";
+}
+
+.question-box .question-description {
+    color: #666;
+    font-family: "Baloo Da 2";
+    font-size: 16px;
+}
+
+.question-box input {
+    height: 45px;
+    width: 100%;
+    margin: 30px 0px;
+    font-family: "Oswald";
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+    outline-color: #0081FF;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    padding: 0px 15px;
+}
+
+#question-box-1 .submit-button {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #FF0073;
+    border: none;
+    color: white;
+    font-size: 24px;
+    transition-duration: 0.2s;
+    text-align: center;
+}
+
+#question-box-1 .submit-button:hover {
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.6);
+    outline: 2px solid #0081FF;
+    /* Combined outline shorthand */
+    outline-offset: -2px;
+    color: black;
+}
+
+.age-container{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.age-container button{
+    font-family: "Oswald";
+    width: 100px;
+    padding: 10px 0px;
+    border-radius: 20px;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    transition-duration: 0.2s;
+}
+
+.age-container button:hover{
+    outline: 2px solid #0081FF;
+}
+
+.girlfriend-name-reveal-box {
+    position: relative;
+    display: none;
+    background-color: white;
+    padding: 30px 10px;
+    width: 90%;
+    height: 85%;
+    border-radius: 15px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.8);
+    transition: transform 0.5s ease;
+}
+
+.girlfriend-name-reveal-box::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("background-2.png");
+    background-size: cover;
+    z-index: 0;
+    opacity: 0.2;
+    /* Adjust the opacity as needed */
+}
+
+.girlfriend-name-reveal-box .name-container {
+    font-family: "Ubuntu";
+    font-weight: 200;
+}
+
+.girlfriend-name-reveal-box .name-container span {
+    font-family: "Andika";
+    font-weight: 700;
+}
+
+.girlfriend-name-reveal-box .reveal-description{
+    font-family: "Baloo Da 2";
+    z-index: 1;
+    font-weight: 500;
+    overflow: scroll;
+    margin-top: 28px;
+}
+
+#april-fool{
+    display: none;
+}

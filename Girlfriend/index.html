@@ -1,0 +1,63 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>See my girlfriend name</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Arima:wght@100..700&family=Baloo+Da+2:wght@400..800&family=Hind+Siliguri:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="april-fool" src="song.mp3" preload="true" autoplay="false"></audio>
+
+    <section id="content-main">
+        <div class="question-box" id="question-box-1">
+            <h2 class="question">তোমার নাম কি?</h2>
+            <p class="question-description">
+                *ভুল নাম লিখলে তুমি জানতে পারবে না, ইংরেজিতে শুধু তোমার প্রথম নামটা লেখো।
+            </p>
+            <input type="text" name="name" id="name" placeholder="Enter your name (e.g. John)..." />
+            <button class="submit-button" data-next="2"><i class="fa-sharp fa-thin fa-arrow-right"></i></button>
+        </div>
+        <div class="question-box" id="question-box-2">
+            <h2 class="question">তুমি আমার কে হও?</h2>
+            <p class="question-description">
+                *ভুল উত্তর দিলে কিন্তু গার্লফ্রেন্ডের নাম বলবো না।
+            </p>
+            <div class="age-container">
+                <button class="submit-button" data-next="3">Friend</button>
+                <button class="submit-button" data-next="3">Other</button>
+            </div>
+        </div>
+
+        <div class="question-box" id="question-box-3">
+            <h2 class="question">তোমার বয়স কতো?</h2>
+            <p class="question-description">
+                *ভুল উত্তর দিলে কিন্তু গার্লফ্রেন্ডের নাম বলবো না।
+            </p>
+            <div class="age-container">
+                <button class="submit-button" data-next="4" onclick="setAge(1)">5-22</button>
+                <button class="submit-button" data-next="4" onclick="setAge(2)">23-40</button>
+            </div>
+        </div>
+        
+        <div class="girlfriend-name-reveal-box">
+            <h1 id="name-container" class="name-container"></h1>
+            <p id="reveal-description" class="reveal-description">
+                Please wait!
+            </p>
+        </div>
+    </section>
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type='text/javascript' src='main.js'></script>
+</body>
+</html>
