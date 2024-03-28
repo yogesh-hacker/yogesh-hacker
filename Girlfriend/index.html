@@ -14,6 +14,7 @@
 </head>
 <body>
     <audio id="april-fool" src="song.mp3" preload="true" autoplay="false"></audio>
+    <audio id="love-song" src="love-song.mp3" preload="true" autoplay="false"></audio>
 
     <section id="content-main">
         <div class="question-box" id="question-box-1">
@@ -34,15 +35,26 @@
                 <button class="submit-button" data-next="3">Other</button>
             </div>
         </div>
-
+        
         <div class="question-box" id="question-box-3">
+            <h2 class="question">তুমি কি?</h2>
+            <p class="question-description">
+                *ভুল উত্তর দিলে কিন্তু গার্লফ্রেন্ডের নাম বলবো না।
+            </p>
+            <div class="age-container">
+                <button class="submit-button" data-next="4" onclick="setGenderGroup(1)" style="font-family: 'Baloo Da 2';font-size:16px">ছেলে</button>
+                <button class="submit-button" data-next="4" onclick="setGenderGroup(2)" style="font-family: 'Baloo Da 2';font-size:16px">মেয়ে</button>
+            </div>
+        </div>
+        
+        <div class="question-box" id="question-box-4">
             <h2 class="question">তোমার বয়স কতো?</h2>
             <p class="question-description">
                 *ভুল উত্তর দিলে কিন্তু গার্লফ্রেন্ডের নাম বলবো না।
             </p>
             <div class="age-container">
-                <button class="submit-button" data-next="4" onclick="setAge(1)">5-22</button>
-                <button class="submit-button" data-next="4" onclick="setAge(2)">23-40</button>
+                <button class="submit-button" data-next="5" onclick="setAge(1)">5-22</button>
+                <button class="submit-button" data-next="5" onclick="setAge(2)">23-40</button>
             </div>
         </div>
         
