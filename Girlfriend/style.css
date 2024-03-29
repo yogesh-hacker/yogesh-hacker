@@ -31,7 +31,8 @@
 }
 
 
-.question-box {
+.question-box,
+.timer-box {
     display: none;
     background-color: white;
     padding: 30px 10px;
@@ -95,7 +96,7 @@
     color: black;
 }
 
-.age-container{
+.age-container {
     display: flex;
     flex-direction: row;
     width: 80%;
@@ -104,7 +105,7 @@
     margin-top: 20px;
 }
 
-.age-container button{
+.age-container button {
     font-family: "Oswald";
     width: 100px;
     padding: 10px 0px;
@@ -116,9 +117,27 @@
     transition-duration: 0.2s;
 }
 
-.age-container button:hover{
+.age-container button:hover {
     outline: 2px solid #0081FF;
 }
+
+.timer-box h3 {
+    font-family: "Hind Siliguri";
+}
+
+.progress-bar-container {
+    text-align: left;
+    width: 100%;
+}
+
+#progress-bar{
+    width: 0%;
+    height: 10px;
+    background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 50%, rgba(2,0,36,1) 100%);
+    border-radius: 10px;
+}
+
 
 .girlfriend-name-reveal-box {
     position: relative;
@@ -160,7 +179,7 @@
     font-weight: 700;
 }
 
-.girlfriend-name-reveal-box .reveal-description{
+.girlfriend-name-reveal-box .reveal-description {
     font-family: "Baloo Da 2";
     z-index: 1;
     font-weight: 500;
@@ -169,6 +188,6 @@
 }
 
 #april-fool,
-#love-song{
+#love-song {
     display: none;
 }

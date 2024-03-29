@@ -4,10 +4,6 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <meta property="og:image" content="https://yogesh-hacker.github.io/yogesh-hacker/Girlfriend/thumbnail.webp" />
-    <meta property="og:image:secure_url" content="https://yogesh-hacker.github.io/yogesh-hacker/Girlfriend/thumbnail.webp" />
-    <meta property="og:image:width" content="1280" />
-    <meta property="og:image:height" content="720" />
     <title>See my girlfriend name</title>
     <link rel='stylesheet' href='style.css'>
     <link rel='stylesheet' href='https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css' type='text/css' media='all' />
@@ -17,8 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Arima:wght@100..700&family=Baloo+Da+2:wght@400..800&family=Hind+Siliguri:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <audio id="april-fool" src="song.mp3" preload="true" autoplay="false"></audio>
-    <audio id="love-song" src="love-song.mp3" preload="true" autoplay="false"></audio>
+    <audio id="april-fool" src="song.m4a" preload="true" autoplay="false"></audio>
+    <audio id="love-song" src="love-song.m4a" preload="true" autoplay="false"></audio>
 
     <section id="content-main">
         <div class="question-box" id="question-box-1">
@@ -32,7 +28,7 @@
         <div class="question-box" id="question-box-2">
             <h2 class="question">তুমি আমার কে হও?</h2>
             <p class="question-description">
-                *ভুল উত্তর দিলে কিন্তু গার্লফ্রেন্ডের নাম বলবো না।
+                *ভুল উত্তর দিলে কিন্তু Crush-এর নাম বলবো না।
             </p>
             <div class="age-container">
                 <button class="submit-button" data-next="3">Friend</button>
@@ -43,7 +39,7 @@
         <div class="question-box" id="question-box-3">
             <h2 class="question">তুমি কি?</h2>
             <p class="question-description">
-                *ভুল উত্তর দিলে কিন্তু গার্লফ্রেন্ডের নাম বলবো না।
+                *ভুল উত্তর দিলে কিন্তু Crush-এর নাম বলবো না।
             </p>
             <div class="age-container">
                 <button class="submit-button" data-next="4" onclick="setGenderGroup(1)" style="font-family: 'Baloo Da 2';font-size:16px">ছেলে</button>
@@ -54,11 +50,18 @@
         <div class="question-box" id="question-box-4">
             <h2 class="question">তোমার বয়স কতো?</h2>
             <p class="question-description">
-                *ভুল উত্তর দিলে কিন্তু গার্লফ্রেন্ডের নাম বলবো না।
+                *ভুল উত্তর দিলে কিন্তু Crush-এর নাম বলবো না।
             </p>
             <div class="age-container">
                 <button class="submit-button" data-next="5" onclick="setAge(1)">5-22</button>
                 <button class="submit-button" data-next="5" onclick="setAge(2)">23-40</button>
+            </div>
+        </div>
+        
+        <div class="timer-box">
+            <h3>তাহলে এবার Crush-এর নামটা বলি?</h3>
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
             </div>
         </div>
         

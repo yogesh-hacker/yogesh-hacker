@@ -13,14 +13,8 @@ $(document).ready(function() {
 
     function handleLastQuestion() {
         addUser();
-        isTarget = girlfriendName.toLowerCase() === "sanchita" || girlfriendName.toLowerCase() === "sonchita" || genderGroup == 2;
-        if (!isTarget) {
-            $("#april-fool")[0].play();
-        }else{
-            $("#love-song")[0].play();
-        }
         $(".girlfriend-name-reveal-box").css("display", "flex");
-        $("#name-container").html(`I Love You <span>${girlfriendName}</span>`);
+        $("#name-container").html(`আমার Crush-এর নাম হলো - <span>${girlfriendName} </span><br>I Love You <span>${girlfriendName}</span>`);
         $("#reveal-description").html(ageGroup == 1 ? `হ্যাঁ, এটাই সত্যি যে, ${girlfriendName} আমার জীবনের একমাত্র ভালোবাসা। ${girlfriendName} যার সঙ্গে আমি একা নয়, তোর সঙ্গে আমি সবকিছু অনুভব করি, সবকিছু অবস্থান করি। তোর অভাবে আমার জীবন অসম্পূর্ণ, এমনকি সূর্য অবস্থান করেছে অন্ধকারে।<br><br>To ${girlfriendName}, তোকে আমি খুব খুব ভালোবাসি তা আমার কথার সমাহার নয়। ${girlfriendName}, আমি তোকে ভালোবাসি তা বলতে পারি না, কারণ সময় থেকে অদৃশ্য হয়ে ওঠে। তোর দৃশ্যে আমার মনের সব দুঃখ ভুলে যায়, সব অসুখ মৃত্যুর সমান নষ্ট হয়ে যায়।<br><br>তোর অমৃত হাসি, তোর চমৎকার চোখ, এসব মেলে যায় আমার মনের অগ্নিপরীক্ষা হয়ে যাওয়ার সময়। তোর সঙ্গে পাঁচালীর সুর, বনের শান্তি, সব মিলে আমার জীবনে প্রেমের কাহিনী লিখে যায়।<br><br>${girlfriendName} তোর অকৃত্রিম সৌন্দর্য আমাকে মোহ করে, তোর কথা শোনার সাথে আমার হৃদয় ছুঁয়ে যায়। তোর সাথে আমি একা নয়, তোর সাথে আমি পূর্ণতা অনুভব করি।<br><br>আমার প্রিয় ${girlfriendName}, তুই আমার প্রতি সদায় একটি অবিচল আত্মা হয়ে সব সময় আছিস। তুই আমার জীবনের প্রকৃত অর্থ, প্রকৃত সুখ, এবং প্রকৃত সমৃদ্ধি।<br><br>আমার প্রিয় ${girlfriendName}, তুই আমার অমৃত প্রেমের কবিতা, আমার সকল সৃষ্টির মূল, আমার সমগ্র স্বপ্নের নায়ক। তুইই আমার প্রিয়।<br><br>প্রেম ও আদরের সাথে,<br>Yogesh`: `হ্যাঁ, এটাই সত্যি যে, ${girlfriendName} আমার জীবনের একমাত্র ভালোবাসা। ${girlfriendName} যার সঙ্গে আমি একা নয়, তোমার সঙ্গে আমি সবকিছু অনুভব করি, সবকিছু অবস্থান করি। তোমার অভাবে আমার জীবন অসম্পূর্ণ, এমনকি সূর্য অবস্থান করেছে অন্ধকারে।<br><br>To ${girlfriendName}, তোমাকে আমি খুব খুব ভালোবাসি তা আমার কথার সমাহার নয়। ${girlfriendName}, আমি তোমাকে ভালোবাসি তা বলতে পারি না, কারণ সময় থেকে অদৃশ্য হয়ে ওঠে। তোমার দৃশ্যে আমার মনের সব দুঃখ ভুলে যায়, সব অসুখ মৃত্যুর সমান নষ্ট হয়ে যায়।<br><br>তোমার অমৃত হাসি, তোমার চমৎকার চোখ, এসব মেলে যায় আমার মনের অগ্নিপরীক্ষা হয়ে যাওয়ার সময়। তোমার সঙ্গে পাঁচালীর সুর, বনের শান্তি, সব মিলে আমার জীবনে প্রেমের কাহিনী লিখে যায়।<br><br>${girlfriendName} তোমার অকৃত্রিম সৌন্দর্য আমাকে মোহ করে, তোমার কথা শোনার সাথে আমার হৃদয় ছুঁয়ে যায়। তোমার সাথে আমি একা নয়, তোমার সাথে আমি পূর্ণতা অনুভব করি।<br><br>আমার প্রিয় ${girlfriendName}, তুমি আমার প্রতি সদায় একটি অবিচল আত্মা হয়ে সব সময় আছো। তুমি আমার জীবনের প্রকৃত অর্থ, প্রকৃত সুখ, এবং প্রকৃত সমৃদ্ধি।<br><br>আমার প্রিয় ${girlfriendName}, তুমি আমার অমৃত প্রেমের কবিতা, আমার সকল সৃষ্টির মূল, আমার সমগ্র স্বপ্নের নায়ক। তুমিই আমার প্রিয়।<br><br>প্রেম ও আদরের সাথে,<br>Yogesh`);
         Cookies.set('hasFormSubmitted', true, {
             expires: 5
@@ -47,7 +41,7 @@ $(document).ready(function() {
         }
 
         if (nextQuestionNumber > 4) {
-            handleLastQuestion();
+            showTimer();
         } else if (pass) {
             swipeEffect(currentQuestion, nextQuestionBox);
         } else {
@@ -64,6 +58,30 @@ $(document).ready(function() {
         $('.question-box').hide();
     } else {
         $("#question-box-1").css("display", "flex");
+    }
+
+    function showTimer() {
+        $(".timer-box").css("display",
+            "flex")
+        $(".question-box").hide();
+        isTarget = girlfriendName.toLowerCase() === "sanchita" || girlfriendName.toLowerCase() === "sonchita" || genderGroup == 2;
+        if (!isTarget) {
+            $("#april-fool")[0].play();
+        } else {
+            $("#love-song")[0].play();
+        }
+        let progress = 0;
+        const interval = setInterval(() => {
+            if (progress >= 100) {
+                clearInterval(interval);
+                $(".timer-box").css("display", "none")
+                handleLastQuestion();
+            } else {
+                $('#progress-bar').css("width", progress+"%");
+                progress++;
+            }
+        },
+            90);
     }
 });
 
