@@ -169,7 +169,8 @@
     /* Adjust the opacity as needed */
 }
 
-.girlfriend-name-reveal-box .name-container {
+.girlfriend-name-reveal-box .name-container,
+.girlfriend-name-reveal-box .name-container p{
     font-family: "Ubuntu","Baloo Da 2";
     font-weight: 200;
 }
