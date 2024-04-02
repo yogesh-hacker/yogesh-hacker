@@ -2,5 +2,10 @@ data=[{
   "item_title" : "Elegy Written in a Country Churchyard",
   "item_cover" : "elegy.jpg",
   "item_source" : "elegy-written-in-a-country-churchyard/"
-}
+},
+  {
+    "item_title" : "Gulliver's Travels",
+  "item_cover" : "elegy.jpg",
+  "item_source" : "Gullivers_Travels_By_Jonathan_Swift.pdf"
+  }
 ]
