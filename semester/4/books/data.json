@@ -1,1 +1,6 @@
-data=[]
+data=[{
+  "item_title" : "Elegy Written in a Country Churchyard",
+  "item_cover" : "elegy.jpg",
+  "item_source" : "elegy-written-in-a-country-churchyard/"
+}
+]
