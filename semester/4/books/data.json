@@ -5,7 +5,7 @@ data=[{
 },
   {
     "item_title" : "Gulliver's Travels",
-  "item_cover" : "elegy.jpg",
+  "item_cover" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROz8oAPIJ1Zr-dKuB-ThT5JBFdDF-0GZnku31dXaH0-B08kLo0pUa3VYfI&s=10",
   "item_source" : "Gullivers_Travels_By_Jonathan_Swift.pdf"
   }
 ]
