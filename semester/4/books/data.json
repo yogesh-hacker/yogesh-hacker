@@ -12,5 +12,10 @@ data=[{
     "item_title" : "Kubla Khan",
   "item_cover" : "kubla-khan.jpg",
   "item_source" : "kubla-khan/"
-  }
+  },
+{
+    "item_title" : "Lamb",
+  "item_cover" : "lamb.jpg",
+  "item_source" : "lamb/"
+}
 ]
