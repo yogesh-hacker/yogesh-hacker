@@ -47,5 +47,8 @@ function showData(paper_id) {
         $(".books-container").append("<p class='data-error'>No books available, Check Back Later!</p>")
     }
 }
-
 showData(0);
+
+$("#filter-by-paper").change(function(){
+    showData($(this).val());
+})
