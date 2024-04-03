@@ -177,12 +177,12 @@ body {
     flex-direction: column;
 }
 
-.item img{
+.item img {
     height: 300px;
     border-radius: 10px;
 }
 
-.item p{
+.item p {
     font-family: "Lato";
     color: var(--primary-button-text-color);
     margin: 20px 0px;
@@ -190,7 +190,7 @@ body {
     font-weight: bold;
 }
 
-.item a{
+.item a {
     background-color: var(--primary-color);
     width: 90%;
     text-align: center;
@@ -217,4 +217,64 @@ body {
     font-family: "Arima";
     text-align: center;
     font-size: 16px;
+}
+
+/* -------- Drop Down --------*/
+
+.filter-container{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px 20px;
+}
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+    background-color: var(--secondary-accent-color);
+    color: var(--primary-button-text-color);
+    padding: 12px 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    max-height: 0px;
+    min-width: 200px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    transition-duration: 0.5s;
+    overflow-y: hidden;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    max-height: 300px;
+}
+
+.dropdown-content-close{
+    max-height: 0px;
 }

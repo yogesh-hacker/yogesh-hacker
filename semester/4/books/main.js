@@ -24,16 +24,28 @@ $(".sec-2").click(function() {
     window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/4/notes/papers/2/";
 })
 
-$(document).ready(function() {
+
+function showData(paper_id) {
+    $(".books-container").html("");
     if (data.length != 0) {
         for (var i = 0; i < data.length; i++) {
-            $(".books-container").append(`<div class="item">
-                <img src="`+data[i].item_cover+`" alt="" />
-                <p>`+data[i].item_title+`</p>
-                <a class="viewOrDownload" href="`+data[i].item_source+`">View or Download</a>
-                </div>`)
+            if (data[i].item_paper_id === "CC_"+paper_id) {
+                $(".books-container").append(`<div class="item">
+                    <img src="`+data[i].item_cover+`" alt="" />
+                    <p>`+data[i].item_title+`</p>
+                    <a class="viewOrDownload" href="`+data[i].item_source+`">View or Download</a>
+                    </div>`)
+            } else if (paper_id == 0) {
+                $(".books-container").append(`<div class="item">
+                    <img src="`+data[i].item_cover+`" alt="" />
+                    <p>`+data[i].item_title+`</p>
+                    <a class="viewOrDownload" href="`+data[i].item_source+`">View or Download</a>
+                    </div>`)
+            }
         }
     } else {
         $(".books-container").append("<p class='data-error'>No books available, Check Back Later!</p>")
     }
-})
+}
+
+showData(0);
