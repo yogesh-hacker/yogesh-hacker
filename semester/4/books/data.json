@@ -84,9 +84,9 @@ data=[{
     },
     {
         "item_paper_id" : "CC_10",
-        "item_title" : "The Lady of Shallot",
-        "item_cover" : "the-lady-of-shallot.jpg",
-        "item_source" : "the-lady-of-shallot/"
+        "item_title" : "The Lady of Shalott",
+        "item_cover" : "the-lady-of-shalott.jpg",
+        "item_source" : "the-lady-of-shalott/"
     },
     {
         "item_paper_id" : "CC_10",
