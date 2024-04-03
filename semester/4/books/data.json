@@ -54,9 +54,9 @@ data=[{
     },
     {
         "item_paper_id" : "CC_9",
-        "item_title" : "Childe Harolde's Pilgrimage (Canto III, verses 36-45)",
-        "item_cover" : "childe-harolde-pilgrimage.jpg",
-        "item_source" : "childe-harolde-pilgrimage/"
+        "item_title" : "Childe Harold's Pilgrimage (Canto III, verses 36-45)",
+        "item_cover" : "childe-harold-pilgrimage.jpg",
+        "item_source" : "childe-harold-pilgrimage/"
     },
     {
         "item_paper_id" : "CC_9",
