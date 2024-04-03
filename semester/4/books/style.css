@@ -182,14 +182,17 @@ body {
     border-radius: 10px;
 }
 
-.item p,
-.item p i{
+.item p{
     font-family: "Lato";
     color: var(--primary-button-text-color);
     margin: 20px 0px;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
+}
+
+.item p i{
+    font-family: "Lato";
 }
 
 
