@@ -60,9 +60,9 @@ data=[{
     },
     {
         "item_paper_id" : "CC_9",
-        "item_title" : "Ode to the West",
-        "item_cover" : "ode-to-west-wind.jpg",
-        "item_source" : "ode-to-west-wind/"
+        "item_title" : "Ode to the West wind",
+        "item_cover" : "ode-to-the-west-wind.jpg",
+        "item_source" : "ode-to-the-west-wind/"
     },
     {
         "item_paper_id" : "CC_9",
@@ -90,9 +90,9 @@ data=[{
     },
     {
         "item_paper_id" : "CC_10",
-        "item_title" : "My Last Duches",
-        "item_cover" : "my-last-duches.jpg",
-        "item_source" : "my-last-duches/"
+        "item_title" : "My Last Duchess",
+        "item_cover" : "my-last-duchess.jpg",
+        "item_source" : "my-last-duchess/"
     },
     {
         "item_paper_id" : "CC_10",
