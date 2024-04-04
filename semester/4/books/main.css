@@ -29,7 +29,8 @@
 .book-author-name {
     font-family: 'Gibson Regular', sans-serif;
     margin: 2px 0px;
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: 5px;
 }
 
 .book-author-name u {
