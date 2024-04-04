@@ -29,11 +29,14 @@
 .book-author-name {
     font-family: 'Gibson Regular', sans-serif;
     margin: 2px 0px;
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 5px;
+    letter-spacing: 2px;
+    color: #1a1a1a;
 }
 
 .book-author-name u {
+    color: #000;
     text-transform: uppercase;
 }
 
