@@ -184,9 +184,11 @@ if (themeMode === "light") {
 function applyFontStyle() {
     if (questionFontFamily) {
         $(".question").css("font-family", questionFontFamily);
+        $(".question u").css("font-family", questionFontFamily);
     }
 
     if (answerFontFamily) {
         $(".answer").css("font-family", answerFontFamily);
+        $(".answer u").css("font-family", answerFontFamily);
     }
 }
