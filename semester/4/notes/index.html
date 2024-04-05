@@ -95,15 +95,23 @@
                     <div>
                         <label for="notes-theme">Theme Mode</label>
                         <select name="notes-theme" id="notes-theme">
-                            <option value="dark">Dark</option>
+                            <option value="dark" selected>Dark</option>
                             <option value="light">Light</option>
-                            
+
+                        </select>
+                    </div>
+                    <div>
+                        <label for="answer-collapse">Collapse Answer?</label>
+                        <select name="answer-collapse" id="answer-collapse">
+                            <option value="true" selected>Yes</option>
+                            <option value="false">No</option>
+
                         </select>
                     </div>
                     <div>
                         <label for="question-font-family">Question Font Family:</label>
                         <select id="question-font-family">
-                            <option value="Andika" selected="">Andika</option>
+                            <option value="Andika" selected=>Andika</option>
                             <option value="Arima">Arima</option>
                             <option value="Merriweather">Merriweather</option>
                             <option value="Playfair Display">Playfair Display</option>
@@ -113,7 +121,7 @@
                     <div>
                         <label for="answer-font-family">Answer Font Family:</label>
                         <select id="answer-font-family">
-                            <option value="Merriweather" selected="">Merriweather</option>
+                            <option value="Merriweather" selected>Merriweather</option>
                             <option value="Andika">Andika</option>
                             <option value="Arima">Arima</option>
                             <option value="Playfair Display">Playfair Display</option>

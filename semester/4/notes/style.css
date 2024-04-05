@@ -216,6 +216,10 @@ body {
     font-family: "Open Sans";
 }
 
+.stats-hyperlink{
+    margin-bottom: 10px;
+}
+
 .stats-hyperlink a i,
 .notes-settings a i{
     margin: 0px 8px;

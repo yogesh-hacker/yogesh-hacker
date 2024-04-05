@@ -30,6 +30,12 @@ $("#notes-theme").change(function() {
     })
 })
 
+$("#answer-collapse").change(function() {
+    Cookies.set("_is_collapse_enabled", $(this).val(), {
+        expires: 365
+    })
+})
+
 $("#question-font-family").change(function() {
     Cookies.set("_question_font_family", $(this).val(), {
         expires: 365
@@ -44,17 +50,30 @@ $("#answer-font-family").change(function() {
 
 
 var themeMode = Cookies.get("_theme_mode_");
+var collapseAnswer = Cookies.get("_is_collapse_enabled");
 var questionFontFamily = Cookies.get('_question_font_family');
 var answerFontFamily = Cookies.get("_answer_font_family");
 
-$("#notes-theme").val(themeMode);
-$("#question-font-family").val(questionFontFamily);
-$("#answer-font-family").val(answerFontFamily);
+if (themeMode) {
+    $("#notes-theme").val(themeMode);
+}
 
-$(".notes-page-settings-canvas").click(function(){
+if (collapseAnswer) {
+    $("#answer-collapse").val(collapseAnswer);
+}
+
+if (questionFontFamily) {
+    $("#question-font-family").val(questionFontFamily);
+}
+
+if (answerFontFamily) {
+    $("#answer-font-family").val(answerFontFamily);
+}
+
+$(".notes-page-settings-canvas").click(function() {
     $(".notes-page-settings-container").hide();
 })
 
-$("#notes-page-setting").click(function(){
+$("#notes-page-setting").click(function() {
     $(".notes-page-settings-container").show();
 })
