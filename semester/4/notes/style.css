@@ -194,14 +194,16 @@ body {
     font-weight: 900;
 }
 
-.stats-hyperlink{
+.stats-hyperlink,
+.notes-settings{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
-.stats-hyperlink a{
+.stats-hyperlink a,
+.notes-settings a{
     display: block;
     width: 85%;
     padding: 18px 0px;
@@ -214,7 +216,8 @@ body {
     font-family: "Open Sans";
 }
 
-.stats-hyperlink a i{
+.stats-hyperlink a i,
+.notes-settings a i{
     margin: 0px 8px;
 }
 
@@ -226,4 +229,62 @@ body {
     left: 0;
     width: 100%;
     z-index: -1;
+}
+
+/*-------- Settings --------*/
+
+.notes-page-settings-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.notes-settings-main-container-heading{
+    font-family: "Lato";
+    margin: 15px 0px;
+}
+
+.notes-page-settings-canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.notes-settings-main-container{
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: 300px;
+    z-index: 999;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    font-family: "Ubuntu";
+}
+
+.font-family-settings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.font-family-settings div label,
+.font-family-settings div select{
+    font-family: "Open Sans";
+    font-size: 16px;
+    outline: none;
+}
+
+.font-family-settings div{
+    margin: 5px 0px;
 }

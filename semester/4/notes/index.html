@@ -79,8 +79,49 @@
                 </p>
             </div>
         </div>
+        <div class="notes-settings">
+            <a id="notes-page-setting" href="#"><i class="fa-sharp fa-solid fa-gear"></i>Settings</a>
+        </div>
         <div class="stats-hyperlink">
             <a href="stats/"><i class="fa-sharp fa-solid fa-chart-simple"></i>Statistics</a>
+        </div>
+        <div class="notes-page-settings-container">
+            <div class="notes-page-settings-canvas">
+
+            </div>
+            <div class="notes-settings-main-container">
+                <h2 class="notes-settings-main-container-heading">Notes Page Settings</h2>
+                <div class="font-family-settings">
+                    <div>
+                        <label for="notes-theme">Theme Mode</label>
+                        <select name="notes-theme" id="notes-theme">
+                            <option value="dark">Dark</option>
+                            <option value="light">Light</option>
+                            
+                        </select>
+                    </div>
+                    <div>
+                        <label for="question-font-family">Question Font Family:</label>
+                        <select id="question-font-family">
+                            <option value="Andika" selected="">Andika</option>
+                            <option value="Arima">Arima</option>
+                            <option value="Merriweather">Merriweather</option>
+                            <option value="Playfair Display">Playfair Display</option>
+                            <option value="Gibson Regular">Gibson</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="answer-font-family">Answer Font Family:</label>
+                        <select id="answer-font-family">
+                            <option value="Merriweather" selected="">Merriweather</option>
+                            <option value="Andika">Andika</option>
+                            <option value="Arima">Arima</option>
+                            <option value="Playfair Display">Playfair Display</option>
+                            <option value="Gibson">Gibson</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -103,6 +144,7 @@
     </div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
     <script type='text/javascript' src='main.js'></script>
 </body>
 </html>
