@@ -1,7 +1,7 @@
 var data = [];
 var mAccessKey;
 var accessKeys = ["3de013132a81731687c1", "a13df950d3172fe1df8b", "5cb343ceeae2263e3471", "24c4ba9cad9bf5aae190", "ffc1ec0b6bedd74122c2", "03968fde20f5cca2fe99", "624ba2d56f22a3f3618c", "9bbdcd61084e818079f8"]
-var mPaperId = 0;
+var mPaperId = 8;
 
 
 var mCurrentPage = window.location.href;
@@ -145,4 +145,28 @@ function hideLoginForm() {
 function hideAlert() {
     $(".info").css("display",
         "none");
+}
+
+var themeMode = Cookies.get("_theme_mode_");
+var questionFontFamily = Cookies.get('_question_font_family');
+var answerFontFamily = Cookies.get("_answer_font_family");
+
+const root = document.documentElement;
+
+if (themeMode === "light") {
+    root.style.setProperty('--secondary-color', '#fff');
+    root.style.setProperty('--secondary-accent-color', "#000")
+    root.style.setProperty('--question-mark-background-color', '#FF008D');
+    root.style.setProperty('--question-container-background-color', 'rgba(0,0,0,0.05')
+    root.style.setProperty('--color-question', '#000');
+    root.style.setProperty('--color-answer', '#000')
+    root.style.setProperty('--primary-button-text-color', '#fff')
+    root.style.setProperty('--color-error', '#000')
+}
+
+if (questionFontFamily != undefined) {
+    $(".question").css("font-family", questionFontFamily);
+}
+if (answerFontFamily != undefined) {
+    $(".answer").css("font-family", "answerFontFamily");
 }

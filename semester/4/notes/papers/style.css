@@ -13,6 +13,21 @@
     --secondary-text-color: #ACC1D2;
     --primary-icon-color: #D0D0D0;
     --primary-button-text-color: #182244;
+    --question-mark-background-color: #9FD5FF;
+    --question-container-background-color: rgba(159,213,255,0.1);
+    --color-question: #fff;
+    --color-answer: #E0F2FF;
+    --color-error: #CF1C00;
+}
+
+@font-face {
+  font-family: 'Gibson Bold';
+  src: url('https://assets.poetryfoundation.org/assets/fonts/Gibson-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gibson Regular';
+  src: url('https://assets.poetryfoundation.org/assets/fonts/Gibson-Regular.woff2') format('woff2');
 }
 
 body {
@@ -20,7 +35,7 @@ body {
     color: var(--secondary-text-color);
 }
 
-.page-heading {
+.page-heading{
     margin: 20px 0px;
     font-family: "Oswald";
     font-size: 40px;
@@ -52,7 +67,7 @@ body {
 }
 
 .error {
-    color: #CF1C00;
+    color: var(--color-error);
     font-family: "Open Sans";
     margin: 0;
     margin-top: 5px;
@@ -63,14 +78,14 @@ body {
 }
 
 .question-container {
-    background-color: rgba(159,213,255,0.1);
+    background-color: var(--question-container-background-color);
     border-radius: 10px;
     margin: 10px 0px;
     padding: 5px;
 }
 
 .question {
-    color: #FFFFFF;
+    color: var(--color-question);
     font-weight: 600;
     font-family: "Andika";
     margin: 0px;
@@ -79,7 +94,7 @@ body {
 .answer,
 .answer b {
     font-family: "Merriweather";
-    color: var(--primary-text-color);
+    color: var(--color-answer);
 }
 
 .poem_name {
@@ -93,7 +108,7 @@ body {
     text-align: center;
     text-decoration: underline;
     font-family: "Ubuntu";
-    color: var(--primary-accent-color);
+    color: var(--secondary-accent-color);
     margin: 20px 0px;
 }
 
@@ -108,7 +123,7 @@ body {
     border: 1px solid black;
     border-radius: 50%;
     user-select: none;
-    background-color: var(--primary-accent-color);
+    background-color: var(--question-mark-background-color);
     color: var(--primary-button-text-color);
     z-index: 0;
 }
@@ -171,7 +186,7 @@ body {
 }
 
 .login_form {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     height: 200px;
     width: 90%;
     display: flex;
