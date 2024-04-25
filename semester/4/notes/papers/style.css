@@ -84,7 +84,9 @@ body {
     padding: 5px;
 }
 
-.question {
+.question,
+.question b,
+.question i{
     color: var(--color-question);
     font-weight: 600;
     font-family: "Andika";
@@ -92,7 +94,8 @@ body {
 }
 
 .answer,
-.answer b {
+.answer b,
+.answer i{
     font-family: "Merriweather";
     color: var(--color-answer);
 }
