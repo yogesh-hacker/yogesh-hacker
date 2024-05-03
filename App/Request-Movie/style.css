@@ -1,14 +1,25 @@
 * {
     margin: 0;
     padding: 0;
-    user-select: none;
+    
 }
 
 body {
-    background-color: #0C101A;
+    background-color: #ECF8FF;
     transition-duration: 0.2s;
     padding: 70px 0px 0px 0px;
 }
+
+@font-face {
+  font-family: 'Gibson Bold';
+  src: url('https://assets.poetryfoundation.org/assets/fonts/Gibson-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gibson Regular';
+  src: url('https://assets.poetryfoundation.org/assets/fonts/Gibson-Regular.woff2') format('woff2');
+}
+
 
 #navbar {
     display: flex;
@@ -20,14 +31,14 @@ body {
     top: 0;
     left: 0;
     height: 50px;
-    background-color: #0C101A;
-    border-bottom: 1px solid #192133;
+    background-color: #fff;
     z-index: 5;
     margin: 0;
     padding: 0;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
 }
 
-#result_container{
+#result_container {
     width: 100%;
     overflow-x: scroll;
 }
@@ -36,19 +47,15 @@ body {
     display: block;
     position: absolute;
     left: 10px;
-    color: #A1A3A9;
+    color: #000;
     font-size: 20px;
     -webkit-tap-highlight-color: transparent;
     transition-duration: 0.2s;
 }
 
-.nav_menu:hover {
-    color: white;
-}
-
 .nav_items {
     list-style-type: none;
-    background-color: #0C101A;
+    background-color: #fff;
     top: 0;
     position: fixed;
     left: 0;
@@ -57,6 +64,39 @@ body {
     overflow: hidden;
     transition-duration: 0.5s;
     z-index: 2;
+    border-radius: 0px 30px 30px 0px;
+    padding: 20px 0px;
+}
+
+.nav_items ul li,
+.nav_items li a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 15px;
+    font-family: 'Raleway';
+    font-weight: 400;
+    word-wrap: nowrap;
+    text-wrap: nowrap;
+}
+
+.nav_items li a {
+    margin: 10px;
+    padding: 20px 15px;
+    transition-duration: 0.2s;
+    word-wrap: nowrap;
+    text-wrap: nowrap;
+}
+
+.nav_items li i {
+    margin-right: 5px;
+    color: #A1A3A9;
+}
+
+.nav_items a:hover{
+    background-color: #E5F9FF;
+    border-radius: 20px;
 }
 
 .canvas {
@@ -70,61 +110,48 @@ body {
     z-index: 1;
 }
 
-.nav_items ul li,
-.nav_items li a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-    font-size: 15px;
-    font-family: 'Raleway';
-    font-weight: 400;
-}
-
-.nav_items li a {
-    margin: 10px;
-    padding: 5px 10px;
-}
-
-.nav_items li i {
-    margin-right: 5px;
-    color: #A1A3A9;
-    transition-duration: 0.2s;
-}
-
-.nav_items a:hover i {
-    color: white;
-}
-
 .user_id,
-.username{
+.username {
     font-family: 'Montserrat' !important;
     font-size: 14px;
     word-break: break !important;
-    word-wrap: wrap;
-    color: #F1F1F1 !important;
+    word-wrap: nowrap;
+    text-wrap: nowrap;
+    color: #666 !important;
     text-align: center;
     margin-top: 10px;
+
 }
 
 .nav_logo {
-    margin: 5px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 2px solid black;
 }
 
 .nav_logo p {
-    color: white;
-    font-family: 'Raleway';
+    color: black;
+    font-family: 'Oswald';
     margin-left: 10px;
+    word-wrap: nowrap;
+    text-wrap: nowrap;
 }
 
-#navbar h2 {
+.nav_items hr{
+    width: 100%;
+    margin: 0px auto;
+    border: 1px solid black;
+}
+
+#navbar h1 {
     font-size: 20px;
     text-align: center;
-    color: white;
-    font-family: 'Raleway';
+    color: #000;
+    font-family: 'Oswald';
+    word-wrap: nowrap;
+    text-wrap: nowrap;
 }
 
 
@@ -135,6 +162,9 @@ body {
     border-radius: 50%;
     padding: 2px;
 }
+
+
+/*----------- Request Page -----------*/
 
 .poster {
     width: 200px;
@@ -164,14 +194,16 @@ body {
 
 .form input {
     outline: none;
-    border-radius: 3px;
-    height: 40px;
+    height: 50px;
     width: 90%;
-    padding: 5px 12px;
+    padding: 6px 12px;
     font-size: 15px;
-    border: 1px solid #00A8FF;
+    border: 2px solid #EDEDED;
+    border-radius: 10px;
     transition-duration: 0.2s;
     margin: 20px 0px;
+    font-family: "Lato";
+    font-weight: 700;
 }
 
 .form button {
@@ -196,7 +228,13 @@ body {
 
 
 .form input:hover {
-    box-shadow: 0px 0px 0px 4px #ADE6FF;
+    outline: 2px solid #0093FF;
+    outline-offset: 3px;
+}
+
+#request-page h2{
+    font-family: "Gibson Bold";
+    color: #000;
 }
 
 .movie_item {
@@ -210,7 +248,8 @@ body {
 .title {
     text-align: center;
     margin-top: 10px;
-    !important
+    color: #000;
+    font-family: "Gibson Bold";
 }
 
 .next_page {
@@ -247,7 +286,7 @@ body {
 }
 
 .divider {
-    background-color: white;
+    background-color: #000;
     height: 2px;
     width: 50%;
 }
@@ -415,21 +454,25 @@ button,
 
 .loader-container {
     position: fixed;
-    width: 100%;
+    padding: 10px;
     top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     transition-duration: 0.5s;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
 }
 
 .custom-loader {
-    position: fixed;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    background: conic-gradient(#0000 10%,#EAF4E9);
+    background: conic-gradient(#0000 10%,#000);
     -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 5px),#000 0);
     animation: s3 1s infinite linear;
 }
@@ -441,7 +484,7 @@ button,
 
 /* V2.0 */
 
-.edit-username{
+.edit-username {
     font-size: 14px;
     padding: 10px 10px 10px 5px;
 }
@@ -474,31 +517,37 @@ button,
     background-color: #e0e0e0;
 }
 
-#all-requests-page h2 i{
-    margin: 0px 10px; !important
+#all-requests-page h2 i {
+    margin: 0px 10px;
+    !important
 }
 
-#all-requests-page h2{
+#all-requests-page h2 {
     margin-bottom: 20px;
+    color: black;
 }
 
-.status{
+.status {
     color: black;
     padding: 5px 10px;
 }
 
-.pending{
-    background-color: #FFBC00; !important
+.pending {
+    background-color: #FFBC00;
+    !important
 }
 
-.uploaded{
-    background-color: #00B211; !important
+.uploaded {
+    background-color: #00B211;
+    !important
 }
 
-.canceled{
-    background-color: #C82F00; !important
+.canceled {
+    background-color: #C82F00;
+    !important
 }
 
-.unavailable{
-    background-color: #CDCDCD; !important
+.unavailable {
+    background-color: #CDCDCD;
+    !important
 }

@@ -1,14 +1,14 @@
 var BASE_URL = "https://api.themoviedb.org/3/search/movie";
 var BASE_URL_MOVIE = "https://api.themoviedb.org/3/movie/"
 var API_KEY = "0216c7f0ac7eccd88428ff92bbccd0a1";
-var IMAGE_PATH = "https://image.tmdb.org/t/p/w200";
+var IMAGE_PATH = "https://image.tmdb.org/t/p/original";
 var REQUESTS_DB = [];
 var API_LAYER_CONNECTION_URL = "https://yogeshkumarjamre.pythonanywhere.com/api/?url=";
 
 var SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbyaUYzYo7Aa6GA8FZnA-P6Xqp9hA_dpCWbcfGB_p4prEelB_5n_eoATBqfc5H1ahMlB8Q/exec";
 var isParsed = false;
 
-$(document).ready(function(){
+$(document).ready(function() {
     loadRequests();
 })
 
@@ -18,7 +18,7 @@ $("#request-page").show();
 
 $("#viewMore").hide();
 $(".nav_menu").click(function() {
-    $(".nav_items").css("width", "250px")
+    $(".nav_items").css("width", "280px")
     $(".canvas").css("display", "block")
 })
 
@@ -46,7 +46,7 @@ function fetchData() {
                         var isUploaded = REQUESTS_DB[j].is_uploaded;
                         var statusText = getStatus(REQUESTS_DB[j].is_uploaded);
 
-                        $(".result_items").append("<div class='movie_item'><img class='poster' src='" + IMAGE_PATH + data.results[i].poster_path + "'/>" + "<h2 class='title'>" + data.results[i].title + "</h2><p class='status " + statusText.toLowerCase() + "'>" + statusText + "</p><p class='divider'></p></div>");
+                        $(".result_items").append("<div class='movie_item'><img class='poster' src='" + IMAGE_PATH + data.results[i].poster_path + "'/>" + "<h2 class='title'>" + data.results[i].title + " ("+getYearFromDate(data.results[i].release_date)+")</h2><p class='status " + statusText.toLowerCase() + "'>" + statusText + "</p><p class='divider'></p></div>");
 
                         idMatched = true;
                         break;
@@ -54,7 +54,7 @@ function fetchData() {
                 }
 
                 if (!idMatched) {
-                    $(".result_items").append("<div class='movie_item'><img class='poster' src='" + IMAGE_PATH + data.results[i].poster_path + "'/>" + "<h2 class='title'>" + data.results[i].title + "</h2><button class='request' onclick='request(" + data.results[i].id + ")'>Request</button><p class='divider'></p></div>");
+                    $(".result_items").append("<div class='movie_item'><img class='poster' src='" + IMAGE_PATH + data.results[i].poster_path + "'/>" + "<h2 class='title'>" + data.results[i].title + " ("+getYearFromDate(data.results[i].release_date)+")</h2><button class='request' onclick='request(" + data.results[i].id + ")'>Request</button><p class='divider'></p></div>");
                 }
             }
 
@@ -119,38 +119,44 @@ function request(id) {
             method: "GET",
             dataType: "jsonp"
         });
-    }else{
+    } else {
         customAlertDialog('Please Wait!',
-        'Please wait! the page is loading...',
-        [{
-            name: 'OK',
-            action: () => {}
-        }]);
+            'Please wait! the page is loading...',
+            [{
+                name: 'OK',
+                action: () => {}
+            }]);
     }
 }
 
 
+let dataLoaded = false;
+let showRequestsCallback = null;
+
 function loadRequests() {
     REQUESTS_DB.length = 0;
     $(".loader-container").css("top", "100px");
-    $(".form button").attr("disabled", "true")
-    $.getJSON(SCRIPT_BASE_URL+"?action=read", function (json) {
+    $(".form button").attr("disabled", "true");
+
+    $.getJSON(SCRIPT_BASE_URL + "?action=read", function(json) {
         for (var i = 0; i < json.records.length; i++) {
-            REQUESTS_DB.push(json.records[i])
+            REQUESTS_DB.push(json.records[i]);
         }
-        showRequests();
         REQUESTS_DB.reverse();
-    })
-    $(".loader-container").css("top",
-        "-100px");
-    $(".form button").removeAttr("disabled");
+        dataLoaded = true;
+        $(".loader-container").css("top", "-100px");
+        $(".form button").removeAttr("disabled");
+        if (showRequestsCallback) {
+            showRequestsCallback();
+        }
+    });
 }
 
 $(".request_movie").click(function() {
     $("#all-requests-page").hide();
     $("#request-page").show();
     $(".canvas").click();
-})
+});
 
 $(".all_requests").click(function() {
     $("#all-requests-page").show();
@@ -158,36 +164,54 @@ $(".all_requests").click(function() {
     $(".canvas").click();
     $('#results tr:not(:first)').remove();
     showRequests();
-})
+});
 
 async function showRequests() {
+    //("#results").empty();
     let serialNumber = 1;
+    if (!dataLoaded) {
+
+        showRequestsCallback = showRequests;
+        return; // Exit the function
+    }
+
     for (let i = 0; i < REQUESTS_DB.length; i++) {
         try {
+            console.log(REQUESTS_DB[i]);
+            console.log("Index " + i + ": Movie ID - " + REQUESTS_DB[i].movie_id);
             const title = await parseTitle(REQUESTS_DB[i].movie_id);
+            console.log("Title for request ID " + REQUESTS_DB[i].request_id + ": " + title);
             const isUploaded = REQUESTS_DB[i].is_uploaded;
             let status;
 
-            if (isUploaded === 0) {
-                status = "Pending";
-            } else if (isUploaded === 1) {
-                status = "Uploaded";
-            } else if (isUploaded === 2) {
-                status = "Canceled";
-            } else if (isUploaded === 3) {
-                status = "Unavailable";
-            } else {
-                status = "Unknown";
+            switch (isUploaded) {
+                case 0:
+                    status = "Pending";
+                    break;
+                case 1:
+                    status = "Uploaded";
+                    break;
+                case 2:
+                    status = "Canceled";
+                    break;
+                case 3:
+                    status = "Unavailable";
+                    break;
+                default:
+                    status = "Unknown";
+                    break;
             }
 
-            const row = $("<tr><td>" + serialNumber+ "</td><td>" + REQUESTS_DB[i].request_id + "</td><td>" + title + "</td><td>" + REQUESTS_DB[i].request_date + "</td><td class='p-0 " + status.toLowerCase() + "'><span class='p-1 m-1 rounded-1'>" + status + "</span></td></tr>");
+            const row = $("<tr><td>" + serialNumber + "</td><td>" + REQUESTS_DB[i].request_id + "</td><td>" + title + "</td><td>" + formatDate(REQUESTS_DB[i].request_date) + "</td><td class='p-0 " + status.toLowerCase() + "'><span class='p-1 m-1 rounded-1'>" + status + "</span></td></tr>");
             $("#results").append(row);
-            serialNumber ++;
-        } catch (error) {
+            serialNumber++;
+
+        }catch (error) {
             console.error("Error: ", error);
         }
     }
 }
+
 
 
 function parseTitle(movieId) {
@@ -245,4 +269,18 @@ function getStatus(isUploaded) {
         status = "Unknown";
     }
     return status;
+}
+
+function getYearFromDate(dateString) {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    return year;
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = String(date.getFullYear());
+    return `${day}/${month}/${year}`;
 }
