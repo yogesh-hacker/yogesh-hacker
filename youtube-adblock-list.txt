@@ -1,4 +1,5 @@
 ::::pagead2.googlesyndication.com
 ::::www.googleadservices.com
 ::::www.youtube.com/pagead/
+::::googleads.g.doubleclick.net
 ::::rr4---sn-gwpa-gq2k.googlevideo.com
