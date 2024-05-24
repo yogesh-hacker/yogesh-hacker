@@ -1,6 +1,7 @@
 const advanced = {
     init: function() {
         console.log('advanced.init() has been called.');
+        hideTapColor();
 
         function hideAds() {
             const ads = document.getElementsByClassName("ytp-ad-text");
@@ -39,3 +40,9 @@ const advanced = {
         };
     }
 };
+
+function hideTapColor() {
+    document.querySelectorAll('*').forEach(element => {
+        element.style.setProperty('-webkit-tap-highlight-color', 'transparent');
+    });
+}
