@@ -39,5 +39,3 @@ const advanced = {
         };
     }
 };
-
-advanced.init();
