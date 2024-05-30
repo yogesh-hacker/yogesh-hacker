@@ -182,12 +182,16 @@ if (themeMode === "light") {
 
 
 function applyFontStyle() {
-    if (questionFontFamily) {
-        $(".question").css("font-family", questionFontFamily);
-        $(".question u").css("font-family", questionFontFamily);
-        $(".question i").not(".tts-button-container .question i").css("font-family", questionFontFamily);
-    }  
-
+if (questionFontFamily) {
+    // Apply font family to .question and its child elements unless they are within .tts-button-container
+    $(".question").each(function() {
+        if (!$(this).closest('.tts-button-container').length) {
+            $(this).css("font-family", questionFontFamily);
+            $(this).find('u').css("font-family", questionFontFamily);
+            $(this).find('i').css("font-family", questionFontFamily);
+        }
+    });
+}
 
     if (answerFontFamily) {
         $(".answer").css("font-family", answerFontFamily);
