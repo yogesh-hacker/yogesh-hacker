@@ -80,7 +80,7 @@ function showData() {
         if (!isCollapseEnabled) {
             questionDiv.append("<div class='question-container'><p class='question'>" + questionNumber + ". " + data[i].question + "<span class='mark'>" + data[i].mark + "<span></p><br><div id='answer_" + item_id + "_" + questionNumber + "'><p class='answer'><b>Ans. </b>" + data[i].answer + "</p></div></div>");
         } else {
-            questionDiv.append("<div class='question-container'><p class='question' data-bs-toggle='collapse' data-bs-target='#answer_"+item_id+"_"+questionNumber+"'>" + questionNumber + ". " + data[i].question + "<span class='mark'>" + data[i].mark + "<span><span class='tts-button-container' data-target='answer_"+item_id+"_"+questionNumber+"'><i class='fa-solid fa-volume'></i></span></p><br><div id='answer_" + item_id + "_" + questionNumber + "' class='collapse'><p class='answer'><b>Ans. </b>" + data[i].answer + "</p></div></div>");
+            questionDiv.append("<div class='question-container'><p class='question' data-bs-toggle='collapse' data-bs-target='#answer_"+item_id+"_"+questionNumber+"'>" + questionNumber + ". " + data[i].question + "<span class='mark'>" + data[i].mark + "</span><span class='tts-button-container' data-target='answer_"+item_id+"_"+questionNumber+"'><i class='fa-solid fa-volume'></i></span></p><br><div id='answer_" + item_id + "_" + questionNumber + "' class='collapse'><p class='answer'><b>Ans. </b>" + data[i].answer + "</p></div></div>");
         }
 
         $("#item_id_" + item_id).append(questionDiv);
