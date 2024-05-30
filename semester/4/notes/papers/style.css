@@ -85,8 +85,7 @@ body {
 }
 
 .question,
-.question b,
-.question i{
+.question b{
     color: var(--color-question);
     font-weight: 600;
     font-family: "Andika";
@@ -133,7 +132,10 @@ body {
 
 .tts-button-container{
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
     width: 30px;
     height: 30px;
     margin-left: 5px;
@@ -142,7 +144,7 @@ body {
     border: none;
     border-radius: 50%;
     user-select: none;
-    background-color: #666;
+    background-color: #D3D3D3;
     color: #000;
     z-index: 0;
 }
