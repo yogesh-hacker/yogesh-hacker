@@ -185,8 +185,9 @@ function applyFontStyle() {
     if (questionFontFamily) {
         $(".question").css("font-family", questionFontFamily);
         $(".question u").css("font-family", questionFontFamily);
-        $(".question i").css("font-family", questionFontFamily);
-    }
+        $(".question i").not(".tts-button-container .question i").css("font-family", questionFontFamily);
+    }  
+
 
     if (answerFontFamily) {
         $(".answer").css("font-family", answerFontFamily);
