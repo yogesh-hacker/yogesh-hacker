@@ -131,6 +131,26 @@ body {
     z-index: 0;
 }
 
+.tts-button-container{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    border-radius: 50%;
+    user-select: none;
+    background-color: #666;
+    color: #000;
+    z-index: 0;
+}
+
+.tts-button-container i{
+    color: #000;
+}
+
 .hairline {
     background-color: #D9D9D9;
     height: 1px;
