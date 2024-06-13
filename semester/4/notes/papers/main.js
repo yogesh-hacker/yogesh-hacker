@@ -1,6 +1,6 @@
 var data = [];
 var mAccessKey;
-var accessKeys = ["A6AVP97APFTNTWJS74AGN3G3A"]
+var accessKeys = ["A6AVP97APFTNTWJS74AGN3G3A","commit-id@2024#secure&full"]
 var mPaperId = 8;
 
 
@@ -19,6 +19,10 @@ $(document).ready(function() {
     var accessKey = Cookies.get("_access_key_");
     if (accessKey != undefined) {
         var validUser = false;
+        if(accessKey != "commit-id@2024#secure&full"{
+            validUser = true;
+            document.write("Make sure you have committed to this page! Unless you can't access the page");
+        }
         for (var i = 0; i < accessKeys.length; i++) {
             if (accessKey === accessKeys[i]) {
                 validUser = true;
