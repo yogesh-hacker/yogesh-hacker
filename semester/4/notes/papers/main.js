@@ -21,7 +21,7 @@ $(document).ready(function() {
         var validUser = false;
         if(accessKey != "commit-id@2024#secure&full"){
             validUser = true;
-            document.write("Make sure you have committed to this page! Unless you can't access the page");
+            document.write("Ensure you have committed to this page, unless it's inaccessible even with the access key.");
         }
         for (var i = 0; i < accessKeys.length; i++) {
             if (accessKey === accessKeys[i]) {
