@@ -16,29 +16,30 @@ if (mCurrentPage.includes("/8")) {
 }
 
 $(document).ready(function() {
+$(document).ready(function() {
     var accessKey = Cookies.get("_access_key_");
-    if (accessKey != undefined) {
-        var validUser = false;
-        if(accessKey != "commit-id@2024#secure&full"){
-            validUser = true;
-            document.write("Ensure you have committed to this page, unless it's inaccessible even with the access key.<a href='#' onclick='showLoginForm()'> Re-enter access key</a>");
-            return;
-        }
+    if (accessKey === undefined) {
+        showLoginForm();
+        return;
+    }
+    
+    var validUser = accessKey === "commit-id@2024#secure&full";
+    
+    if (!validUser) {
         for (var i = 0; i < accessKeys.length; i++) {
             if (accessKey === accessKeys[i]) {
                 validUser = true;
                 break;
             }
         }
-        if (validUser) {
-            loadData();
-        } else {
-            showLoginForm();
-        }
-    } else {
-        showLoginForm();
     }
-})
+    
+    if (validUser) {
+        loadData();
+    } else {
+        document.write("Ensure you have committed to this page, unless it's inaccessible even with the access key.<a href='#' onclick='showLoginForm()'> Re-enter access key</a>");
+    }
+});
 
 
 function loadData() {
