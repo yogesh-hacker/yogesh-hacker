@@ -16,7 +16,6 @@ if (mCurrentPage.includes("/8")) {
 }
 
 $(document).ready(function() {
-$(document).ready(function() {
     var accessKey = Cookies.get("_access_key_");
     if (accessKey === undefined) {
         showLoginForm();
