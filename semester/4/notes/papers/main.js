@@ -127,7 +127,7 @@ $('.question').on('click', function () {
 
 $("#login").click(function() {
     mAccessKey = $("#userNumber").val();
-    if (mAccessKey.length == 25 && mAccessKey.length == 26) {
+    if (mAccessKey.length == 25 || mAccessKey.length == 26) {
         for (var i = 0; i < accessKeys.length; i++) {
             if (mAccessKey === accessKeys[i]) {
                 Cookies.set("_access_key_", mAccessKey, {
