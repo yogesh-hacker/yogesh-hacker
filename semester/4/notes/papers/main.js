@@ -19,7 +19,7 @@ $(document).ready(function() {
     var accessKey = Cookies.get("_access_key_");
     if (accessKey != undefined) {
         var validUser = false;
-        if(accessKey != "commit-id@2024#secure&full"{
+        if(accessKey != "commit-id@2024#secure&full"){
             validUser = true;
             document.write("Make sure you have committed to this page! Unless you can't access the page");
         }
