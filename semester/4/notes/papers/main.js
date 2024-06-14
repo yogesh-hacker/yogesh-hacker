@@ -23,7 +23,7 @@ $(document).ready(function() {
         if(accessKey != "commit-id@2024#secure&full"){
             validUser = true;
             fullAccess = false;
-            $("body").html("Ensure you have committed to this page, unless it's inaccessible even with the access key.&nbsp<a href='#' onclick='showLoginForm()'>Re-enter access key</a>");
+            $("#result").html("Ensure you have committed to this page, unless it's inaccessible even with the access key.&nbsp<a href='#' onclick='showLoginForm()'>Re-enter access key</a>");
             return;
         } else {
             fullAccess = true;
