@@ -190,11 +190,11 @@ body {
     top: 0px;
     left: 0px;
     z-index: 5;
-    background-color: #0E111F;
+    background-color: #fff;
     touch-action: none;
 }
 .canvas img {
-    height: 150px;
+    height: 200px;
 }
 
 .login_canvas {
