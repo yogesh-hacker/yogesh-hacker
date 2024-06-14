@@ -263,6 +263,10 @@ function speakAnswer(answer, elem) {
                 chunkIndex++;
                 speakChunk();
             };
+            utterance.onstop = () => {
+                releaseWakeLock();
+                $(elem).html("<i class='fa-solid fa-volume'></i>");
+            };
             speechSynthesis.speak(utterance);
         } else {
             releaseWakeLock();
