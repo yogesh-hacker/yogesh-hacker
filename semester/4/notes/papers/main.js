@@ -218,6 +218,9 @@ function getRefineAnswer(targetAnswer, elem) {
 }
 
 function speakAnswer(answer, elem) {
+    if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+    }
     const utterance = new SpeechSynthesisUtterance(answer);
     const voices = speechSynthesis.getVoices();
     utterance.voice = voices[0];
