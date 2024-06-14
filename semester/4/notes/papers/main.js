@@ -92,7 +92,7 @@ function showData() {
         if (!isCollapseEnabled) {
             questionDiv.append("<div class='question-container'><p class='question'>" + questionNumber + ". " + data[i].question + "<span class='mark'>" + data[i].mark + "<span></p><br><div id='answer_" + item_id + "_" + questionNumber + "'><p class='answer'><b>Ans. </b>" + data[i].answer + "</p></div></div>");
         } else{
-            questionDiv.append("<div class='question-container'><p class='question' data-bs-toggle='collapse' data-bs-target='#answer_"+item_id+"_"+questionNumber+"'>" + questionNumber + ". " + data[i].question + "<span class='mark'>" + data[i].mark + "</span></p><br><div id='answer_" + item_id + "_" + questionNumber + "' class='collapse'><p class='answer'><b>Ans. </b>" + data[i].answer + "</p></div></div>");
+            questionDiv.append("<div class='question-container'><p class='question' data-bs-toggle='collapse' data-bs-target='#answer_"+item_id+"_"+questionNumber+"'>" + questionNumber + ". " + data[i].question + "<span class='mark'>" + data[i].mark + "</span><span class='tts-button-container' onclick='getRefineAnswer(answer_"+item_id+"_"+questionNumber+",$(this))'><i class='fa-solid fa-volume'></i></span></p><br><div id='answer_" + item_id + "_" + questionNumber + "' class='collapse'><p class='answer'><b>Ans. </b>" + data[i].answer + "</p></div></div>");
         }
         $("#item_id_" + item_id).append(questionDiv);
         applyFontStyle();
@@ -214,22 +214,14 @@ function applyFontStyle() {
 function getRefineAnswer(targetAnswer, elem) {
     $(elem).html("<div class='loader'></div>")
     var refineAnswer = $(targetAnswer).find('.answer').text();
-    const settings = {
-        async: true,
-        crossDomain: true,
-        url: 'https://large-text-to-speech.p.rapidapi.com/tts',
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': 'd75d999194msh3d44beadad8616cp163090jsn5cb53ae5e285',
-            'X-RapidAPI-Host': 'large-text-to-speech.p.rapidapi.com'
-        },
-        processData: false,
-        data: '{\n"text": "'+refineAnswer+'"\n}'
-    };
-    $.ajax(settings).done(function (response) {
-        playAudio(response.id, response.eta, elem);
-    });
+    speakAnswer(refineAnswer);
+}
+
+function speakAnswer(answer) {
+    const utterance = new SpeechSynthesisUtterance(answer);
+    const voices = speechSynthesis.getVoices();
+    utterance.voice = voices[0];
+    speechSynthesis.speak(utterance);
 }
 
 function playAudio(id, eta, elem) {
