@@ -19,10 +19,14 @@ $(document).ready(function() {
     var accessKey = Cookies.get("_access_key_");
     if (accessKey != undefined) {
         var validUser = false;
+        var fullAccess = false;
         if(accessKey != "commit-id@2024#secure&full"){
             validUser = true;
-            $("body").html("Ensure you have committed to this page, unless it's inaccessible even with the access key.&nbsp<button onclick='showLoginForm()'>Re-enter access key</button>");
+            fullAccess = false;
+            $("body").html("Ensure you have committed to this page, unless it's inaccessible even with the access key.&nbsp<a href='#' onclick='showLoginForm()'>Re-enter access key</a>");
             return;
+        } else {
+            fullAccess = true;
         }
         for (var i = 0; i < accessKeys.length; i++) {
             if (accessKey === accessKeys[i]) {
@@ -31,7 +35,9 @@ $(document).ready(function() {
             }
         }
         if (validUser) {
-            loadData();
+            if(fullAccess){
+                loadData();
+            }
         } else {
             showLoginForm();
         }
