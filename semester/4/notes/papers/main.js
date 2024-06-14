@@ -218,6 +218,7 @@ function getRefineAnswer(targetAnswer, elem) {
 }
 
 let wakeLock = null;
+let currentElem = null;
 
 async function requestWakeLock() {
     try {
@@ -244,8 +245,15 @@ function releaseWakeLock() {
 function speakAnswer(answer, elem) {
     if (speechSynthesis.speaking) {
         speechSynthesis.cancel();
+        releaseWakeLock();
+        if (currentElem) {
+            $(currentElem).html("<i class='fa-solid fa-volume'></i>");
+        }
     }
 
+    currentElem = elem;
+    $(currentElem).html("<div class='loader'></div>")
+    
     const voices = speechSynthesis.getVoices();
     const chunks = splitTextIntoChunks(answer, 160); // Adjust chunk size as needed
     let chunkIndex = 0;
@@ -262,10 +270,6 @@ function speakAnswer(answer, elem) {
             utterance.onend = () => {
                 chunkIndex++;
                 speakChunk();
-            };
-            utterance.onstop = () => {
-                releaseWakeLock();
-                $(elem).html("<i class='fa-solid fa-volume'></i>");
             };
             speechSynthesis.speak(utterance);
         } else {
