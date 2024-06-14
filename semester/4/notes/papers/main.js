@@ -48,6 +48,7 @@ $(document).ready(function() {
 
 
 function loadData() {
+    $("#result").html("");
     var script_url = "https://script.google.com/macros/s/AKfycbyzXcc-oRdehTMWT_z6JQawPFy8kpRhE-YSTb4p_KLHfSo3H_3o4LIHBTziwFB-CHN0/exec";
     $(".canvas").css("display",
         "flex");
