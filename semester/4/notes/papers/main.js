@@ -222,34 +222,5 @@ function speakAnswer(answer) {
     const voices = speechSynthesis.getVoices();
     utterance.voice = voices[0];
     speechSynthesis.speak(utterance);
-}
-
-function playAudio(id, eta, elem) {
-    var isPlayed = false;
-    var interval = setInterval(function() {
-        const settings = {
-            async: true,
-            crossDomain: true,
-            url: 'https://large-text-to-speech.p.rapidapi.com/tts?id=' + id,
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': 'd75d999194msh3d44beadad8616cp163090jsn5cb53ae5e285',
-                'X-RapidAPI-Host': 'large-text-to-speech.p.rapidapi.com'
-            }
-        };
-
-        $.ajax(settings).done(function(response) {
-            if (response.status === "success") {
-                if (!isPlayed) {
-                    isPlayed = true;
-                    var audio = new Audio(response.url);
-                    audio.autoplay = true;
-                    $(document).click()
-                    audio.play();
-                    $(elem).html("<i class='fa-solid fa-volume'></i>")
-                    clearInterval(interval);
-                }
-            }
-        });
-    }, 1000);
+    $(elem).html("<i class='fa-solid fa-volume'></i>")
 }
