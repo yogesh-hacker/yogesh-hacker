@@ -217,15 +217,44 @@ function getRefineAnswer(targetAnswer, elem) {
     speakAnswer(refineAnswer, elem);
 }
 
+let wakeLock = null;
+
+async function requestWakeLock() {
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        console.log('Wake Lock is active');
+    } catch (err) {
+        console.error(`${err.name}, ${err.message}`);
+    }
+}
+
+function releaseWakeLock() {
+    if (wakeLock !== null) {
+        wakeLock.release()
+            .then(() => {
+                wakeLock = null;
+                console.log('Wake Lock released');
+            })
+            .catch((err) => {
+                console.error(`${err.name}, ${err.message}`);
+            });
+    }
+}
+
 function speakAnswer(answer, elem) {
     if (speechSynthesis.speaking) {
         speechSynthesis.cancel();
     }
+
     const voices = speechSynthesis.getVoices();
-    const chunks = splitTextIntoChunks(answer, 160);
+    const chunks = splitTextIntoChunks(answer, 160); // Adjust chunk size as needed
     let chunkIndex = 0;
 
-    function speakChunk() {
+    async function speakChunk() {
+        if (chunkIndex === 0) {
+            await requestWakeLock();
+        }
+
         if (chunkIndex < chunks.length) {
             const utterance = new SpeechSynthesisUtterance(chunks[chunkIndex]);
             utterance.voice = voices[0];
@@ -236,9 +265,11 @@ function speakAnswer(answer, elem) {
             };
             speechSynthesis.speak(utterance);
         } else {
+            releaseWakeLock();
             $(elem).html("<i class='fa-solid fa-volume'></i>");
         }
     }
+
     speakChunk();
 }
 
@@ -255,8 +286,10 @@ function splitTextIntoChunks(text, maxLength) {
             chunk += sentence;
         }
     });
+
     if (chunk) {
         chunks.push(chunk);
     }
+
     return chunks;
 }
