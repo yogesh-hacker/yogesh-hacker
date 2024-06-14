@@ -221,10 +221,42 @@ function speakAnswer(answer, elem) {
     if (speechSynthesis.speaking) {
         speechSynthesis.cancel();
     }
-    const utterance = new SpeechSynthesisUtterance(answer);
     const voices = speechSynthesis.getVoices();
-    utterance.voice = voices[0];
-    utterance.lang = "en-US"
-    speechSynthesis.speak(utterance);
-    $(elem).html("<i class='fa-solid fa-volume'></i>")
+    const chunks = splitTextIntoChunks(answer, 160);
+    let chunkIndex = 0;
+
+    function speakChunk() {
+        if (chunkIndex < chunks.length) {
+            const utterance = new SpeechSynthesisUtterance(chunks[chunkIndex]);
+            utterance.voice = voices[0];
+            utterance.lang = "en-US";
+            utterance.onend = () => {
+                chunkIndex++;
+                speakChunk();
+            };
+            speechSynthesis.speak(utterance);
+        } else {
+            $(elem).html("<i class='fa-solid fa-volume'></i>");
+        }
+    }
+    speakChunk();
+}
+
+function splitTextIntoChunks(text, maxLength) {
+    const sentences = text.match(/[^\.!\?]+[\.!\?]+/g);
+    const chunks = [];
+    let chunk = '';
+
+    sentences.forEach(sentence => {
+        if ((chunk + sentence).length > maxLength) {
+            chunks.push(chunk);
+            chunk = sentence;
+        } else {
+            chunk += sentence;
+        }
+    });
+    if (chunk) {
+        chunks.push(chunk);
+    }
+    return chunks;
 }
