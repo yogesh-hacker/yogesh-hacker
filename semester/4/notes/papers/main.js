@@ -214,10 +214,10 @@ function applyFontStyle() {
 function getRefineAnswer(targetAnswer, elem) {
     $(elem).html("<div class='loader'></div>")
     var refineAnswer = $(targetAnswer).find('.answer').text();
-    speakAnswer(refineAnswer);
+    speakAnswer(refineAnswer, elem);
 }
 
-function speakAnswer(answer) {
+function speakAnswer(answer, elem) {
     const utterance = new SpeechSynthesisUtterance(answer);
     const voices = speechSynthesis.getVoices();
     utterance.voice = voices[0];
