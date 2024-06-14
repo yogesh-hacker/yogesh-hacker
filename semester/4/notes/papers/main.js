@@ -221,6 +221,7 @@ function speakAnswer(answer, elem) {
     const utterance = new SpeechSynthesisUtterance(answer);
     const voices = speechSynthesis.getVoices();
     utterance.voice = voices[0];
+    utterance.lang = "en-US"
     speechSynthesis.speak(utterance);
     $(elem).html("<i class='fa-solid fa-volume'></i>")
 }
