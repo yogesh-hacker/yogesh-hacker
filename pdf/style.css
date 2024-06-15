@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Gibson Bold';
+    src: url('https://assets.poetryfoundation.org/assets/fonts/Gibson-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Gibson Regular';
+    src: url('https://assets.poetryfoundation.org/assets/fonts/Gibson-Regular.woff2') format('woff2');
+}
+
+.pdf-page {
+    page-break-after: always;
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.page-no {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: 100px;
+    height: 100px;
+    z-index: -2;
+}
+
+.info {
+    z-index: 0;
+    font-family: "Gibson Bold";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+}
+
+.original-content{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.original-content .assignment-title{
+    font-family: "Gibson Bold";
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.original-content p{
+    padding: 0px 50px 0px 50px;
+    font-family: "Oswald";
+    font-weight: 400;
+    text-align: justify;
+}
+
+.original-content i{
+    text-align: center;
+}
+
+button {
+    margin-top: 19em;
+    height: 80;
+    width: 300;
+}

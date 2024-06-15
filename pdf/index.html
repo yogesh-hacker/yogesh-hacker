@@ -1,1 +1,69 @@
+<!DOCTYPE HTML5>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>My Assignment</title>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css' type='text/css' media='all' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
 
+    <section id="html2pdf-main">
+        <div class="pdf-page">
+            <img class="background-image" src="background-1.jpg" />
+            <div class="info"></div>
+        </div>
+        <div class="pdf-page">
+            <img class="page-no" src="page-1.png" />
+            <div class="original-content">
+                <h1 class="assignment-title"></h1>
+                <p>
+                    <u>Elegy Written in a Country Churchyard</u> by Thomas Gray is a deeply reflective poem that explores themes of life, death, and the human experience. Written in 1750, it is structured in four-line stanzas with a consistent rhyme scheme (ABAB), which gives it a rhythmic and solemn feel. This formality reflects Gray's classical education and the style of poetry popular in his time.<br><br>The poem begins with the tolling of the curfew bell, marking the end of the day. Gray describes the peaceful scene of a countryside where the "lowing herd wind slowly o'er the lea" and the weary plowman makes his way home. This serene setting of rural life sets the stage for Gray's contemplation on the lives of those buried in the churchyard nearby.<br><br>The central theme of the poem is mortality. Gray reflects on the lives of the ordinary villagers laid to rest in the churchyard, acknowledging their humble origins and the fact that they did not fulfill all their potential. He uses the poem to remind readers of the inevitability of death and encourages them to reflect on their own lives and legacies. As Gray writes:<br><br><i>"The curfew tolls the knell of parting day,<br>The lowing herd wind slowly o'er the lea,<br>The plowman homeward plods his weary way,<br>And leaves the world to darkness and to me."</i><br><br>Gray uses the churchyard as a symbol of final rest and tranquility. It is portrayed as a place removed from the busy world outside, where the villagers find peace after their lives of toil and hardship. This contrast between the quiet churchyard and the bustling life beyond its walls underscores Gray's contemplation on the serenity that death brings from worldly cares.<br><br>In addition to reflecting on mortality, the poem also critiques social inequality. Gray laments that many of the individuals buried in the churchyard were not recognized for their talents and virtues during their lives, simply because they were from humble backgrounds. He imagines that among them could have been great leaders or writers who never had the opportunity to shine:<br><br><i>"Some village-Hampden, that with dauntless breast<br>The little tyrant of his fields withstood;<br>Some mute inglorious Milton here may rest,<br>Some Cromwell, guiltless of his country's blood."</i>
+                </p>
+            </div>
+        </div>
+        <div class="pdf-page">
+            <img class="page-no" src="page-2.png" />
+            <div class="original-content">
+                <p>
+                    These lines express Gray's belief in the potential greatness of every individual, regardless of their social status. He mourns the fact that societal structures often prevent talented individuals from achieving recognition and fulfilling their potential.<br><br>
+                    Despite its specific setting and historical context, <u>Elegy Written in a Country Churchyard</u> addresses universal themes that resonate with readers of all ages. It encourages readers, even students in their final year of school, to reflect on their own lives and the impact they want to have on the world. The poem invites contemplation on the value of living a life of integrity and purpose, irrespective of external recognition or achievement.<br><br><u>Elegy Written in a Country Churchyard</u> has had a lasting impact on English literature, influencing poets and writers for centuries. Its introspective and emotional style paved the way for a more personal approach to poetry, where the inner thoughts and feelings of the individual became central themes. Romantic poets like Wordsworth and Shelley were particularly inspired by Gray's elegy, adapting its themes and style in their own works.<br><br>In conclusion, <u>Elegy Written in a Country Churchyard</u> is a timeless masterpiece that continues to resonate with readers today. Its profound meditation on life, death, and the human condition, coupled with its evocative imagery and elegant language, ensures its enduring significance in the canon of English literature. The poem invites readers of all ages to contemplate their own mortality and the legacy they wish to leave behind, making it relevant and meaningful to students and scholars alike.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <button type="submit" id="convert-button">Convert</button>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+    <script type='text/javascript'>
+        document.getElementById('convert-button').addEventListener('click', function () {
+            const element = document.getElementById('html2pdf-main');
+            const opt = {
+                margin: 0,
+                filename: 'assignment.pdf',
+                image: {
+                    type: 'jpeg', quality: 1
+                },
+                html2canvas: {
+                    scale: 8
+                },
+                jsPDF: {
+                    unit: 'in', format: 'letter', orientation: 'portrait'
+                },
+                pagebreak: {
+                    mode: ['css', 'legacy']
+                }
+            };
+            html2pdf().from(element).set(opt).save();
+        });
+    </script>
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
