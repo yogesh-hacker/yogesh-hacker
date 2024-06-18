@@ -278,9 +278,20 @@ function getYearFromDate(dateString) {
 }
 
 function formatDate(dateString) {
-    const date = new Date(dateString);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const year = String(date.getFullYear());
-    return `${month}/${day}/${year}`;
+    let formattedDate;
+    if (dateString.includes(', ')) {
+        const [datePart, timePart] = dateString.split(', ');
+        const [day, month, year] = datePart.split('/').map(Number);
+        const [hours, minutes, seconds] = timePart.split(':').map(Number);
+        const paddedDay = String(day).padStart(2, '0');
+        const paddedMonth = String(month).padStart(2, '0');
+        formattedDate = `${paddedDay}/${paddedMonth}/${year}`;
+    } else {
+        const date = new Date(dateString);
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const year = String(date.getFullYear());
+        formattedDate = `${month}/${day}/${year}`;
+    }
+    return formattedDate;
 }
