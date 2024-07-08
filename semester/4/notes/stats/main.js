@@ -24,43 +24,99 @@ function showData() {
     const itemInfo = {
         1: {
             name: 'Elegy',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
         2: {
             name: 'Ode to Evening',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
         3: {
-            name: 'Dry September',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            name: 'Gulliver’s Travels',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
         4: {
-            name: 'The Prologue',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            name: 'Tintern Abbey',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
         5: {
-            name: 'Passage To India (lines. 1-68)',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            name: 'Kubla Khan',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
         6: {
-            name: 'Crow Testament',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            name: 'Lamb & The Tyger',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
         7: {
-            name: 'Murder of Roger Ackroyd',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            name: 'Chimney Sweeper',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
         8: {
-            name: 'Tintin in Tibet',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            name: 'Childe Harolde’s Pilgrimage',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
         9: {
-            name: 'Paradise Lost (Book I)',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            name: 'Ode to the West Wind',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
         10: {
-            name: 'The Rape of The Lock (Cantos I and III)',
-            marks: { 2: 0, 5: 0, 10: 0 }
+            name: 'Ozymandias',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
+        },
+        11: {
+            name: 'Ode to a Nightingale',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
+        },
+        12: {
+            name: 'Ode To Autumn',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
+        },
+        13: {
+            name: 'The Lady of Shallot',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
+        },
+        14: {
+            name: 'My Last Duchess',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
+        },
+        15: {
+            name: 'The Goblin Market',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
+        },
+        16: {
+            name: 'Jane Eyre',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
         },
     };
 
@@ -70,7 +126,7 @@ function showData() {
             if (item.answer !== "") {
                 acc.answered++;
             }
-            acc[`fromCC${item.cc_id}`]++;
+            acc[`fromCC${item.paper_id}`]++;
             acc[`total${item.mark}Marks`]++;
 
             const itemId = item.item_id;
@@ -94,23 +150,23 @@ function showData() {
         });
 
     const resultHtml = `
-        <p>Total Questions : ${stats.totalQuestions}</p>
-        <p>Answered Questions : ${stats.answered} (${((stats.answered / stats.totalQuestions)*100).toFixed(2)}%)</p>
-        <p>From CC8 : ${stats.fromCC5}</p>
-        <p>From CC9 : ${stats.fromCC6}</p>
-        <p>From CC10 : ${stats.fromCC7}</p>
-        <p>Total 10 Marks : ${stats.total10Marks}</p>
-        <p>Total 5 Marks : ${stats.total5Marks}</p>
-        <p>Total 2 Marks : ${stats.total2Marks}</p>
-        <h2>Book Wise</h2>
-        ${Object.keys(itemInfo).map(id => `
-            <p>
-                From <span class="book-name">${itemInfo[id].name}</span> : 
-                <span class="mark-style">${itemInfo[id].marks[2]}</span> questions with 2 marks,
-                <span class="mark-style">${itemInfo[id].marks[5]}</span> questions with 5 marks,
-                <span class="mark-style">${itemInfo[id].marks[10]}</span> questions with 10 marks
-            </p><br>`).join('')}
+    <p>Total Questions : ${stats.totalQuestions}</p>
+    <p>Answered Questions : ${stats.answered} (${((stats.answered / stats.totalQuestions)*100).toFixed(2)}%)</p>
+    <p>From CC8 : ${stats.fromCC5}</p>
+    <p>From CC9 : ${stats.fromCC6}</p>
+    <p>From CC10 : ${stats.fromCC7}</p>
+    <p>Total 10 Marks : ${stats.total10Marks}</p>
+    <p>Total 5 Marks : ${stats.total5Marks}</p>
+    <p>Total 2 Marks : ${stats.total2Marks}</p>
+    <h2>Book Wise</h2>
+    ${Object.keys(itemInfo).map(id => `
+        <p>
+        From <span class="book-name">${itemInfo[id].name}</span> :
+        <span class="mark-style">${itemInfo[id].marks[2]}</span> questions with 2 marks,
+        <span class="mark-style">${itemInfo[id].marks[5]}</span> questions with 5 marks,
+        <span class="mark-style">${itemInfo[id].marks[10]}</span> questions with 10 marks
+        </p><br>`).join('')}
     `;
 
     $("#result").append(resultHtml);
-    }
+                          }
