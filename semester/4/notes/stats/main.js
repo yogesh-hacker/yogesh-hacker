@@ -53,7 +53,7 @@ function showData() {
             }
         },
         6: {
-            name: 'Lamb & The Tyger',
+            name: 'The Lamb & The Tyger',
             marks: {
                 2: 0, 5: 0, 10: 0
             }
