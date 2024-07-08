@@ -152,9 +152,9 @@ function showData() {
     const resultHtml = `
     <p>Total Questions : ${stats.totalQuestions}</p>
     <p>Answered Questions : ${stats.answered} (${((stats.answered / stats.totalQuestions)*100).toFixed(2)}%)</p>
-    <p>From CC8 : ${stats.fromCC5}</p>
-    <p>From CC9 : ${stats.fromCC6}</p>
-    <p>From CC10 : ${stats.fromCC7}</p>
+    <p>From CC8 : ${stats.fromCC8}</p>
+    <p>From CC9 : ${stats.fromCC9}</p>
+    <p>From CC10 : ${stats.fromCC10}</p>
     <p>Total 10 Marks : ${stats.total10Marks}</p>
     <p>Total 5 Marks : ${stats.total5Marks}</p>
     <p>Total 2 Marks : ${stats.total2Marks}</p>
