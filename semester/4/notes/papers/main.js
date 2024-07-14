@@ -196,6 +196,7 @@ function applyFontStyle() {
     if (questionFontFamily) {
         $(".question").css("font-family", questionFontFamily);
         $(".question u").css("font-family", questionFontFamily);
+        $(".question span").css("font-family", questionFontFamily);
         $(".question i").each(function() {
             if (!$(this).hasClass("fa-solid") || !$(this).hasClass("fa-volume")) {
                 $(this).css("font-family", questionFontFamily);
