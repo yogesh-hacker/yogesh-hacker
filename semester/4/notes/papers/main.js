@@ -208,6 +208,7 @@ function applyFontStyle() {
         $(".answer").css("font-family", answerFontFamily);
         $(".answer u").css("font-family", answerFontFamily);
         $(".answer i").css("font-family", answerFontFamily);
+        $(".answer s").css("font-family", answerFontFamily);
     }
 }
 
