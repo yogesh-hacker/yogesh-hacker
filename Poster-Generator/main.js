@@ -21,7 +21,8 @@ $('#convertButton').on('click', function () {
     convertToImage();
 });*/
 
-var isGenerated = false;
+var isGenerated = true;
+var __custom_typo__;
 
 function convertToImage() {
     var element = document.getElementById('h2c-canvas');
@@ -58,13 +59,8 @@ $('#convertButton').click(function () {
         setTimeout(convertToImage(), 1000);
     } else {
         $(".h2c-status").text("Generating...");
-        if(getTypo() != ""){
-            $(".h2c-title").html($("#h2c-title-input").val()+`<span class="h2c-movie-quality"><sup>${getTypo()}</sup><span>`);
-        }
-        else{
-            $(".h2c-title").html($("#h2c-title-input").val());
-        }
-        $(".h2c-poster").attr("src",$("#h2c-poster-input").val());
+        $(".h2c-title").html($("#h2c-title-input").val()+`<span class="h2c-movie-quality"><sup>${getTypo()}</sup><span>`);
+        $(".h2c-poster").attr("src", $("#h2c-poster-input").val());
         setTheme();
         setTimeout(function() {
             $("#convertButton").text("Convert to Image")
@@ -76,6 +72,19 @@ $('#convertButton').click(function () {
         isGenerated = true;
     }
 });
+
+$("#movie-typo").change(function() {
+    if ($(this).val() === "7") {
+        var customTypo = prompt("Add your custom typo:", "");
+
+        if (customTypo !== null) {
+            __custom_typo__ = customTypo;
+        } else {
+            alert("No custom typo added.");
+        }
+    }
+});
+
 
 function generateFileName() {
     const now = new Date();
@@ -98,16 +107,28 @@ function setTheme() {
     var __theme__ = $("#movie-poster-theme").val();
     switch (__theme__) {
         case 'null':
-            $("#h2c-canvas").attr("class","theme-normal");
+            $("#h2c-canvas").attr("class",
+                "theme-normal");
             break;
         case '1':
-            $("#h2c-canvas").attr("class","theme-normal");
+            $("#h2c-canvas").attr("class",
+                "theme-normal");
             break;
         case '2':
-            $("#h2c-canvas").attr("class","theme-violence");
+            $("#h2c-canvas").attr("class",
+                "theme-violence");
             break;
         case '3':
-            $("#h2c-canvas").attr("class","theme-aqua");
+            $("#h2c-canvas").attr("class",
+                "theme-aqua");
+            break;
+        case '4':
+            $("#h2c-canvas").attr("class",
+                "theme-gold");
+            break;
+        case '5':
+            $("#h2c-canvas").attr("class",
+                "theme-nature");
             break;
         default:
             // code
@@ -136,8 +157,11 @@ function getTypo() {
         case '6':
             return "HD"
             break;
+        case '7':
+            return __custom_typo__
+            break;
         default:
-            return "";
+            return null;
             break;
     }
 }
