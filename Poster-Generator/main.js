@@ -1,33 +1,9 @@
-/*function convertToImage() {
-    var element = document.getElementById('h2c-canvas');
-
-    html2canvas(element, {
-        allowTaint: true, useCORS: true, scale: 8
-    }).then(function (canvas) {
-        var img = new Image();
-        img.src = canvas.toDataURL('image/png');
-        console.log(img.src);
-
-        var link = $('#h2c-result-download');
-        link.attr("href", img.src);
-        link.attr("download", 'myImage.png');
-        link.click();
-        alert("Done");
-    });
-}
-
-// Assuming you trigger this function on a button click or some event
-$('#convertButton').on('click', function () {
-    convertToImage();
-});*/
-
-var isGenerated = true;
+var isGenerated = false;
 var __custom_typo__;
 
 function convertToImage() {
     var element = document.getElementById('h2c-canvas');
 
-    // Introduce a delay before capturing the screenshot
     setTimeout(function () {
         html2canvas(element, {
             allowTaint: true,
