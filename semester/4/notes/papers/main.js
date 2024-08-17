@@ -1,6 +1,6 @@
 var data = [];
 var mAccessKey;
-var accessKeys = ["A6AVP97APFTNTWJS74AGN3G3A","commit-id@2024#secure&full"]
+var accessKeys = ["commit-id@2024#secure&full"]
 var mPaperId = 8;
 
 
