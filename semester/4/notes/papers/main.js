@@ -1,6 +1,30 @@
 var data = [];
 var mAccessKey;
-var accessKeys = ["commit-id@2024#secure&full"]
+var accessKeys = [{
+    "name": "Yogesh",
+    "key": "ZpLUwScHr69cx6iGavnk9fOzio",
+    "status": "active"
+},
+    {
+        "name": "Ashis",
+        "key": "jvxb6QNRjL57qVU1erFyqDnANZ",
+        "status": "active"
+    },
+    {
+        "name": "Avik",
+        "key": "q7nvEs9PTSZbg3lgeDYnH2KeL3",
+        "status": "active"
+    },
+    {
+        "name": "Arish",
+        "key": "4uWQilz4YeD4bIkxXx6Emk7Kpv",
+        "status": "active"
+    },
+    {
+        "name": "All",
+        "key": "commit-id@2024#secure&full",
+        "status": "revoked"
+    }];
 var mPaperId = 8;
 
 
@@ -17,35 +41,29 @@ if (mCurrentPage.includes("/8")) {
 
 $(document).ready(function() {
     var accessKey = Cookies.get("_access_key_");
-    if (accessKey != undefined) {
-        var validUser = false;
-        var fullAccess = false;
-        if(accessKey != "commit-id@2024#secure&full"){
-            validUser = true;
-            fullAccess = false;
-            $("#result").html("Ensure you have committed to this page, unless it's inaccessible even with the access key.&nbsp<a href='#' onclick='showLoginForm()'>Re-enter access key</a>");
+
+    if (accessKey) {
+        if (accessKey.length !== 26) {
+            $("#result").html("Invalid access key length. The key must be 25 characters long.&nbsp<a href='#' onclick='showLoginForm()'>Re-enter access key</a>");
             return;
-        } else {
-            fullAccess = true;
         }
-        for (var i = 0; i < accessKeys.length; i++) {
-            if (accessKey === accessKeys[i]) {
-                validUser = true;
-                break;
-            }
+
+        let user = accessKeys.find(user => user.key === accessKey);
+
+        if (!user) {
+            $("#result").html("Invalid access key. Please check your key and try again.&nbsp<a href='#' onclick='showLoginForm()'>Re-enter access key</a>");
+            return;
         }
-        if (validUser) {
-            if(fullAccess){
-                loadData();
-            }
-        } else {
-            showLoginForm();
+
+        if (user.status === "revoked") {
+            $("#result").html("This access key has been revoked. Please contact support.&nbsp<a href='#' onclick='showLoginForm()'>Re-enter access key</a>");
+            return;
         }
+        loadData()
     } else {
         showLoginForm();
     }
-})
-
+});
 
 function loadData() {
     $("#result").html("");
@@ -130,24 +148,31 @@ $('.question').on('click', function () {
 });
 
 $("#login").click(function() {
-    mAccessKey = $("#userNumber").val();
-    if (mAccessKey.length == 25 || mAccessKey.length == 26) {
-        for (var i = 0; i < accessKeys.length; i++) {
-            if (mAccessKey === accessKeys[i]) {
+    var mAccessKey = $("#userNumber").val().trim();
+
+    if (mAccessKey.length === 26) {
+        var user = accessKeys.find(user => user.key === mAccessKey);
+
+        if (user) {
+            if (user.status === "active") {
                 Cookies.set("_access_key_", mAccessKey, {
                     expires: 5
-                })
-                alert("Welcome dear user, I am glad to see you here!")
+                });
+
+                user.loggedInBefore = true;
+                alert("Welcome, " + user.name + "! I'm glad to see you here!");
                 hideLoginForm();
-                loadData()
-            } else {
-                $(".error").text("This access key isn't verified!")
+                loadData();
+            } else if (user.status === "revoked") {
+                $(".error").text("This access key has been revoked. Please contact support.");
             }
+        } else {
+            $(".error").text("This access key isn't verified!");
         }
     } else {
         $(".error").text("Invalid access key!");
     }
-})
+});
 
 function showLoginForm() {
     $(".login_canvas").css("display",
