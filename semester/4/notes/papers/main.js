@@ -20,16 +20,16 @@ var accessKeys = [{
         "key": "4uWQilz4YeD4bIkxXx6Emk7Kpv",
         "status": "active"
     },
-                  {
-                      "name": "Titas",
-                      "key": "xyPjejUBi5W9uqDvtFgio45z4C",
-"status":"active"
-                  },
-                  {
-                      "name": "Abid",
-                      "key": "e1mtNWLsFG55yZsfZSt8i8KQS0",
-"status":"active"
-                  },
+    {
+        "name": "Titas",
+        "key": "xyPjejUBi5W9uqDvtFgio45z4C",
+        "status": "active"
+    },
+    {
+        "name": "Abid",
+        "key": "e1mtNWLsFG55yZsfZSt8i8KQS0",
+        "status": "active"
+    },
     {
         "name": "All",
         "key": "commit-id@2024#secure&full",
@@ -119,7 +119,7 @@ function showData() {
 
         if (!isCollapseEnabled) {
             questionDiv.append("<div class='question-container'><p class='question'>" + questionNumber + ". " + data[i].question + "<span class='mark'>" + data[i].mark + "<span></p><br><div id='answer_" + item_id + "_" + questionNumber + "'><p class='answer'><b>Ans. </b>" + data[i].answer + "</p></div></div>");
-        } else{
+        } else {
             questionDiv.append("<div class='question-container'><p class='question' data-bs-toggle='collapse' data-bs-target='#answer_"+item_id+"_"+questionNumber+"'>" + questionNumber + ". " + data[i].question + "<span class='mark'>" + data[i].mark + "</span><span class='tts-button-container' onclick='getRefineAnswer(answer_"+item_id+"_"+questionNumber+",$(this))'><i class='fa-solid fa-volume'></i></span></p><br><div id='answer_" + item_id + "_" + questionNumber + "' class='collapse'><p class='answer'><b>Ans. </b>" + data[i].answer + "</p></div></div>");
         }
         $("#item_id_" + item_id).append(questionDiv);
@@ -269,13 +269,13 @@ async function requestWakeLock() {
 function releaseWakeLock() {
     if (wakeLock !== null) {
         wakeLock.release()
-            .then(() => {
-                wakeLock = null;
-                console.log('Wake Lock released');
-            })
-            .catch((err) => {
-                console.error(`${err.name}, ${err.message}`);
-            });
+        .then(() => {
+            wakeLock = null;
+            console.log('Wake Lock released');
+        })
+        .catch((err) => {
+            console.error(`${err.name}, ${err.message}`);
+        });
     }
 }
 
@@ -290,7 +290,7 @@ function speakAnswer(answer, elem) {
 
     currentElem = elem;
     $(currentElem).html("<div class='loader'></div>")
-    
+
     const voices = speechSynthesis.getVoices();
     const chunks = splitTextIntoChunks(answer, 160); // Adjust chunk size as needed
     let chunkIndex = 0;
