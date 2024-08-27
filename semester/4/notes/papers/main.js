@@ -41,7 +41,6 @@ var accessKeys = [{
         "status": "revoked"
     }];
 var mPaperId = 8;
-HN0baHhxVADIL8y2ZqZVdyDZQN
 
 var mCurrentPage = window.location.href;
 if (mCurrentPage.includes("/8")) {
@@ -342,4 +341,4 @@ function splitTextIntoChunks(text, maxLength) {
     }
 
     return chunks;
-            }
+                         }
