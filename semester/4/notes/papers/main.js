@@ -31,12 +31,17 @@ var accessKeys = [{
         "status": "active"
     },
     {
+        "name": "Minhaz",
+        "key": "HN0baHhxVADIL8y2ZqZVdyDZQN",
+        "status": "active"
+    },
+    {
         "name": "All",
         "key": "commit-id@2024#secure&full",
         "status": "revoked"
     }];
 var mPaperId = 8;
-
+HN0baHhxVADIL8y2ZqZVdyDZQN
 
 var mCurrentPage = window.location.href;
 if (mCurrentPage.includes("/8")) {
@@ -337,4 +342,4 @@ function splitTextIntoChunks(text, maxLength) {
     }
 
     return chunks;
-}
+            }
