@@ -283,6 +283,17 @@ function releaseWakeLock() {
     }
 }
 
+function getUrlParameter(name) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(window.location.href);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+var speedParam = getUrlParameter('speed');
+
 function speakAnswer(answer, elem) {
     if (speechSynthesis.speaking) {
         speechSynthesis.cancel();
@@ -298,6 +309,10 @@ function speakAnswer(answer, elem) {
     const voices = speechSynthesis.getVoices();
     const chunks = splitTextIntoChunks(answer, 160); // Adjust chunk size as needed
     let chunkIndex = 0;
+    let utteranceSpeed = 1.0;
+    if (speedParam && !isNaN(speedParam) && speedParam >= 0.1 && speedParam <= 10) {
+        utteranceSpeed = parseFloat(speedParam);
+    }
 
     async function speakChunk() {
         if (chunkIndex === 0) {
@@ -308,7 +323,7 @@ function speakAnswer(answer, elem) {
             const utterance = new SpeechSynthesisUtterance(chunks[chunkIndex]);
             utterance.voice = voices[0];
             utterance.lang = "en-US";
-            utterance.rate = 1.0
+            utterance.rate = utteranceSpeed;
             utterance.onend = () => {
                 chunkIndex++;
                 speakChunk();
