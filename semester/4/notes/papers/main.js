@@ -321,7 +321,7 @@ function speakAnswer(answer, elem) {
 
         if (chunkIndex < chunks.length) {
             const utterance = new SpeechSynthesisUtterance(chunks[chunkIndex]);
-            utterance.voice = voices[0];
+            utterance.voice = voices[1];
             utterance.lang = "en-US";
             utterance.rate = utteranceSpeed;
             utterance.onend = () => {
