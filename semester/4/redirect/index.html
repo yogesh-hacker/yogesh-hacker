@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Important Announcement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 100px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: 24px;
+      margin-bottom: 50px;
+    }
+
+    #timer {
+      font-size: 36px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Important Announcement</h1>
+  <p>The current site for 4th semester materials, notes, and books will be closing soon.</p>
+  <p>Please make sure to download any necessary resources before it's too late.</p>
+  <p>You will be automatically redirected to the new site in <span id="timer">10</span> seconds.</p>
+
+  <script>
+    var timer = document.getElementById("timer");
+    var seconds = 5;
+
+    var countdown = setInterval(function() {
+      seconds--;
+      timer.innerHTML = seconds;
+
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/5/"; // Replace with the URL of the new site
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
