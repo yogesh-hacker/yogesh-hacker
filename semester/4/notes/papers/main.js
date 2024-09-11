@@ -312,7 +312,7 @@ function speakAnswer(answer, elem) {
 
     const voices = speechSynthesis.getVoices();
     const chunks = splitTextIntoChunks(answer, 160); // Adjust chunk size as needed
-    console.log(answer)
+    console.log(chunks)
     let chunkIndex = 0;
     let utteranceSpeed = 1.0;
     if (speedParam && !isNaN(speedParam) && speedParam >= 0.1 && speedParam <= 10) {
