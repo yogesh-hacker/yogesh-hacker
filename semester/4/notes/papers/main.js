@@ -311,8 +311,8 @@ function speakAnswer(answer, elem) {
     $(currentElem).html("<div class='loader'></div>")
 
     const voices = speechSynthesis.getVoices();
-    console.log(voices)
     const chunks = splitTextIntoChunks(answer, 160); // Adjust chunk size as needed
+    console.log(answer)
     let chunkIndex = 0;
     let utteranceSpeed = 1.0;
     if (speedParam && !isNaN(speedParam) && speedParam >= 0.1 && speedParam <= 10) {
