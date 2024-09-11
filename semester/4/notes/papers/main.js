@@ -258,6 +258,7 @@ function applyFontStyle() {
 function getRefineAnswer(targetAnswer, elem) {
     $(elem).html("<div class='loader'></div>")
     var refineAnswer = $(targetAnswer).find('.answer').text();
+    console.log(refineAnswer);
     speakAnswer(refineAnswer, elem);
 }
 
