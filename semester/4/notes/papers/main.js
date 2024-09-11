@@ -344,7 +344,7 @@ function speakAnswer(answer, elem) {
 }
 
 function splitTextIntoChunks(text, maxLength) {
-    const sentences = text.match(/[^\.!\?]+[\.!\?]+/g);
+    const sentences = text.match(/[^\.!\?।]+[\.!\?।]+/g);
     const chunks = [];
     let chunk = '';
 
