@@ -51,6 +51,8 @@ if (mCurrentPage.includes("/8")) {
     mPaperId = 10;
 } else if (mCurrentPage.includes("/sec-2")) {
     mPaperId = "sec-2"
+} else if (mCurrentPage.includes("/ge")) {
+    mPaperId = "ge"
 }
 
 $(document).ready(function() {
