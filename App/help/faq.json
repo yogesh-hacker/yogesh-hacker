@@ -1,0 +1,46 @@
+[
+  {
+    "question": "What is HackFlix?",
+    "answer": "HackFlix is a platform that offers unlimited access to a vast collection of movies and web series, allowing users to stream all their favorite content without any cost."
+  },
+  {
+    "question": "Is HackFlix free to use?",
+    "answer": "Yes, HackFlix is completely free to use, allowing you to stream content without any subscription fees."
+  },
+  {
+    "question": "How do I request a movie?",
+    "answer": "You can request a movie by navigating to the 'Request Movie' section in the menu, searching for your favorite movie there, and then tapping the 'Request' button."
+  },
+  {
+    "question": "How long does it take to process my movie request?",
+    "answer": "Movie requests are usually processed within <b>24-48 hours</b>, but it may take longer depending on demand and availability."
+  },
+  {
+    "question": "Why is my video not playing?",
+    "answer": "If your video is not playing, it may be due to network issues, a broken or expired link, or an unsupported video format. Check your internet connection, refresh the app, or restart your device. If the problem continues, please email us at <b>businesshackerindia@gmail.com</b> for assistance."
+  },
+  {
+    "question": "I can't find a specific movie. What should I do?",
+    "answer": "If you're unable to find a specific movie, it may not be available on HackFlix yet. You can request it using the 'Request Movie' feature."
+  },
+  {
+    "question": "Are there any ads while watching content?",
+    "answer": "HackFlix may display occasional ads, but we strive to keep interruptions to a minimum to enhance your viewing experience."
+  },
+  {
+    "question": "What does it mean if my movie request status is 'Pending'?",
+    "answer": "A 'Pending' status indicates that your movie request is currently being processed. You will be notified once it has been approved or if there are any updates."
+  },
+  {
+    "question": "What does 'Unavailable' mean for my movie request?",
+    "answer": "If your request status shows 'Unavailable', it means the movie is either not yet launched or not in our library. You can request a second try by emailing us, which may increase the chances of making it available."
+  },
+  {
+    "question": "Why was my movie request status changed to 'Cancelled'?",
+    "answer": "Your movie request may be marked as 'Cancelled' if it was not approved for any reason, such as copyright restrictions or if the requested title is too much bold content."
+  },
+  {
+    "question": "How can I contact support?",
+    "answer": "You can reach our support team exclusively through email at <b>businesshackerindia@gmail.com</b>. We are here to assist you with any inquiries, issues, or feedback you may have regarding the HackFlix app. Your messages will be responded to as quickly as possible, ensuring you receive the support you need."
+  }
+]

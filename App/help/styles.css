@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: #343a40; /* Dark background */
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+}
+
+footer a:hover {
+    color: #ff9800; /* Change color on hover */
+}
+
+.mt-auto {
+    margin-top: auto; /* Ensure the footer is pushed to the bottom */
+}
+
+
+header {
+    background-image: linear-gradient(to right, #6DC5FF, #F83AFF);
+    box-shadow: 0px 0px 10px 2px rgba(111, 197, 255, 0.5), 0px 0px 10px 2px rgba(248, 58, 255, 0.5);
+    font-family: "Cabin";
+}
+
+
+.accordion-button {
+    background-color: #e9ecef;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.accordion-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#faqSearch {
+    border: 2px solid #007bff;
+}
+
+.accordion-header{
+    font-family: "Open Sans";
+}
+
+.accordion-body{
+    font-family: "Lato";
+}
