@@ -10,10 +10,21 @@ data=[{
         "item_cover" : "im_wife_ive_finished_that.png",
         "item_source" : "im-wife-ive-finished-that/"
     },
-
     {
         "item_paper_id" : "CC_11",
         "item_title" : "Daddy",
         "item_cover" : "daddy.png",
         "item_source" : "daddy/"
-    }]
+    },
+{
+        "item_paper_id" : "CC_11",
+        "item_title" : "Advice to Women",
+        "item_cover" : "advice_to_women.png",
+        "item_source" : "advice-to-women/"
+},
+{
+        "item_paper_id" : "CC_11",
+        "item_title" : "Bequest",
+        "item_cover" : "bequest.png",
+        "item_source" : "bequest/"
+}]
