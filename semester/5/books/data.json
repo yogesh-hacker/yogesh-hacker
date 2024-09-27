@@ -1,0 +1,12 @@
+data=[{
+    "item_paper_id" : "CC_11",
+    "item_title" : "I cannot live with you",
+    "item_cover" : "i_cannot_live_with_you.png",
+    "item_source" : "i-cannot-live-with-you/"
+},
+    {
+        "item_paper_id" : "CC_11",
+        "item_title" : "I’m wife; I’ve finished that",
+        "item_cover" : "im_wife_ive_finished_that.png",
+        "item_source" : "im-wife-ive-finished-that/"
+    }]
