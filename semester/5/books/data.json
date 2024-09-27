@@ -27,4 +27,10 @@ data=[{
         "item_title" : "Bequest",
         "item_cover" : "bequest.png",
         "item_source" : "bequest/"
+},
+{
+        "item_paper_id" : "CC_11",
+        "item_title" : "The Yellow Wallpaper",
+        "item_cover" : "https://www.gutenberg.org/files/1952/1952-h/images/cover.jpg",
+        "item_source" : "The-Yellow-Wallpaper.pdf"
 }]
