@@ -9,4 +9,11 @@ data=[{
         "item_title" : "I’m wife; I’ve finished that",
         "item_cover" : "im_wife_ive_finished_that.png",
         "item_source" : "im-wife-ive-finished-that/"
+    },
+
+    {
+        "item_paper_id" : "CC_11",
+        "item_title" : "Daddy",
+        "item_cover" : "daddy.png",
+        "item_source" : "daddy/"
     }]
