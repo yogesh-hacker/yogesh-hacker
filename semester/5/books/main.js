@@ -63,7 +63,7 @@ $("#clear-search").on("click", function(e) {
 });
 
 $("#search-input").on("keyup", function() {
-    let searchTerm = $(this).val().toLowerCase().replace(/[^a-z0-9\s]/gi, '');
+    let searchTerm = $(this).val().trim().toLowerCase().replace(/[^a-z0-9\s]/gi, '');
 
     if (searchTerm.length > 0) {
         $("#clear-search").show();
