@@ -245,6 +245,7 @@ body {
     font-size: 16px;
     font-family: "Ubuntu";
     border-radius: 25px;
+    padding-left: 2px;
 }
 
 .search-container a{
