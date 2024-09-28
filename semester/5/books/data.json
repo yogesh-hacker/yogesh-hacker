@@ -33,4 +33,16 @@ data=[{
         "item_title" : "The Yellow Wallpaper",
         "item_cover" : "https://www.gutenberg.org/files/1952/1952-h/images/cover.jpg",
         "item_source" : "The-Yellow-Wallpaper.pdf"
+},
+{
+        "item_paper_id" : "CC_11",
+        "item_title" : "Bliss",
+        "item_cover" : "bliss.png",
+        "item_source" : "Bliss.pdf"
+},
+{
+        "item_paper_id" : "CC_11",
+        "item_title" : "Draupadi",
+        "item_cover" : "draupadi.png",
+        "item_source" : "Draupadi.pdf"
 }]
