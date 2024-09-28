@@ -49,6 +49,34 @@ function showData(paper_id) {
 }
 showData(0);
 
-$("#filter-by-paper").change(function(){
+$("#filter-by-paper").change(function() {
     showData($(this).val());
 })
+
+$("#clear-search").hide();
+
+$("#clear-search").on("click", function(e) {
+    e.preventDefault();
+    $("#search-input").val('');
+    $(this).hide();
+    $(".books-container .item").show();
+});
+
+$("#search-input").on("keyup", function() {
+    let searchTerm = $(this).val().toLowerCase();
+
+    if (searchTerm.length > 0) {
+        $("#clear-search").show();
+    } else {
+        $("#clear-search").hide();
+    }
+
+    $(".books-container .item").each(function() {
+        let itemTitle = $(this).find("p").text().toLowerCase();
+        if (itemTitle.includes(searchTerm)) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
+});
