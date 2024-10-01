@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'Gibson Bold';
+  src: url('https://assets.poetryfoundation.org/assets/fonts/Gibson-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gibson Regular';
+  src: url('https://assets.poetryfoundation.org/assets/fonts/Gibson-Regular.woff2') format('woff2');
+}
+
+
+.nav_buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav_buttons button{
+    background-color: #008DFF;
+    border-radius: 5px;
+    width: 100px;
+    color: white;
+    padding: 10px 0px;
+    border: none;
+    font-family: "Gibson Regular";
+    margin: 10px;
+    transition-duration: 0.3s;
+}
+
+.nav_buttons button:disabled{
+    background-color: #B8E0FF;
+}
+
+.nav_buttons button:hover{
+    box-shadow: 0px 0px 0px 3px #B8E0FF;
+}
+
+#result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#currentPage{
+    text-align: center;
+    color: black;
+    font-family: "Gibson Regular";
+}
+
+.record{
+    width: 70%;
+    background-color: #DC0069;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 0px;
+    border-radius: 20px;
+    color: white;
+    font-family: "Gibson Bold";
+}
+
+.record .profile_name{
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0px;
+    text-align: center;
+}
+
+.record p{
+    margin: 0px;
+}
+
+.record .record_profile_image{
+    margin-top: 25px;
+    width: 80%;
+    border-radius: 10px;
+}
