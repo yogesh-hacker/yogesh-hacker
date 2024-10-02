@@ -146,9 +146,6 @@ body {
 
 #page-content {
     padding-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .page-heading {
@@ -163,6 +160,8 @@ body {
 .items-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .item {
