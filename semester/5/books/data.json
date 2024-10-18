@@ -51,4 +51,10 @@ data=[{
         "item_title" : "Leda and the Swan",
         "item_cover" : "leda_and_the_swan.png",
         "item_source" : "leda-and-the-swan/"
+},
+{
+        "item_paper_id" : "CC_12",
+        "item_title" : "The Second Coming",
+        "item_cover" : "The_second_coming.png",
+        "item_source" : "the-second-coming/"
 }]
