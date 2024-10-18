@@ -55,6 +55,6 @@ data=[{
 {
         "item_paper_id" : "CC_12",
         "item_title" : "The Second Coming",
-        "item_cover" : "The_second_coming.png",
+        "item_cover" : "the_second_coming.png",
         "item_source" : "the-second-coming/"
 }]
