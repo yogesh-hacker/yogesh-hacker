@@ -45,4 +45,10 @@ data=[{
         "item_title" : "Draupadi",
         "item_cover" : "draupadi.png",
         "item_source" : "Draupadi.pdf"
+},
+{
+        "item_paper_id" : "CC_12",
+        "item_title" : "Leda and the Swan",
+        "item_cover" : "leda_and_the_swan.png",
+        "item_source" : "leda-and-the-swan/"
 }]
