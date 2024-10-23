@@ -63,4 +63,10 @@ data=[{
         "item_title" : "Where the Mind is Without Fear",
         "item_cover" : "where_the_mind_is_without_fear.png",
         "item_source" : "where-the-mind-is-without-fear/"
+},
+    {
+        "item_paper_id" : "DSE_1",
+        "item_title" : "Leave This",
+        "item_cover" : "leave_this.png",
+        "item_source" : "leave-this/"
 }]
