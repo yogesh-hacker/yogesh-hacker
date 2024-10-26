@@ -76,4 +76,11 @@ data=[{
         "item_title" : "Art thou abroad on this stormy night",
         "item_cover" : "gitanjali_23.png",
         "item_source" : "gitanjali-23/"
+    },
+
+    {
+        "item_paper_id" : "DSE_1",
+        "item_title" : "Obstinate are the Trammels",
+        "item_cover" : "gitanjali_28.png",
+        "item_source" : "gitanjali-28/"
     }]
