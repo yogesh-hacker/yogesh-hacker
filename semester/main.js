@@ -11,5 +11,14 @@ $(".canvas").click(function() {
 $(".item").click(function(){
     var semester = $(this).attr('class').match(/semester-\d+/)[0]
     var semesterNum = semester.split('-')[1];
-    window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/demo/" + semesterNum;
+    if(semesterNum=1){
+        window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/demo/1";
+    }
+    else if(semesterNum=2){
+        window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/demo/2";
+    } else if(semesterNum=5){
+        window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/5/";
+    } else{
+        window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/demo/coming-soon/";
+    }
 });
