@@ -13,7 +13,7 @@ $(".books").click(function(){
 })
 
 $(".notes").click(function(){
-    window.location.href = "notes/";
+    window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/demo/coming-soon/";
 })
 
 $(".syllabus").click(function(){
@@ -21,5 +21,5 @@ $(".syllabus").click(function(){
 })
 
 $(".past-papers").click(function(){
-    window.location.href = "past-papers/";
+    window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/demo/coming-soon/";
 })
