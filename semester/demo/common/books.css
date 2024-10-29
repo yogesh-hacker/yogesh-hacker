@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+#warning{
+    display: none;
+}
+
 body{
     padding-bottom: 20px;
 }
