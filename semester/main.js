@@ -17,7 +17,10 @@ $(".item").click(function(){
         window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/demo/2";
     } else if (semesterNum == 5) {
         window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/5/";
-    } else {
+    } else if(semesterNum == 4) {
+           window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/4/";
+    }
+    else {
         window.location.href = "https://yogesh-hacker.github.io/yogesh-hacker/semester/demo/coming-soon/";
     }
 });
