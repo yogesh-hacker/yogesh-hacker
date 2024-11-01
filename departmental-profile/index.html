@@ -1,1 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departmental Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Background Gradient */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            color: #333;
+            overflow-x: hidden;
+        }
 
+        /* Container Styling */
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Header Styling */
+        .section-header {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #007bff;
+            background: -webkit-linear-gradient(#6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .section-header:hover {
+            transform: scale(1.05);
+        }
+
+        /* Button Styling */
+        .btn-custom {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 15px;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 70%;
+            text-align: center;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Button Hover Effect */
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Section Content Styling */
+        .content-section {
+            padding: 20px;
+            margin-top: 30px;
+            background: linear-gradient(135deg, #f9f7fa, #e1ecf5);
+            border-radius: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Contact Form Styling */
+        .form-control {
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid #e1ecf5;
+            outline: none;
+            box-shadow: none;
+        }
+
+        .form-control:focus {
+            border-color: #6a11cb;
+            box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+            color: white;
+            transition: all 0.3s ease;
+            border-radius: 25px;
+            padding: 12px 20px;
+            border: none;
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Placeholder Animation */
+        .form-control::placeholder {
+            color: #aaa;
+            transition: color 0.3s ease;
+        }
+
+        .form-control:focus::placeholder {
+            color: transparent;
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container text-center animate__animated animate__fadeInUp">
+        <h1 class="section-header">Departmental Profile</h1>
+        <p class="animate__animated animate__fadeInDown animate__delay-1s">
+            Explore the Department of English and learn about our mission, faculty, and resources.
+        </p>
+
+        <!-- Button Links Centered -->
+        <div class="row justify-content-center gap-3 mt-4">
+            <div class="col-md-5 d-flex justify-content-center">
+                <a href="about-us/" class="btn btn-custom animate__animated animate__zoomIn animate__delay-1s">Learn More About Us</a>
+            </div>
+            <div class="col-md-5 d-flex justify-content-center">
+                <a href="https://drive.google.com/drive/folders/1VueNLeYeRLuV9ds9o_RH4BKczmEVceCK?usp=sharing" class="btn btn-custom animate__animated animate__zoomIn animate__delay-1s">Departmental Library</a>
+            </div>
+        </div>
+
+        <!-- Department Overview Section -->
+        <div id="departmentOverview" class="content-section mt-5 animate__animated animate__fadeInLeft">
+            <h2 class="section-header">Department Overview</h2>
+            <p>
+                The Department of English fosters a rich environment for academic inquiry and creativity, offering a variety of programs that prepare students for diverse career paths.
+            </p>
+        </div>
+
+        <!-- Our Mission Section -->
+        <div id="mission" class="content-section mt-5 animate__animated animate__fadeInRight animate__delay-1s">
+            <h2 class="section-header">Our Mission</h2>
+            <p>
+                Our mission is to empower students through comprehensive education, research, and community engagement, enabling them to thrive in a globalized world.
+            </p>
+        </div>
+
+        <!-- Faculty Highlights Section -->
+        <div id="faculty" class="content-section mt-5 animate__animated animate__fadeInLeft animate__delay-2s">
+            <h2 class="section-header">Meet Our Faculty</h2>
+            <p>
+                Our dedicated faculty members are accomplished scholars and passionate educators, committed to providing high-quality instruction and mentorship.
+            </p>
+        </div>
+
+        <!-- Departmental Library Section -->
+        <div id="departmentalLibrary" class="content-section mt-5 animate__animated animate__fadeInRight animate__delay-3s">
+            <h2 class="section-header">Departmental Library</h2>
+            <p>
+                The Departmental Library boasts an extensive collection of literature and resources, supporting students in their academic pursuits and research projects.
+            </p>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div id="contact" class="content-section mt-5 animate__animated animate__fadeInDown animate__delay-4s">
+            <h2 class="section-header">Get in Touch</h2>
+            <p>
+                For inquiries or further information, feel free to reach out to us!
+            </p>
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit w-100">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="animate__animated animate__fadeInUp">
+        <p>&copy; 2024 Department of English. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap and Animation Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
