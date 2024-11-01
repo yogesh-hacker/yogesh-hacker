@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - English Department</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Background Gradient */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f0f0f0, #d9e4f5);
+            color: #333;
+            overflow-x: hidden;
+        }
 
+        /* Container Styling */
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Header Styling */
+        .section-header {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #007bff;
+            background: -webkit-linear-gradient(#6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .section-header:hover {
+            transform: scale(1.05);
+        }
+
+        /* Content Section Styling */
+        .content-section {
+            padding: 20px;
+            margin-top: 30px;
+            background: linear-gradient(135deg, #f9f7fa, #e1ecf5);
+            border-radius: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #007bff;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container text-center animate__animated animate__fadeInUp">
+        <h1 class="section-header">About Us</h1>
+        <p class="animate__animated animate__fadeInDown animate__delay-1s">
+            Discover the mission and values of the English Department.
+        </p>
+
+        <!-- Department Overview Section -->
+        <div class="content-section mt-5 animate__animated animate__fadeInLeft">
+            <h2 class="section-header">Department Overview</h2>
+            <p>
+                The English Department is committed to developing critical thinking, effective communication, and a deep appreciation for literature and language. We offer a diverse curriculum that spans various genres and periods, encouraging students to explore the richness of English literature while honing their analytical skills.
+            </p>
+        </div>
+
+        <!-- Our Vision Section -->
+        <div class="content-section mt-5 animate__animated animate__fadeInRight animate__delay-1s">
+            <h2 class="section-header">Our Vision</h2>
+            <p>
+                To cultivate a passion for English literature and language among students, empowering them to become articulate, thoughtful, and engaged citizens who appreciate the power of words in shaping ideas and culture.
+            </p>
+        </div>
+
+        <!-- Core Values Section -->
+        <div class="content-section mt-5 animate__animated animate__fadeInLeft animate__delay-2s">
+            <h2 class="section-header">Core Values</h2>
+            <ul class="list-unstyled">
+                <li><strong>Excellence:</strong> Striving for the highest standards in teaching and scholarship.</li>
+                <li><strong>Creativity:</strong> Encouraging innovative thinking and expression in literature and language.</li>
+                <li><strong>Community:</strong> Fostering a supportive environment that values collaboration and diversity.</li>
+                <li><strong>Respect:</strong> Honoring the diverse voices and perspectives within our literary traditions.</li>
+            </ul>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="content-section mt-5 animate__animated animate__fadeInRight animate__delay-3s">
+            <h2 class="section-header">Contact Information</h2>
+            <p>
+                For inquiries about our programs and events, please reach out to us at:
+                <br>
+                Email: <a href="mailto:englishdepartment@example.com">englishdepartment@example.com</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="animate__animated animate__fadeInUp">
+        <p>&copy; 2024 English Department. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap and Animation Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
