@@ -10,9 +10,8 @@ let isValid = true;
 // Function to initialize page with movie details
 $(document).ready(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    //mMovieId = urlParams.get("movie_id");
+    mMovieId = urlParams.get("movie_id");
     
-    mMovieId = 176
     if (mMovieId) {
         fetchMovieDetails(mMovieId);
     } else {
