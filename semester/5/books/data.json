@@ -89,4 +89,10 @@ data=[{
         "item_title" : "Obstinate are the Trammels",
         "item_cover" : "gitanjali_28.png",
         "item_source" : "gitanjali-28/"
-    }]
+    },
+{
+        "item_paper_id" : "DSE_1",
+        "item_title" : "Hind Swaraj",
+        "item_cover" : "hind_swaraj.jpeg",
+        "item_source" : "Hind Swaraj.pdf"
+}]
