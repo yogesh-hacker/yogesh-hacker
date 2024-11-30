@@ -12,9 +12,9 @@ if (mCurrentPage.includes("/11")) {
     mPaperId = 11;
 } else if (mCurrentPage.includes("/12")) {
     mPaperId = 12;
-} else if (mCurrentPage.includes("/dse-1")) {
+} else if (mCurrentPage.includes("/1")) {
     mPaperId = 1;
-} else if (mCurrentPage.includes("/dse-2")) {
+} else if (mCurrentPage.includes("/2")) {
     mPaperId = 2;
 }
 
@@ -325,4 +325,4 @@ function splitTextIntoChunks(text, maxLength) {
     }
 
     return chunks;
-                               }
+}
