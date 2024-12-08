@@ -95,4 +95,10 @@ data=[{
         "item_title" : "Hind Swaraj",
         "item_cover" : "hind_swaraj.jpeg",
         "item_source" : "Hind Swaraj.pdf"
+},
+{
+        "item_paper_id" : "DSE_2",
+        "item_title" : "Alam's Own House",
+        "item_cover" : "alams_own_house.png",
+        "item_source" : "https://drive.google.com/file/d/1dNbRqmkbxTgALmHGwIlGlHmSx6NAUBft/view?usp=drivesdk"
 }]
