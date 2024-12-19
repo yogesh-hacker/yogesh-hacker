@@ -54,7 +54,7 @@ function fetchData() {
                 }
 
                 if (!idMatched) {
-                    $(".result_items").append("<div class='movie_item'><img class='poster' src='" + IMAGE_PATH + data.results[i].poster_path + "'/>" + "<h2 class='title'>" + data.results[i].title + " ("+getYearFromDate(data.results[i].release_date)+")</h2><button class='request' onclick='request(" + data.results[i].id + ")'>Request</button><p class='divider'></p></div>");
+                    $(".result_items").append(`<div class='movie_item'><img class='poster' src='${IMAGE_PATH}${data.results[i].poster_path}'/><h2 class='title'>${data.results[i].title} (${getYearFromDate(data.results[i].release_date)})</h2><button class='request' onclick='request(${data.results[i].id}, "${data.results[i].title}")'>Request</button><p class='divider'></p></div>`);
                 }
             }
 
@@ -110,8 +110,8 @@ function ctrlq(e) {
     }
 }
 
-function request(id) {
-    var url = SCRIPT_BASE_URL + "?callback=ctrlq&serial_no=1&request_id="+user+"&movie_id="+id+"&is_uploaded=0&device_id="+userDeviceId+"&action=insert";
+function request(id, title) {
+    var url = `${SCRIPT_BASE_URL}?callback=ctrlq&serial_no=1&request_id=${user}&movie_id=${id}&movie_title=${title}&is_uploaded=0&device_id=${userDeviceId}&action=insert`;
     if (user != "") {
         var request = jQuery.ajax({
             crossDomain: true,
@@ -179,7 +179,7 @@ async function showRequests() {
         try {
             console.log(REQUESTS_DB[i]);
             console.log("Index " + i + ": Movie ID - " + REQUESTS_DB[i].movie_id);
-            const title = await parseTitle(REQUESTS_DB[i].movie_id);
+            const title = REQUESTS_DB[i].movie_title
             console.log("Title for request ID " + REQUESTS_DB[i].request_id + ": " + title);
             const isUploaded = REQUESTS_DB[i].is_uploaded;
             let status;
@@ -280,9 +280,14 @@ function getYearFromDate(dateString) {
 function formatDate(dateString) {
     let formattedDate;
     if (dateString.includes(', ')) {
-        const [datePart, timePart] = dateString.split(', ');
-        const [day, month, year] = datePart.split('/').map(Number);
-        const [hours, minutes, seconds] = timePart.split(':').map(Number);
+        const [datePart,
+            timePart] = dateString.split(', ');
+        const [day,
+            month,
+            year] = datePart.split('/').map(Number);
+        const [hours,
+            minutes,
+            seconds] = timePart.split(':').map(Number);
         const paddedDay = String(day).padStart(2, '0');
         const paddedMonth = String(month).padStart(2, '0');
         formattedDate = `${paddedDay}/${paddedMonth}/${year}`;
@@ -294,4 +299,4 @@ function formatDate(dateString) {
         formattedDate = `${month}/${day}/${year}`;
     }
     return formattedDate;
-}
+    }
