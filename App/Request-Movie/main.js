@@ -5,7 +5,7 @@ var IMAGE_PATH = "https://image.tmdb.org/t/p/original";
 var REQUESTS_DB = [];
 var API_LAYER_CONNECTION_URL = "https://yogeshkumarjamre.pythonanywhere.com/api/?url=";
 
-var SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbz0r5CXHKbAYEi5fnpYzWOXMj-0U_1BcqaKaRe5WbqFe9nN29DywuvIHY-SCTLJj-NwCg/exec";
+var SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbxyiLLnD_wEcL1ouwXBS7TYyln594uI9AGESD-TtUSNHus4pxxJ4ztcyKJkI3B9Tfwzrw/exec";
 var isParsed = false;
 
 $(document).ready(function() {
