@@ -29,52 +29,55 @@ $(".canvas").click(function() {
 var page = 1;
 
 function fetchData() {
-    var uploadStatus = "";
-    var status = "";
     var sQuery = $(".form input").val().trim();
     var sUrl = API_LAYER_CONNECTION_URL + BASE_URL + "?api_key=" + API_KEY + "%26query=" + sQuery + "%26include_adult=true%26page=" + page;
 
     fetch(sUrl)
-    .then(response => response.json())
-    .then(data => {
-        if (data.success !== false) {
-            for (var i = 0; i < data.results.length; i++) {
-                var idMatched = false;
+        .then(response => response.json())
+        .then(data => {
+            if (data.success !== false) {
+                data.results.forEach(item => {
+                    var releaseYear = getYearFromDate(item.release_date);
+                    if (isNaN(releaseYear)) return;
 
-                for (var j = 0; j < REQUESTS_DB.length; j++) {
-                    if (data.results[i].id == REQUESTS_DB[j].movie_id) {
-                        var isUploaded = REQUESTS_DB[j].is_uploaded;
-                        var statusText = getStatus(REQUESTS_DB[j].is_uploaded);
+                    var idMatched = REQUESTS_DB.some(dbItem => {
+                        if (item.id === dbItem.movie_id) {
+                            $(".result_items").append(
+                                `<div class='movie_item'>
+                                    <img class='poster' src='${IMAGE_PATH}${item.poster_path}'/>
+                                    <h2 class='title'>${item.title} (${releaseYear})</h2>
+                                    <p class='status ${getStatus(dbItem.is_uploaded).toLowerCase()}'>${getStatus(dbItem.is_uploaded)}</p>
+                                    <p class='divider'></p>
+                                </div>`
+                            );
+                            return true;
+                        }
+                        return false;
+                    });
 
-                        $(".result_items").append("<div class='movie_item'><img class='poster' src='" + IMAGE_PATH + data.results[i].poster_path + "'/>" + "<h2 class='title'>" + data.results[i].title + " ("+getYearFromDate(data.results[i].release_date)+")</h2><p class='status " + statusText.toLowerCase() + "'>" + statusText + "</p><p class='divider'></p></div>");
-
-                        idMatched = true;
-                        break;
+                    if (!idMatched) {
+                        $(".result_items").append(
+                            `<div class='movie_item'>
+                                <img class='poster' src='${IMAGE_PATH}${item.poster_path}'/>
+                                <h2 class='title'>${item.title} (${releaseYear})</h2>
+                                <button class='request' onclick='request(${item.id}, "${item.title}")'>Request</button>
+                                <p class='divider'></p>
+                            </div>`
+                        );
                     }
+                });
+
+                if (!data.results.length) alert("No results found");
+                if (page < data.total_pages) {
+                    $("#viewMore").show();
+                    page++;
+                } else {
+                    $("#viewMore").hide();
                 }
-
-                if (!idMatched) {
-                    $(".result_items").append(`<div class='movie_item'><img class='poster' src='${IMAGE_PATH}${data.results[i].poster_path}'/><h2 class='title'>${data.results[i].title} (${getYearFromDate(data.results[i].release_date)})</h2><button class='request' onclick='request(${data.results[i].id}, "${data.results[i].title}")'>Request</button><p class='divider'></p></div>`);
-                }
             }
-
-
-
-            if (data.results.length == 0) {
-                alert("No results found");
-            }
-            if (page < data.total_pages) {
-                $("#viewMore").show();
-                page++;
-            } else {
-                $("#viewMore").hide();
-            }
-        }
-    })
-    .catch(error => console.error("Error: ", error));
-
+        })
+        .catch(error => console.error("Error: ", error));
 }
-
 
 $(".form button").click(function () {
     page = 1;
