@@ -44,7 +44,7 @@ data=[{
         "item_paper_id" : "CC_11",
         "item_title" : "Draupadi",
         "item_cover" : "draupadi.png",
-        "item_source" : "Draupadi.pdf"
+        "item_source" : "https://drive.google.com/file/d/1xSdkPcylEnwnGAfbqufI7lwX9fD5xa_O/view?usp=drivesdk"
 },
 {
         "item_paper_id" : "CC_12",
