@@ -10,8 +10,23 @@ $(document).ready(function () {
         $(".user_id").append("User ID : "+androidId);
         userDeviceId = androidId;
     } else {
-        $("body").html("<center>Unauthorized Access<br>This page used to embed please <a href='../'>download </a>our app to view this page.</center>")
-        $("body").css("background-color", "#fff")
+    $("body").html(`
+        <center style="font-family: Arial, sans-serif; color: #333; padding: 20px;">
+            <h2>Unauthorized Access</h2>
+            <p>This page is meant to be embedded within our app. Please 
+                <a href="../" style="color: #007BFF; text-decoration: none;">download</a> 
+                our app to view the content.</p>
+        </center>
+    `);
+    $("body").css({
+        "background-color": "#fff",
+        "margin": "0",
+        "padding": "0",
+        "height": "100vh",
+        "display": "flex",
+        "align-items": "center",
+        "justify-content": "center"
+    });
     }
 });
 
