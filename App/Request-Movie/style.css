@@ -53,6 +53,16 @@ body {
     transition-duration: 0.2s;
 }
 
+.reload-btn {
+    display: block;
+    position: absolute;
+    right: 10px;
+    color: #000;
+    font-size: 20px;
+    -webkit-tap-highlight-color: transparent;
+    transition-duration: 0.2s;
+}
+
 .nav_items {
     list-style-type: none;
     background-color: #fff;
