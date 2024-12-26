@@ -22,7 +22,7 @@ $(".nav_menu").click(function() {
     $(".canvas").css("display", "block")
 })
 
-$('#reload_btn').click(function() {
+$('.reload_btn').click(function() {
     location.reload();
 });
 
