@@ -53,7 +53,7 @@ body {
     transition-duration: 0.2s;
 }
 
-.reload-btn {
+.reload_btn {
     display: block;
     position: absolute;
     right: 10px;
