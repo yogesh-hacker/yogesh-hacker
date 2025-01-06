@@ -46,6 +46,12 @@ data=[{
         "item_cover" : "draupadi.png",
         "item_source" : "https://drive.google.com/file/d/1xSdkPcylEnwnGAfbqufI7lwX9fD5xa_O/view?usp=drivesdk"
 },
+    {
+        "item_paper_id" : "CC_12",
+        "item_title" : "Look Back in Anger",
+        "item_cover" : "look_back_in_anger.png",
+        "item_source" : "Look Back in Anger.pdf"
+},
 {
         "item_paper_id" : "CC_12",
         "item_title" : "Leda and the Swan",
