@@ -101,43 +101,61 @@ function showData() {
             }
         },
         14: {
-            name: 'The Non-Veg Cow',
+            name: 'Where the mind is without fear',
             marks: {
                 2: 0, 5: 0, 10: 0
             }
         },
         15: {
-            name: 'Gitanjali',
+            name: 'Leave thy chanting and singing and telling beads',
             marks: {
                 2: 0, 5: 0, 10: 0
             }
         },
         16: {
-            name: 'Hind Swaraj',
+            name: 'Art thou abroad on this stormy night',
             marks: {
                 2: 0, 5: 0, 10: 0
             }
         },
         17: {
-            name: 'The Shadow Lines',
+            name: 'Obstinate are the trammels',
             marks: {
                 2: 0, 5: 0, 10: 0
             }
         },
         18: {
-            name: 'Alam\'s Own House',
+            name: 'Hind Swaraj',
             marks: {
                 2: 0, 5: 0, 10: 0
             }
         },
         19: {
-            name: 'The Final Solution',
+            name: 'The Shadow Lines',
             marks: {
                 2: 0, 5: 0, 10: 0
             }
         },
         20: {
+            name: 'Alam\'s Own House',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
+        },
+        21: {
+            name: 'The Final Solution',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
+        },
+        22: {
             name: 'Toba Tek Sing',
+            marks: {
+                2: 0, 5: 0, 10: 0
+            }
+        }
+        22: {
+            name: 'A Leaf in the Storm',
             marks: {
                 2: 0, 5: 0, 10: 0
             }
@@ -187,7 +205,7 @@ function showData() {
     <h2>Book Wise</h2>
     ${Object.keys(itemInfo).map(id => `
         <p>
-        From <span class="book-name">${itemInfo[id].name}</span> :
+        ${itemInfo[id]}. From <span class="book-name">${itemInfo[id].name}</span> :
         <span class="mark-style">${itemInfo[id].marks[2]}</span> questions with 2 marks,
         <span class="mark-style">${itemInfo[id].marks[5]}</span> questions with 5 marks,
         <span class="mark-style">${itemInfo[id].marks[10]}</span> questions with 10 marks
@@ -195,4 +213,4 @@ function showData() {
     `;
 
     $("#result").append(resultHtml);
-        }
+}
