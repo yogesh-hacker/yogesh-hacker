@@ -5,6 +5,7 @@ $(document).ready(function() {
 })
 
 function loadData() {
+    toggleImage("https://mir-s3-cdn-cf.behance.net/project_modules/disp/04de2e31234507.564a1d23645bf.gif");
     var script_url = "https://script.google.com/macros/s/AKfycbxZZ4TtWgEYUwfUDzp2oSHs6gcarK0wpOP9bbNU-5LbIr7gALr6rgAJSFDvoWR2tVX-/exec";
     $(".canvas").css("display",
         "flex");
@@ -153,7 +154,7 @@ function showData() {
             marks: {
                 2: 0, 5: 0, 10: 0
             }
-        }
+        },
         22: {
             name: 'A Leaf in the Storm',
             marks: {
@@ -213,4 +214,24 @@ function showData() {
     `;
 
     $("#result").append(resultHtml);
+    toggleImage('remove');
+}
+
+function toggleImage(imageUrl) {
+    const $existingImage = $('#fixedImage');
+    if ($existingImage.length) {
+        $existingImage.remove();
+    } else {
+        $('<img>', {
+            id: 'fixedImage',
+            src: imageUrl,
+            css: {
+                position: 'fixed',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                zIndex: '1000'
+            }
+        }).appendTo('body');
+    }
 }
