@@ -204,9 +204,9 @@ function showData() {
     <p>Total 5 Marks : ${stats.total5Marks}</p>
     <p>Total 2 Marks : ${stats.total2Marks}</p>
     <h2>Book Wise</h2>
-    ${Object.keys(itemInfo).map(id => `
+    ${Object.keys(itemInfo).map((id, index) => `
         <p>
-        ${itemInfo[id]}. From <span class="book-name">${itemInfo[id].name}</span> :
+        ${index + 1}. From <span class="book-name">${itemInfo[id].name}</span> :
         <span class="mark-style">${itemInfo[id].marks[2]}</span> questions with 2 marks,
         <span class="mark-style">${itemInfo[id].marks[5]}</span> questions with 5 marks,
         <span class="mark-style">${itemInfo[id].marks[10]}</span> questions with 10 marks
