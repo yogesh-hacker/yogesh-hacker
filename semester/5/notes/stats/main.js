@@ -227,6 +227,7 @@ function toggleImage(imageUrl) {
             src: imageUrl,
             css: {
                 position: 'fixed',
+                height: '100px',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
