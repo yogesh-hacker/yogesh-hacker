@@ -274,8 +274,7 @@ function speakAnswer(answer, elem) {
     $(currentElem).html("<div class='loader'></div>")
 
     const voices = speechSynthesis.getVoices();
-    const chunks = splitTextIntoChunks(answer, 160); // Adjust chunk size as needed
-    console.log(chunks)
+    const chunks = splitTextIntoChunks(answer, 160);
     let chunkIndex = 0;
     let utteranceSpeed = 1.0;
     if (speedParam && !isNaN(speedParam) && speedParam >= 0.1 && speedParam <= 10) {
@@ -290,7 +289,7 @@ function speakAnswer(answer, elem) {
         if (chunkIndex < chunks.length) {
             const utterance = new SpeechSynthesisUtterance(chunks[chunkIndex]);
             utterance.voice = voices[0];
-            utterance.lang = "bn-IN";
+            utterance.lang = "en-IN";
             utterance.rate = utteranceSpeed;
             utterance.onend = () => {
                 chunkIndex++;
