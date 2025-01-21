@@ -39,14 +39,21 @@
                     }
                 }
                 K_8fCcP(kQHuHX);
+                /**
+                 * @Rfi7bq is the encrypted string derived from original page.
+                 **/
                 var [Rfi7bq] = zup3Dun;
                 const mTJ0P0 = ["!", "@", "#", "$", "%", "^", "&", "*", "(", VcIpJWl[0x47]]
                   , Z1W4RMo = [VcIpJWl[0x6], VcIpJWl[0x1b], VcIpJWl[0x35], VcIpJWl[0xb], VcIpJWl[0x30], VcIpJWl[0x29], VcIpJWl[0x8], VcIpJWl[0x1d], VcIpJWl[0x2b], "j"];
+                 //This line decodes the Base64 encrypted string stored in Rfi7bq
                 Rfi7bq = atob(Rfi7bq);
+                // Initialized result variable
                 let ofs0Pu = "";
+                //Populating value into result variable
                 for (let XOtZVkN = VcIpJWl[0x3]; XOtZVkN < Rfi7bq[kQHuHX(VcIpJWl[0x28])]; XOtZVkN++) {
                     debugger ;ofs0Pu += bmw5cfA(Rfi7bq[XOtZVkN])
                 }
+                
                 let ApMHIei = new Uint8Array(ofs0Pu[kQHuHX(0x5e)]("")[kQHuHX(0x5f)](K_8fCcP((...p6tcPH8)=>{
                     R_BzCI(K_8fCcP(Rfi7bq), p6tcPH8[VcIpJWl[0x0]] = VcIpJWl[0x1]);
                     function kQHuHX(p6tcPH8) {
@@ -121,9 +128,13 @@
                     debugger ;return p6tcPH8[VcIpJWl[0x3]][Rfi7bq(0x60)](VcIpJWl[0x3])
                 }
                 )));
+                
+                // Last point of checking 
+                // ofs0Pu is the last value in screenshot
                 ofs0Pu = lXkdcbQ["QZKQB4i"][kQHuHX(VcIpJWl[0x51])](ApMHIei, {
                     to: kQHuHX(0x62)
                 });
+                
                 for (let XOtZVkN = VcIpJWl[0x3]; XOtZVkN < mTJ0P0[kQHuHX(VcIpJWl[0x28])]; XOtZVkN++) {
                     K_8fCcP(aXM7BkV);
                     function lsUd0Q6(p6tcPH8) {
