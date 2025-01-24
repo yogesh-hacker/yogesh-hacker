@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 function loadData() {
     $("#result").html("");
-    var script_url = "https://script.google.com/macros/s/AKfycbyzXcc-oRdehTMWT_z6JQawPFy8kpRhE-YSTb4p_KLHfSo3H_3o4LIHBTziwFB-CHN0/exec";
+    var script_url = "https://script.google.com/macros/s/AKfycbyt21ok0eZgqXSfWq-iXSabp6nS95t2hA_UAGxfsHLbQBlrEu5pvvY7Dbo0nDYYDZE5/exec";
     $(".canvas").css("display",
         "flex");
     var url = script_url + "?action=read&paper_id="+mPaperId;
