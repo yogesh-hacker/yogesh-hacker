@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 function loadData() {
     toggleImage("https://mir-s3-cdn-cf.behance.net/project_modules/disp/04de2e31234507.564a1d23645bf.gif");
-    var script_url = "https://script.google.com/macros/s/AKfycbxZZ4TtWgEYUwfUDzp2oSHs6gcarK0wpOP9bbNU-5LbIr7gALr6rgAJSFDvoWR2tVX-/exec";
+    var script_url = "https://script.google.com/macros/s/AKfycbwjc1_xJgC36Y3ij6htZKxDk8czpP_gGBBvZj9iEXjWDm1n31aT9gGh2Vbu6tIxw4yD/exec";
     $(".canvas").css("display",
         "flex");
     var url = script_url + "?action=read";
