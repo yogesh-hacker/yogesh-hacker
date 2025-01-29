@@ -89,7 +89,7 @@ body {
 .question,
 .question b{
     color: var(--color-question);
-    font-weight: 500;
+    font-weight: 550;
     font-family: "Andika";
     margin: 0px;
 }
