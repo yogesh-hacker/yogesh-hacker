@@ -169,7 +169,7 @@ function showData() {
             if (item.answer !== "") {
                 acc.answered++;
             }
-            acc[`fromCC${item.paper_id}`]++;
+            acc[item.paper_id == "11" ? "fromCC11" : item.paper_id == "12" ? "fromCC12" : item.paper_id == "1" ? "fromDSE1" : "fromDSE2"]++;
             acc[`total${item.mark}Marks`]++;
 
             const itemId = item.item_id;
