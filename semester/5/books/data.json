@@ -66,6 +66,12 @@ data=[{
 },
     {
         "item_paper_id" : "CC_12",
+        "item_title" : "The Love Song of J. Alfred Prufrock",
+        "item_cover" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE5Njei-jxxPAd_wiLMua2tD7vwPqZutj4w9d6XXH6QyZPqA2kJP9FSrs&s=10",
+        "item_source" : "The Love Song of J. Alfred Prufrock/"
+    },
+    {
+        "item_paper_id" : "CC_12",
         "item_title" : "The Hollow Men",
         "item_cover" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP6cgUu1tKzmHtwJP-ftmrPWobtN3jYMIoynERA9XNQVTYSCQfv6lzY-yA&s=10",
         "item_source" : "the-hollow-men/"
