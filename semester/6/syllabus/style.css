@@ -201,6 +201,18 @@ body {
     font-family: "Merriweather";
 }
 
+.non-detailed{
+    font-family: "lato";
+    background-color: red;
+    color: white;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 12px;
+    vertical-align: middle;
+    margin-bottom: 2px;
+    margin-left: 2px;
+}
+
 
 /*-------- Wave Section --------*/
 
