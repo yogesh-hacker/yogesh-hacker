@@ -8,20 +8,20 @@ $(".canvas").click(function() {
     $(".canvas").css("display", "none")
 })
 
-$(".cc-11").click(function() {
-    window.location.href = "papers/11/";
+$(".cc-13").click(function() {
+    window.location.href = "papers/13/";
 })
 
-$(".cc-12").click(function() {
-    window.location.href = "papers/12/";
+$(".cc-14").click(function() {
+    window.location.href = "papers/14/";
 })
 
-$(".dse-1").click(function() {
-    window.location.href = "papers/1/";
+$(".dse-3").click(function() {
+    window.location.href = "papers/3/";
 })
 
-$(".dse-2").click(function() {
-    window.location.href = "papers/2/";
+$(".dse-4").click(function() {
+    window.location.href = "papers/4/";
 })
 
 $("#notes-theme").change(function() {
