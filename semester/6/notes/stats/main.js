@@ -1,6 +1,7 @@
 var data = [];
 
 $(document).ready(function() {
+    location.href = "../"
     loadData()
 })
 
