@@ -4,17 +4,17 @@ var Encrypted = "WwogICAgewogICAgICAgICJuYW1lIjogIkFsbCIsCiAgICAgICAgImtleSI6ICJ
 var accessKeys = JSON.parse(atob(Encrypted));
 
 console.log(accessKeys);
-var mPaperId = 11;
+var mPaperId = 13;
 
 var mCurrentPage = window.location.href;
-if (mCurrentPage.includes("/11")) {
-    mPaperId = 11;
-} else if (mCurrentPage.includes("/12")) {
-    mPaperId = 12;
-} else if (mCurrentPage.includes("/1")) {
-    mPaperId = 1;
-} else if (mCurrentPage.includes("/2")) {
-    mPaperId = 2;
+if (mCurrentPage.includes("/13")) {
+    mPaperId = 13;
+} else if (mCurrentPage.includes("/14")) {
+    mPaperId = 14;
+} else if (mCurrentPage.includes("/3")) {
+    mPaperId = 3;
+} else if (mCurrentPage.includes("/4")) {
+    mPaperId = 4;
 }
 
 $(document).ready(function() {
