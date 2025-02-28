@@ -31,7 +31,7 @@ function showData(paper_id) {
         for (var i = 0; i < data.length; i++) {
             if (data[i].item_paper_id === "CC_"+paper_id) {
                 $(".books-container").append(`<div class="item">
-                    <img src="`+data[i].item_cover+`" alt="" />
+                    <img src="covers/`+data[i].item_cover+`" alt="" />
                     <p>`+data[i].item_title+`</p>
                     <a class="viewOrDownload" href="`+data[i].item_source+`">View or Download</a>
                     </div>`)
