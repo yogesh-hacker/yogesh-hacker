@@ -1,6 +1,6 @@
 data=[{
-    "item_paper_id" : "",
-    "item_title" : "",
-    "item_cover" : "",
-    "item_source" : ""
+    "item_paper_id" : "CC_14",
+    "item_title" : "Tonight I Can Write",
+    "item_cover" : "tonight_i_can_write.png",
+    "item_source" : "tonight-i-can-write/"
 }]
