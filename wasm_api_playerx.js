@@ -205,8 +205,8 @@ async function __wbg_init(module_or_path) {
     }
 
     if (typeof module_or_path === 'undefined') {
-        const wasmPath = "https://raretoonsindia.co/assets/js/library_wasm_bg.wasm";
-        module_or_path = new URL('library_wasm_bg.wasm', wasmPath);
+        const wasmPath = "https://raretoonsindia.co/assets/js/library_wasm_bg-1.0.wasm";
+        module_or_path = new URL('library_wasm_bg-1.0.wasm', wasmPath);
     }
     const imports = __wbg_get_imports();
 
