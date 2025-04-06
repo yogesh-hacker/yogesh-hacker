@@ -1,4 +1,11 @@
-data=[{
+data=[
+    {
+    "item_paper_id" : "CC_13",
+    "item_title" : "A Doll's House",
+    "item_cover" : "a_doll's_house.png",
+    "item_source" : "https://drive.google.com/file/d/1-HhH3GQOk8AgkPFJGfnZjEO7ocXGk5MH/view?usp=drivesdk"
+    },
+    {
     "item_paper_id" : "CC_14",
     "item_title" : "Tonight I Can Write",
     "item_cover" : "tonight_i_can_write.png",
