@@ -64,7 +64,7 @@ function fetchData() {
                             `<div class='movie_item'>
                                 <img class='poster' src='${IMAGE_PATH}${item.poster_path}'/>
                                 <h2 class='title'>${item.title} (${releaseYear})</h2>
-                                <button class='request' onclick='request(${item.id}, "${item.title}")'>Request</button>
+                                <button class='request' onclick='request(${item.id}, "${item.title}", ${releaseYear})'>Request</button>
                                 <p class='divider'></p>
                             </div>`
                         );
@@ -117,8 +117,8 @@ function ctrlq(e) {
     }
 }
 
-function request(id, title) {
-    var url = `${SCRIPT_BASE_URL}?callback=ctrlq&serial_no=1&request_id=${user}&movie_id=${id}&movie_title=${title}&is_uploaded=0&device_id=${userDeviceId}&action=insert`;
+function request(id, title, releaseYear) {
+    var url = `${SCRIPT_BASE_URL}?callback=ctrlq&serial_no=1&request_id=${user}&movie_id=${id}&movie_title=${title}&release_year=${releaseYear}&is_uploaded=0&device_id=${userDeviceId}&action=insert`;
     if (user != "") {
         var request = jQuery.ajax({
             crossDomain: true,
