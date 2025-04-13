@@ -16,4 +16,10 @@ data=[
     "item_title" : "A Far Cry from Africa",
     "item_cover" : "a_far_cry_from_africa.png",
     "item_source" : "a-far-cry-from-africa/"
+},
+{
+    "item_paper_id" : "CC_14",
+    "item_title" : "Small Towns and the River",
+    "item_cover" : "small_towns_and_the_river.png",
+    "item_source" : "small-towns-and-the-river/"
 }]
