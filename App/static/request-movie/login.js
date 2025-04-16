@@ -5,7 +5,7 @@ $(document).ready(function () {
     const urlParams = new URLSearchParams(window.location.search);
     const manufacturer = urlParams.get('manufacturer');
     const model = urlParams.get('model');
-    const androidId = "92ede64dc3a2f6ba" //urlParams.get('androidId');
+    const androidId = urlParams.get('androidId');
     if (androidId != null && androidId != "") {
         $(".user_id").append("User ID : "+androidId);
         userDeviceId = androidId;
