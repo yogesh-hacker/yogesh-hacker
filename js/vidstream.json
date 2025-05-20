@@ -1,0 +1,13 @@
+{
+  "type": "AES",
+  "mode": "GCM",
+  "keyHex": "",
+  "ivRange": "",
+  "tagRange": "",
+  "cipherTextHex": "",
+  "padding": "",
+  "tagHex": "",
+  "additionalDataHex": "",
+  "counterHex": "",
+  "outputEncoding": "utf-8"
+}
