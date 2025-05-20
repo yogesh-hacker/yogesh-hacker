@@ -1,12 +1,12 @@
 {
   "type": "AES",
-  "mode": "GCM",
-  "keyHex": "",
-  "ivRange": "",
-  "tagRange": "",
-  "padding": "",
+  "mode": "CBC",
+  "keyHex": "6b546d4e3273356a3953484369496f31307a3352714f4b414466586550676277",
+  "ivRange": "0-16",
+  "tagRange": "0-0",
+  "dataRange": "16-^",
+  "padding": "7",
   "tagHex": "",
   "additionalDataHex": "",
   "counterHex": "",
-  "outputEncoding": "utf-8"
 }
