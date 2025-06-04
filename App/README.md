@@ -1,6 +1,6 @@
 ## License & Disclaimer
 
-**© 2025 Hacker India. All Rights Reserved.**
+**© 2023-25 Hacker India. All Rights Reserved.**
 
 HackFlix is a proprietary Android application developed and maintained by **Hacker India**.  
 This project, including its branding, design, and functionality, is not open source and may not be copied, modified, redistributed, or reverse-engineered without written permission from the owner.
