@@ -5,7 +5,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=yogesh-hacker" alt="yogesh-hacker" /></a> </p>
 
-- 🔭 I’m currently working on [HackFlix](https://yogesh-hacker.github.io/yogesh-hacker/App)
+- 🔭 I’m currently working on [HackFlix](https://hack-flix-nu.vercel.app/)
 
 - 🌱 I’m currently learning **Backend Development on Python**
 
@@ -13,11 +13,11 @@
 
 - 🤝 I’m looking for help with **oSumAltX**
 
-- 💬 Ask me about **Javascript, PHP, C++**
+- 💬 Ask me about **Javascript, PHP, Python, Java**
 
-- 📫 How to reach me **yogeshkumarjamre1@gmail.com**
+- 📫 How to reach me **businesshackerindia@gmail.com or peerlessxofficial@gmail.com**
 
-- ⚡ Fun fact **I am Ethical Hacker and Developer, come to 8BP😃**
+- ⚡ Fun fact **I am Ethical Hacker and Developer, come to BGMI(Battlegrounds Mobile India)😃**
 
 
 # Hack Flix
@@ -51,7 +51,7 @@
 
 To experience ad-free, subscription-free streaming with Hack Flix, visit our website:
 
-[Download HackFlix](https://yogesh-hacker.github.io/yogesh-hacker/App/)
+[Download HackFlix](https://hack-flix-nu.vercel.app/)
 
 
 <h3 align="left">Connect with me:</h3>
