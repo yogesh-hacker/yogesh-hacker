@@ -1,3 +1,22 @@
+/*!
+ * Title: AnimeKai Token Generator – Decompiled for Educational Use
+ * Author: Yogesh Kumar Jamre (Hacker India)
+ * Date: 2025
+ * 
+ * Copyright (c) 2025 Yogesh Kumar Jamre
+ * 
+ * This source code is protected and proprietary.
+ * Redistribution, modification, usage, or integration of this code,
+ * in part or whole, is strictly prohibited without the explicit
+ * written permission of the author.
+ * 
+ * If you wish to use this code, please contact:
+ * 📧 Email: businesshackerindia@gmail.com
+ * 
+ * Unauthorized use will be considered a violation of intellectual property rights.
+ */
+
+
 function generateToken(input) {
     // Step 1
     var input = getCharCodes(input);
@@ -53,7 +72,6 @@ function base64UrlEncode(input) {
     const base64 = btoa(input);
     return base64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
-
 
 // Encrypts a string using a key, RC4(Symmetric)
 function rc4(key, text) {
