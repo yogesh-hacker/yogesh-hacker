@@ -1,5 +1,6 @@
-// Last Updated: 21 Jul 2025:18:08(IST)
+// Last Updated: 11 Aug 2025:18:46(IST)
 // Fixed with Latest changes ✅
+
 
 function doGet(e) {
     return handleRequest(e);
@@ -81,7 +82,7 @@ const deterministicShuffle = (y_, H$) => {
     c2,
     d7;
 
-    a$ = BigInt("0"); // Google App Script doesn't support native BigInt
+    a$ = BigInt("0");
     for (var R9 = 0; R9 < H$.length; R9++) {
         a$ = a$ * BigInt("31") + BigInt(H$.charCodeAt(R9)) & BigInt("0xFFFFFFFF");
     }
@@ -117,7 +118,7 @@ const generateKey = (secret, nonce) => {
     G9;
     U6 = secret + nonce;
     h1 = BigInt("0");
-    e6 = BigInt("47");
+    e6 = BigInt("31");
     for (var B4 = 0; B4 < U6.length; B4++) {
         T3 = BigInt(U6.charCodeAt(B4));
         h1 = T3 + h1 * e6 + (h1 << BigInt("7")) - h1;
@@ -126,11 +127,11 @@ const generateKey = (secret, nonce) => {
     N7 = Number(L_ % BigInt("0x7FFFFFFFFFFFFFFF"));
     x0 = [];
     for (var v_ = 0; v_ < U6.length; v_++) {
-        x0.push(String.fromCharCode(U6.charCodeAt(v_) ^ 15835827 & "0xFF" * 1));
+        x0.push(String.fromCharCode(U6.charCodeAt(v_) ^ 13886967 & "0xFF" * 1));
     }
     U6 = x0.join('');
-    var C0 = 1;
-    p9 = N7 % U6.length + ("7" ^ 0);
+    var C0 = 5;
+    p9 = N7 % U6.length + C0;
     U6 = U6.slice(p9) + U6.slice(0, p9);
     y8 = nonce.split('').reverse().join('');
     S1 = ''
@@ -196,4 +197,4 @@ function decrypt(encrypted_data, secret, nonce, iterations = 3) {
     }
 
     return decoded;
-                          }
+}
