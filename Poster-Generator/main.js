@@ -1,5 +1,5 @@
 var isGenerated = false;
-var __custom_typo__;
+var __custom_typo__, __image_url__;
 
 function convertToImage() {
     var element = document.getElementById('h2c-canvas');
@@ -61,6 +61,18 @@ $("#movie-typo").change(function() {
     }
 });
 
+$("#movie-poster-theme").change(function() {
+    if ($(this).val() === "6") {
+        var imageUrl = prompt("Enter a Image URL:", "");
+
+        if (imageUrl !== null) {
+            __image_url__ = imageUrl;
+        } else {
+            alert("No Image URL Added");
+        }
+    }
+});
+
 
 function generateFileName() {
     const now = new Date();
@@ -106,6 +118,10 @@ function setTheme() {
             $("#h2c-canvas").attr("class",
                 "theme-nature");
             break;
+        case '6':
+            if(__image_url__){
+                setBlurBackground(__image_url__);
+            }
         default:
             // code
             break;
@@ -140,4 +156,29 @@ function getTypo() {
             return null;
             break;
     }
+}
+
+function setBlurBackground(imageUrl) {
+    var canvas = $("#h2c-canvas");
+    $(canvas).css("background", "none");
+
+    // Create background wrapper if missing
+    if ($("#h2c-bg").length === 0) {
+        canvas.prepend('<div id="h2c-bg"></div>');
+    }
+
+    var bg = $("#h2c-bg");
+    bg.css({
+        "background-image": `url(${imageUrl})`,
+        "background-size": "cover",
+        "background-position": "center",
+        "filter": "blur(1px) brightness(0.8)",
+        "position": "absolute",
+        "top": 0,
+        "left": 0,
+        "width": "100%",
+        "height": "100%",
+        "z-index": "-1",
+        "border-radius": "12px"
+    });
 }
