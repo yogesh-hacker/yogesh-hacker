@@ -70,6 +70,19 @@ $("#movie-poster-theme").change(function() {
         } else {
             alert("No Image URL Added");
         }
+    } else if ($(this).val() === '7') {
+        var colorCode = prompt("Enter a 6-digit Hex Color Code (e.g. #AABBCC):", "");
+
+        if (colorCode !== null) {
+            colorCode = colorCode.trim();
+
+            // Regex to validate hex color
+            if (/^#?[0-9A-Fa-f]{6}$/.test(colorCode)) {
+                __custom_color__ = colorCode.replace("#", "");
+            } else {
+                alert("Invalid color! Please enter a valid 6-digit hex color code.");
+            }
+        }
     }
 });
 
@@ -119,9 +132,15 @@ function setTheme() {
                 "theme-nature");
             break;
         case '6':
-            if(__image_url__){
+            if (__image_url__) {
                 setBlurBackground(__image_url__);
             }
+            break;
+        case '7':
+            if (__custom_color__) {
+                setCustomColor(__custom_color__);
+            }
+            break;
         default:
             // code
             break;
@@ -181,4 +200,35 @@ function setBlurBackground(imageUrl) {
         "z-index": "-1",
         "border-radius": "0px"
     });
+}
+
+function setCustomColor(hexCode) {
+    // Safety check
+    if (!/^[0-9A-Fa-f]{6}$/.test(hexCode)) {
+        console.error("Invalid hex color:", hexCode);
+        return;
+    }
+
+    // Convert HEX → RGB
+    function hexToRgb(hex) {
+        return {
+            r: parseInt(hex.substring(0, 2), 16),
+            g: parseInt(hex.substring(2, 4), 16),
+            b: parseInt(hex.substring(4, 6), 16)
+        };
+    }
+
+    // Darken color (percentage-based)
+    function darkenColor(rgb, factor = 0.4) {
+        return {
+            r: Math.max(0, Math.floor(rgb.r * (1 - factor))),
+            g: Math.max(0, Math.floor(rgb.g * (1 - factor))),
+            b: Math.max(0, Math.floor(rgb.b * (1 - factor)))
+        };
+    }
+
+    const topRGB = hexToRgb(hexCode);
+    const bottomRGB = darkenColor(topRGB, 0.4); // deeper color
+
+    $("#h2c-canvas").css("background", `linear-gradient(rgb(${topRGB.r}, ${topRGB.g}, ${topRGB.b}), rgb(${bottomRGB.r}, ${bottomRGB.g}, ${bottomRGB.b}))`);
 }
