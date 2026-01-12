@@ -1,5 +1,5 @@
 var isGenerated = false;
-var __custom_typo__, __image_url__;
+var __custom_typo__, __image_url__, __color_code__;
 
 function convertToImage() {
     var element = document.getElementById('h2c-canvas');
@@ -71,14 +71,14 @@ $("#movie-poster-theme").change(function() {
             alert("No Image URL Added");
         }
     } else if ($(this).val() === '7') {
-        var colorCode = prompt("Enter a 6-digit Hex Color Code (e.g. #AABBCC):", "");
+        var __color_code__ = prompt("Enter a 6-digit Hex Color Code (e.g. #AABBCC):", "");
 
-        if (colorCode !== null) {
-            colorCode = colorCode.trim();
+        if (__color_code__ !== null) {
+            __color_code__ = __color_code__.trim();
 
             // Regex to validate hex color
             if (/^#?[0-9A-Fa-f]{6}$/.test(colorCode)) {
-                __custom_color__ = colorCode.replace("#", "");
+                __custom_color__ = __color_code__.replace("#", "");
             } else {
                 alert("Invalid color! Please enter a valid 6-digit hex color code.");
             }
@@ -228,7 +228,7 @@ function setCustomColor(hexCode) {
     }
 
     const topRGB = hexToRgb(hexCode);
-    const bottomRGB = darkenColor(topRGB, 0.4); // deeper color
+    const bottomRGB = darkenColor(topRGB, 0.7); // deeper color
 
     $("#h2c-canvas").css("background", `linear-gradient(rgb(${topRGB.r}, ${topRGB.g}, ${topRGB.b}), rgb(${bottomRGB.r}, ${bottomRGB.g}, ${bottomRGB.b}))`);
 }
