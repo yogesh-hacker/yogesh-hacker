@@ -68,7 +68,7 @@ for (let i = 0; i < encryptedBytes.length; i++) {
     final[i] = encryptedBytes[i] ^ hash[i % hash.length];
 }
 
-// Step 2 Tranformantion
+// Step 2 Transformantion
 // All of the values are exact replica of site
 // Do not change any values except related to Step 2
 const targetOutput = "1d93bbb5c4d246e9b7ea6bfb5c12c747eca2b96a190bf085e6a3ec82713820407b9565a31aa30061b25797c64873833c22558da0c620ce15f6d60401ef7ab042a8d0e01461cfdf417e8eb1e95e46d0d97384340d59cbdb6fcd0bf8fcffda53fe5732a75a28ec0cf8fcab01216973bca8";
