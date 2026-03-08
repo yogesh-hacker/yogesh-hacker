@@ -76,13 +76,13 @@ const s2_input = final;
 const s2_seed = new Uint8Array(Buffer.concat([mainKeyBytes, randomIv]));
 
 // TO DO: FIND THE TRANSFORMATION METHOD
-let hash_2 = crypto.createHash("sha256").update(s2_seed).digest();
+let hash_2 = crypto.createHash("sha256").update(s2_seed).digest(); // Till this line everything matches
 
+// This is a wrong method(I was trying to find)
 const output = Buffer.alloc(final.length);
-
 for (let i = 0; i < final.length; i++) {
     let prev = i === 0 ? 0 : output[i - 1];
     output[i] = (final[i] + hash_2[i % 32] + prev) % 256
 }
 
-console.log("Is Output Matched?: ", Buffer.from(final).toString("hex") == targetOutput)
+console.log("Is Output Matched?: ", Buffer.from(output).toString("hex") == targetOutput)
