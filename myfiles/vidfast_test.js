@@ -13,7 +13,7 @@ const mainIvBytes = Buffer.from("b8a4acdfcef043ac437daaf51d6eab13", "hex");
 const mainXorKeyBytes = Buffer.from("f8a51068c2f86602", "hex");
 
 // Current timestamp as BigInt
-let timestampBigInt = 1773374909297n //BigInt(Date.now()); // Dynamic
+let timestampBigInt = 1773379459067n //BigInt(Date.now()); // Dynamic
 const timestampBytes = new Uint8Array(8);
 
 
@@ -24,24 +24,24 @@ for (let byteIndex = 0; byteIndex < 8; byteIndex++) {
 
 // Get site data
 var randomIv = new Uint8Array([
-        239,
-        33,
-        221,
-        180,
-        243,
-        86,
-        26,
+        191,
+        156,
+        88,
+        142,
+        123,
+        89,
         29,
-        200,
-        190,
-        100,
-        57,
-        253,
-        104,
-        60,
-        174
+        167,
+        71,
+        132,
+        224,
+        159,
+        0,
+        86,
+        193,
+        106
     ]); //crypto.getRandomValues(new Uint8Array(16)); // Dynamic
-let siteData = "CvQFlRwfQ8Yu2cISxhNDqXUOs79oZ7v3xFS41RMb-ByvyDxPpalGTXUu4gWBczdbEvZU-5yh7q-95O0ptb5lff"; // Dynamic
+let siteData = "CvQFlRwfQ8Yu2cISxhNDqa-3eVAbyiV2T7jqbhINyh5_H3dPaHBU5-20ZPzXwIH0EvZU-5yh7q-95O0ptb5lff"; // Dynamic
 const siteDataBytes = Buffer.from(siteData, "utf8");
 const combinedBuffers = new Uint8Array(Buffer.concat([randomIv, timestampBytes, siteDataBytes]));
 
@@ -111,9 +111,8 @@ console.log("\nStep 3 Hash: ", new Uint8Array(hash_3).toString())
 
 function generateKSA(derivedBufferArray) {
     // Ensure the input is a Node.js Buffer
-    const buffer1 = Buffer.isBuffer(derivedBufferArray) 
-        ? derivedBufferArray 
-        : Buffer.from(derivedBufferArray);
+    const buffer1 = Buffer.isBuffer(derivedBufferArray)
+    ? derivedBufferArray: Buffer.from(derivedBufferArray);
 
     // 1. Read the first four 32-bit chunks from the 32-byte buffer
     const chunk0 = buffer1.readUInt32LE(0);
@@ -123,9 +122,11 @@ function generateKSA(derivedBufferArray) {
 
     // 2. Fold them together using XOR to create the master seed / initial state
     let state = (chunk0 ^ chunk1 ^ chunk2 ^ chunk3) >>> 0;
-    
+
     // 3. Initialize the state array S (0 to 255)
-    let S = Array.from({ length: 256 }, (_, k) => k);
+    let S = Array.from({
+        length: 256
+    }, (_, k) => k);
 
     // 4. Execute the reverse Fisher-Yates shuffle using Xorshift32
     for (let i = 255; i > 0; i--) {
@@ -133,7 +134,7 @@ function generateKSA(derivedBufferArray) {
         state ^= state << 13;
         state ^= state >>> 17;
         state ^= state << 5;
-        
+
         // Force state to remain an unsigned 32-bit integer
         state = state >>> 0;
 
@@ -146,7 +147,10 @@ function generateKSA(derivedBufferArray) {
         S[j] = temp;
     }
 
-    return { S: S, finalState: state };
+    return {
+        S: S,
+        finalState: state
+    };
 }
 
 const ksaResult = generateKSA(hash_3);
@@ -154,31 +158,13 @@ const payload112 = output;
 console.log("\nKSA(S-Box):", ksaResult.S.toString());
 console.log("\nKSA(State):", ksaResult.finalState.toString());
 
-/******** Above this line the algorithm re-constructed and matching as expected ********/
-
-
-function getPayloadSwaps(initialState, length) {
-    let state = initialState;
-    let j_values = [];
-
-    for (let k = 0; k < length; k++) {
-        // Advance the Xorshift32 PRNG exactly like the KSA did
-        state ^= state << 13;
-        state ^= state >>> 17;
-        state ^= state << 5;
-        state = state >>> 0;
-
-        // The swap index for the PRGA phase is modulo 256
-        let j = state % 256; 
-        
-        j_values.push(j);
-    }
-
-    return j_values;
+var output_4 = [];
+for (var i = 0; i < payload112.length; i++) {
+    var index = payload112[i];
+    var value = ksaResult.S[index];
+    output_4.push(value)
 }
 
-const my112Array = getPayloadSwaps(ksaResult.finalState, 112);
+console.log("\nPayload Swaps: ", JSON.stringify(output_4));
 
-console.log("\nPayload Swaps: ", JSON.stringify(my112Array));
-// expected output
-//[7,217,145,157,238,94,27,94,160,47,171,201,246,24,70,35,37,146,195,249,53,140,36,147,172,24,157,152,246,189,87,121,220,153,205,104,144,217,82,182,232,83,120,249,6,184,140,211,57,82,250,224,39,96,15,18,5,243,197,147,145,108,190,56,51,81,186,199,205,140,143,230,134,241,111,104,171,234,9,28,35,49,99,254,247,217,198,167,126,252,8,210,156,243,166,105,89,40,220,228,144,134,193,138,79,133,129,135,253,11,244,18]
+/******** Above this line the algorithm re-constructed and matching as expected ********/
