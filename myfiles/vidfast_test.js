@@ -1,93 +1,90 @@
 const crypto = require("crypto");
 
-function hextoBytes(s) {
-    return Buffer.from(s, 'hex')
+function hexToBytes(hexString) {
+    return Buffer.from(hexString, 'hex')
 }
-function bytesToHex(bytes) {
-    return Buffer.from(bytes).toString('hex');
+
+function bytesToHex(byteArray) {
+    return Buffer.from(byteArray).toString('hex');
 }
 
 // Convert Hex to Bytes
-const mainKeyBytes = Buffer.from("42f082221250ad12dbcb8dbbe310d2319a66bb50dec37bb725d6ecac0a0b836d", "hex");
-const mainIvBytes = Buffer.from("b8a4acdfcef043ac437daaf51d6eab13", "hex");
-const mainXorKeyBytes = Buffer.from("f8a51068c2f86602", "hex");
+const aesKeyBytes = Buffer.from("42f082221250ad12dbcb8dbbe310d2319a66bb50dec37bb725d6ecac0a0b836d", "hex");
+const aesIvBytes = Buffer.from("b8a4acdfcef043ac437daaf51d6eab13", "hex");
+const xorSeedKeyBytes = Buffer.from("f8a51068c2f86602", "hex");
 
 // Current timestamp as BigInt
+/*
 let timestampBigInt = 1773379459067n //BigInt(Date.now()); // Dynamic
-const timestampBytes = new Uint8Array(8);
-
+const timestampByteArray = new Uint8Array(8);
 
 for (let byteIndex = 0; byteIndex < 8; byteIndex++) {
-    timestampBytes[byteIndex] = Number(timestampBigInt & 255n);
+    timestampByteArray[byteIndex] = Number(timestampBigInt & 255n);
     timestampBigInt >>= 8n;
 }
+*/
+
+timestampByteArray = new Uint8Array([[234,171,178,229,156,1,0,0]])
 
 // Get site data
-var randomIv = new Uint8Array([
-        191,
-        156,
-        88,
-        142,
-        123,
-        89,
-        29,
-        167,
-        71,
-        132,
-        224,
-        159,
-        0,
-        86,
-        193,
-        106
-    ]); //crypto.getRandomValues(new Uint8Array(16)); // Dynamic
-let siteData = "CvQFlRwfQ8Yu2cISxhNDqa-3eVAbyiV2T7jqbhINyh5_H3dPaHBU5-20ZPzXwIH0EvZU-5yh7q-95O0ptb5lff"; // Dynamic
-const siteDataBytes = Buffer.from(siteData, "utf8");
-const combinedBuffers = new Uint8Array(Buffer.concat([randomIv, timestampBytes, siteDataBytes]));
+var randomIvBytes = new Uint8Array([218,252,68,211,157,121,216,141,250,201,80,178,15,173,87,89]);
+let siteDataString = "CvQFlRwfQ8Yu2cISxhNDqa6xEwoJIuBzTj1ILYQGdBZ3jVEvDZtq4BoGpUuLDTmoEvZU-5yh7q-95O0ptb5lff";
+const siteDataBuffer = Buffer.from(siteDataString, "utf8");
+
+const combinedInputBytes = new Uint8Array(
+    Buffer.concat([randomIvBytes, timestampByteArray, siteDataBuffer])
+);
 
 // Encrypt the data
-const cipher = crypto.createCipheriv("aes-256-cbc", mainKeyBytes, mainIvBytes);
-const encryptedBuffer = Buffer.concat([cipher.update(combinedBuffers), cipher.final()]);
-const encryptedBytes = new Uint8Array(encryptedBuffer);
+const aesCipher = crypto.createCipheriv("aes-256-cbc", aesKeyBytes, aesIvBytes);
+const encryptedBuffer = Buffer.concat([
+    aesCipher.update(combinedInputBytes),
+    aesCipher.final()
+]);
 
-console.log("Step 0 Output: ", new Uint8Array(encryptedBytes).toString())
+const encryptedByteArray = new Uint8Array(encryptedBuffer);
+
+console.log("Step 0 Output: ", new Uint8Array(encryptedByteArray).toString())
 
 // SHA-256
-const seed = new Uint8Array(Buffer.concat([mainXorKeyBytes, randomIv]));
-// XOR
-let hash = crypto.createHash("sha256").update(seed).digest();
+const xorSeed = new Uint8Array(Buffer.concat([xorSeedKeyBytes, randomIvBytes]));
 
-var final = new Uint8Array(encryptedBytes.length);
-for (let i = 0; i < encryptedBytes.length; i++) {
+// XOR
+let xorHash = crypto.createHash("sha256").update(xorSeed).digest();
+
+var xorResult = new Uint8Array(encryptedByteArray.length);
+
+for (let i = 0; i < encryptedByteArray.length; i++) {
 
     // every 32 bytes generate next hash block
-    if (i > 0 && i % hash.length === 0) {
-        hash = crypto.createHash("sha256").update(hash).digest();
+    if (i > 0 && i % xorHash.length === 0) {
+        xorHash = crypto.createHash("sha256").update(xorHash).digest();
     }
 
     // XOR
-    final[i] = encryptedBytes[i] ^ hash[i % hash.length];
+    xorResult[i] = encryptedByteArray[i] ^ xorHash[i % xorHash.length];
 }
 
-console.log("Step 1 Output: ", new Uint8Array(final).toString())
+console.log("Step 1 Output: ", new Uint8Array(xorResult).toString())
 
 // Step 2 Transformation
-const s2_input = final;
-const seed_2 = new Uint8Array(Buffer.concat([mainKeyBytes, randomIv]));
+const step2InputBytes = xorResult;
+const transformSeed = new Uint8Array(Buffer.concat([aesKeyBytes, randomIvBytes]));
 
 // TO DO: FIND THE TRANSFORMATION METHOD
-let hash_2 = crypto.createHash("sha256").update(seed_2).digest();
-
+let transformHash = crypto.createHash("sha256").update(transformSeed).digest();
 
 function transformByte(inputByte, keyByte) {
+
     // Determine rotation amount (0–7)
     const rotation = keyByte % 8;
 
     // Rotate the input byte left by the rotation amount
-    const rotatedByte = ((inputByte << rotation) | (inputByte >> (8 - rotation))) & 0xFF;
+    const rotatedByte =
+        ((inputByte << rotation) | (inputByte >> (8 - rotation))) & 0xFF;
 
     // Mix the key with a constant mask
-    const keyMask = keyByte ^ 0xA5; // 165 in hex
+    const keyMask = keyByte ^ 0xA5;
 
     // Combine rotated byte with masked key
     const outputByte = (rotatedByte + keyMask) & 0xFF;
@@ -95,76 +92,146 @@ function transformByte(inputByte, keyByte) {
     return outputByte;
 }
 
-const output = Buffer.alloc(final.length);
-const blockSize = hash_2.length; // 32
+const transformOutput = Buffer.alloc(xorResult.length);
+const transformBlockSize = transformHash.length;
 
-for (let i = 0; i < final.length; i++) {
-    output[i] = transformByte(final[i], hash_2[i % blockSize]);
+for (let i = 0; i < xorResult.length; i++) {
+    transformOutput[i] = transformByte(
+        xorResult[i],
+        transformHash[i % transformBlockSize]
+    );
 }
 
-console.log("\nStep 2 Output/Payload: ", new Uint8Array(output).toString())
+console.log("\nStep 2 Output/Payload: ", new Uint8Array(transformOutput).toString())
 
-const seed_3 = new Uint8Array(Buffer.concat([randomIv, mainXorKeyBytes, mainIvBytes]));
-console.log("\nStep 3 Seed: ", new Uint8Array(seed_3).toString());
-let hash_3 = crypto.createHash("sha256").update(seed_3).digest();
-console.log("\nStep 3 Hash: ", new Uint8Array(hash_3).toString())
+const ksaSeed = new Uint8Array(
+    Buffer.concat([randomIvBytes, xorSeedKeyBytes, aesIvBytes])
+);
 
-function generateKSA(derivedBufferArray) {
-    // Ensure the input is a Node.js Buffer
-    const buffer1 = Buffer.isBuffer(derivedBufferArray)
-    ? derivedBufferArray: Buffer.from(derivedBufferArray);
+console.log("\nStep 3 Seed: ", new Uint8Array(ksaSeed).toString());
 
-    // 1. Read the first four 32-bit chunks from the 32-byte buffer
-    const chunk0 = buffer1.readUInt32LE(0);
-    const chunk1 = buffer1.readUInt32LE(4);
-    const chunk2 = buffer1.readUInt32LE(8);
-    const chunk3 = buffer1.readUInt32LE(12);
+let ksaHash = crypto.createHash("sha256").update(ksaSeed).digest();
 
-    // 2. Fold them together using XOR to create the master seed / initial state
-    let state = (chunk0 ^ chunk1 ^ chunk2 ^ chunk3) >>> 0;
+console.log("\nStep 3 Hash: ", new Uint8Array(ksaHash).toString())
 
-    // 3. Initialize the state array S (0 to 255)
-    let S = Array.from({
-        length: 256
-    }, (_, k) => k);
+function generateKSA(hashBuffer) {
+    const seedBuffer = Buffer.isBuffer(hashBuffer)
+        ? hashBuffer
+        : Buffer.from(hashBuffer);
 
-    // 4. Execute the reverse Fisher-Yates shuffle using Xorshift32
+    const chunk0 = seedBuffer.readUInt32LE(0);
+    const chunk1 = seedBuffer.readUInt32LE(4);
+    const chunk2 = seedBuffer.readUInt32LE(8);
+    const chunk3 = seedBuffer.readUInt32LE(12);
+
+    let prngState = (chunk0 ^ chunk1 ^ chunk2 ^ chunk3) >>> 0;
+
+    let sbox = Array.from({ length: 256 }, (_, k) => k);
+
     for (let i = 255; i > 0; i--) {
-        // Update PRNG state
-        state ^= state << 13;
-        state ^= state >>> 17;
-        state ^= state << 5;
 
-        // Force state to remain an unsigned 32-bit integer
-        state = state >>> 0;
+        prngState ^= prngState << 13;
+        prngState ^= prngState >>> 17;
+        prngState ^= prngState << 5;
 
-        // Calculate swap index
-        let j = state % (i + 1);
+        prngState = prngState >>> 0;
 
-        // Swap S[i] and S[j]
-        let temp = S[i];
-        S[i] = S[j];
-        S[j] = temp;
+        let swapIndex = prngState % (i + 1);
+
+        let temp = sbox[i];
+        sbox[i] = sbox[swapIndex];
+        sbox[swapIndex] = temp;
     }
 
     return {
-        S: S,
-        finalState: state
+        S: sbox,
+        finalState: prngState
     };
 }
 
-const ksaResult = generateKSA(hash_3);
-const payload112 = output;
+const ksaResult = generateKSA(ksaHash);
+
+const payloadBytes = transformOutput;
+
 console.log("\nKSA(S-Box):", ksaResult.S.toString());
 console.log("\nKSA(State):", ksaResult.finalState.toString());
 
-var output_4 = [];
-for (var i = 0; i < payload112.length; i++) {
-    var index = payload112[i];
-    var value = ksaResult.S[index];
-    output_4.push(value)
+var payloadSwaps = [];
+for (var i = 0; i < payloadBytes.length; i++) {
+    var lookupIndex = payloadBytes[i];
+    var sboxValue = ksaResult.S[lookupIndex];
+    payloadSwaps.push(sboxValue)
 }
 
-console.log("\nPayload Swaps: ", JSON.stringify(output_4));
+console.log("\nPayload Swaps: ", JSON.stringify(payloadSwaps)); // Not matching all bytes [0-15] is matching only
 
 /******** Above this line the algorithm re-constructed and matching as expected ********/
+
+/*
+// --- Step 5: Block-Level Shuffle ---
+// The payload is 112 bytes. 112 / 16 = 7 blocks.
+const numBlocks = output_4.length / 16; 
+let blockIndices = Array.from({ length: numBlocks }, (_, k) => k);
+
+// Crucial: Continue using the cascading state from the KSA
+let state = ksaResult.finalState;
+
+// Fisher-Yates shuffle for the 7 block indices using Xorshift32
+for (let i = numBlocks - 1; i > 0; i--) {
+    state ^= state << 13;
+    state ^= state >>> 17;
+    state ^= state << 5;
+    state = state >>> 0; // Force unsigned 32-bit
+    
+    let j = state % (i + 1);
+    
+    // Swap block indices
+    let temp = blockIndices[i];
+    blockIndices[i] = blockIndices[j];
+    blockIndices[j] = temp;
+}
+
+console.log("\nBlock Shuffle Order:", blockIndices);
+
+// Apply the block shuffle to output_4
+let blockShuffledPayload = [];
+for (let i = 0; i < numBlocks; i++) {
+    let sourceBlockIdx = blockIndices[i];
+    let start = sourceBlockIdx * 16;
+    let block = output_4.slice(start, start + 16);
+    blockShuffledPayload.push(...block);
+}
+
+// --- Step 6: Byte-Level Shuffle ---
+// Initialize byte indices 0 to 111
+let byteIndices = Array.from({ length: output_4.length }, (_, k) => k);
+
+// Fisher-Yates shuffle for the 112 byte indices (continuing with the SAME state)
+for (let i = output_4.length - 1; i > 0; i--) {
+    state ^= state << 13;
+    state ^= state >>> 17;
+    state ^= state << 5;
+    state = state >>> 0;
+    
+    let j = state % (i + 1);
+    
+    // Swap byte indices
+    let temp = byteIndices[i];
+    byteIndices[i] = byteIndices[j];
+    byteIndices[j] = temp;
+}
+
+console.log("\nByte Shuffle Indices (First 10):", byteIndices.slice(0, 10));
+
+// Apply the final byte shuffle
+let finalPayload = new Uint8Array(output_4.length);
+for (let i = 0; i < output_4.length; i++) {
+    // Depending on the obfuscator's specific assembly mapping, apply the shuffle.
+    // If this forward mapping yields malformed data, swap the assignment to:
+    // finalPayload[byteIndices[i]] = blockShuffledPayload[i];
+    finalPayload[i] = blockShuffledPayload[byteIndices[i]];
+}
+
+console.log("\nFinal Obfuscated Payload (Hex):", Buffer.from(finalPayload).toString('hex'));
+console.log("Final Obfuscated Payload (Base64):", Buffer.from(finalPayload).toString('base64'));
+*/
