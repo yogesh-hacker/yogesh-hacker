@@ -9,13 +9,13 @@ function bytesToHex(byteArray) {
 }
 
 // Convert Hex to Bytes
-const aesKeyBytes = Buffer.from("42f082221250ad12dbcb8dbbe310d2319a66bb50dec37bb725d6ecac0a0b836d", "hex");
-const aesIvBytes = Buffer.from("b8a4acdfcef043ac437daaf51d6eab13", "hex");
-const xorSeedKeyBytes = Buffer.from("f8a51068c2f86602", "hex");
+const aesKeyBytes = Buffer.from("f32d7016705d4d6c71b5cda311073a06703c6f66bf9f22a8f268479b08443d3e", "hex");
+const aesIvBytes = Buffer.from("f0d1a42026e458a63c77506dac76ae8d", "hex");
+const xorSeedKeyBytes = Buffer.from("26ce1e9", "hex");
 //console.log(new Uint8Array(aesIvBytes).toString())
 
 // Current timestamp as BigInt
-let timestampBigInt = 1773409212316n //BigInt(Date.now()); // Dynamic
+let timestampBigInt = 1773462680330n //BigInt(Date.now()); // Dynamic
 
 const timestampByteArray = new Uint8Array(8);
 
@@ -28,24 +28,24 @@ for (let byteIndex = 0; byteIndex < 8; byteIndex++) {
 
 // Get site data
 var randomIvBytes = new Uint8Array([
-    222,
-    134,
-    112,
-    236,
-    82,
-    157,
-    168,
-    148,
-    180,
-    242,
-    57,
-    83,
-    95,
-    165,
-    27,
-    139
-]);
-let siteDataString = "CvQFlRwfQ8Yu2cISxhNDqRpShw1r3PT8qMlyxVOM_7OiJFmhiHbIb9EtOxF6CP3nEvZU-5yh7q-95O0ptb5lff";
+        68,
+        224,
+        44,
+        72,
+        99,
+        96,
+        68,
+        180,
+        8,
+        58,
+        219,
+        54,
+        79,
+        102,
+        224,
+        198
+    ]);
+let siteDataString = "he-AK4Yl-GE2J1jxVOwskal2p401HAakwTpso0OAk02JciSmHvzzog1Hk7VX_zRhUeoD_qIOMk_9qfNnXCqKll";
 const siteDataBuffer = Buffer.from(siteDataString, "utf8");
 
 const combinedInputBytes = new Uint8Array(
@@ -82,7 +82,7 @@ for (let i = 0; i < encryptedByteArray.length; i++) {
     xorResult[i] = encryptedByteArray[i] ^ xorHash[i % xorHash.length];
 }
 
-console.log("Step 1 Output: ", new Uint8Array(xorResult).toString())
+console.log("\nStep 1 Output: ", new Uint8Array(xorResult).toString())
 
 
 /*****************************************/
@@ -128,9 +128,7 @@ console.log("\nStep 2 Output/Payload: ", new Uint8Array(transformOutput).toStrin
 /*-------- STEP 3 TRANSFORMATION --------*/
 /*****************************************/
 
-const ksaSeed = new Uint8Array(
-    Buffer.concat([randomIvBytes, xorSeedKeyBytes, aesIvBytes])
-);
+const ksaSeed = new Uint8Array(Buffer.concat([randomIvBytes, xorSeedKeyBytes, aesIvBytes]));
 
 console.log("\nStep 3 Seed: ", new Uint8Array(ksaSeed).toString());
 
@@ -138,7 +136,7 @@ let ksaHash = crypto.createHash("sha256").update(ksaSeed).digest();
 
 console.log("\nStep 3 Hash: ", new Uint8Array(ksaHash).toString())
 
-function generateKSA(hashBuffer) {
+function generateKSA(hashBuffer, length) {
     const seedBuffer = Buffer.isBuffer(hashBuffer)
     ? hashBuffer: Buffer.from(hashBuffer);
 
@@ -150,10 +148,10 @@ function generateKSA(hashBuffer) {
     let prngState = (chunk0 ^ chunk1 ^ chunk2 ^ chunk3) >>> 0;
 
     let sbox = Array.from({
-        length: 256
+        length: length
     }, (_, k) => k);
 
-    for (let i = 255; i > 0; i--) {
+    for (let i = (length - 1); i > 0; i--) {
 
         prngState ^= prngState << 13;
         prngState ^= prngState >>> 17;
@@ -174,7 +172,7 @@ function generateKSA(hashBuffer) {
     };
 }
 
-const ksaResult = generateKSA(ksaHash);
+const ksaResult = generateKSA(ksaHash, 256);
 
 const payloadBytes = transformOutput;
 
@@ -202,11 +200,45 @@ console.log("\nPayload Swaps: ", JSON.stringify(payloadSwaps));
 /*****************************************/
 /*-------- STEP 4 TRANSFORMATION --------*/
 /*****************************************/
-
+const inputArr = payloadSwaps;
+//const inputArr = new Uint8Array([228,62,81,79,2,102,225,155,51,52,130,227,119,13,60,61,196,165,33,4,122,50,181,245,6,176,28,127,199,36,8,169,251,90,78,0,19,226,155,146,104,154,159,243,141,214,143,12,99,180,120,191,114,11,10,229,29,82,153,144,1,143,125,115,93,87,31,63,164,150,172,155,129,139,70,8,180,98,18,141,174,10,116,181,80,72,116,39,111,54,169,76,181,109,203,178,42,161,113,121,111,238,84,14,107,53,149,197,41,218,180,97]);
+//const seed_4 = new Uint8Array([248,165,16,104,194,248,102,2,80,41,247,218,26,198,127,22,206,77,15,50,126,114,155,35]);
 const seed_4 = new Uint8Array(Buffer.concat([xorSeedKeyBytes, randomIvBytes]));
-
 let hash_4 = crypto.createHash("sha256").update(seed_4).digest();
-
 const permutationTableLength = payloadSwaps.length / 16;
 
-console.log(new Uint8Array(hash_4).toString());
+const ksaResult2 = generateKSA(hash_4, 7)
+
+function shuffleBlocks(payload, pBox) {
+    if (payload.length !== 112) {
+        throw new Error("Payload must be exactly 112 bytes.");
+    }
+    if (pBox.length !== 7) {
+        throw new Error("P-Box must be exactly 7 elements.");
+    }
+
+    const blockSize = 16;
+    const shuffledPayload = new Uint8Array(112);
+
+    for (let i = 0; i < pBox.length; i++) {
+        const sourceBlockIndex = pBox[i];
+        
+        const sourceOffset = sourceBlockIndex * blockSize;
+        const destOffset = i * blockSize;
+
+        for (let j = 0; j < blockSize; j++) {
+            shuffledPayload[destOffset + j] = payload[sourceOffset + j];
+        }
+    }
+
+    return shuffledPayload;
+}
+
+const shuffledData = shuffleBlocks(inputArr, ksaResult2.S);
+console.log("\nStep 4 Output: ", shuffledData.toString());
+console.log("\nStep 4 Seed: ", seed_4.toString());
+
+
+/*****************************************/
+/*-------- STEP 5 TRANSFORMATION --------*/
+/*****************************************/
