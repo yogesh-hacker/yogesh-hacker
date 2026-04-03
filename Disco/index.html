@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Disco 💃</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #controls {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.7);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            background: #111;
+            color: white;
+        }
+
+        input[type="file"] {
+            width: 100%;
+        }
+
+        input[type="range"] {
+            width: 90%;
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="controls">
+        <input type="file" id="music" accept="audio/*">
+
+        <div class="row">
+            <button onclick="start()">Start 🔥</button>
+            <button onclick="stop()">Stop 🛑</button>
+            <button onclick="toggleFullscreen()">⛶</button>
+        </div>
+
+        <input type="range" id="sensitivity" min="50" max="250" value="160">
+        <small style="color:white;">Beat Sensitivity</small>
+
+        <audio id="audio" controls></audio>
+    </div>
+
+    <script>
+        const colors = [
+            "#ff0000", "#00ff00", "#0000ff",
+            "#ffff00", "#ff00ff", "#00ffff",
+            "#ffffff"
+        ];
+
+        let audioCtx, analyser, source;
+        let dataArray;
+        let animationId;
+
+        const audio = document.getElementById("audio");
+        const sensitivitySlider = document.getElementById("sensitivity");
+
+        // Load music
+        document.getElementById("music").addEventListener("change", function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                audio.src = URL.createObjectURL(file);
+            }
+        });
+
+        function setupAudio() {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+            analyser = audioCtx.createAnalyser();
+            source = audioCtx.createMediaElementSource(audio);
+
+            source.connect(analyser);
+            analyser.connect(audioCtx.destination);
+
+            analyser.fftSize = 256;
+            dataArray = new Uint8Array(analyser.frequencyBinCount);
+        }
+
+        function detectBeat() {
+            analyser.getByteFrequencyData(dataArray);
+
+            let bass = 0;
+            for (let i = 0; i < 10; i++) {
+                bass += dataArray[i];
+            }
+            bass /= 10;
+
+            const threshold = sensitivitySlider.value;
+
+            if (bass > threshold) {
+                flashColor();
+            }
+
+            animationId = requestAnimationFrame(detectBeat);
+        }
+
+        function flashColor() {
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = color;
+        }
+
+        async function start() {
+            if (!audioCtx) setupAudio();
+
+            // Mobile fix (user interaction required)
+            if (audioCtx.state === "suspended") {
+                await audioCtx.resume();
+            }
+
+            audio.play();
+            detectBeat();
+        }
+
+        function stop() {
+            audio.pause();
+            cancelAnimationFrame(animationId);
+            document.body.style.backgroundColor = "black";
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+    </script>
+
+</body>
+  </html>
