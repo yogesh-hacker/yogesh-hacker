@@ -1,1 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dream: The World Beyond</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
+:root {
+        --bg-color: #0b0c10;
+        --text-color: #c5c6c7;
+        --highlight: #66fcf1;
+        --secondary-bg: #1f2833;
+        --font-heading: 'Cinzel', serif;
+        --font-body: 'Lora', serif;
+    }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 15vh 20px;
+            background: radial-gradient(circle at center, var(--secondary-bg) 0%, var(--bg-color) 100%);
+            border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--highlight);
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .scene {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 100px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards;
+        }
+
+        .scene:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .text-content {
+            flex: 1;
+            font-size: 1.15rem;
+        }
+
+        .text-content p {
+            margin-bottom: 20px;
+        }
+
+        .text-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .image-content {
+            flex: 1;
+            position: relative;
+        }
+
+        .image-content img {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(102, 252, 241, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            object-fit: cover;
+        }
+
+        .image-content img:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(102, 252, 241, 0.3);
+        }
+
+        .conclusion {
+            text-align: center;
+            padding: 80px 20px;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-shadow: 0 0 20px var(--highlight);
+        }
+
+        /* Staggered animation delays for a smooth loading effect */
+        .scene:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .scene:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .scene:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+@keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+@media (max-width: 900px) {
+            .scene, .scene:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+                margin-bottom: 80px;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dream: The World Beyond</h1>
+        <p class="subtitle">
+            A journey from the mundane to the surreal
+        </p>
+    </header>
+
+    <div class="container">
+
+        <!-- Scene 1: The Normal Life -->
+        <section class="scene">
+            <div class="text-content">
+                <p>
+                    The dream begins in a familiar rhythm of normal life. I go to my father’s house to give him food, as I usually do, riding my cycle through the same everyday path. I sit with him for a while, and we talk calmly—nothing unusual, just a peaceful moment of routine connection between father and son.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="reference_11.png" alt="Peaceful bicycle path">
+            </div>
+        </section>
+
+        <!-- Scene 2: The Parasite -->
+        <section class="scene">
+            <div class="text-content">
+                <p>
+                    While sitting there, something strange breaks that normality. I notice a tiny bump on my right bicep (like something most people ignore in real life). Without thinking much, I start scratching it. Slowly, I press it, expecting a small white, semi-hard substance to come out like usual skin impurities. But instead, something unnatural appears—a small opening at the top of the bump, and from it, a thick white substance begins to emerge along with something semi-hard attached to it.
+                </p>
+                <p>
+                    The moment I try to pull it out, a disturbing realization hits me—it feels like a parasite under the skin. The pain is not just surface-level; it feels deep, like something is resisting inside my body. Still, I pull harder, and it finally comes out. It looks like a small living parasite. Instinctively, I throw it onto the ground of dust, as if removing something dangerous.
+                </p>
+                <p>
+                    But in my mind, a fear forms immediately—this thing is not ordinary. It has behavior: if I come near it again, it can jump onto exposed skin and enter the body again after some time. I try to destroy it using a brick, but even after hitting it, it doesn’t fully die. It is only half-dead, still lingering with an unsettling presence.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="reference_10.png">
+            </div>
+        </section>
+
+        <!-- Scene 3: The Baba Figure -->
+        <section class="scene">
+            <div class="text-content">
+                <p>
+                    Then suddenly, a Baba-like figure appears (a mysterious man with authority over these parasites, like he controls them). He walks toward me with calm dominance. He tells me to put the parasite back into my skin. Fear rises instantly, and I try to escape, but strangely, no one else is around—not even my father. The world feels emptied.
+                </p>
+                <p>
+                    He follows me again, repeating the command. I refuse. His expression shifts—anger builds. He threatens indirectly, as if he has control over something larger. He throws the parasite toward me, but this time I destroy it completely with stones.
+                </p>
+                <p>
+                    He speaks again, almost casually: he sells these parasites for ₹700/kg and can create more anytime. Then he offers me ₹20 to put it back into my body. I reject it instantly, almost disgusted by the idea. I question it in my mind—how can something so harmful be treated like a product, and my body like a container for profit?
+                </p>
+                <p>
+                    He opens his bag and begins throwing multiple newly created parasites at me. They multiply rapidly. The scene becomes overwhelming. My vision starts to blur, darkness slowly taking over, and everything fades into black.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="reference_9.png" alt="Mysterious figure in fog">
+            </div>
+        </section>
+
+        <!-- Scene 4: The Shift to Reality -->
+        <section class="scene">
+            <div class="text-content">
+                <p>
+                    Suddenly, I am back on my cycle, as if nothing happened. I have just given food to my father, and everything feels like a hallucination or dream fragment dissolving into reality. Relief briefly returns.
+                </p>
+                <p>
+                    But the environment shifts again. I notice people near the ferry ghat area (people who manage the river crossing and collect money). A dispute is happening there; they are scolding a man on a motorcycle with passengers. Life feels normal again, but slightly strange, as if reality is still unstable.
+                </p>
+                <p>
+                    While cycling near the river road, I notice a girl sitting on a motorcycle from behind—beautiful but distant. Curiosity makes me move closer, but I control myself and pass by calmly. I avoid looking too closely, choosing to continue cycling normally. On a second glance, I realize there are two girls, and even though they appear beautiful, I recognize they are minors, so I immediately detach and move away, continuing toward the quieter tree-lined road before circling back toward the ferry area again.
+                </p>
+            </div>
+        </section>
+
+        <!-- Scene 5: The Deep Ocean & The Snake -->
+        <section class="scene">
+            <div class="text-content">
+                <p>
+                    Then the scene shifts completely.
+                </p>
+                <p>
+                    Now I am with my friends—Jiadul, Saniyaj, Samirul, and others—bathing and swimming in a vast ocean-like river. The water is deep blue, cold, and endless. There is no visible ground beneath, only depth and silence.
+                </p>
+                <p>
+                    A snake appears in the water, swimming ahead of us. Surprisingly, it does not feel threatening. It feels like a world where animals are not harmful. I grab the snake by its tail and throw it behind me, continuing forward as if it is just another obstacle in motion.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="reference_7.png">
+            </div>
+        </section>
+
+        <!-- Scene 6: The Great Wall -->
+        <section class="scene">
+            <div class="text-content">
+                <p>
+                    We swim toward an unknown direction, toward something we cannot fully understand. Ahead, a huge concrete wall rises from the water, like a boundary of the world itself. Internally, it feels like we are meant to cross it.
+                </p>
+                <p>
+                    We try to swim faster, and somehow speed turns into height—we begin jumping higher with effort. On the first attempt, we fail to cross the wall. Others around us continue swimming, but we stay focused on escaping beyond it.
+                </p>
+                <p>
+                    We decide to push harder. We return, build momentum again. I see the snake again, but this time Jiadul throws it away instead. Something in us feels different now—we feel stronger, more determined. It even feels like we have companions and support (girlfriends/partners in the dream sense), giving us emotional strength.
+                </p>
+                <p>
+                    We try again and finally manage to grab the high metal rods of the wall window and escape. We succeed.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="reference_6.png" alt="Massive wall in the ocean">
+            </div>
+        </section>
+
+        <!-- Scene 7: The Coral Reef & Second Wall -->
+        <section class="scene">
+            <div class="text-content">
+                <p>
+                    Beyond the wall, everything changes.
+                </p>
+                <p>
+                    We enter another ocean—this one clear, calm, and breathtaking. The floor is visible with corals underneath. Colorful fishes move peacefully around us. There is no fear here, only silence, beauty, and deep comfort. We swim forward, absorbing the view like we have entered a hidden layer of nature.
+                </p>
+                <p>
+                    But again, another wall appears—taller, cleaner, more impossible. We try multiple times but fail to reach it. It feels like the final boundary. After repeated attempts, I manage to grab it firmly. In that moment, an orange fish gently attaches to my toe—not biting, just holding softly, almost like a strange connection with the life around me.
+                </p>
+                <p>
+                    Finally, we climb over.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="reference_5.png" alt="Clear underwater corals">
+            </div>
+        </section>
+
+        <!-- Scene 8: The Scenic World -->
+        <section class="scene">
+            <div class="image-content">
+                <img src="reference_4.png" alt="Surreal sunset landscape">
+            </div>
+            <div class="text-content">
+                <p>
+                    Beyond it opens a vast scenic world—small islands, flowing river streams, greenery, cliffs, and a sunset that feels unreal, almost painted by something divine. It feels like we have broken out of a system designed to limit exploration, and now we are seeing what lies beyond it.
+                </p>
+                <p>
+                    We jump down together, gliding through the air as if gravity has softened. We land near a river shore. The water is clean but fast-moving.
+                </p>
+                <p>
+                    A friend is injured and cannot walk properly. Many cross ahead with their partners, including my girlfriend helping others across. I find myself struggling mid-stream against the strong current. For a moment, I nearly get pulled away, but I fight back and reach the shore again.
+                </p>
+                <p>
+                    I decide to help the injured friend. Slowly, I move toward him. My legs slip in the current, but I stabilize and pull him with effort. Together, we manage to reach safety. Everyone becomes relieved.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="reference_3.png" alt="Surreal sunset landscape">
+            </div>
+        </section>
+
+        <!-- Scene 9: Peace & The Jellyfish -->
+        <section class="scene">
+            <div class="text-content">
+                <p>
+                    After this, I meet my girlfriend again, and in a quiet moment of relief, we lean toward each other, breathe deeply, and share a peaceful hug—no tension, only comfort and calm.
+                </p>
+                <p>
+                    As evening falls, we sit together by the river. The sky is filled with unreal stars, glowing beautifully. The sound of water feels like soft music. Everything feels settled, peaceful, and complete.
+                </p>
+                <p>
+                    Then something extraordinary happens.
+                </p>
+                <p>
+                    From the river, glowing jellyfish-like blue orbs begin to rise into the sky. Each one carries a faint celestial presence. From them, fairy-like figures emerge, and they release light into the sky, forming the word:
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="reference_1.png" alt="Glowing blue orbs in the night sky">
+            </div>
+        </section>
+
+        <div class="conclusion">
+            “Welcome”
+        </div>
+
+    </div>
+
+</body>
+</html>
