@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMC Execution Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+:root {
+        --bg-color: #0b0f19;
+        --card-bg: #111827;
+        --card-border: #1f2937;
+        --accent-blue: #3b82f6;
+        --accent-green: #10b981;
+        --accent-red: #ef4444;
+        --text-main: #f3f4f6;
+        --text-muted: #9ca3af;
+    }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-image:
+            radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.05), transparent 25%),
+            radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.05), transparent 25%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .title p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-blue);
+        }
+
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .check-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background: rgba(31, 41, 55, 0.5);
+            border: 1px solid transparent;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .check-item:hover {
+            background: rgba(31, 41, 55, 0.8);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .check-item input {
+            display: none;
+        }
+
+        .custom-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--text-muted);
+            border-radius: 6px;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .check-item input:checked + .custom-checkbox {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+        }
+
+        .check-item input:checked + .custom-checkbox::after {
+            content: "✓";
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .check-item span.label-text {
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .check-item input:checked ~ span.label-text {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        /* Active state styling for the row */
+        .check-item.active-row {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .dashboard {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .progress-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #1f2937;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .status {
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .valid {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .partial {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .invalid {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--accent-red);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        .timer {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .timer-text {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            font-family: monospace;
+            background: #1f2937;
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        button {
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .save-btn {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .save-btn:hover {
+            background: #2563eb;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .reset-btn {
+            background: transparent;
+            color: var(--accent-red);
+            border: 1px solid var(--accent-red);
+        }
+
+        .reset-btn:hover {
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #4b5563;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="title">
+            <h1>Execution Terminal</h1>
+            <p>
+                SMC A+ Confirmation Flow
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Trade Confirmations</h2>
+
+            <div class="checklist">
+                <label class="check-item">
+                    <input type="checkbox" id="c1">
+                    <div class="custom-checkbox"></div>
+                    <span class="label-text">1. 15M Meaningful Sweep</span>
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" id="c2">
+                    <div class="custom-checkbox"></div>
+                    <span class="label-text">2. 15M BOS</span>
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" id="c3">
+                    <div class="custom-checkbox"></div>
+                    <span class="label-text">3. 15M Zone Tap (Demand / Supply)</span>
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" id="c4">
+                    <div class="custom-checkbox"></div>
+                    <span class="label-text">4. 5M / 3M Clean BOS</span>
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" id="c5">
+                    <div class="custom-checkbox"></div>
+                    <span class="label-text">5. Demand / Supply Tap of 5M</span>
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" id="c6">
+                    <div class="custom-checkbox"></div>
+                    <span class="label-text">6. Liquidity Pending Near Current Price</span>
+                </label>
+
+                <label class="check-item">
+                    <input type="checkbox" id="c7">
+                    <div class="custom-checkbox"></div>
+                    <span class="label-text">7. Final Tap on 5M/3M Zone (Entry)</span>
+                </label>
+            </div>
+
+            <div class="dashboard">
+                <div class="progress-wrapper">
+                    <div class="progress-header">
+                        <span>Setup Conviction</span>
+                        <span id="percent-text">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                </div>
+
+                <div id="status" class="status invalid">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Setup Not Ready
+                </div>
+
+                <div class="timer">
+                    <div class="timer-text" id="timeText">
+                        No active setup logged
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="save-btn" onclick="saveChecklist()">Log Setup</button>
+                    <button class="reset-btn" onclick="resetChecklist()">Clear Form</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            Stay disciplined. Trade the plan.
+        </div>
+        <br />
+        <br />
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll("input[type='checkbox']");
+        const checkItems = document.querySelectorAll(".check-item");
+        const statusBox = document.getElementById("status");
+        const progress = document.getElementById("progress");
+        const percentText = document.getElementById("percent-text");
+        const timeText = document.getElementById("timeText");
+
+        const TOTAL_STEPS = checkboxes.length;
+        const EXPIRE_HOURS = 12;
+
+        function updateUI() {
+            let checkedCount = 0;
+
+            checkboxes.forEach((cb, index) => {
+                if (cb.checked) {
+                    checkedCount++;
+                    checkItems[index].classList.add("active-row");
+                } else {
+                    checkItems[index].classList.remove("active-row");
+                }
+            });
+
+            const percent = Math.round((checkedCount / TOTAL_STEPS) * 100);
+
+            progress.style.width = percent + "%";
+            percentText.innerText = percent + "%";
+
+            // Logic updated for 7 steps
+            if (checkedCount === TOTAL_STEPS) {
+                statusBox.className = "status valid";
+                statusBox.innerHTML = `<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> A+ Setup Authorized`;
+            } else if (checkedCount >= 5) {
+                statusBox.className = "status partial";
+                statusBox.innerHTML = `<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg> B+ Setup Emerging`;
+            } else {
+                statusBox.className = "status invalid";
+                statusBox.innerHTML = `<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Setup Not Ready`;
+            }
+
+            localStorage.setItem("smcChecklistState", JSON.stringify([...checkboxes].map(cb => cb.checked)));
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener("change", updateUI);
+        });
+
+        function saveChecklist() {
+            const now = Date.now();
+            localStorage.setItem("smcChecklistTime", now);
+            updateTimer();
+
+            // Quick visual feedback on button
+            const btn = document.querySelector('.save-btn');
+            const originalText = btn.innerText;
+            btn.innerText = "Setup Logged ✓";
+            btn.style.background = "var(--accent-green)";
+
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = "";
+            }, 2000);
+        }
+
+        function resetChecklist() {
+            checkboxes.forEach(cb => {
+                cb.checked = false;
+            });
+
+            localStorage.removeItem("smcChecklistState");
+            localStorage.removeItem("smcChecklistTime");
+
+            updateUI();
+            updateTimer();
+        }
+
+        function loadChecklist() {
+            const saved = JSON.parse(localStorage.getItem("smcChecklistState"));
+            if (saved) {
+                checkboxes.forEach((cb, index) => {
+                    cb.checked = saved[index] || false;
+                });
+            }
+            updateUI();
+        }
+
+        function updateTimer() {
+            const savedTime = localStorage.getItem("smcChecklistTime");
+
+            if (!savedTime) {
+                timeText.innerHTML = "No active setup logged";
+                return;
+            }
+
+            const now = Date.now();
+            const diff = now - savedTime;
+            const hoursPassed = diff / (1000 * 60 * 60);
+
+            if (hoursPassed >= EXPIRE_HOURS) {
+                resetChecklist();
+                timeText.innerHTML = "⏰ Setup Log Expired";
+                return;
+            }
+
+            const remaining = EXPIRE_HOURS - hoursPassed;
+            const hrs = Math.floor(remaining);
+            const mins = Math.floor((remaining - hrs) * 60);
+
+            timeText.innerHTML = `⏱ Active Entry Window: ${hrs}h ${mins}m remaining`;
+        }
+
+        // Initialization
+        loadChecklist();
+        updateTimer();
+        setInterval(updateTimer, 60000);
+
+    </script>
+
+</body>
+                      </html>
