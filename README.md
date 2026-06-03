@@ -19,6 +19,21 @@
 
 - ⚡ Fun fact **I am Ethical Hacker and Developer, come to BGMI(Battlegrounds Mobile India)😃**
 
+## ☕ Support the Developer
+
+<p align="center">
+  <a href="https://buymeacoffee.com/yogeshkumau" target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" width="150" height="50" alt="Buy Me A Coffee" />
+  </a>
+</p>
+
+> 💬 If any of my projects helped you, inspired you, or made your work easier — consider fueling future updates with a small donation!<br>
+> ❤️ Every single coffee helps keep my work alive, faster, and free for everyone.  
+> 👨‍💻 From sleepless debugging nights to building new features and tools — your support truly makes it all possible.
+
+[![Support Me](https://img.shields.io/badge/Support-☕-ff69b4?style=for-the-badge&logo=buymeacoffee)](https://buymeacoffee.com/yogeshkumau)
+
+---
 
 # Hack Flix
 
@@ -66,3 +81,4 @@ To experience ad-free, subscription-free streaming with Hack Flix, visit our web
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=yogesh-hacker&show_icons=true&locale=en&layout=compact" alt="yogesh-hacker" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=yogesh-hacker&show_icons=true&locale=en" alt="yogesh-hacker" /></p>
+
