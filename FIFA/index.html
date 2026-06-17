@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ICC Championship Trophy - Premium Live</title>
+
+    <meta content="noindex, nofollow, noarchive" name="robots">
+    <meta name="referrer" content="no-referrer">
+    
+    <script src="https://ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+    <script>
+        jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            background-color: #050505;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: "Cabin", sans-serif;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 100vw;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+        }
+
+        #videoPlayer { width: 100%; height: 100%; z-index: 1; }
+
+        /* Dark Vignette to make bottom UI pop */
+        .video-vignette {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 35%;
+            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Top Brand Logos */
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .logo-container img {
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+        }
+        .logo-container .logo1 { width: 55px; height: auto; }
+        .logo-container .logo2 { width: 110px; height: auto; }
+
+        /* Premium Glassmorphism Channel Bar */
+        .channel-bar-container {
+            position: absolute;
+            bottom: 35px;
+            width: 92%;
+            max-width: 900px;
+            background: rgba(20, 20, 25, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 20px 25px;
+            display: none; /* Hidden until loaded */
+            z-index: 10;
+            overflow-x: auto;
+            white-space: nowrap;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+            /* Smooth scrolling */
+            scroll-behavior: smooth;
+        }
+
+        /* Sleek custom scrollbar */
+        .channel-bar-container::-webkit-scrollbar { height: 6px; }
+        .channel-bar-container::-webkit-scrollbar-track { background: transparent; }
+        .channel-bar-container::-webkit-scrollbar-thumb { 
+            background: rgba(255,255,255,0.2); 
+            border-radius: 10px; 
+        }
+        .channel-bar-container::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
+
+        .channel-list {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding-bottom: 5px; /* Room for scrollbar */
+        }
+
+        .channel-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            min-width: 80px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            opacity: 0.5;
+        }
+
+        .channel-item:hover { 
+            transform: translateY(-5px); 
+            opacity: 0.9; 
+        }
+        
+        .channel-item.active { 
+            opacity: 1; 
+            transform: translateY(-8px) scale(1.05); 
+        }
+
+        /* Circular Avatar Style */
+        .channel-item img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+            padding: 8px;
+            border: 3px solid transparent;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        /* Active State Glow & Border */
+        .channel-item.active img { 
+            border-color: #00ffcc; 
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.6); 
+            padding: 4px; /* Image grows slightly inside the ring */
+        }
+
+        .channel-item span {
+            color: #e0e0e0;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 10px;
+            text-align: center;
+            max-width: 85px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            transition: color 0.3s ease;
+        }
+
+        .channel-item.active span { 
+            color: #00ffcc; 
+            font-weight: 700; 
+        }
+
+        /* Pulsing Loading Animation */
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: scale(0.98); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.5; transform: scale(0.98); }
+        }
+
+        #statusMessage {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            color: #00ffcc;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 5;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .logo-container { top: 15px; left: 15px; right: 15px; }
+            .logo-container .logo1 { width: 40px; }
+            .logo-container .logo2 { width: 80px; }
+            
+            .channel-bar-container { 
+                width: 95%; 
+                bottom: 20px; 
+                padding: 15px 20px; 
+                border-radius: 20px;
+            }
+            .channel-list { gap: 15px; }
+            .channel-item img { width: 55px; height: 55px; }
+            .channel-item span { font-size: 11px; margin-top: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <div class="video-vignette"></div>
+
+        <div id="statusMessage">Loading Premium Channels...</div>
+        
+        <div id="videoPlayer"></div>
+        
+        <div class="channel-bar-container" id="channelBar">
+            <div class="channel-list" id="channelList">
+                </div>
+        </div>
+
+        <div class="logo-container">
+            <img class="logo1" src="https://raw.githubusercontent.com/yogesh-hacker/yogesh-hacker/refs/heads/main/App/app_icon.png" alt="App Logo">
+            <img class="logo2" src="https://raw.githubusercontent.com/yogesh-hacker/MediaVanced/refs/heads/main/README/logo.png" alt="Brand Logo">
+        </div>
+    </div>
+
+    <script>
+        const JSON_DATA_URL = "https://raw.githubusercontent.com/SHAJON-404/iptv/8b066fcf5fce8d88437181c37ab5ae87586e3ed4/app/data/fifa.json";
+
+        function initPlayer(streamUrl, drmKeyId, drmKey) {
+            let sources = [];
+
+            if (streamUrl.includes('.m3u8')) {
+                sources.push({ file: streamUrl, type: 'hls' });
+            } else if (streamUrl.includes('.mpd')) {
+                let drmConfig = (drmKeyId && drmKey) ? {
+                    clearkey: { keyId: drmKeyId, key: drmKey }
+                } : {};
+                sources.push({ file: streamUrl, type: 'dash', drm: drmConfig });
+            } else {
+                sources.push({ file: streamUrl, type: 'hls' });
+            }
+
+            jwplayer("videoPlayer").setup({
+                playlist: [{ sources }],
+                autostart: true,
+                mute: false,
+                stretching: "uniform",
+                width: "100%",
+                height: "100%",
+                cast: {}
+            });
+        }
+
+        function switchChannel(element, url, keyId, key) {
+            document.querySelectorAll('.channel-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            
+            // Auto-scroll the clicked item into view nicely
+            element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            
+            initPlayer(url, keyId, key);
+        }
+
+        async function fetchAndSetupChannels() {
+            const statusNode = document.getElementById("statusMessage");
+            const channelBar = document.getElementById("channelBar");
+            const channelList = document.getElementById("channelList");
+
+            try {
+                const response = await fetch(JSON_DATA_URL);
+                if (!response.ok) throw new Error("Failed to fetch JSON.");
+                
+                let rawData = await response.json();
+                let channels = Array.isArray(rawData) ? rawData : (rawData.channels || rawData.data || []);
+
+                let fifaChannels = channels.filter(item => {
+                    let group = item.group || item.group_name || item.category || "";
+                    return group.toUpperCase().includes("FIFA");
+                });
+
+                if (fifaChannels.length === 0) fifaChannels = channels;
+
+                if (fifaChannels.length === 0) {
+                    statusNode.innerText = "No channels found.";
+                    statusNode.style.animation = "none";
+                    return;
+                }
+
+                channelList.innerHTML = "";
+                fifaChannels.forEach((channel, idx) => {
+                    const name = channel.name || channel.title || `Channel ${idx + 1}`;
+                    const logo = channel.logo || channel.image || channel.icon || "https://via.placeholder.com/150/ffffff/000000?text=TV";
+                    const url = channel.url || channel.link || channel.stream;
+                    const keyId = channel.keyId || channel.clearkey_id || (channel.clearkey && channel.clearkey.keyId) || "";
+                    const key = channel.key || channel.clearkey_hex || (channel.clearkey && channel.clearkey.key) || "";
+
+                    const itemDiv = document.createElement("div");
+                    itemDiv.className = "channel-item";
+                    itemDiv.innerHTML = `
+                        <img src="${logo}" alt="Logo" onerror="this.src='https://via.placeholder.com/150/ffffff/000000?text=TV'">
+                        <span>${name}</span>
+                    `;
+
+                    itemDiv.onclick = () => switchChannel(itemDiv, url, keyId, key);
+                    channelList.appendChild(itemDiv);
+                });
+
+                statusNode.style.display = "none";
+                channelBar.style.display = "block";
+
+                // Auto-play first item
+                const firstItemDiv = channelList.querySelector('.channel-item');
+                const firstData = fifaChannels[0];
+                const firstUrl = firstData.url || firstData.link || firstData.stream;
+                const firstKeyId = firstData.keyId || firstData.clearkey_id || "";
+                const firstKey = firstData.key || firstData.clearkey_hex || "";
+                
+                if (firstItemDiv && firstUrl) {
+                    switchChannel(firstItemDiv, firstUrl, firstKeyId, firstKey);
+                }
+
+            } catch (error) {
+                console.error("Initialization Failed: ", error);
+                statusNode.innerText = "Error loading streams. Check console.";
+                statusNode.style.animation = "none";
+                statusNode.style.color = "#ff4444";
+            }
+        }
+
+        fetchAndSetupChannels();
+    </script>
+</body>
+  </html>
+  
