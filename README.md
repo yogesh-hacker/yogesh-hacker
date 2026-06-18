@@ -19,19 +19,31 @@
 
 - ⚡ Fun fact **I am Ethical Hacker and Developer, come to BGMI(Battlegrounds Mobile India)😃**
 
-## ☕ Support the Developer
+<div align="center">
 
-<p align="center">
-  <a href="https://buymeacoffee.com/yogeshkumau" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" width="150" height="50" alt="Buy Me A Coffee" />
-  </a>
-</p>
+## 🟡 Support the Development
 
-> 💬 If any of my projects helped you, inspired you, or made your work easier — consider fueling future updates with a small donation!<br>
-> ❤️ Every single coffee helps keep my work alive, faster, and free for everyone.  
-> 👨‍💻 From sleepless debugging nights to building new features and tools — your support truly makes it all possible.
+<img src="https://img.shields.io/badge/Donate_with-Binance-F3BA2F?style=for-the-badge&logo=binance&logoColor=black" alt="Donate with Binance">
 
-[![Support Me](https://img.shields.io/badge/Support-☕-ff69b4?style=for-the-badge&logo=buymeacoffee)](https://buymeacoffee.com/yogeshkumau)
+<br><br>
+
+💬 If <b>MediaVanced</b> made your work easier or inspired you — consider fueling its next update!
+
+
+⚡ Every contribution keeps this project alive, faster, and free for everyone.
+
+👨‍💻 From sleepless debugging nights to new scraper modules — your support truly makes it all possible.
+
+<br>
+
+<img src="https://github.com/yogesh-hacker/yogesh-hacker/raw/main/myfiles/qr-image-1781150775681.png" width="220" alt="Binance Pay QR Code">
+
+<p><b>Scan the QR code above using your Binance App</b></p>
+
+<p><i>Or copy Binance Pay ID:</i> <code>992511662</code></p>
+<p>💛 Donations are completely optional and greatly appreciated.</p>
+</div>
+
 
 ---
 
