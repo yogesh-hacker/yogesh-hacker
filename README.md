@@ -21,18 +21,17 @@
 
 <div align="center">
 
-## 🟡 Support the Development
+## 🟡 Support the Developer
 
 <img src="https://img.shields.io/badge/Donate_with-Binance-F3BA2F?style=for-the-badge&logo=binance&logoColor=black" alt="Donate with Binance">
 
 <br><br>
 
-💬 If <b>MediaVanced</b> made your work easier or inspired you — consider fueling its next update!
+💬 If my projects made your work easier or inspired you — consider donating small amount!
 
+⚡ Every donation makes my nights go faster.
 
-⚡ Every contribution keeps this project alive, faster, and free for everyone.
-
-👨‍💻 From sleepless debugging nights to new scraper modules — your support truly makes it all possible.
+👨‍💻 From sleepless debugging nights to new scraper modules — your support and love truly makes it all possible.
 
 <br>
 
