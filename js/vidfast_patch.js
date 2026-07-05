@@ -1,5 +1,5 @@
 // ==========================================
-// --- ULTIMATETOOL UNIFIED EXTRACTION HOOK ---
+// --- MEDIAVANCED UNIFIED EXTRACTION HOOK ---
 // ==========================================
 (() => {
     // ---------------------------------------------------
@@ -23,18 +23,17 @@
     // Unified Error Logger
     function logError(context, err) {
         const errorMsg = `[!] ERROR in ${context}: ${err.message}\nStack: ${err.stack}`;
-        if (typeof UltimateLogger !== "undefined") UltimateLogger.log(errorMsg);
+        if (typeof AndroidBridge !== "undefined") AndroidBridge.log(errorMsg);
         else if (typeof mylogger !== "undefined") mylogger.log(errorMsg);
         else console.error(errorMsg);
     }
 
     // Real-time individual logger
     function logEvent(msg) {
-        if (typeof UltimateLogger !== "undefined") UltimateLogger.log(msg);
+        if (typeof AndroidBridge !== "undefined") AndroidBridge.log(msg);
         else if (typeof mylogger !== "undefined") mylogger.log(msg);
         else console.log(msg);
     }
-
     // Master JSON Dumper (Debounced)
     function triggerMasterDump() {
         clearTimeout(dumpTimeout);
@@ -55,7 +54,7 @@
     }
 
     // Expose globally so you can trigger it manually from Android WebView if needed
-    window.dumpUltimateToolConfig = triggerMasterDump;
+    window.dumpMediaVancedConfig = triggerMasterDump;
 
     // ---------------------------------------------------
     // 2. HELPER UTILITIES
@@ -158,6 +157,7 @@
     }
 
     function hookCrypto(cryptoObj) {
+        alert("Crypto Hook")
         if (!cryptoObj || cryptoObj.__isCipherHooked) return;
 
         if (typeof cryptoObj.createCipheriv === "function") {
@@ -187,6 +187,30 @@
     // 5. WEBPACK CHUNK INTERCEPTOR
     // ---------------------------------------------------
     window.webpackChunk_N_E = window.webpackChunk_N_E || [];
+        // ---------------------------------------------------
+    // WEBPACK CACHE RETROACTIVE SCANNER (Fixes the Cache Issue)
+    // ---------------------------------------------------
+    window.webpackChunk_N_E = window.webpackChunk_N_E || [];
+    window.webpackChunk_N_E.push([
+        [Symbol("mediavanced_extractor")], 
+        {}, 
+        function(__webpack_require__) {
+            try {
+                if (__webpack_require__.c) {
+                    const cacheIds = Object.keys(__webpack_require__.c);
+                    for (let i = 0; i < cacheIds.length; i++) {
+                        const mod = __webpack_require__.c[cacheIds[i]];
+                        if (mod) {
+                            if (mod.exports && mod.exports.Buffer) hookBuffer(mod.exports.Buffer);
+                            if (mod.exports && mod.exports.createCipheriv) hookCrypto(mod.exports);
+                        }
+                    }
+                }
+            } catch (err) {
+                logError("Webpack Cache Scanner", err);
+            }
+        }
+    ]);
     const originalPush = window.webpackChunk_N_E.push;
     
     window.webpackChunk_N_E.push = function(chunkData) {
@@ -227,5 +251,5 @@
         return originalPush.apply(this, arguments);
     };
 
-    logEvent("[+] UltimateTool Unified Hooks Installed Successfully.");
+    logEvent("[+] MediaVanced Unified Hooks Installed Successfully.");
 })();
