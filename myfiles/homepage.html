@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Premium Start Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --text-main: #ffffff;
+            --text-muted: #a0a0b0;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.15);
+            --accent-glow: rgba(66, 133, 244, 0.6);
+            --shadow-deep: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #050505;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 12vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- BACKGROUND SPACE ANIMATIONS --- */
+        .nebula-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -4;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(45, 20, 80, 0.4), transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(15, 45, 90, 0.5), transparent 50%);
+            animation: pulseNebula 15s ease-in-out infinite alternate;
+        }
+
+        .stars-layer {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: transparent;
+            z-index: -3;
+        }
+        
+        .stars-1 {
+            background-image: radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)), radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)), radial-gradient(1px 1px at 50px 160px, #fff, rgba(0,0,0,0)), radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)), radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: driftUp 40s linear infinite;
+            opacity: 0.4;
+        }
+        
+        .stars-2 {
+            background-image: radial-gradient(1.5px 1.5px at 100px 150px, #fff, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 180px 40px, #fff, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 220px 200px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 300px 300px;
+            animation: driftUp 60s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes driftUp {
+            from { background-position: 0 0; }
+            to { background-position: -200px -600px; }
+        }
+        @keyframes pulseNebula {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* --- ENTRANCE ANIMATIONS --- */
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(25px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .animate-in {
+            animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+
+        /* --- PREMIUM LOGO --- */
+        .logo-container {
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+        .logo-container span { color: #4285f4; }
+        .logo-container span:nth-child(2) { color: #ea4335; }
+        .logo-container span:nth-child(3) { color: #fbbc05; }
+        .logo-container span:nth-child(4) { color: #4285f4; }
+        .logo-container span:nth-child(5) { color: #34a853; }
+        .logo-container span:nth-child(6) { color: #ea4335; }
+        
+        /* --- SEARCH BAR --- */
+        .search-container {
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .search-form {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 14px 22px;
+            box-shadow: var(--shadow-deep);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .search-form:focus-within {
+            border-color: rgba(66, 133, 244, 0.5);
+            background: rgba(20, 20, 25, 0.8);
+            box-shadow: 0 0 30px var(--accent-glow), var(--shadow-deep);
+            transform: translateY(-2px) scale(1.01);
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--text-muted);
+            margin-right: 14px;
+        }
+        .search-form:focus-within .search-icon { fill: #4285f4; }
+
+        .search-input {
+            flex-grow: 1;
+            border: none;
+            background: transparent;
+            font-size: 17px;
+            color: var(--text-main);
+            outline: none;
+        }
+        .search-input::placeholder { color: var(--text-muted); font-weight: 300; }
+
+        /* --- GRID AND ICON SCALE CONTROLS (Strict 4 in a row) --- */
+        .shortcuts-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Hard locked to 4 columns */
+            gap: 16px;
+            width: 92%;
+            max-width: 400px;
+        }
+
+        .shortcut {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-main);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .shortcut-icon-wrapper {
+            width: 52px; /* Decreased size */
+            height: 52px; /* Decreased size */
+            background: linear-gradient(135deg, var(--glass-bg), rgba(0,0,0,0.2));
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px; /* Clean squircle ratio */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-deep);
+            position: relative;
+            /* REMOVED overflow:hidden so delete button can sit outside safely */
+        }
+
+        .shortcut:active { transform: scale(0.92); }
+        .shortcut:hover .shortcut-icon-wrapper {
+            border-color: rgba(255,255,255,0.25);
+            background: var(--glass-highlight);
+        }
+
+        .shortcut-icon {
+            width: 24px; /* Decreased size */
+            height: 24px; /* Decreased size */
+            border-radius: 5px;
+        }
+
+        .shortcut-title {
+            font-size: 11px; /* Scaled text down slightly to look proportional */
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            letter-spacing: 0.3px;
+            opacity: 0.85;
+        }
+
+        /* --- VISIBLE FIX FOR DELETE BUTTON --- */
+        .delete-btn {
+            position: absolute;
+            top: -6px; 
+            right: -6px;
+            background: linear-gradient(135deg, #ff4b4b, #cc0000);
+            color: white;
+            border-radius: 50%;
+            width: 20px; 
+            height: 20px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 11px;
+            font-weight: 700;
+            z-index: 15; /* Sits over everything else */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 75, 75, 0.4);
+            border: 1.5px solid #050505;
+        }
+        .delete-btn:active { transform: scale(1.2); }
+        .edit-mode-active .delete-btn { display: flex; animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+
+        @keyframes popIn {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- LAYOUT CONTROLS --- */
+        .controls { margin-top: 35px; }
+        .btn-glass {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            padding: 9px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            transition: all 0.3s ease;
+        }
+        .btn-glass:active { transform: scale(0.96); }
+        .edit-active-btn { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.25); }
+
+        /* --- MODAL DIALOG --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal {
+            background: linear-gradient(135deg, rgba(28,28,32,0.95), rgba(12,12,16,0.98));
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 26px;
+            border-radius: 22px;
+            width: 88%;
+            max-width: 320px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
+            transform: translateY(15px) scale(0.96);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-overlay.active { opacity: 1; }
+        .modal-overlay.active .modal { transform: translateY(0) scale(1); }
+        .modal h3 { margin-bottom: 18px; font-weight: 600; font-size: 19px; }
+        
+        .modal input {
+            width: 100%;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.06);
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            outline: none;
+            font-size: 14px;
+        }
+        .modal input:focus { border-color: #4285f4; }
+        
+        .modal-actions { display: flex; justify-content: flex-end; gap: 12px; }
+        .modal-btn { padding: 9px 18px; border-radius: 10px; border: none; cursor: pointer; font-weight: 600; font-size: 13px; }
+        .btn-cancel { background: transparent; color: var(--text-muted); }
+        .btn-save { background: #4285f4; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="nebula-bg"></div>
+    <div class="stars-layer stars-1"></div>
+    <div class="stars-layer stars-2"></div>
+
+    <div class="logo-container animate-in delay-1">
+        <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+    </div>
+
+    <div class="search-container animate-in delay-2">
+        <form class="search-form" action="https://www.google.com/search" method="GET">
+            <svg class="search-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+            </svg>
+            <input type="text" class="search-input" name="q" placeholder="Search the web" autocomplete="off" required>
+        </form>
+    </div>
+
+    <!-- Strictly locked grid layout -->
+    <div class="shortcuts-container animate-in delay-3" id="shortcuts">
+        <!-- Rendered dynamically -->
+    </div>
+
+    <div class="controls animate-in delay-3">
+        <button class="btn-glass" id="editToggleBtn" onclick="toggleEditMode()">EDIT LAYOUT</button>
+    </div>
+
+    <div class="modal-overlay" id="addModal">
+        <div class="modal">
+            <h3>Add Shortcut</h3>
+            <input type="text" id="siteName" placeholder="Name (e.g. Netflix)">
+            <input type="url" id="siteUrl" placeholder="URL (e.g. https://netflix.com)">
+            <div class="modal-actions">
+                <button class="modal-btn btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="modal-btn btn-save" onclick="saveNewSite()">Save Site</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const defaultSites = [
+            { id: 1, name: 'YouTube', url: 'https://www.youtube.com' },
+            { id: 2, name: 'Instagram', url: 'https://www.instagram.com' },
+            { id: 3, name: 'Reddit', url: 'https://www.reddit.com' },
+            { id: 4, name: 'GitHub', url: 'https://github.com' },
+            { id: 5, name: 'Vidfast', url: 'https://vidfast.pro/movie/533535' },
+            { id: 6, name: 'Prmovies', url: 'https://prmovies.recipes/' },
+            { id: 7, name: 'Vidcore', url: 'https://vidcore.net/movie/1198994' }
+        ];
+
+        let mySites = [];
+        let isEditMode = false;
+        const container = document.getElementById('shortcuts');
+        const modalOverlay = document.getElementById('addModal');
+
+        function init() {
+            const stored = localStorage.getItem('webview_sites_premium');
+            if (stored) {
+                mySites = JSON.parse(stored);
+            } else {
+                mySites = [...defaultSites];
+                saveToStorage();
+            }
+            renderSites();
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('webview_sites_premium', JSON.stringify(mySites));
+        }
+
+        function renderSites() {
+            container.innerHTML = ''; 
+
+            mySites.forEach((site, index) => {
+                let iconUrl = '';
+                try {
+                    const domain = new URL(site.url).hostname;
+                    iconUrl = `https://s2.googleusercontent.com/s2/favicons?domain=${domain}&sz=128`;
+                } catch(e) { iconUrl = ''; }
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'shortcut';
+                wrapper.style.animation = `slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards ${0.3 + (index * 0.04)}s`;
+                wrapper.style.opacity = '0';
+                
+                wrapper.onclick = (e) => {
+                    if(!isEditMode) window.location.href = site.url;
+                };
+
+                const iconWrapper = document.createElement('div');
+                iconWrapper.className = 'shortcut-icon-wrapper';
+
+                const iconImg = document.createElement('img');
+                iconImg.className = 'shortcut-icon';
+                iconImg.src = iconUrl;
+                
+                iconImg.onerror = function() {
+                    this.style.display = 'none';
+                    iconWrapper.innerText = site.name.charAt(0).toUpperCase();
+                    iconWrapper.style.fontWeight = '600';
+                    iconWrapper.style.fontSize = '20px'; /* Adjusted for smaller container */
+                    iconWrapper.style.color = '#fff';
+                };
+
+                const deleteBtn = document.createElement('div');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.innerHTML = '✕';
+                deleteBtn.onclick = (e) => {
+                    e.stopPropagation(); 
+                    deleteSite(site.id);
+                };
+
+                const title = document.createElement('div');
+                title.className = 'shortcut-title';
+                title.innerText = site.name;
+
+                iconWrapper.appendChild(iconImg);
+                iconWrapper.appendChild(deleteBtn);
+                wrapper.appendChild(iconWrapper);
+                wrapper.appendChild(title);
+                
+                container.appendChild(wrapper);
+            });
+
+            // Compact Add button
+            const addWrapper = document.createElement('div');
+            addWrapper.className = 'shortcut';
+            addWrapper.style.animation = `slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards ${0.3 + (mySites.length * 0.04)}s`;
+            addWrapper.style.opacity = '0';
+            addWrapper.onclick = openModal;
+
+            const addIconWrapper = document.createElement('div');
+            addIconWrapper.className = 'shortcut-icon-wrapper';
+            addIconWrapper.style.borderStyle = 'dashed';
+            addIconWrapper.innerHTML = '<span style="font-size:26px; font-weight:300; color:#a0a0b0; line-height: 0;">+</span>';
+
+            const addTitle = document.createElement('div');
+            addTitle.className = 'shortcut-title';
+            addTitle.innerText = 'Add Site';
+
+            addWrapper.appendChild(addIconWrapper);
+            addWrapper.appendChild(addTitle);
+            container.appendChild(addWrapper);
+
+            if(isEditMode) container.classList.add('edit-mode-active');
+        }
+
+        function toggleEditMode() {
+            isEditMode = !isEditMode;
+            const btn = document.getElementById('editToggleBtn');
+            if(isEditMode) {
+                container.classList.add('edit-mode-active');
+                btn.innerText = 'DONE EDITING';
+                btn.classList.add('edit-active-btn');
+            } else {
+                container.classList.remove('edit-mode-active');
+                btn.innerText = 'EDIT LAYOUT';
+                btn.classList.remove('edit-active-btn');
+            }
+        }
+
+        function deleteSite(id) {
+            mySites = mySites.filter(site => site.id !== id);
+            saveToStorage();
+            renderSites();
+        }
+
+        function openModal() {
+            modalOverlay.style.display = 'flex';
+            setTimeout(() => modalOverlay.classList.add('active'), 10);
+            document.getElementById('siteName').value = '';
+            document.getElementById('siteUrl').value = '';
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            setTimeout(() => modalOverlay.style.display = 'none', 300);
+        }
+
+        function saveNewSite() {
+            const name = document.getElementById('siteName').value.trim();
+            let url = document.getElementById('siteUrl').value.trim();
+
+            if (!name || !url) {
+                alert("Please fill in both fields");
+                return;
+            }
+
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                url = 'https://' + url;
+            }
+
+            mySites.push({ id: Date.now(), name: name, url: url });
+            saveToStorage();
+            renderSites();
+            closeModal();
+        }
+
+        init();
+    </script>
+</body>
+  </html>
+  
