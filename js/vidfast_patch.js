@@ -12,7 +12,8 @@
             AES_DEC_KEY: null,
             XOR_SEED_KEY: null,
             MAGIC_NUM_1_NONCE: null,
-            MAGIC_NUM_2_COUNTER: null
+            MAGIC_NUM_2_COUNTER: null,
+            CUSTOM_B64_MAP: null
         },
         base64KeyBatches: [] // Will hold objects of { keyPrimary, keySecondary, rc4Key }
     };
@@ -23,17 +24,18 @@
     // Unified Error Logger
     function logError(context, err) {
         const errorMsg = `[!] ERROR in ${context}: ${err.message}\nStack: ${err.stack}`;
-        if (typeof AndroidBridge !== "undefined") AndroidBridge.log(errorMsg);
+        if (typeof UltraLogger !== "undefined") UltraLogger.log(errorMsg);
         else if (typeof mylogger !== "undefined") mylogger.log(errorMsg);
         else console.error(errorMsg);
     }
 
     // Real-time individual logger
     function logEvent(msg) {
-        if (typeof AndroidBridge !== "undefined") AndroidBridge.log(msg);
+        if (typeof UltraLogger !== "undefined") UltraLogger.log(msg);
         else if (typeof mylogger !== "undefined") mylogger.log(msg);
         else console.log(msg);
     }
+
     // Master JSON Dumper (Debounced)
     function triggerMasterDump() {
         clearTimeout(dumpTimeout);
@@ -42,15 +44,16 @@
             ExtractedConfig.base64KeyBatches = [];
             for (let i = 0; i < rawBase64Keys.length; i += 3) {
                 ExtractedConfig.base64KeyBatches.push({
-                    keyPrimary:   rawBase64Keys[i]     || null,
+                    keyPrimary: rawBase64Keys[i] || null,
                     keySecondary: rawBase64Keys[i + 1] || null,
-                    rc4Key:       rawBase64Keys[i + 2] || null
+                    rc4Key: rawBase64Keys[i + 2] || null
                 });
             }
 
             const jsonOutput = JSON.stringify(ExtractedConfig, null, 4);
             logEvent("\n[!] === COMPLETE EXTRACTED CONFIG ===\n" + jsonOutput + "\n=====================================");
-        }, 1500); // Waits 1.5 seconds after activity stops to print the full JSON
+        },
+            1500); // Waits 1.5 seconds after activity stops to print the full JSON
     }
 
     // Expose globally so you can trigger it manually from Android WebView if needed
@@ -62,9 +65,11 @@
     function toHex(data) {
         if (!data) return "null";
         try {
-            const arr = data instanceof Uint8Array ? data : new Uint8Array(data);
+            const arr = data instanceof Uint8Array ? data: new Uint8Array(data);
             return Array.from(arr).map(b => b.toString(16).padStart(2, '0')).join('');
-        } catch(e) { return "unknown"; }
+        } catch(e) {
+            return "unknown";
+        }
     }
 
     function littleEndianToInt(bytes) {
@@ -87,9 +92,9 @@
     function looksLikeBase64(str) {
         if (/^[a-z]+$/.test(str)) return false; // Reject pure lowercase words
         return typeof str === "string" &&
-               str.length >= 8 && 
-               str.length % 4 === 0 &&
-               /^[A-Za-z0-9+/]+={0,2}$/.test(str);
+        str.length >= 8 &&
+        str.length % 4 === 0 &&
+        /^[A-Za-z0-9+/]+={0,2}$/.test(str);
     }
 
     // ---------------------------------------------------
@@ -98,7 +103,7 @@
     const originalReplace = String.prototype.replace;
     String.prototype.replace = function(searchValue, replaceValue) {
         const str = String(this);
-        
+
         try {
             if (looksLikeBase64(str) && searchValue instanceof RegExp && searchValue.source === "\\s+" && searchValue.flags === "g") {
                 if (!rawBase64Keys.includes(str)) {
@@ -110,18 +115,39 @@
         } catch (err) {
             logError("String.replace Hook", err);
         }
-        
+
         return originalReplace.call(this, searchValue, replaceValue);
     };
 
     // ---------------------------------------------------
-    // 4. BUFFER & CRYPTO HOOKS
+    // 4. JSON.PARSE HOOK
+    // ---------------------------------------------------
+    const originalParse = JSON.parse;
+
+    JSON.parse = function (text, reviver) {
+        try {
+            const result = originalParse.call(this, text, reviver);
+
+            if (Array.isArray(result) && result.length === 64 && result.every(v => typeof v === "string")) {
+                alert(JSON.stringify(result));
+                ExtractedConfig.crypto.CUSTOM_B64_MAP = result;
+                triggerMasterDump();
+            }
+            return result;
+        } catch (e) {
+            return originalParse.call(this, text, reviver);
+        }
+    };
+
+
+    // ---------------------------------------------------
+    // 5. BUFFER & CRYPTO HOOKS
     // ---------------------------------------------------
     let knownEncIV = null;
 
     function hookBuffer(TargetBuffer) {
         if (!TargetBuffer || TargetBuffer.__isConcatHooked) return;
-        
+
         const origConcat = TargetBuffer.concat;
         TargetBuffer.concat = function(list, totalLength) {
             if (Array.isArray(list)) {
@@ -135,7 +161,7 @@
                             triggerMasterDump();
                         }
                     }
-                    
+
                     // Pattern: The Decryption Config Fingerprint [32, 8, 8]
                     if (list.length === 3 && list[0].length === 32 && list[1].length === 8 && list[2].length === 8) {
                         const decHex = toHex(list[0]);
@@ -166,7 +192,7 @@
                 try {
                     const encKeyHex = toHex(key);
                     const encIvHex = toHex(iv);
-                    
+
                     if (ExtractedConfig.crypto.AES_ENC_KEY !== encKeyHex) {
                         ExtractedConfig.crypto.AES_ENC_KEY = encKeyHex;
                         ExtractedConfig.crypto.AES_ENC_IV = encIvHex;
@@ -184,41 +210,17 @@
     }
 
     // ---------------------------------------------------
-    // 5. WEBPACK CHUNK INTERCEPTOR
+    // 6. WEBPACK CHUNK INTERCEPTOR
     // ---------------------------------------------------
     window.webpackChunk_N_E = window.webpackChunk_N_E || [];
-        // ---------------------------------------------------
-    // WEBPACK CACHE RETROACTIVE SCANNER (Fixes the Cache Issue)
-    // ---------------------------------------------------
-    window.webpackChunk_N_E = window.webpackChunk_N_E || [];
-    window.webpackChunk_N_E.push([
-        [Symbol("mediavanced_extractor")], 
-        {}, 
-        function(__webpack_require__) {
-            try {
-                if (__webpack_require__.c) {
-                    const cacheIds = Object.keys(__webpack_require__.c);
-                    for (let i = 0; i < cacheIds.length; i++) {
-                        const mod = __webpack_require__.c[cacheIds[i]];
-                        if (mod) {
-                            if (mod.exports && mod.exports.Buffer) hookBuffer(mod.exports.Buffer);
-                            if (mod.exports && mod.exports.createCipheriv) hookCrypto(mod.exports);
-                        }
-                    }
-                }
-            } catch (err) {
-                logError("Webpack Cache Scanner", err);
-            }
-        }
-    ]);
     const originalPush = window.webpackChunk_N_E.push;
-    
+
     window.webpackChunk_N_E.push = function(chunkData) {
         try {
             const modules = chunkData[1];
             if (modules) {
                 const moduleIds = Object.keys(modules);
-                
+
                 for (let i = 0; i < moduleIds.length; i++) {
                     const id = moduleIds[i];
                     const originalModule = modules[id];
@@ -226,19 +228,19 @@
                     if (typeof originalModule === 'function') {
                         modules[id] = function(module, exports, __webpack_require__) {
                             const result = originalModule.apply(this, arguments);
-                            
+
                             try {
                                 // 1. Check module.exports
                                 if (module.exports && module.exports.Buffer) hookBuffer(module.exports.Buffer);
                                 if (module.exports && module.exports.createCipheriv) hookCrypto(module.exports);
-                                
+
                                 // 2. Check Next.js direct exports (Crucial Fallback)
                                 if (exports && exports.Buffer) hookBuffer(exports.Buffer);
                                 if (exports && exports.createCipheriv) hookCrypto(exports);
                             } catch (err) {
                                 logError(`Webpack Module Intercept (ID: ${id})`, err);
                             }
-                            
+
                             return result;
                         };
                     }
