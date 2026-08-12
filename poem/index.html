@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Limbo - Yogesh</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Mono:ital@0;1&display=swap');
+
+        :root {
+            --bg-color: #050002; /* Pitch black with an almost invisible hint of pink */
+            --text-main: #ffe4e6; /* Very clear, pale blush pink for perfect readability */
+            --text-dim: #fda4af; /* Muted pink */
+            --accent-glow: #e11d48; /* Deep vibrant pink for highlights */
+            --accent-neon: #fb7185; /* Soft neon pink */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.15rem;
+            line-height: 2;
+            margin: 0;
+            padding: 10vh 20px 25vh 20px; /* Massive bottom padding ensures deep scrolling */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .poem-container {
+            max-width: 600px;
+            margin: 0 auto;
+            animation: softFadeIn 2.5s ease-out;
+        }
+
+        .title {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.5rem;
+            color: var(--accent-neon);
+            margin-bottom: 4rem;
+            font-weight: normal;
+            letter-spacing: -0.5px;
+            border-bottom: 1px solid rgba(225, 29, 72, 0.3);
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .stanza {
+            margin-bottom: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 0.2px;
+        }
+
+        /* Subtle styling for code words to keep the dev connection */
+        .code {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95em;
+            color: var(--text-dim);
+            font-style: italic;
+        }
+
+        /* Strong, glowing emphasis for the dev brothers */
+        .fellas {
+            color: #fff1f2;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(225, 29, 72, 0.6), 0 0 20px rgba(225, 29, 72, 0.2);
+            transition: text-shadow 0.3s ease;
+        }
+
+        .fellas:hover {
+            text-shadow: 0 0 15px rgba(251, 113, 133, 0.8), 0 0 30px rgba(251, 113, 133, 0.4);
+        }
+
+        .author {
+            margin-top: 6rem;
+            font-family: 'Space Mono', monospace;
+            color: var(--accent-neon);
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        @keyframes softFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 1.05rem;
+                line-height: 1.9;
+                padding: 8vh 15px 20vh 15px;
+            }
+            .stanza {
+                margin-bottom: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poem-container">
+        <div class="title">The Limbo</div>
+
+        <div class="stanza">
+            I was good in codes.<br>
+            Good in my little world of <span class="code">Python</span>,<br>
+            where errors had reasons<br>
+            and broken things could always be fixed.
+        </div>
+
+        <div class="stanza">
+            Late nights meant terminals glowing,<br>
+            fingers on the keyboard,<br>
+            ideas turning into something real.<br>
+            I knew my world.<br>
+            I knew where I belonged.
+        </div>
+
+        <div class="stanza">
+            Then curiosity made me join the server.
+        </div>
+
+        <div class="stanza">
+            I wasn't searching for anything.<br>
+            Just curious about people,<br>
+            new voices, new faces,<br>
+            a world outside my code.
+        </div>
+
+        <div class="stanza">
+            But somewhere between<br>
+            “hello” and “who are you?”<br>
+            I lost a little piece of my peace.
+        </div>
+
+        <div class="stanza">
+            I was good in <span class="code">Python</span>,<br>
+            but not in ex,<br>
+            not in flirting,<br>
+            not in understanding why people change.<br>
+            I could <span class="code">debug</span> a program,<br>
+            but I couldn't debug a heart.
+        </div>
+
+        <div class="stanza">
+            Now I'm somewhere in between—<br>
+            surrounded by people,<br>
+            yet strangely alone.
+        </div>
+
+        <div class="stanza">
+            I've met new people.<br>
+            I've made new friends.<br>
+            And maybe they're wonderful.
+        </div>
+
+        <div class="stanza">
+            But the feeling was different<br>
+            with <span class="fellas">AzartX</span>, <span class="fellas">Phisher</span>, and <span class="fellas">IsDebug</span>.
+        </div>
+
+        <div class="stanza">
+            They weren't just usernames.<br>
+            They were my dev companions,<br>
+            my people from the same battlefield.<br>
+            Different screens, different projects,<br>
+            but somehow the same army. 🪖
+        </div>
+
+        <div class="stanza">
+            We spoke in <span class="code">bugs</span>, <span class="code">APIs</span>, <span class="code">servers</span>,<br>
+            late-night fixes and broken builds.<br>
+            There was comfort in knowing<br>
+            someone else was awake<br>
+            fighting the same invisible war.
+        </div>
+
+        <div class="stanza">
+            Now I scroll through endless messages,<br>
+            watch people connect in seconds,<br>
+            and wonder why I still feel<br>
+            like I'm standing outside the room.
+        </div>
+
+        <div class="stanza">
+            Maybe that's the strange thing<br>
+            about being surrounded by people—<br>
+            loneliness doesn't always need silence.
+        </div>
+
+        <div class="stanza">
+            Sometimes it needs a server full of voices.
+        </div>
+
+        <div class="stanza">
+            I don't want to sink<br>
+            into this deep ache.
+        </div>
+
+        <div class="stanza">
+            I don't want to lose myself<br>
+            trying to belong somewhere<br>
+            I was never meant to stay.
+        </div>
+
+        <div class="stanza">
+            Maybe I don't have to.
+        </div>
+
+        <div class="stanza">
+            Maybe I can step back,<br>
+            open my <span class="code">terminal</span>,<br>
+            write some <span class="code">Python</span>,<br>
+            break something,<br>
+            fix it,<br>
+            and remember who I was<br>
+            before all this noise.
+        </div>
+
+        <div class="stanza">
+            I was good in codes.
+        </div>
+
+        <div class="stanza">
+            I was good in my world.
+        </div>
+
+        <div class="stanza">
+            And perhaps this isn't being lost.
+        </div>
+
+        <div class="stanza">
+            Perhaps this is just the limbo—<br>
+            the space between<br>
+            who I was,<br>
+            who I met,<br>
+            and who I'm becoming.
+        </div>
+
+        <div class="author">
+            — Yogesh
+        </div>
+    </div>
+
+</body>
+  </html>
+  
