@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bengali Food Encyclopedia 💀</title>
+
+<style>
+/* --- BASE RESET & FONTS --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #0f0a0a;
+}
+::-webkit-scrollbar-thumb {
+    background: #4a2c20;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffb35c;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #f8f3ed;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(139, 34, 18, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(194, 116, 21, 0.25) 0%, transparent 40%),
+        #0c0808;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 40px 20px 60px;
+    line-height: 1.5;
+}
+
+.container {
+    width: min(1200px, 100%);
+    margin: auto;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 60px 25px;
+    border-radius: 30px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 126, 67, 0.12) 0%,
+        rgba(224, 46, 46, 0.05) 100%
+    );
+    border: 1px solid rgba(255, 173, 74, 0.15);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,173,74,0.05);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 50%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4.8rem);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    background: linear-gradient(to right, #ffce85, #ff7e43);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin: 0 auto;
+    max-width: 700px;
+    color: #dfd4ca;
+    font-size: 1.15rem;
+}
+
+.tags {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tag {
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(255, 173, 74, 0.1);
+    border: 1px solid rgba(255, 173, 74, 0.2);
+    color: #ffce85;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tag:hover {
+    background: rgba(255, 173, 74, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 173, 74, 0.2);
+}
+
+/* --- SEARCH BAR --- */
+.search-box {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    margin-bottom: 40px;
+}
+
+#search {
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid rgba(255, 173, 74, 0.2);
+    background: rgba(20, 15, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: white;
+    font-size: 1.1rem;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+#search::placeholder {
+    color: #9a9088;
+}
+
+#search:focus {
+    border-color: #ff7e43;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 20px rgba(255, 126, 67, 0.2);
+    transform: translateY(-2px);
+}
+
+/* --- GRID & CARDS --- */
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.category {
+    background: linear-gradient(145deg, rgba(30, 20, 20, 0.6), rgba(20, 15, 15, 0.8));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 24px;
+    padding: 25px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.category:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 126, 67, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(255, 126, 67, 0.1);
+}
+
+.category h2 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: #fff;
+    border-bottom: 2px dashed rgba(255, 173, 74, 0.2);
+    padding-bottom: 10px;
+}
+
+.category ul {
+    list-style: none;
+}
+
+.category li {
+    padding: 10px 0;
+    color: #d1c8c0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.category li:last-child {
+    border-bottom: none;
+}
+
+.category li::before {
+    content: "✦";
+    color: #ff7e43;
+    font-size: 0.8rem;
+    margin-right: 12px;
+    transition: transform 0.2s ease;
+}
+
+.category li:hover {
+    color: #ffce85;
+    transform: translateX(5px);
+}
+
+.category li:hover::before {
+    transform: scale(1.3) rotate(90deg);
+}
+
+/* --- FOOTER & STATS --- */
+.stats {
+    text-align: center;
+    color: #ffce85;
+    background: rgba(255, 173, 74, 0.08);
+    padding: 15px;
+    border-radius: 15px;
+    margin: 40px auto 20px;
+    max-width: max-content;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 173, 74, 0.2);
+}
+
+footer {
+    text-align: center;
+    color: #8a7f76;
+    margin-top: 40px;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 600px) {
+    body { padding: 20px 15px 40px; }
+    .hero { padding: 40px 20px; }
+    #search { padding: 16px 20px; font-size: 1rem; }
+    .food-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="hero">
+        <h1>🍚 Bengali Food Encyclopedia 💀</h1>
+        <p>An unnecessarily massive collection of Bengali dishes, because one Discord message wasn't enough. Now with 100% more aesthetic.</p>
+        <div class="tags">
+            <span class="tag">🐟 Machh</span>
+            <span class="tag">🍚 Bhat & Pulao</span>
+            <span class="tag">🍗 Mangsho</span>
+            <span class="tag">🥬 Niramish</span>
+            <span class="tag">🍬 Mishti</span>
+            <span class="tag">🫓 Street Food</span>
+        </div>
+    </header>
+
+    <div class="search-box">
+        <input id="search" type="text" placeholder="🔎 Craving something? Search for a dish...">
+    </div>
+
+    <main class="food-grid" id="foodGrid">
+
+        <section class="category">
+            <h2>🍚 Rice & Pulao</h2>
+            <ul>
+                <li>Sada Bhat (Steamed Rice)</li>
+                <li>Panta Bhat (Fermented Rice)</li>
+                <li>Basanti Pulao (Sweet Yellow Pulao)</li>
+                <li>Zardah Pulao</li>
+                <li>Kaju Kismis Pulao</li>
+                <li>Ghee Bhat</li>
+                <li>Muri Ghonto (Fish Head with Rice)</li>
+                <li>Bhuna Khichuri</li>
+                <li>Bhoger Khichuri</li>
+                <li>Mangshor Khichuri (Meat Khichuri)</li>
+                <li>Old Dhaka Beef Tehari</li>
+                <li>Kolkata Mutton Biryani</li>
+                <li>Dhakai Kacchi Biryani</li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>🐟 Fish & Seafood (Machh)</h2>
+            <ul>
+                <li>Sorshe Ilish (Hilsa in Mustard)</li>
+                <li>Ilish Bhapa (Steamed Hilsa)</li>
+                <li>Doi Ilish</li>
+                <li>Chingri Malai Curry (Prawn Coconut Curry)</li>
+                <li>Daab Chingri (Prawns cooked in Coconut)</li>
+                <li>Bhetki Paturi (Fish wrapped in Banana Leaf)</li>
+                <li>Bhetki Fish Fry</li>
+                <li>Rui Macher Kalia</li>
+                <li>Katla Macher Jhol</li>
+                <li>Pabda Macher Jhal</li>
+                <li>Parshe Macher Jhal</li>
+                <li>Tel Koi</li>
+                <li>Tyangra Macher Chochchori</li>
+                <li>Aar Macher Jhol</li>
+                <li>Chital Macher Muitha (Fish Dumplings)</li>
+                <li>Shol Macher Curry</li>
+                <li>Boal Macher Kalia</li>
+                <li>Mourala Macher Bati Chochchori</li>
+                <li>Kachki Macher Jhal</li>
+                <li>Loitta Macher Jhuri (Bombay Duck)</li>
+                <li>Shutki Bhorta (Dried Fish Mash)</li>
+                <li>Macher Dimer Bora (Fish Roe Fritters)</li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>🍗 Meat (Mangsho)</h2>
+            <ul>
+                <li>Kosha Mangsho (Slow-cooked Mutton)</li>
+                <li>Robibarer Mutton Jhol (Sunday Mutton Curry)</li>
+                <li>Dak Bungalow Mutton</li>
+                <li>Kolkata Chicken Chaap</li>
+                <li>Chicken Rezala</li>
+                <li>Mutton Korma</li>
+                <li>Beef Kala Bhuna (Chittagong Special)</li>
+                <li>Mezbani Gosht</li>
+                <li>Hasher Mangsho (Duck Curry)</li>
+                <li>Quail (Titir Pakhi) Roast</li>
+                <li>Boti Kebab</li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>🥔🥬 Vegetarian (Niramish)</h2>
+            <ul>
+                <li>Aloo Posto (Potatoes in Poppy Seeds)</li>
+                <li>Jhinge Posto (Ridge Gourd in Poppy Seeds)</li>
+                <li>Shukto (Bitter Mixed Veg Stew)</li>
+                <li>Enchorer Dalna (Green Jackfruit Curry)</li>
+                <li>Mochar Ghonto (Banana Blossom Curry)</li>
+                <li>Dhokar Dalna (Lentil Cake Curry)</li>
+                <li>Chhanar Dalna (Cottage Cheese Curry)</li>
+                <li>Potoler Dolma (Stuffed Pointed Gourd)</li>
+                <li>Lau Ghonto (Bottle Gourd Curry)</li>
+                <li>Kumror Chokka (Pumpkin & Chickpeas)</li>
+                <li>Panchmishali Tarkari</li>
+                <li>Labra (Mixed Veg for Puja)</li>
+                <li>Bati Chochchori</li>
+                <li>Kochu Shak (Taro Leaves)</li>
+                <li>Pui Shak Chochchori</li>
+                <li>Begun Bhaja (Fried Eggplant)</li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>🫘 Dal (Lentils)</h2>
+            <ul>
+                <li>Kacha Aamer Tok Dal (Raw Mango Dal)</li>
+                <li>Narkel diye Cholar Dal (Chana Dal with Coconut)</li>
+                <li>Musur Dal (Red Lentils)</li>
+                <li>Machher Matha diye Moong Dal (Moong Dal with Fish Head)</li>
+                <li>Biulir Dal with Fennel</li>
+                <li>Motor Dal</li>
+                <li>Lau diye Dal</li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>🌶️ Bhorta (Mashes)</h2>
+            <ul>
+                <li>Aloo Bhorta</li>
+                <li>Begun Pora (Roasted Eggplant Mash)</li>
+                <li>Tomato Bhorta</li>
+                <li>Dim Bhorta (Egg Mash)</li>
+                <li>Kacha Aam Bhorta (Raw Mango Mash)</li>
+                <li>Taki Macher Bhorta</li>
+                <li>Ilish Macher Lej Bhorta (Hilsa Tail Mash)</li>
+                <li>Chingri Bhorta (Prawn Mash)</li>
+                <li>Kalo Jeere Bhorta (Black Cumin Mash)</li>
+                <li>Dhonia Pata Bhorta (Coriander Mash)</li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>🫓 Street Food & Snacks</h2>
+            <ul>
+                <li>Phuchka (The Undisputed King)</li>
+                <li>Kolkata Kathi Roll (Chicken/Egg/Mutton)</li>
+                <li>Churmur</li>
+                <li>Aloo Kabli</li>
+                <li>Jhalmuri</li>
+                <li>Ghugni (Yellow Pea Curry)</li>
+                <li>Muri-Ghugni</li>
+                <li>Luchi & Alur Dom</li>
+                <li>Radhaballavi</li>
+                <li>Koraishutir Kochuri (Peas Kachori)</li>
+                <li>Singara (Bengali Samosa)</li>
+                <li>Vegetable Chop</li>
+                <li>Macher Chop (Fish Croquette)</li>
+                <li>Dimer Devil (Deviled Eggs)</li>
+                <li>Beguni & Piyaji</li>
+                <li>Kobiraji Cutlet</li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>🍬 Sweets (Mishti) 💀</h2>
+            <ul>
+                <li>Rosogolla / Sponge Rasgulla</li>
+                <li>Nolen Gurer Sandesh</li>
+                <li>Jolbhora Sandesh</li>
+                <li>Mishti Doi</li>
+                <li>Bhapa Doi</li>
+                <li>Roshmalai</li>
+                <li>Lyangcha</li>
+                <li>Kheer Kadam</li>
+                <li>Pantua</li>
+                <li>Chhanar Jilipi</li>
+                <li>Lady Kenny (Ledikeni)</li>
+                <li>Sita Bhog & Mihidana</li>
+                <li>Joynagarer Moa</li>
+                <li>Kachagolla</li>
+                <li>Patishapta (Winter Crepes)</li>
+                <li>Doodh Puli</li>
+                <li>Bhapa Pitha</li>
+                <li>Chitoi Pitha</li>
+                <li>Malpua</li>
+                <li>Payesh (Rice Pudding)</li>
+                <li>Chena Poda</li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>☕ Drinks & Chutneys</h2>
+            <ul>
+                <li>Aampora Shorbot (Roasted Mango Drink)</li>
+                <li>Ghol (Bengali Buttermilk)</li>
+                <li>Lebu Cha (Spiced Lemon Tea)</li>
+                <li>Bharer Cha (Clay-cup Tea)</li>
+                <li>Bel-er Shorbot (Wood-apple Sherbet)</li>
+                <li>Khejurer Gur Chutney (Date Chutney)</li>
+                <li>Plastic Chutney (Raw Papaya Chutney)</li>
+                <li>Aamshotto (Mango Leather)</li>
+                <li>Tomator Chutney</li>
+                <li>Aamer Chutney (Raw Mango)</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <div class="stats" id="stats">
+        Hundreds of Bengali dishes loaded. Ready to make you hungry. 💀
+    </div>
+
+    <footer>
+        🍚 + 🐟 + 🌶️ + 🥔 + 🧈 + 🍬
+        <br><br>
+        Bengali food supremacy. Accept no substitutes. 💀😂
+    </footer>
+
+</div>
+
+<script>
+const search = document.getElementById("search");
+const categories = document.querySelectorAll(".category");
+const stats = document.getElementById("stats");
+
+function filterFood() {
+    const query = search.value.toLowerCase().trim();
+    let total = 0;
+
+    categories.forEach(category => {
+        const items = category.querySelectorAll("li");
+        let visible = 0;
+
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            const match = !query || text.includes(query);
+            item.style.display = match ? "" : "none";
+            if (match) {
+                visible++;
+                total++;
+            }
+        });
+
+        // Hide category if no items match
+        if (visible > 0) {
+            category.style.display = "";
+            category.style.animation = "fadeIn 0.3s ease";
+        } else {
+            category.style.display = "none";
+        }
+    });
+
+    if (query) {
+        stats.textContent = `${total} dish${total === 1 ? "" : "es"} found 🔎`;
+    } else {
+        stats.textContent = "Hundreds of Bengali dishes loaded. Ready to make you hungry. 💀";
+    }
+}
+
+search.addEventListener("input", filterFood);
+</script>
+
+</body>
+</html>
