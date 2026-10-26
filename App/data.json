@@ -2,12 +2,12 @@
     "data": [
         {
             "app_name": "Hack Flix",
-            "app_size": "10.26 MB",
+            "app_size": "87.25 MB",
             "occasion_banner" : "",
-            "latest_version_code": 33.0,
-            "latest_version": "9.7",
-            "latest_version_src": "https://yogesh-hacker.github.io/yogesh-hacker/App/download/Hack_Flix_v9.7_Official.apk",
-            "last_updated_date": "17 March 2026"
+            "latest_version_code": 34.0,
+            "latest_version": "1.0.0",
+            "latest_version_src": "https://github.com/yogesh-hacker/yogesh-hacker/releases/download/v1.0.0/Hack_Flix_v1.0.0_Official.apk",
+            "last_updated_date": "26 October 2026"
         }
     ]
 }
