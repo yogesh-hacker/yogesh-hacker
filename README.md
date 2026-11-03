@@ -3,7 +3,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=yogesh-hacker&label=Profile%20views&color=0e75b6&style=flat" alt="yogesh-hacker" /> </p>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=yogesh-hacker" alt="yogesh-hacker" /></a> </p>
+<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy-six.vercel.app/?username=yogesh-hacker" alt="yogesh-hacker" /></a> </p>
 
 - 🔭 I’m currently working on [HackFlix](https://www.hackflix.in/)
 
@@ -53,7 +53,7 @@
 - No Ads
 - No Subscription
 - Smooth Video Playback
-- Fast Downloader powered by [Fetch2](https://github.com/tonyofrancis/Fetch)
+- Fast Downloader powered by [LoadZ](https://github.com/yogesh-hacker/Loadz)
 - Adaptive Streaming and more...
 
 ## Tags
@@ -77,7 +77,7 @@
 
 To experience ad-free, subscription-free streaming with Hack Flix, visit our website:
 
-[Download HackFlix](https://hack-flix-nu.vercel.app/)
+[Download HackFlix](https://www.hackflix.in/)
 
 
 <h3 align="left">Connect with me:</h3>
