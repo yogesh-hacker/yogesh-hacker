@@ -6,21 +6,7 @@
       "enabled": true,
       "server_id": "streamhg",
       "domains": [
-        "hgcloud.to",
-        "uqloads.xyz",
-        "streamwish.to",
-        "hgplaycdn.com",
-        "davioad.com",
-        "habetar.com",
-        "ghbrisk.com",
-        "yuguaab.com",
-        "guxhag.com",
-        "taylorplayer.com",
-        "filelions.to",
-        "mivalyo.com",
-        "streamwish.site",
-        "filelions.online",
-        "streamhg.com"
+        "2vcdn.skin"
       ]
     }
   }
