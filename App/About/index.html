@@ -1,61 +1,299 @@
-<!DOCTYPE HTML5>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width', initial-scale='1.0'>
-    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title>About HackFlix || An app to explore the entertainment </title>
-    <link rel='stylesheet' href='style.css'>
-    <!--None-->
-    <link rel='stylesheet' href='https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css' type='text/css' media='all' />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1c0d15">
+    <meta name="description" content="Discover HackFlix, an independent entertainment platform built with passion for technology and innovation.">
+    <title>About HackFlix</title>
+
+    <style>
+        :root {
+            --bg: #1c0d15;
+            --surface: #2e0f23;
+            --pink: #ff4b91;
+            --text: #ffffff;
+            --muted: #bba9b4;
+            --border: rgba(255,255,255,.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            padding: 28px 18px 45px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 35px 12px 40px;
+        }
+
+        .logo {
+            font-size: 34px;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+        }
+
+        .logo span {
+            color: var(--pink);
+        }
+
+        .tagline {
+            color: var(--pink);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .intro {
+            margin-top: 25px;
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 560px;
+            margin-inline: auto;
+        }
+
+        .section {
+            margin-top: 24px;
+        }
+
+        .section-title {
+            font-size: 19px;
+            margin-bottom: 15px;
+            font-weight: 750;
+        }
+
+        .section-title span {
+            color: var(--pink);
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            padding: 23px;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #ff4b91, #7b2356);
+            display: grid;
+            place-items: center;
+            font-size: 23px;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .profile h3 {
+            font-size: 17px;
+        }
+
+        .role {
+            color: var(--pink);
+            font-size: 12px;
+            font-weight: 650;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 17px;
+        }
+
+        .skill {
+            background: rgba(255,75,145,.10);
+            color: #ff8bb7;
+            border: 1px solid rgba(255,75,145,.17);
+            padding: 5px 11px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 650;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px 15px;
+            background: linear-gradient(145deg, #351127, #24101e);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+        }
+
+        .cta h3 {
+            font-size: 19px;
+            margin-bottom: 7px;
+        }
+
+        .cta p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .cta a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background: var(--pink);
+            padding: 10px 23px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 750;
+        }
+
+        footer {
+            text-align: center;
+            color: #806b78;
+            font-size: 11px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding-inline: 14px;
+            }
+
+            .hero {
+                padding-top: 22px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <main class="container">
 
-    <section id="welcome-content">
+        <header class="hero">
+            <div class="logo">Hack<span>Flix</span></div>
+            <div class="tagline">Stream Different.</div>
 
-        <div class="app-icon-container">
-            <img class="app-icon" src="https://yogesh-hacker.github.io/yogesh-hacker/App/app_icon.png" alt="" />
-
-            <div class="social-icon-container">
-                <li><a href="https://www.facebook.com/hackerindia1"><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a><i class="fa-brands fa-instagram"></i></a></span>
-                <li><a href="http://www.youtube.com/@hackerindia1"><i class="fa-brands fa-youtube"></i></a></li>
-                <li><a><i class="fa-brands fa-github"></i></a></li>
-                <li><a><i class="fa-brands fa-linkedin"></i></a></li>
-            </div>
-            <p class="welcome-message">
-                Welcome to Hack Flix, the ultimate movie streaming app. Enjoy free movies from a vast database, with a unique Force Play feature that generates new streaming URLs even if they expire. Customize your experience with quality-changing options for thumbnails and posters, and benefit from our fast parallel downloader. Get ready for an unparalleled cinematic adventure with Hack Flix.
+            <p class="intro">
+                Welcome to HackFlix, an independent entertainment
+                platform built with a passion for technology,
+                innovation, and entertainment.
+                Discover a convenient way to explore, stream,
+                and download your favourite movies and web series.
             </p>
-        </div>
-    </section>
-    
-    <h2 style="text-align:center;text-decoration:underline; font-family:Oswald">Meet The Team</h2>
-    
-    <section id="team-content">
-        
-        <div class="member-card">
-            
-            <img src="person1.jpg" alt="" />
-            <p class="member-name">Yogesh Kumar Jamre</p>
-            <p class="member-bio">A passionate frontend and backend developer from India. As developer I am addicted to create awesome websites, apps and tools.</p>
-            <p class="member-position">CEO || Ethical Hacker || Backend Developer</p>
-            <a class="member-facebook" href="https://www.facebook.com/profile.php?id=100036812003047"><i class="fa-brands fa-facebook"></i></a>
-        </div>
-        <div class="member-card">
-            <img src="person2.jpg" alt="" />
-            <p class="member-name">Ashis Ghatak</p>
-            <p class="member-bio">I am a part-time frontend developer, who loves create awesome logos and designs.<br><br> Fun fact is, I love to play Free Fire full-time 😜.</p>
-            <p class="member-position">Frontend Developer || Designer</p>
-            <a class="member-facebook" href="https://www.facebook.com/agniroy.agniroy.1"><i class="fa-brands fa-facebook"></i></a>
-        </div>
-        
-    </section>
+        </header>
 
+        <section class="section">
+            <h2 class="section-title">
+                Our <span>Mission</span>
+            </h2>
 
-    <!--None-->
-    <script type='text/javascript' src='main.js'></script>
+            <div class="card">
+                <p>
+                    We believe entertainment should be simple,
+                    accessible, and enjoyable. Our goal is to
+                    continuously improve the platform through
+                    thoughtful design, better performance,
+                    innovative features, and community feedback.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                Meet The <span>Team</span>
+            </h2>
+
+            <div class="card">
+                <div class="profile">
+                    <div class="avatar">P</div>
+                    <div>
+                        <h3>Peerless</h3>
+                        <div class="role">
+                            Founder & Developer
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    An independent developer passionate about
+                    software engineering, building digital
+                    experiences, and exploring new technologies.
+                    Behind HackFlix is a continuous journey of
+                    learning, experimentation, and development.
+                </p>
+
+                <div class="skills">
+                    <span class="skill">Android Development</span>
+                    <span class="skill">Web Development</span>
+                    <span class="skill">Backend Engineering</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">Cybersecurity</span>
+                    <span class="skill">Software Engineering</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">
+                Our <span>Vision</span>
+            </h2>
+
+            <div class="card">
+                <p>
+                    To keep building, improving, and exploring
+                    new possibilities while delivering a better
+                    entertainment experience through technology
+                    and creativity.
+                </p>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h3>Stream Different.</h3>
+            <p>
+                Explore the HackFlix experience.
+            </p>
+            <a href="https://www.hackflix.in/">
+                Visit HackFlix
+            </a>
+        </section>
+
+        <footer>
+            HackFlix © 2023–2026<br>
+            Built with passion.
+        </footer>
+
+    </main>
 </body>
-</html>
+                </html>
+                
